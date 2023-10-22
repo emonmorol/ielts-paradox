@@ -14,8 +14,17 @@
          <content>
             <HBox prefHeight="595.0" prefWidth="1207.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
                <children>
-                  <VBox fx:id="firstBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;" />
-                  <VBox fx:id="secondBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;" />
+                  <VBox fx:id="firstBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding></VBox>
+                  <VBox fx:id="secondBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding></VBox>
                </children>
                <padding>
                   <Insets right="15.0" />

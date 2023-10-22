@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="404.0" style="-fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="404.0" style="-fx-background-color: white;" stylesheets="@../../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="228.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="222.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/blog-2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="218.0" prefWidth="414.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="212.0" prefWidth="392.0" style="-fx-background-color: white;">
          <children>
             <Group layoutX="21.0" layoutY="16.0">
                <children>
@@ -41,7 +40,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="details_button" layoutX="237.0" layoutY="179.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="146.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
+            <Button fx:id="details_button" layoutX="23.0" layoutY="178.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="360.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

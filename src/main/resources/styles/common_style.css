@@ -2,3 +2,11 @@
     -fx-background-radius:10px;
     -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);
 }
+#blogs_container{
+        -fx-border-style: solid inside;
+         -fx-border-width: 0.4;
+         -fx-effect:dropshadow( one-pass-box,#2e265c34 , 0, 0.0 , 0 , 0);
+}
+#blogs_container:hover{
+        -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);
+}
