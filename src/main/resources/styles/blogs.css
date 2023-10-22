@@ -1,0 +1,6 @@
+#blog_container{
+    -fx-effect:  dropshadow( one-pass-box,#2e265c34 , 0, 0.0 , 0 , 0);
+}
+#blog_container:hover{
+      -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5)
+}

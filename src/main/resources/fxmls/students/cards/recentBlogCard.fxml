@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="306.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox id="blog_container" layoutX="3.0" layoutY="5.0" prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" stylesheets="@../../../styles/blogs.css">
+         <children>
+            <ImageView blendMode="MULTIPLY" fitHeight="70.0" fitWidth="129.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/blog-2.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane prefHeight="70.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 0 10 10 0;">
+               <children>
+                  <Label layoutY="2.0" prefHeight="17.0" prefWidth="146.0" text="23th June 2023">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="15.0" prefHeight="38.0" prefWidth="154.0" text="How to score 9 in listening!" wrapText="true" />
+                  <Label layoutY="48.0" prefHeight="17.0" prefWidth="138.0" text="Emon Morol">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

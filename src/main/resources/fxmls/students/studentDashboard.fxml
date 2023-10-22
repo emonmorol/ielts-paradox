@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #f0fcfb;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.StudentDashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #f0fcfb;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.StudentDashboardController">
     <left>
             <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="667.0" prefWidth="232.0" style="-fx-background-color: #04364A; -fx-background-radius: 20px;">
                 <children>
@@ -23,69 +23,93 @@
                         <children>
                             <VBox prefHeight="416.0" prefWidth="211.0" spacing="6.0">
                                 <children>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickOne" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="My Classes" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickOne" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="My Classes" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick2" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Courses" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick2" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Courses" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick3" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Success Stories" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick3" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Success Stories" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick4" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 4" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick4" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Blogs" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick5" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 5" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick5" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 5" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick6" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 6" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick6" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 6" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick7" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 7" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick7" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 7" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick8" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 8" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick8" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 8" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                                     </Button>
                                 </children>
                             </VBox>
