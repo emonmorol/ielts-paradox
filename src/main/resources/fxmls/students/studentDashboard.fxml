@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #f0fcfb;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.StudentDashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #f0fcfb;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.StudentDashboardController">
     <left>
             <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="667.0" prefWidth="232.0" style="-fx-background-color: #04364A; -fx-background-radius: 20px;">
                 <children>
@@ -31,7 +31,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick2" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 2" textFill="WHITE">
+                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick2" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Courses" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
@@ -39,7 +39,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                                     </Button>
-                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick3" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 3" textFill="WHITE">
+                                    <Button id="buttons" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick3" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Success Stories" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>

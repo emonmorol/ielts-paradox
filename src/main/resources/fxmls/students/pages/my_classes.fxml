@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
-      <ScrollPane layoutY="84.0" prefHeight="582.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
+      <ScrollPane layoutY="136.0" prefHeight="530.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
          <content>
             <HBox prefHeight="806.0" prefWidth="985.0" spacing="15.0" style="-fx-background-color: #f0fcfb;">
                <children>
@@ -20,12 +20,12 @@
             </HBox>
          </content>
       </ScrollPane>
-      <Label layoutX="611.0" prefHeight="68.0" prefWidth="389.0" style="-fx-background-radius: 10; -fx-background-color: #04364ad1;" text="TOTAL COURSES:" textFill="WHITE">
+      <Label layoutX="611.0" prefHeight="113.0" prefWidth="389.0" style="-fx-background-radius: 10; -fx-background-color: #04364ad1;" text="TOTAL COURSES:" textFill="WHITE">
          <padding>
             <Insets left="20.0" />
          </padding>
       </Label>
-      <Label prefHeight="68.0" prefWidth="587.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
+      <Label prefHeight="113.0" prefWidth="587.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
          <padding>
             <Insets left="20.0" />
          </padding>

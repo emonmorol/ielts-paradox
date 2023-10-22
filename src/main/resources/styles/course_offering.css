@@ -1,0 +1,15 @@
+#total_price{
+    -fx-strikethrough: true;
+}
+#details_button{
+-fx-border-style: solid inside;
+ -fx-border-width: 1;
+ -fx-border-radius: 15;
+ -fx-background-color:transparent;
+ -fx-background-radius: 15;
+
+}
+#details_button:hover{
+ -fx-text-fill:white;
+ -fx-background-color: #04364A;
+}
