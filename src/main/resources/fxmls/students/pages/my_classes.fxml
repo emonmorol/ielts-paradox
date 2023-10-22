@@ -8,29 +8,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1223.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
-      <ScrollPane layoutY="136.0" prefHeight="530.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
+      <ScrollPane layoutY="136.0" prefHeight="585.0" prefWidth="1223.0" style="-fx-background-color: #f0fcfb;">
          <content>
-            <HBox prefHeight="806.0" prefWidth="985.0" spacing="15.0" style="-fx-background-color: #f0fcfb;">
+            <HBox prefHeight="595.0" prefWidth="1207.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
                <children>
-                  <VBox fx:id="firstBox" prefHeight="847.0" prefWidth="480.0" spacing="15.0" style="-fx-background-color: #f0fcfb;" />
-                  <VBox fx:id="secondBox" prefHeight="847.0" prefWidth="480.0" spacing="15.0" style="-fx-background-color: #f0fcfb;" />
+                  <VBox fx:id="firstBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;" />
+                  <VBox fx:id="secondBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;" />
                </children>
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
             </HBox>
          </content>
       </ScrollPane>
-      <Label layoutX="611.0" prefHeight="113.0" prefWidth="389.0" style="-fx-background-radius: 10; -fx-background-color: #04364ad1;" text="TOTAL COURSES:" textFill="WHITE">
-         <padding>
-            <Insets left="20.0" />
-         </padding>
-      </Label>
-      <Label prefHeight="113.0" prefWidth="587.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
+      <Label alignment="CENTER" prefHeight="113.0" prefWidth="1223.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
          <padding>
             <Insets left="20.0" />
          </padding>
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Label>
    </children>

@@ -51,7 +51,7 @@ public class StudentDashboardController implements Initializable {
     @FXML
     public void onClick5(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
-        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/page5.fxml");
+        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/mock_test.fxml");
         mainPane.setCenter(panel);
     }
 

@@ -67,7 +67,7 @@
                               <Insets left="20.0" />
                            </padding>
                                     </Button>
-                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick5" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="BUTTON 5" textFill="WHITE">
+                                    <Button id="buttons" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick5" prefHeight="42.0" prefWidth="225.0" stylesheets="@../../styles/sidebar_buttons.css" text="Mock Test" textFill="WHITE">
                                         <font>
                                             <Font name="Arial Bold" size="13.0" />
                                         </font>
