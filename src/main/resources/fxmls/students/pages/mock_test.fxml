@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="7.0" prefHeight="102.0" prefWidth="1223.0" text="Mock Test" textFill="#04364a">
+        <Label contentDisplay="CENTER" layoutY="7.0" prefHeight="102.0" prefWidth="934.0" text="MOCK TEST" textFill="#1a2579">
             <font>
                 <Font name="System Bold" size="29.0" />
             </font>
         </Label>
-        <GridPane hgap="20.0" layoutX="27.0" layoutY="121.0" prefHeight="411.0" prefWidth="1173.0" vgap="20.0">
+        <GridPane hgap="20.0" layoutY="121.0" prefHeight="411.0" prefWidth="934.0" vgap="20.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="787.2000244140625" minWidth="10.0" prefWidth="586.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="609.0" minWidth="0.0" prefWidth="587.0" />
@@ -27,9 +27,9 @@
                 <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <AnchorPane prefHeight="298.0" prefWidth="611.0">
+                <AnchorPane prefHeight="195.0" prefWidth="553.0">
                     <children>
-                        <Button alignment="TOP_LEFT" layoutY="-1.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="576.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
+                        <Button alignment="TOP_LEFT" layoutY="-1.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="456.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -37,12 +37,12 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Text layoutX="469.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
+                        <Text layoutX="324.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
                     </children>
                 </AnchorPane>
                 <AnchorPane prefHeight="250.0" prefWidth="455.0" GridPane.columnIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="577.0" style="-fx-background-radius: 7; -fx-background-color: #93c5fd;" text="Reading">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #93c5fd;" text="Reading">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -50,12 +50,12 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Text layoutX="470.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
+                        <Text layoutX="339.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="200.0" prefWidth="611.0" GridPane.rowIndex="1">
+                <AnchorPane prefHeight="196.0" prefWidth="473.0" GridPane.rowIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" layoutX="-1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="576.0" style="-fx-background-radius: 7; -fx-background-color: #5eead4;" text="Writting">
+                        <Button alignment="TOP_LEFT" layoutX="-1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #5eead4;" text="Writting">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -63,12 +63,12 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Text layoutX="469.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
+                        <Text layoutX="287.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
                     </children>
                 </AnchorPane>
                 <AnchorPane prefHeight="256.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="576.0" style="-fx-background-radius: 7; -fx-background-color: #fca5a5;" text="Speaking">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #fca5a5;" text="Speaking">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -76,7 +76,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Text layoutX="470.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
+                        <Text layoutX="347.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tap Card For Test" />
                     </children>
                 </AnchorPane>
             </children>

@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 public class BlogsController implements Initializable {
 
     @FXML
-    private VBox recentBlogs,first,second;
+    private VBox firstBox,secondBox;
     ArrayList<String> it = new ArrayList<>();
     ArrayList<String> it2 = new ArrayList<>();
 
@@ -43,17 +43,17 @@ public class BlogsController implements Initializable {
         it2.add("aksjhdsf");
 
 
-        for(String i:it){
-
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/recentBlogCard.fxml"));
-                AnchorPane paneee = fxmlLoader.load();
-                recentBlogs.getChildren().add(paneee);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
+//        for(String i:it){
+//
+//            try {
+//                FXMLLoader fxmlLoader = new FXMLLoader();
+//                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/recentBlogCard.fxml"));
+//                AnchorPane paneee = fxmlLoader.load();
+//                recentBlogs.getChildren().add(paneee);
+//            } catch (IOException ex) {
+//                throw new RuntimeException(ex);
+//            }
+//        }
         boolean isFirst = true;
         for(String i:it){
 
@@ -62,10 +62,10 @@ public class BlogsController implements Initializable {
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/blogCard.fxml"));
                 VBox paneee = fxmlLoader.load();
                 if(isFirst){
-                    first.getChildren().add(paneee);
+                    firstBox.getChildren().add(paneee);
                     isFirst = false;
                 }else{
-                    second.getChildren().add(paneee);
+                    secondBox.getChildren().add(paneee);
                     isFirst= true;
                 }
             } catch (IOException ex) {

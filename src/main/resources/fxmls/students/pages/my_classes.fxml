@@ -7,14 +7,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="922.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="136.0" prefHeight="610.0" prefWidth="893.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
+      <ScrollPane hbarPolicy="NEVER" layoutY="112.0" prefHeight="618.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
          <content>
-            <VBox fx:id="mainBox" alignment="TOP_CENTER" prefHeight="607.0" prefWidth="893.0" spacing="15.0" style="-fx-background-color: #e9eff6;" />
+            <VBox fx:id="mainBox" alignment="TOP_CENTER" prefHeight="650.0" prefWidth="932.0" spacing="15.0" style="-fx-background-color: #e9eff6;">
+               <padding>
+                  <Insets bottom="20.0" right="10.0" />
+               </padding></VBox>
          </content>
       </ScrollPane>
-      <Label alignment="CENTER" layoutX="15.0" layoutY="17.0" prefHeight="96.0" prefWidth="893.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
+      <Label layoutX="-20.0" layoutY="14.0" prefHeight="77.0" prefWidth="922.0" style="-fx-background-radius: 10;" text="MY CLASSES" textFill="#1a2579">
          <padding>
             <Insets left="20.0" />
          </padding>

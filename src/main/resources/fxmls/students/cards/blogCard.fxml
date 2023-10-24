@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="404.0" style="-fx-background-color: white;" stylesheets="@../../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="447.0" style="-fx-background-color: white;" stylesheets="@../../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="222.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="222.0" fitWidth="447.0" pickOnBounds="true">
          <image>
             <Image url="@../../../images/blog-2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="212.0" prefWidth="392.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="219.0" prefWidth="447.0" style="-fx-background-color: white;">
          <children>
             <Group layoutX="21.0" layoutY="16.0">
                <children>
@@ -35,12 +35,12 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="70.0" prefHeight="100.0" prefWidth="360.0" text="আইয়েল্টস পরীক্ষায় যে মডিউলে সবচেয়ে বেশী স্কোর পাওয়া যায় সেটা হচ্ছে লিসেনিং। লিসেনিং-এ আমার স্কোর হচ্ছে ৯/৯। আমার লাস্ট এক্সামেও স্কোর ছিলো ৯.০ । এখন প্রশ্ন হচ্ছে যে, ৯.০ পাওয়া বা বেশী স্কোর তোলার জন্য কোনো ম্যাজিক ফরমুলা আছে নাকি! উত্তর হইলো- নাই! নাই! তাহলে কিভাবে ভালো স্কোর করা যেতে পারেঃ ১।রেগুলার স্ট্যান্ডার্ড ইংরেজি শুনার অভ্যাস করতে হবে। এখনো প্রায় প্রতিদিনই আমি বিভিন্ন পডকাস্ট শুনে থাকি! ইউটিউবে বিভিন্ন চ্যানেলে অনেক ডকুমেন্টারি/ ডকুফিকশন দেখে থাকি! অর্থাৎ রেগুলার ইংরেজি শুনার অভ্যাস আছে! যারা আইয়েল্টস এক্সাম দিবেন, তাদেরও উচিত ১ ঘন্টার মত এরকম লিসেনিং শুনা, যদি টাইম থাকে! ২। আইয়েল্টস এর লিসেনিং এর এক্সাম ফরম্যাট সম্পর্কে ভালো ধারনা থাকা! প্রতিটা সেকশনে কোন ধরনের অডিও আসে তা নিয়ে ওয়ার্ক করা! এক্ষেত্রে আপনি কেইম্ব্রিজ লিসেনিং নিয়েই ওয়ার্ক করতে পারেন! ৩। বিভিন্ন প্রশ্নসম্পর্কে ভালো ধারণা রাখা! প্রয়োজনে প্রব্লেম্যাটিক প্রশ্নগুলো বার বার প্র্যাকটিস করা! ৪। বেইসিক গ্রামার এবং কমন স্পেলিং মিসটেইক নিয়ে কাজ করতে হবে! ৫। অনেকগুলো ফুল এক্সাম প্র্যাকটিস করতে হবে, কোনো ব্রেক না দিয়ে! ৬। টাইম ম্যানেজমেন্ট এবং কুইক রিডিং নিয়ে কাজ করতে হবে!" wrapText="true">
+            <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="70.0" prefHeight="100.0" prefWidth="403.0" text="আইয়েল্টস পরীক্ষায় যে মডিউলে সবচেয়ে বেশী স্কোর পাওয়া যায় সেটা হচ্ছে লিসেনিং। লিসেনিং-এ আমার স্কোর হচ্ছে ৯/৯। আমার লাস্ট এক্সামেও স্কোর ছিলো ৯.০ । এখন প্রশ্ন হচ্ছে যে, ৯.০ পাওয়া বা বেশী স্কোর তোলার জন্য কোনো ম্যাজিক ফরমুলা আছে নাকি! উত্তর হইলো- নাই! নাই! তাহলে কিভাবে ভালো স্কোর করা যেতে পারেঃ ১।রেগুলার স্ট্যান্ডার্ড ইংরেজি শুনার অভ্যাস করতে হবে। এখনো প্রায় প্রতিদিনই আমি বিভিন্ন পডকাস্ট শুনে থাকি! ইউটিউবে বিভিন্ন চ্যানেলে অনেক ডকুমেন্টারি/ ডকুফিকশন দেখে থাকি! অর্থাৎ রেগুলার ইংরেজি শুনার অভ্যাস আছে! যারা আইয়েল্টস এক্সাম দিবেন, তাদেরও উচিত ১ ঘন্টার মত এরকম লিসেনিং শুনা, যদি টাইম থাকে! ২। আইয়েল্টস এর লিসেনিং এর এক্সাম ফরম্যাট সম্পর্কে ভালো ধারনা থাকা! প্রতিটা সেকশনে কোন ধরনের অডিও আসে তা নিয়ে ওয়ার্ক করা! এক্ষেত্রে আপনি কেইম্ব্রিজ লিসেনিং নিয়েই ওয়ার্ক করতে পারেন! ৩। বিভিন্ন প্রশ্নসম্পর্কে ভালো ধারণা রাখা! প্রয়োজনে প্রব্লেম্যাটিক প্রশ্নগুলো বার বার প্র্যাকটিস করা! ৪। বেইসিক গ্রামার এবং কমন স্পেলিং মিসটেইক নিয়ে কাজ করতে হবে! ৫। অনেকগুলো ফুল এক্সাম প্র্যাকটিস করতে হবে, কোনো ব্রেক না দিয়ে! ৬। টাইম ম্যানেজমেন্ট এবং কুইক রিডিং নিয়ে কাজ করতে হবে!" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="details_button" layoutX="23.0" layoutY="178.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="360.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
+            <Button fx:id="details_button" layoutX="23.0" layoutY="178.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="403.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
