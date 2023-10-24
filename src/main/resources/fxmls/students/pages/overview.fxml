@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.OverviewController">
    <children>
       <VBox prefHeight="730.0" prefWidth="934.0" spacing="10.0">
          <children>
@@ -41,7 +41,10 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="400.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="See Course" />
+                        <Button fx:id="buttons" alignment="CENTER" layoutX="400.0" layoutY="89.0" mnemonicParsing="false" onAction="#onClickSeeCourse" prefHeight="34.0" prefWidth="180.0" stylesheets="@../../../styles/sidebar_buttons.css" text="See Course">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="143.0" prefWidth="143.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;">
