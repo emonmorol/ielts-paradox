@@ -4,35 +4,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1223.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="922.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
-      <ScrollPane layoutY="136.0" prefHeight="585.0" prefWidth="1223.0" style="-fx-background-color: #f0fcfb;">
+      <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="136.0" prefHeight="610.0" prefWidth="893.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
          <content>
-            <HBox prefHeight="595.0" prefWidth="1207.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
-               <children>
-                  <VBox fx:id="firstBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding></VBox>
-                  <VBox fx:id="secondBox" prefHeight="581.0" prefWidth="584.0" spacing="20.0" style="-fx-background-color: #f0fcfb;">
-                     <padding>
-                        <Insets bottom="20.0" />
-                     </padding></VBox>
-               </children>
-               <padding>
-                  <Insets right="15.0" />
-               </padding>
-            </HBox>
+            <VBox fx:id="mainBox" alignment="TOP_CENTER" prefHeight="607.0" prefWidth="893.0" spacing="15.0" style="-fx-background-color: #e9eff6;" />
          </content>
       </ScrollPane>
-      <Label alignment="CENTER" prefHeight="113.0" prefWidth="1223.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="15.0" layoutY="17.0" prefHeight="96.0" prefWidth="893.0" style="-fx-background-radius: 10; -fx-background-color: #176b87ba;" text="MY CLASSES" textFill="WHITE">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -41,4 +23,7 @@
          </font>
       </Label>
    </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
 </AnchorPane>

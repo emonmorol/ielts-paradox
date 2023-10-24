@@ -19,35 +19,11 @@ import java.util.ResourceBundle;
 public class MyClassesController implements Initializable{
 
     @FXML
-    private VBox firstBox,secondBox;
+    private VBox mainBox;
     ArrayList<String> it = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
         it.add("aksjhdsf");
         it.add("aksjhdsf");
         it.add("aksjhdsf");
@@ -60,14 +36,7 @@ public class MyClassesController implements Initializable{
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/courseCard.fxml"));
                 HBox paneee = fxmlLoader.load();
-                if(isFirst){
-                    firstBox.getChildren().add(paneee);
-                    isFirst = false;
-                }else{
-                    secondBox.getChildren().add(paneee);
-                    isFirst= true;
-                }
-//                mainBox.getChildren().add(paneee);
+                mainBox.getChildren().add(paneee);
 
 //                System.out.println("Added\n");
             } catch (IOException ex) {
