@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.ielts_paradox.controllers.Blogs.AllBlogController">
+    <content>
+        <HBox fx:id="allBlgBox" alignment="TOP_CENTER" prefHeight="632.0" prefWidth="934.0" spacing="20.0" style="-fx-background-color: #e9eff6;">
+            <children>
+                <VBox fx:id="firstBox" prefHeight="581.0" prefWidth="447.0" spacing="20.0" style="-fx-background-color: #e9eff6;">
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </VBox>
+                <VBox fx:id="secondBox" prefHeight="632.0" prefWidth="458.0" spacing="20.0" style="-fx-background-color: #e9eff6;">
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets right="15.0" />
+            </padding>
+        </HBox>
+    </content>
+</ScrollPane>

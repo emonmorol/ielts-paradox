@@ -1,9 +1,12 @@
 package com.example.ielts_paradox.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -13,64 +16,57 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BlogsController implements Initializable {
-
     @FXML
-    private VBox firstBox,secondBox;
-    ArrayList<String> it = new ArrayList<>();
-    ArrayList<String> it2 = new ArrayList<>();
+    private BorderPane mainBlogPane;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
-        it2.add("aksjhdsf");
 
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/allBlog.fxml"));
+            ScrollPane paneee = fxmlLoader.load();
+            mainBlogPane.setCenter(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @FXML
+    void addBlogHandler(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/addBlog.fxml"));
+            AnchorPane paneee = fxmlLoader.load();
+            mainBlogPane.setCenter(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-//        for(String i:it){
-//
-//            try {
-//                FXMLLoader fxmlLoader = new FXMLLoader();
-//                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/recentBlogCard.fxml"));
-//                AnchorPane paneee = fxmlLoader.load();
-//                recentBlogs.getChildren().add(paneee);
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        }
-        boolean isFirst = true;
-        for(String i:it){
+    @FXML
+    void allBlogHandler(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/allBlog.fxml"));
+            ScrollPane paneee = fxmlLoader.load();
+            mainBlogPane.setCenter(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/blogCard.fxml"));
-                VBox paneee = fxmlLoader.load();
-                if(isFirst){
-                    firstBox.getChildren().add(paneee);
-                    isFirst = false;
-                }else{
-                    secondBox.getChildren().add(paneee);
-                    isFirst= true;
-                }
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+    }
+
+    @FXML
+    void myBlogHandler(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/myBlog.fxml"));
+            AnchorPane paneee = fxmlLoader.load();
+            mainBlogPane.setCenter(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

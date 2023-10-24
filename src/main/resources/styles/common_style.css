@@ -10,3 +10,16 @@
 #blogs_container:hover{
         -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);
 }
+.my_class{
+    -fx-background-color:transparent;
+
+
+}
+.my_class:hover{
+    -fx-border-style: solid inside;
+    -fx-border-width: 0 0 3 0;
+}
+.my_class:focused{
+    -fx-border-style: solid inside;
+    -fx-border-width: 0 0 3 0;
+}

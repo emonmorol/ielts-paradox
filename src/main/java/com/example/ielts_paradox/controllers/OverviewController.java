@@ -8,7 +8,7 @@ import javafx.scene.layout.BorderPane;
 
 public class OverviewController {
     @FXML
-    AnchorPane mainAnchor = new AnchorPane();
+    AnchorPane mainAnchor;
     @FXML
     public void onClickSeeCourse(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
