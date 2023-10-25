@@ -18,6 +18,4 @@ public class LoadDashboardPane {
         }
         return sidePane;
     }
-
-
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -129,14 +131,6 @@
                                 <Font name="System Bold" size="11.5" />
                             </font>
                         </Label>
-                        <Button layoutX="225.0" layoutY="10.0" minWidth="38.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="38.0" style="-fx-background-radius: 10; -fx-background-color: #cdd1ef;">
-                            <graphic>
-                                <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="25" tabSize="0" text="" wrappingWidth="18.9998779296875" />
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
                         <Button layoutX="83.0" layoutY="13.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="35.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
                             <graphic>
                                 <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="20" tabSize="0" text="" wrappingWidth="18.333251953125" />
@@ -166,6 +160,11 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
+                  <MFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" depthLevel="LEVEL1" layoutX="245.0" layoutY="8.0" prefHeight="38.0" prefWidth="35.0" text=" ">
+                     <graphic>
+                                <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="25" tabSize="0" text="" wrappingWidth="16.9998779296875" />
+                     </graphic>
+                  </MFXButton>
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutY="65.0" prefHeight="666.0" prefWidth="293.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="65.0">
@@ -192,11 +191,7 @@
                                 <Font size="11.0" />
                             </font>
                         </Label>
-                        <Label layoutX="81.0" layoutY="77.0" prefHeight="89.0" prefWidth="131.0" text="71%" textFill="#1b2ca8">
-                            <font>
-                                <Font name="System Bold" size="61.0" />
-                            </font>
-                        </Label>
+                  <MFXProgressSpinner layoutX="76.0" layoutY="63.0" prefHeight="131.0" prefWidth="133.0" progress="0.81" radius="70.0" />
                     </children>
                 </AnchorPane>
             </children>

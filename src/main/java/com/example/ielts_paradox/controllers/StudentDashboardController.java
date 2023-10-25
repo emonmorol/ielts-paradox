@@ -20,10 +20,7 @@ import java.util.ResourceBundle;
 public class StudentDashboardController implements Initializable {
     @FXML
     BorderPane mainPane = new BorderPane();
-    @FXML
-    Rectangle clip;
-    @FXML
-    ImageView img;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         LoadDashboardPane ob = new LoadDashboardPane();
@@ -50,12 +47,7 @@ public class StudentDashboardController implements Initializable {
         mainPane.setCenter(panel);
     }
 
-    @FXML
-    public void onClick4(ActionEvent event) {
-        LoadDashboardPane ob = new LoadDashboardPane();
-        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/blogs.fxml");
-        mainPane.setCenter(panel);
-    }
+
 
     @FXML
     public void onClick5(ActionEvent event) {
@@ -64,12 +56,7 @@ public class StudentDashboardController implements Initializable {
         mainPane.setCenter(panel);
     }
 
-    @FXML
-    public void onClick6(ActionEvent event) {
-        LoadDashboardPane ob = new LoadDashboardPane();
-        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
-        mainPane.setCenter(panel);
-    }
+
 
     @FXML
     public void onClick7(ActionEvent event) {
