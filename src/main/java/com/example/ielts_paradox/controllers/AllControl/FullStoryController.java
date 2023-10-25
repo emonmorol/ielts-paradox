@@ -43,7 +43,6 @@ public class FullStoryController implements Initializable {
         it.add("aksjhdsf");
 
         for(String i:it){
-
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/stories_card.fxml"));
