@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Image logo = new Image(getClass().getResource("/images/logo.png").toExternalForm());

@@ -11,13 +11,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="447.0" style="-fx-background-radius: 10; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5); -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="447.0" style="-fx-background-radius: 10; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5); -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.CourseOfferingCardController">
    <children>
       <AnchorPane prefHeight="192.0" prefWidth="447.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10 10 0 0;">
          <children>
             <ImageView fitHeight="98.0" fitWidth="436.0" layoutX="5.0" layoutY="3.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../images/live-course.png" />
+                  <Image url="@../../images/live-course.png" />
                </image>
             </ImageView>
          </children>
@@ -37,7 +37,7 @@
                            <children>
                               <ImageView fitHeight="47.0" fitWidth="44.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/instructor.png" />
+                                    <Image url="@../../images/instructor.png" />
                                  </image>
                               </ImageView>
                               <Label layoutX="56.0" layoutY="3.0" prefHeight="17.0" prefWidth="131.0" text="EMON MOROL" textFill="#1a2579">
@@ -56,7 +56,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="52.0" prefWidth="447.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 0 0 20 20;">
                      <children>
-                        <Button fx:id="details_button" layoutX="296.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="131.0" stylesheets="@../../../styles/course_offering.css" text="SEE DETAILS">
+                        <Button fx:id="details_button" layoutX="296.0" layoutY="12.0" mnemonicParsing="false" onAction="#seeDetailsHandler" prefHeight="21.0" prefWidth="131.0" stylesheets="@../../styles/course_offering.css" text="SEE DETAILS">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -71,7 +71,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="total_price" layoutX="123.0" layoutY="14.0" stylesheets="@../../../styles/course_offering.css" text="2500TK">
+                        <Label fx:id="total_price" layoutX="123.0" layoutY="14.0" stylesheets="@../../styles/course_offering.css" text="2500TK">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

@@ -38,7 +38,7 @@
                         <Label layoutX="66.0" layoutY="23.0" text="8.5" />
                      </children>
                   </Group>
-                   <Button fx:id="details_button" layoutX="295.0" layoutY="12.0" mnemonicParsing="false" onAction="#viewFullStory" prefHeight="34.0" prefWidth="122.0" stylesheets="@../../../styles/course_offering.css" text="READ FULL STORY">
+                   <Button fx:id="details_button" layoutX="295.0" layoutY="12.0" mnemonicParsing="false" onAction="#viewFullStory" prefHeight="34.0" prefWidth="122.0" stylesheets="@../../styles/course_offering.css" text="READ FULL STORY">
                        <cursor>
                            <Cursor fx:constant="HAND" />
                        </cursor>
@@ -47,13 +47,13 @@
             </AnchorPane>
             <ImageView fitHeight="101.0" fitWidth="108.0" layoutX="174.0" layoutY="-39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/instructor.png" />
+                  <Image url="@../../images/instructor.png" />
                </image>
             </ImageView>
          </children>
          <stylesheets>
-            <URL value="@../../../styles/course_offering.css" />
-            <URL value="@../../../styles/common_style.css" />
+            <URL value="@../../styles/course_offering.css" />
+            <URL value="@../../styles/common_style.css" />
          </stylesheets>
       </AnchorPane>
    </children>

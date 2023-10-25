@@ -37,7 +37,7 @@ public class AllBlogController implements Initializable {
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/blogCard.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/blogCard.fxml"));
                 VBox paneee = fxmlLoader.load();
                 if(isFirst){
                     firstBox.getChildren().add(paneee);

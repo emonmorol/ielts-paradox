@@ -1,13 +1,8 @@
 package com.example.ielts_paradox.controllers;
 
-import com.example.ielts_paradox.utils.LoadDashboardPane;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -46,7 +41,7 @@ public class MyClassesController implements Initializable{
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/courseCard.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseCard.fxml"));
                 HBox paneee = fxmlLoader.load();
                 mainBox.getChildren().add(paneee);
 

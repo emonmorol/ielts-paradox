@@ -3,6 +3,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -71,13 +72,13 @@
             </VBox>
          </children>
       </HBox>
-      <MFXButton buttonType="RAISED" layoutX="53.0" layoutY="35.0" prefHeight="54.0" prefWidth="53.0" style="-fx-background-radius: 50;" text=" ">
+      <MFXButton buttonType="RAISED" layoutX="53.0" layoutY="35.0" onAction="#backButton" prefHeight="46.0" prefWidth="43.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
-            <FontAwesomeIconView size="30" text="" wrappingWidth="20.799983978271484">
-               <font>
-                  <Font size="20.0" />
-               </font></FontAwesomeIconView>
+            <FontAwesomeIconView size="22" text="" wrappingWidth="14.0" />
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MFXButton>
       <Label layoutX="230.0" layoutY="25.0" prefHeight="37.0" prefWidth="604.0" text="BLOGS PROVIDED BY PARADOX IELTS INSTRUCTORS">
          <font>

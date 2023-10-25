@@ -3,8 +3,6 @@ package com.example.ielts_paradox.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -33,7 +31,7 @@ public class CourseOfferingController implements Initializable {
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/courseOfferingCard.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseOfferingCard.fxml"));
                 VBox paneee = fxmlLoader.load();
                 if(isFirst){
                     firstBox.getChildren().add(paneee);

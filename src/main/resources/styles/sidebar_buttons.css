@@ -12,11 +12,3 @@
     -fx-border-width: 0 0 0 3;
     -fx-border-color:white;
 }
-#buttons:focused{
-    -fx-background-color:#10195c;
-    -fx-border-style: solid inside;
-    -fx-border-width: 0 0 0 3;
-    -fx-border-color:white;
-    -fx-font-style:Bold;
-    -fx-font-weight: bold;
-}
