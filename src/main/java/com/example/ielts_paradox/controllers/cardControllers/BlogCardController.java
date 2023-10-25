@@ -18,7 +18,7 @@ public class BlogCardController {
     @FXML
     public void viewFullBlog(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/full_blogs.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/blogs/full_blogs.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
 
