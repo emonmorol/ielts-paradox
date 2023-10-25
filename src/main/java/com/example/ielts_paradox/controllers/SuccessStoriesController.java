@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -20,56 +21,46 @@ public class SuccessStoriesController implements Initializable {
 //    @FXML
     public VBox firstBox,secondBox;
 
-    //    @FXML
-//    public BorderPane mainPane;
     @FXML
-    public AnchorPane anchor;
-    ArrayList<String> it = new ArrayList<>();
+    private AnchorPane mainStoryPane;
+
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-
-        boolean isFirst = true;
-        for(String i:it){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/students/cards/stories_card.fxml"));
-                AnchorPane paneee = fxmlLoader.load();
-                if(isFirst){
-                    firstBox.getChildren().add(paneee);
-                    isFirst = false;
-                }
-                else{
-                    secondBox.getChildren().add(paneee);
-                    isFirst= true;
-                }
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/allStory.fxml"));
+            ScrollPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().add(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
     @FXML
-    public void OnBTN(ActionEvent e){
-
-    }
-    @FXML
-    public void onCl(ActionEvent e){
+    void addStoryHandler(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/full_blogs.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/addStory.fxml"));
             AnchorPane paneee = fxmlLoader.load();
-            anchor.getChildren().add(paneee);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+            mainStoryPane.getChildren().add(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void allStoryHandler(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/allStory.fxml"));
+            ScrollPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().add(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

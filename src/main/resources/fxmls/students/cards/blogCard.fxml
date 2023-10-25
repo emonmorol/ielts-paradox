@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="447.0" style="-fx-background-color: white;" stylesheets="@../../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="447.0" style="-fx-background-color: white;" stylesheets="@../../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.BlogCardController">
    <children>
       <ImageView fitHeight="222.0" fitWidth="447.0" pickOnBounds="true">
          <image>
@@ -40,7 +40,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="details_button" layoutX="23.0" layoutY="178.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="403.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
+            <Button fx:id="details_button" layoutX="23.0" layoutY="178.0" mnemonicParsing="false" onAction="#viewFullBlog" prefHeight="27.0" prefWidth="403.0" stylesheets="@../../../styles/course_offering.css" text="READ MORE ...">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
