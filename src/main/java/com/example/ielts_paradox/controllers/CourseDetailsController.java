@@ -20,7 +20,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CourseDetailsController implements Initializable {
+public class CourseDetailsController {
+
     @FXML
     private AnchorPane insideAnchor;
     @FXML
@@ -34,30 +35,20 @@ public class CourseDetailsController implements Initializable {
     @FXML
     private Label courseTitle;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxmls/cards/courseOfferingCard.fxml"));
+    public static CourseInfo ci ;
+
+    public void setDetailsInfo(CourseInfo crs){
+        CourseDetailsController.ci = crs;
+        courseTitle.setText(ci.title);
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
         try {
-            Parent root = loader.load();
-            CourseOfferingCardController cocd = loader.getController();
+            AnchorPane paneee = fxmlLoader.load();
+            scrollpane.setContent(paneee);
+            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
-//       FXMLLoader fxmlLoader = new FXMLLoader();
-//       fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
-//       try {
-//            AnchorPane paneee = fxmlLoader.load();
-//            scrollpane.setContent(paneee);
-//            System.out.println(insideAnchor+" "+paneee);
-//       } catch (IOException e) {
-//            throw new RuntimeException(e);
-//       }
-    }
-    public void setDetailsInfo(CourseInfo crs){
-
     }
 
 
@@ -76,6 +67,7 @@ public class CourseDetailsController implements Initializable {
 
     @FXML
     void descriptionHandler(ActionEvent event) {
+        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
         try {
@@ -90,6 +82,7 @@ public class CourseDetailsController implements Initializable {
 
     @FXML
     void faqHandler(ActionEvent event) {
+        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/faq.fxml"));
         try {
@@ -104,6 +97,7 @@ public class CourseDetailsController implements Initializable {
 
     @FXML
     void instructorHandler(ActionEvent event) {
+        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/instructor.fxml"));
         try {
@@ -118,6 +112,7 @@ public class CourseDetailsController implements Initializable {
 
     @FXML
     void routineHandler(ActionEvent event) {
+        System.out.println("from routing = "+ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/routine.fxml"));
         try {

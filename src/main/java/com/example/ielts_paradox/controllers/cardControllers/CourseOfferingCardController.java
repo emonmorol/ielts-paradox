@@ -3,6 +3,7 @@ package com.example.ielts_paradox.controllers.cardControllers;
 import com.example.ielts_paradox.controllers.CourseDetailsController;
 import com.example.ielts_paradox.controllers.CourseOfferingController;
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,14 +45,12 @@ public class CourseOfferingCardController{
 
     @FXML
     void seeDetailsHandler(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/courses.fxml"));
-        root = loader.load();
-        CourseOfferingController ccc = loader.getController();
-        System.out.println(ccc);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
         root = fxmlLoader.load();
         CourseDetailsController cdc = fxmlLoader.getController();
-        System.out.println(_id.getText());
+        CourseInfo cf = new DBConnections().getCourseById(_id.getText());
+        cdc.setDetailsInfo(cf);
+//        System.out.println(_id.getText());
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

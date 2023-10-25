@@ -17,5 +17,6 @@ module com.example.ielts_paradox {
     exports com.example.ielts_paradox.controllers;
     exports com.example.ielts_paradox.controllers.AllControl;
     exports com.example.ielts_paradox.controllers.cardControllers;
+    exports com.example.ielts_paradox.models;
 
 }
