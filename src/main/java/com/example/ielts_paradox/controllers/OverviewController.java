@@ -25,6 +25,10 @@ public class OverviewController implements Initializable {
     @FXML
     private VBox popularCourse;
     @FXML
+    private HBox popularBlog;
+    @FXML
+    private HBox popularStory;
+    @FXML
     public void onClickSeeCourse(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/courses.fxml");
@@ -85,7 +89,6 @@ public class OverviewController implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }
         for (int i = 0; i<2;i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -97,9 +100,28 @@ public class OverviewController implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }
+        for (int i = 0; i<2;i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/popularBlogCard.fxml"));
+            try {
+                AnchorPane paneee = fxmlLoader.load();
+                popularBlog.getChildren().add(paneee);
 
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        for (int i = 0; i<2;i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/popularStoryCard.fxml"));
+            try {
+                AnchorPane paneee = fxmlLoader.load();
+                popularStory.getChildren().add(paneee);
 
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

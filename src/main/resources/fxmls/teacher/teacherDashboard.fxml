@@ -44,7 +44,7 @@
                                         <Insets />
                                     </VBox.margin>
                                 </Button>
-                                <Button id="buttons" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickOne" prefHeight="42.0" prefWidth="279.0" stylesheets="@../../styles/sidebar_buttons.css" text="My Classes" textFill="WHITE">
+                                <Button id="buttons" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickOne" prefHeight="42.0" prefWidth="279.0" stylesheets="@../../styles/sidebar_buttons.css" text="My Courses" textFill="WHITE">
                                     <font>
                                         <Font name="Arial" size="13.0" />
                                     </font>
