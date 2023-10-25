@@ -1,6 +1,6 @@
 package com.example.ielts_paradox.utils;
 
-import com.example.ielts_paradox.models.User;
+import com.example.ielts_paradox.models.UserInfo;
 
 import java.sql.*;
 
@@ -44,7 +44,7 @@ public class DBConnections {
         }
         return false;
     }
-    public boolean createUser(User u){
+    public boolean createUser(UserInfo u){
         String DB_QUERY = "INSERT INTO users VALUES (?,?,?,?,?);";
         try{
             Connection connection = DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);

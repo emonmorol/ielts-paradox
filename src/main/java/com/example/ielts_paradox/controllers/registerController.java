@@ -1,7 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
 
-import com.example.ielts_paradox.models.User;
+import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.utils.AlertClass;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
@@ -73,7 +73,7 @@ public class registerController {
             AlertClass.showAlert("ERROR!!!!!","Password Didn't Match!");
         }
         else{
-            User u = new User(fullname,email,contact_number,pass,isTeacher);
+            UserInfo u = new UserInfo(fullname,email,contact_number,pass,isTeacher);
             boolean isValid = new DBConnections().isUserExist(email);
             if(isValid){
                 AlertClass.showAlert("ERROR!!!!!","User Already Exits! Please Login!");

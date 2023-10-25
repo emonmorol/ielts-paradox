@@ -33,7 +33,6 @@ public class OverviewController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/courses.fxml");
         mainAnchor.getChildren().add(panel);
-
     }
 
     @FXML
@@ -41,7 +40,6 @@ public class OverviewController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/my_classes.fxml");
         mainAnchor.getChildren().add(panel);
-
     }
 
     @FXML
@@ -49,7 +47,6 @@ public class OverviewController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/blogs.fxml");
         mainAnchor.getChildren().add(panel);
-
     }
 
 
@@ -59,7 +56,6 @@ public class OverviewController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/courses.fxml");
         mainAnchor.getChildren().add(panel);
-
     }
 
 
@@ -69,12 +65,6 @@ public class OverviewController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/success_stories.fxml");
         mainAnchor.getChildren().add(panel);
-
-    }
-
-    @FXML
-    void onClickUpcomigExam(ActionEvent event) {
-
     }
 
     @Override
