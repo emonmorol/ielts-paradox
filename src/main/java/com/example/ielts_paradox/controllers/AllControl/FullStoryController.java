@@ -1,7 +1,6 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
 import com.example.ielts_paradox.controllers.StudentDashboardController;
-import com.example.ielts_paradox.controllers.TeacherDashboardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class FullBlogController implements Initializable {
+public class FullStoryController implements Initializable {
 
     @FXML
     private VBox allBlogBox;
@@ -46,8 +46,8 @@ public class FullBlogController implements Initializable {
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/blogCard.fxml"));
-                VBox paneee = fxmlLoader.load();
+                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/stories_card.fxml"));
+                AnchorPane paneee = fxmlLoader.load();
                 allBlogBox.getChildren().add(paneee);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -63,7 +63,7 @@ public class FullBlogController implements Initializable {
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        tdc.onClick7(event);
+        tdc.onClick3(event);
         stage.show();
     }
 

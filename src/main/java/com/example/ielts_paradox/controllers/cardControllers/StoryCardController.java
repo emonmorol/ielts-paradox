@@ -24,7 +24,7 @@ public class StoryCardController {
     @FXML
     public void viewFullStory(ActionEvent event) throws IOException {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/full_blogs.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/full_success_story.fxml"));
             root = fxmlLoader.load();
             scene = new Scene(root);
 
