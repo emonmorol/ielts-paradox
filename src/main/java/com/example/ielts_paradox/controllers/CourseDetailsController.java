@@ -1,5 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.controllers.cardControllers.CourseOfferingCardController;
+import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
@@ -28,19 +31,35 @@ public class CourseDetailsController implements Initializable {
     private Scene scene;
 
     private Parent root;
+    @FXML
+    private Label courseTitle;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       FXMLLoader fxmlLoader = new FXMLLoader();
-       fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/fxmls/cards/courseOfferingCard.fxml"));
         try {
-            AnchorPane paneee = fxmlLoader.load();
-            scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
+            Parent root = loader.load();
+            CourseOfferingCardController cocd = loader.getController();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
+//       FXMLLoader fxmlLoader = new FXMLLoader();
+//       fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
+//       try {
+//            AnchorPane paneee = fxmlLoader.load();
+//            scrollpane.setContent(paneee);
+//            System.out.println(insideAnchor+" "+paneee);
+//       } catch (IOException e) {
+//            throw new RuntimeException(e);
+//       }
     }
+    public void setDetailsInfo(CourseInfo crs){
+
+    }
+
 
     @FXML
     void backButtonHandler(ActionEvent event) throws IOException {

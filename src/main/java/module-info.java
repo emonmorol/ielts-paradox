@@ -3,6 +3,7 @@ module com.example.ielts_paradox {
     requires javafx.fxml;
     requires java.sql;
     requires MaterialFX;
+    requires com.google.gson;
 
 
     opens com.example.ielts_paradox to javafx.fxml;

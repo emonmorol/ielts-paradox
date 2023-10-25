@@ -28,7 +28,7 @@
                <children>
                   <AnchorPane prefHeight="148.0" prefWidth="447.0" style="-fx-background-color: white;">
                      <children>
-                        <Label contentDisplay="CENTER" layoutX="29.0" layoutY="8.0" prefHeight="32.0" prefWidth="386.0" text="Live Course Online" textFill="#1a2579">
+                        <Label fx:id="courseTitle" contentDisplay="CENTER" layoutX="29.0" layoutY="8.0" prefHeight="32.0" prefWidth="386.0" text="Live Course Online" textFill="#1a2579">
                            <font>
                               <Font name="MS Gothic" size="22.0" />
                            </font>
@@ -40,7 +40,7 @@
                                     <Image url="@../../images/instructor.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="56.0" layoutY="3.0" prefHeight="17.0" prefWidth="131.0" text="EMON MOROL" textFill="#1a2579">
+                              <Label fx:id="instructorName" layoutX="56.0" layoutY="3.0" prefHeight="17.0" prefWidth="289.0" text="EMON MOROL" textFill="#1a2579">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
@@ -48,7 +48,8 @@
                               <Label layoutX="56.0" layoutY="21.0" prefHeight="17.0" prefWidth="213.0" text="IELTS Instructor, IELTS Paradox" textFill="#1a2579" />
                            </children>
                         </AnchorPane>
-                        <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="43.0" prefHeight="44.0" prefWidth="386.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea" textFill="#1a2578aa" wrapText="true" />
+                        <Label fx:id="courseDetails" alignment="TOP_LEFT" layoutX="30.0" layoutY="43.0" prefHeight="44.0" prefWidth="386.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea" textFill="#1a2578aa" wrapText="true" />
+                        <Label fx:id="_id" layoutX="203.0" layoutY="48.0" text="0" visible="false" />
                      </children>
                      <padding>
                         <Insets left="15.0" right="15.0" top="15.0" />
@@ -66,12 +67,12 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="62.0" layoutY="14.0" text="2250TK" textFill="RED">
+                        <Label fx:id="discountedPrice" layoutX="62.0" layoutY="14.0" text="2250TK" textFill="RED">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="total_price" layoutX="123.0" layoutY="14.0" stylesheets="@../../styles/course_offering.css" text="2500TK">
+                        <Label fx:id="totalPrice" layoutX="123.0" layoutY="14.0" stylesheets="@../../styles/course_offering.css" text="2500TK">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
