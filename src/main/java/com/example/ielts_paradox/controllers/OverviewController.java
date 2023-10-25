@@ -3,8 +3,9 @@ package com.example.ielts_paradox.controllers;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.*;
 
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import javafx.event.ActionEvent;
@@ -12,9 +13,17 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-public class OverviewController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class OverviewController implements Initializable {
     @FXML
     AnchorPane mainAnchor ;
+    @FXML
+    private VBox enrolledCourse;
+    @FXML
+    private VBox popularCourse;
     @FXML
     public void onClickSeeCourse(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
@@ -61,6 +70,36 @@ public class OverviewController {
 
     @FXML
     void onClickUpcomigExam(ActionEvent event) {
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for (int i = 0; i<2;i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/overviewEnrolledCourseCard.fxml"));
+            try {
+                AnchorPane paneee = fxmlLoader.load();
+                enrolledCourse.getChildren().add(paneee);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        for (int i = 0; i<2;i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/overviewPopularCourseCard.fxml"));
+            try {
+                AnchorPane paneee = fxmlLoader.load();
+                popularCourse.getChildren().add(paneee);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
 
     }
 }
