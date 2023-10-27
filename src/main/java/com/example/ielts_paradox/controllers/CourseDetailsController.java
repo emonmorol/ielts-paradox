@@ -141,7 +141,6 @@ public class CourseDetailsController implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         web_video.getEngine().load("https://www.youtube.com/embed/t1_ZFIGMKy8");

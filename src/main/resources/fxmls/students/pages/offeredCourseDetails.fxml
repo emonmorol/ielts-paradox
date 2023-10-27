@@ -168,7 +168,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
-            <Line endX="148.0" endY="-1.0" layoutX="1216.0" layoutY="64.0" startX="-240.0" startY="-1.0" stroke="#e9eff6" />
          </children>
       </AnchorPane>
    </children>

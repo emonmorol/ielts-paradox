@@ -26,3 +26,11 @@
 #titled_pan{
     -fx-background-color:#000000;
 }
+.content_card{
+    -fx-background-color: #ffffff;
+    -fx-effect:dropshadow( one-pass-box,#2e265c34 , 0, 0.0 , 0 , 0);
+}
+.content_card:hover{
+    -fx-background-color: #e9eff6;
+    -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);
+}

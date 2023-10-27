@@ -5,6 +5,7 @@ module com.example.ielts_paradox {
     requires MaterialFX;
     requires com.google.gson;
     requires javafx.web;
+    requires de.jensd.fx.glyphs.fontawesome;
 
 
     opens com.example.ielts_paradox to javafx.fxml;
