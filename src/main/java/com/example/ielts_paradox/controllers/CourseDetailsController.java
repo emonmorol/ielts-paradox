@@ -2,6 +2,8 @@ package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.controllers.cardControllers.CourseOfferingCardController;
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,7 +47,6 @@ public class CourseDetailsController {
         try {
             AnchorPane paneee = fxmlLoader.load();
             scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -54,27 +55,37 @@ public class CourseDetailsController {
 
     @FXML
     public void backButtonHandler(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
-        root = fxmlLoader.load();
-        StudentDashboardController tdc =fxmlLoader.getController();
-        scene = new Scene(root);
+        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
+        UserInfo user = ins.getUser();
+        if(user.isTeacher){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+            root = fxmlLoader.load();
+            TeacherDashboardController tdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            tdc.onClick2(event);
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClick2(event);
+        }
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        tdc.onClick2(event);
         stage.show();
     }
 
     @FXML
     public void descriptionHandler(ActionEvent event) {
-        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
 //            insideAnchor.getChildren().add(paneee);
             scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -82,14 +93,11 @@ public class CourseDetailsController {
 
     @FXML
     public void faqHandler(ActionEvent event) {
-        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/faq.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
-//            insideAnchor.getChildren().add(paneee);
             scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -97,14 +105,11 @@ public class CourseDetailsController {
 
     @FXML
     public void instructorHandler(ActionEvent event) {
-        System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/instructor.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
-//            insideAnchor.getChildren().add(paneee);
             scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -112,14 +117,11 @@ public class CourseDetailsController {
 
     @FXML
     public void routineHandler(ActionEvent event) {
-        System.out.println("from routing = "+ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/routine.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
-//            insideAnchor.getChildren().add(paneee);
             scrollpane.setContent(paneee);
-            System.out.println(insideAnchor+" "+paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

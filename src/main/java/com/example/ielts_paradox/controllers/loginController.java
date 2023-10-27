@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.utils.AlertClass;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
@@ -32,6 +33,7 @@ public class loginController {
     }
     @FXML
     public void loginPressed(ActionEvent e) throws IOException {
+        UserInfo user;
 
         String email = userEmail.getText();
         String pass = userPassword.getText();
@@ -56,7 +58,6 @@ public class loginController {
                 AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
             }
         }
-        System.out.println(email+" "+pass);
 
     }
 }

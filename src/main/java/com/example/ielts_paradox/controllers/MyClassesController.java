@@ -45,7 +45,6 @@ public class MyClassesController implements Initializable{
                 HBox paneee = fxmlLoader.load();
                 mainBox.getChildren().add(paneee);
 
-//                System.out.println("Added\n");
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

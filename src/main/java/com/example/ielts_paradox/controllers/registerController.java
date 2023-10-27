@@ -80,11 +80,12 @@ public class registerController {
             }else if(!isValid){
                 boolean isCreated = new DBConnections().createUser(u);
                 if(isCreated){
-                    if(isTeacher){
-                        new SceneChanger().switchScene(e, "/fxmls/teacher/teacherDashboard.fxml");
-                    }else{
-                        new SceneChanger().switchScene(e, "/fxmls/students/studentDashboard.fxml");
-                    }
+                    new SceneChanger().switchScene(e, "/fxmls/login/login_page.fxml");
+//                    if(isTeacher){
+//                        new SceneChanger().switchScene(e, "/fxmls/teacher/teacherDashboard.fxml");
+//                    }else{
+//                        new SceneChanger().switchScene(e, "/fxmls/students/studentDashboard.fxml");
+//                    }
                 }else {
                     AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
                 }
