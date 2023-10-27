@@ -128,6 +128,8 @@ public class CourseDetailsController {
     public void enrollNowHandler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/checkout.fxml"));
         root = fxmlLoader.load();
+        CheckoutController cc = fxmlLoader.getController();
+        cc.setData(ci);
         scene = new Scene(root);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
