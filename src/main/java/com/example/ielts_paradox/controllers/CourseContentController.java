@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
@@ -35,7 +38,12 @@ public class CourseContentController implements Initializable {
 
     @FXML
     private AnchorPane webAnchor;
+    @FXML
     private Stage stage;
+
+    private Scene scene;
+
+    private Parent root;
 
     ArrayList<String> af = new ArrayList<>();
     @Override
@@ -77,6 +85,15 @@ public class CourseContentController implements Initializable {
     }
     public void loadVideo(String uri){
         videoPlayer.getEngine().load(uri);
+    }
+    public void backButtonHandler(ActionEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+        root = fxmlLoader.load();
+        StudentDashboardController sdc =fxmlLoader.getController();
+        scene = new Scene(root);
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        sdc.onClickOne(e);
     }
 
 //    @FXML

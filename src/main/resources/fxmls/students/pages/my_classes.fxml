@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutY="112.0" prefHeight="618.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
+      <ScrollPane hbarPolicy="NEVER" layoutY="79.0" prefHeight="651.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
          <content>
             <VBox fx:id="mainBox" alignment="TOP_CENTER" prefHeight="650.0" prefWidth="932.0" spacing="15.0" style="-fx-background-color: #e9eff6;">
                <padding>
@@ -17,7 +17,7 @@
                </padding></VBox>
          </content>
       </ScrollPane>
-      <Label layoutX="-20.0" layoutY="14.0" prefHeight="77.0" prefWidth="922.0" style="-fx-background-radius: 10;" text="MY CLASSES" textFill="#1a2579">
+      <Label layoutX="-20.0" layoutY="1.0" prefHeight="77.0" prefWidth="954.0" style="-fx-background-radius: 10;" text="MY CLASSES" textFill="#1a2579">
          <padding>
             <Insets left="20.0" />
          </padding>
