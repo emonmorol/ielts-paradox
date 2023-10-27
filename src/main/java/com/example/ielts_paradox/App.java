@@ -1,20 +1,10 @@
 package com.example.ielts_paradox;
-
-import com.example.ielts_paradox.models.Faq;
-import com.example.ielts_paradox.utils.DBConnections;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-
-import com.google.gson.JsonParser;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 public class App extends Application {
     @Override
@@ -37,4 +27,5 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

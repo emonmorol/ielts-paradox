@@ -53,7 +53,7 @@ public class CourseDetailsController {
 
 
     @FXML
-    void backButtonHandler(ActionEvent event) throws IOException {
+    public void backButtonHandler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
         root = fxmlLoader.load();
         StudentDashboardController tdc =fxmlLoader.getController();
@@ -66,7 +66,7 @@ public class CourseDetailsController {
     }
 
     @FXML
-    void descriptionHandler(ActionEvent event) {
+    public void descriptionHandler(ActionEvent event) {
         System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
@@ -81,7 +81,7 @@ public class CourseDetailsController {
     }
 
     @FXML
-    void faqHandler(ActionEvent event) {
+    public void faqHandler(ActionEvent event) {
         System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/faq.fxml"));
@@ -96,7 +96,7 @@ public class CourseDetailsController {
     }
 
     @FXML
-    void instructorHandler(ActionEvent event) {
+    public void instructorHandler(ActionEvent event) {
         System.out.println(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/instructor.fxml"));
@@ -111,7 +111,7 @@ public class CourseDetailsController {
     }
 
     @FXML
-    void routineHandler(ActionEvent event) {
+    public void routineHandler(ActionEvent event) {
         System.out.println("from routing = "+ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/routine.fxml"));
@@ -123,5 +123,15 @@ public class CourseDetailsController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    public void enrollNowHandler(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/checkout.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }
