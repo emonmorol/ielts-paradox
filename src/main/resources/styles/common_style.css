@@ -23,3 +23,6 @@
     -fx-border-style: solid inside;
     -fx-border-width: 0 0 3 0;
 }
+#titled_pan{
+    -fx-background-color:#000000;
+}

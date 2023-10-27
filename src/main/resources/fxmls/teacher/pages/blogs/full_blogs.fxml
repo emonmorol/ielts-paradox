@@ -16,9 +16,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.AllControl.FullBlogController">
    <children>
-      <HBox layoutX="230.0" layoutY="76.0" prefHeight="652.0" prefWidth="1072.0" spacing="20.0" style="-fx-background-color: #e9eff6;">
+      <HBox layoutX="230.0" layoutY="105.0" prefHeight="623.0" prefWidth="1072.0" spacing="20.0" style="-fx-background-color: #e9eff6;">
          <children>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="636.0" prefWidth="571.0" style="-fx-background-radius: 10; -fx-background-color: white;" vbarPolicy="NEVER">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="636.0" prefWidth="571.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);" vbarPolicy="NEVER">
                <content>
                   <AnchorPane prefHeight="2416.0" prefWidth="491.0" style="-fx-background-radius: 10; -fx-background-color: white;">
                      <children>
@@ -72,14 +72,18 @@
             </VBox>
          </children>
       </HBox>
-      <MFXButton buttonType="RAISED" layoutX="50.0" layoutY="38.0" onAction="#backButtonHandler" prefHeight="38.0" prefWidth="39.0" style="-fx-background-radius: 20;" text=" ">
-         <graphic>
-            <FontAwesomeIconView size="20" text="" wrappingWidth="10.14285659790039" />
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </MFXButton>
+      <AnchorPane layoutY="-1.0" prefHeight="95.0" prefWidth="1500.0" style="-fx-background-color: #ced8eb;">
+         <children>
+            <MFXButton buttonType="RAISED" layoutX="38.0" layoutY="29.0" onAction="#backButtonHandler" prefHeight="38.0" prefWidth="39.0" style="-fx-background-radius: 20;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView size="20" text="" wrappingWidth="10.14285659790039" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
       <Label layoutX="230.0" layoutY="25.0" prefHeight="37.0" prefWidth="604.0" text="BLOGS PROVIDED BY PARADOX IELTS INSTRUCTORS">
          <font>
             <Font name="System Bold" size="20.0" />

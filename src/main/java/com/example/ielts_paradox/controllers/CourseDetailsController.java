@@ -21,8 +21,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.web.WebView;
 
-public class CourseDetailsController {
+public class CourseDetailsController implements Initializable{
 
     @FXML
     private AnchorPane insideAnchor;
@@ -38,6 +39,8 @@ public class CourseDetailsController {
     private Label courseTitle;
 
     public static CourseInfo ci ;
+    @FXML
+    private WebView web_video;
 
     public void setDetailsInfo(CourseInfo crs){
         CourseDetailsController.ci = crs;
@@ -137,5 +140,10 @@ public class CourseDetailsController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        web_video.getEngine().load("https://www.youtube.com/embed/t1_ZFIGMKy8");
     }
 }
