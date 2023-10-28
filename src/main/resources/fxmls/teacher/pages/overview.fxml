@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.OverviewController">
    <children>
       <VBox prefHeight="730.0" prefWidth="934.0" spacing="10.0">
          <children>
@@ -107,28 +107,7 @@
                                     </Button>
                                  </children>
                               </Group>
-                              <VBox layoutX="1.0" layoutY="42.0" prefHeight="195.0" prefWidth="499.0" spacing="10.0">
-                                 <children>
-                                    <AnchorPane prefHeight="89.0" prefWidth="497.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="8.0" layoutY="18.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="89.0" prefWidth="497.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="8.0" layoutY="18.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="providedCourseContainer" layoutX="1.0" layoutY="42.0" prefHeight="195.0" prefWidth="499.0" spacing="10.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="237.0" prefWidth="499.0">
@@ -143,28 +122,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <VBox layoutX="1.0" layoutY="42.0" prefHeight="195.0" prefWidth="499.0" spacing="10.0">
-                                 <children>
-                                    <AnchorPane prefHeight="89.0" prefWidth="497.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="8.0" layoutY="18.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="89.0" prefWidth="497.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="8.0" layoutY="18.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="myBlogsContainer" layoutX="1.0" layoutY="42.0" prefHeight="195.0" prefWidth="499.0" spacing="10.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -187,13 +145,7 @@
                                     </Button>
                                  </children>
                               </Group>
-                              <VBox layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0">
-                                 <children>
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="studentRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="151.0" prefWidth="410.0">
@@ -212,13 +164,7 @@
                                     </Button>
                                  </children>
                               </Group>
-                              <VBox layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0">
-                                 <children>
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="testRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="151.0" prefWidth="410.0">
@@ -237,13 +183,7 @@
                                     </Button>
                                  </children>
                               </Group>
-                              <VBox layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0">
-                                 <children>
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                    <AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="upcomingExamRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
                      </children>

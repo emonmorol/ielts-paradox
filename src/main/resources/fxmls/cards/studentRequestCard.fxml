@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="160.0" layoutY="10.0" prefHeight="15.0" prefWidth="167.0" text="EKRAMUL HASAN MOROL">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="9.0" prefHeight="16.0" prefWidth="118.0" text="Spoken English">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <MFXButton contentDisplay="CENTER" layoutX="381.0" layoutY="6.0" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #d7f5df;" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#51c46f" size="17" text="" wrappingWidth="4.892857074737549" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <MFXButton contentDisplay="CENTER" layoutX="341.0" layoutY="6.0" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #fcd4d4;" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#b33e3e" size="14" text="" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <MFXButton contentDisplay="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #e1eefa; -fx-background-radius: 5;" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#3658a3" size="14" text="" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+   </children>
+</AnchorPane>
