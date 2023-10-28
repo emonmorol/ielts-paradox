@@ -33,7 +33,6 @@ public class DBConnections {
                             String contact_number = resultSet.getString("contact_number");
                             Boolean isTeacher = resultSet.getBoolean("isTeacher");
                             UserSingleTon user = UserSingleTon.getInstance(new UserInfo(fullname,email,contact_number,isTeacher));
-                            System.out.println(email);
                         }catch (SQLException e){
                             e.printStackTrace();
                         }

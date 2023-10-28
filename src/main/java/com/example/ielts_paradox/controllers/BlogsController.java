@@ -39,6 +39,7 @@ public class BlogsController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/addBlog.fxml"));
             AnchorPane paneee = fxmlLoader.load();
+
             mainBlogPane.setCenter(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);

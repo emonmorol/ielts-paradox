@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.AddCourseController">
+    <children>
+        <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FORM">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Text>
+        
+        <MFXButton fx:id="prev" buttonType="RAISED" depthLevel="LEVEL1" layoutY="543.0" onAction="#previousHandler" prefHeight="44.0" prefWidth="455.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="PREVIOUS" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </MFXButton>
+        <MFXButton fx:id="next" buttonType="RAISED" depthLevel="LEVEL1" layoutX="478.0" layoutY="543.0" onAction="#nextHandler" prefHeight="44.0" prefWidth="455.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="NEXT" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </MFXButton>
+      <AnchorPane fx:id="formPane" layoutY="43.0" prefHeight="406.0" prefWidth="934.0" />
+      <Label fx:id="id_" layoutX="178.0" layoutY="2.0" text="1" />
+    </children>
+</AnchorPane>

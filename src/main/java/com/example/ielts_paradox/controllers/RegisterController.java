@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class registerController {
+public class RegisterController {
     @FXML
     private RadioButton student;
 

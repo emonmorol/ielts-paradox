@@ -7,12 +7,12 @@ module com.example.ielts_paradox {
     requires javafx.web;
     requires de.jensd.fx.glyphs.fontawesome;
 
-
     opens com.example.ielts_paradox to javafx.fxml;
     opens com.example.ielts_paradox.utils to javafx.fxml;
     opens com.example.ielts_paradox.controllers to javafx.fxml;
     opens com.example.ielts_paradox.controllers.AllControl to javafx.fxml;
     opens com.example.ielts_paradox.controllers.cardControllers to javafx.fxml;
+    opens com.example.ielts_paradox.controllers.FormControllers to javafx.fxml;
 
     exports com.example.ielts_paradox;
     exports com.example.ielts_paradox.utils;
@@ -20,5 +20,6 @@ module com.example.ielts_paradox {
     exports com.example.ielts_paradox.controllers.AllControl;
     exports com.example.ielts_paradox.controllers.cardControllers;
     exports com.example.ielts_paradox.models;
+    exports com.example.ielts_paradox.controllers.FormControllers;
 
 }

@@ -10,31 +10,35 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.SuccessStoriesController">
     <children>
-        <Label layoutY="1.0" prefHeight="84.0" prefWidth="934.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="SUCCESS STORIES" textFill="#1a2579">
-            <padding>
-                <Insets left="20.0" />
-            </padding>
-            <font>
-                <Font name="System Bold" size="29.0" />
-            </font>
-        </Label>
-      <HBox layoutX="722.0" layoutY="22.0">
+      <AnchorPane layoutY="1.0">
          <children>
-            <MFXButton buttonType="RAISED" onAction="#allStoryHandler" prefHeight="35.0" prefWidth="93.0" styleClass="my_class" stylesheets="@../../../styles/common_style.css" text="ALL STORIES">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </MFXButton>
-            <MFXButton buttonType="RAISED" onAction="#addStoryHandler" prefHeight="35.0" prefWidth="93.0" styleClass="my_class" stylesheets="@../../../styles/common_style.css" text="ADD STORY">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </MFXButton>
+              <Label prefHeight="84.0" prefWidth="934.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="SUCCESS STORIES" textFill="#1a2579">
+                  <padding>
+                      <Insets left="20.0" />
+                  </padding>
+                  <font>
+                      <Font name="System Bold" size="29.0" />
+                  </font>
+              </Label>
+            <HBox layoutX="722.0" layoutY="21.0">
+               <children>
+                  <MFXButton buttonType="RAISED" onAction="#allStoryHandler" prefHeight="35.0" prefWidth="93.0" styleClass="my_class" stylesheets="@../../../styles/common_style.css" text="ALL STORIES">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+                  <MFXButton buttonType="RAISED" onAction="#addStoryHandler" prefHeight="35.0" prefWidth="93.0" styleClass="my_class" stylesheets="@../../../styles/common_style.css" text="ADD STORY">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </AnchorPane>
       <AnchorPane fx:id="mainStoryPane" layoutY="97.0" prefHeight="633.0" prefWidth="934.0" />
     </children>
 </AnchorPane>

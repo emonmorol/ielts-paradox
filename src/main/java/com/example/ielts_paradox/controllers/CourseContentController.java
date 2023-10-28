@@ -92,6 +92,9 @@ public class CourseContentController implements Initializable {
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
         System.out.println(user.isTeacher);
+        System.out.println(user.fullName);
+        System.out.println(user.email);
+        System.out.println(user.contactNumber);
         if(user.isTeacher){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
             root = fxmlLoader.load();
@@ -109,7 +112,6 @@ public class CourseContentController implements Initializable {
             stage.setScene(scene);
             sdc.onClickOne(e);
         }
-
         stage.show();
     }
 

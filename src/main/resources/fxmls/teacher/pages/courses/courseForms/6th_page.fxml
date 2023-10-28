@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="59.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FAQ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="59.0" layoutY="123.0" prefHeight="50.0" prefWidth="816.0" promptText="Enter Instructor Name" />
+      <Text layoutX="60.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUESTION">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="59.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANSWER">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="59.0" layoutY="213.0" prefHeight="82.0" prefWidth="816.0" promptText="Instructor Details Here" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="158.0" layoutY="317.0" prefHeight="50.0" prefWidth="618.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="NEXT" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <Line endX="715.6000366210938" endY="7.62939453125E-6" layoutX="158.0" layoutY="77.0" startX="-100.0" stroke="#cfcfcf" />
+   </children>
+</AnchorPane>

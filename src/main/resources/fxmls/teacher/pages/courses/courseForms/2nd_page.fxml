@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="56.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE CURRICULUM">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <MFXTextField floatMode="BORDER" layoutX="54.0" layoutY="72.0" prefHeight="50.0" prefWidth="826.0" promptText="Enter Course Curriculum Points One By One" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="769.0" layoutY="131.0" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #1a2579;" text="Add Curriculum" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <FlowPane layoutX="52.0" layoutY="173.0" prefHeight="177.0" prefWidth="826.0" />
+   </children>
+</AnchorPane>

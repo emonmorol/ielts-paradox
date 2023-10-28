@@ -34,6 +34,7 @@ public class SuccessStoriesController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/allStory.fxml"));
             ScrollPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().clear();
             mainStoryPane.getChildren().add(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -46,6 +47,7 @@ public class SuccessStoriesController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/addStory.fxml"));
             AnchorPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().clear();
             mainStoryPane.getChildren().add(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -58,6 +60,7 @@ public class SuccessStoriesController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/allStory.fxml"));
             ScrollPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().clear();
             mainStoryPane.getChildren().add(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
