@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FORM">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutY="45.0" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white;">
+         <children>
+            <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course title" />
+            <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="475.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course Price" />
+            <Text layoutX="475.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE PRICE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="35.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE TITLE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="146.0" prefHeight="50.0" prefWidth="259.0" promptText="Enter Discount Percentage" />
+            <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="635.0" layoutY="143.0" prefHeight="50.0" prefWidth="259.0" promptText="Image Link Here" />
+            <Text layoutX="34.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISCOUNT(PERCENTAGE)">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="338.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISRELEASED">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="635.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE BANNER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <ChoiceBox layoutX="334.0" layoutY="146.0" prefHeight="50.0" prefWidth="259.0" />
+            <Text layoutX="34.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="32.0" layoutY="252.0" prefHeight="115.0" prefWidth="866.0" promptText="Course Details Here" style="-fx-background-radius: 10;" />
+         </children>
+      </AnchorPane>
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="543.0" prefHeight="44.0" prefWidth="455.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="PREVIOUS" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </MFXButton>
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="478.0" layoutY="543.0" prefHeight="44.0" prefWidth="455.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="NEXT" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </MFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="854.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="40.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE INSTRUCTOR">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="38.0" layoutY="109.0" prefHeight="38.0" prefWidth="370.0" promptText="Enter Instructor Name" />
+      <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="446.0" layoutY="109.0" prefHeight="38.0" prefWidth="369.0" promptText="Enter Instructor Experience" />
+      <Text layoutX="446.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSTRUCTOR EXPERIENCE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="39.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSTRUCTOR NAME">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="39.0" layoutY="203.0" prefHeight="154.0" prefWidth="777.0" promptText="Instructor Details Here" style="-fx-background-radius: 10;" />
+   </children>
+</AnchorPane>

@@ -1,5 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -87,13 +89,28 @@ public class CourseContentController implements Initializable {
         videoPlayer.getEngine().load(uri);
     }
     public void backButtonHandler(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
-        root = fxmlLoader.load();
-        StudentDashboardController sdc =fxmlLoader.getController();
-        scene = new Scene(root);
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        sdc.onClickOne(e);
+        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
+        UserInfo user = ins.getUser();
+        System.out.println(user.isTeacher);
+        if(user.isTeacher){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+            root = fxmlLoader.load();
+            TeacherDashboardController tdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            tdc.onClickOne(e);
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClickOne(e);
+        }
+
+        stage.show();
     }
 
 //    @FXML

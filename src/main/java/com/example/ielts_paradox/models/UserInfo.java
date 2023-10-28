@@ -14,11 +14,11 @@ public class UserInfo {
         this.password = password;
         this.isTeacher = isTeacher;
     }
+
     public UserInfo(String fullName, String email, String contactNumber, boolean isTeacher) {
         this.fullName = fullName;
         this.email = email;
         this.contactNumber = contactNumber;
         this.isTeacher = isTeacher;
     }
-
 }
