@@ -143,7 +143,7 @@
                         <Font name="System Bold" size="11.5" />
                      </font>
                   </Label>
-                  <Button layoutX="225.0" layoutY="10.0" minWidth="38.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="38.0" style="-fx-background-radius: 10; -fx-background-color: #cdd1ef;">
+                  <Button layoutX="225.0" layoutY="10.0" minWidth="38.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="34.0" prefWidth="38.0" style="-fx-background-radius: 10; -fx-background-color: #cdd1ef;">
                      <graphic>
                         <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="25" tabSize="0" text="" wrappingWidth="18.9998779296875" />
                      </graphic>
@@ -175,7 +175,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="136.0" layoutY="21.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: transparent; -fx-text-fill: #1a2579;" text="Profile">
+                  <Button alignment="CENTER_RIGHT" layoutX="136.0" layoutY="21.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: transparent; -fx-text-fill: #1a2579;" text="Profile">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

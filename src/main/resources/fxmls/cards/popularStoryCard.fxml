@@ -7,30 +7,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="205.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="205.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="164.0" text="How To Score 9 In Listening!" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="164.0" text="How To Score 9 In Listening!" textFill="#1a2579">
          <font>
-            <Font name="System Bold" size="10.0" />
+            <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <Label alignment="BASELINE_RIGHT" layoutX="9.0" layoutY="31.0" prefHeight="12.0" prefWidth="61.0" text="Rimon Morol" textFill="WHITE">
+      <Label alignment="BASELINE_RIGHT" layoutX="9.0" layoutY="31.0" prefHeight="15.0" prefWidth="73.0" text="Rimon Morol" textFill="#1a2579">
          <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="USER" size="8" />
+            <FontAwesomeIconView fill="#1a2579" glyphName="USER" size="8" />
          </graphic>
          <font>
-            <Font size="8.0" />
+            <Font size="10.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="48.0" prefHeight="47.0" prefWidth="148.0" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.ean massa." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+      <Label layoutX="14.0" layoutY="48.0" prefHeight="47.0" prefWidth="148.0" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. AenLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.ean massa." textAlignment="JUSTIFY" textFill="#1a2579" wrapText="true">
          <font>
-            <Font size="9.0" />
+            <Font size="10.0" />
          </font>
       </Label>
-      <MFXButton contentDisplay="RIGHT" layoutX="164.0" layoutY="33.0" prefHeight="51.0" prefWidth="33.0" style="-fx-border-radius: 10; -fx-background-color: #1a2579;" text=" ">
+      <MFXButton contentDisplay="RIGHT" layoutX="164.0" layoutY="33.0" prefHeight="51.0" prefWidth="33.0" style="-fx-border-radius: 10; -fx-background-color: white;" text=" ">
          <graphic>
-            <FontAwesomeIconView fill="WHITE" size="30" text="" />
+            <FontAwesomeIconView fill="#1a2579" size="30" text="" />
          </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />

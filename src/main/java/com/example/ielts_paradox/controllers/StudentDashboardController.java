@@ -71,6 +71,12 @@ public class StudentDashboardController implements Initializable {
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
         mainPane.setCenter(panel);
     }
+    @FXML
+    public void profileHandler(ActionEvent event) {
+        LoadDashboardPane ob = new LoadDashboardPane();
+        AnchorPane panel = ob.getSidePane("/fxmls/profile.fxml");
+        mainPane.setCenter(panel);
+    }
     public void logout(ActionEvent e) throws IOException {
         new SceneChanger().switchScene(e,"/fxmls/login/login_page.fxml");
     }

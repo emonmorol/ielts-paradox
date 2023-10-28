@@ -25,6 +25,8 @@ public class OverviewController implements Initializable {
     @FXML
     private HBox popularStory;
     @FXML
+    private VBox upcomingExam;
+    @FXML
     public void onClickSeeCourse(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/courses.fxml");
@@ -104,6 +106,17 @@ public class OverviewController implements Initializable {
             try {
                 AnchorPane paneee = fxmlLoader.load();
                 popularStory.getChildren().add(paneee);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        for (int i = 0; i<3;i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/upcomingExamCard.fxml"));
+            try {
+                AnchorPane paneee = fxmlLoader.load();
+                upcomingExam.getChildren().add(paneee);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);

@@ -134,7 +134,7 @@
                                     </Label>
                                  </children>
                               </Group>
-                              <HBox fx:id="popularBlog" layoutY="34.0" prefHeight="113.0" prefWidth="419.0" spacing="10.0" />
+                              <HBox fx:id="popularBlog" layoutY="34.0" prefHeight="103.0" prefWidth="419.0" spacing="10.0" />
                               <Button alignment="BASELINE_RIGHT" contentDisplay="RIGHT" layoutX="340.0" layoutY="3.0" mnemonicParsing="false" onAction="#onClickBlogs" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: transparent;" text="See All   ">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -167,7 +167,7 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="159.0" prefWidth="412.0">
+                        <AnchorPane prefHeight="203.0" prefWidth="419.0">
                            <children>
                               <Group layoutX="2.0" layoutY="2.0">
                                  <children>
@@ -186,12 +186,7 @@
                                     <FontAwesomeIconView text="" />
                                  </graphic>
                               </Button>
-                              <VBox layoutX="1.0" layoutY="36.0" prefHeight="123.0" prefWidth="418.0" spacing="7.0">
-                                 <children>
-                                    <AnchorPane prefHeight="60.0" prefWidth="415.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;" />
-                                    <AnchorPane prefHeight="60.0" prefWidth="415.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;" />
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="upcomingExam" layoutX="1.0" layoutY="36.0" prefHeight="123.0" prefWidth="418.0" spacing="7.0" />
                            </children>
                         </AnchorPane>
                      </children>
