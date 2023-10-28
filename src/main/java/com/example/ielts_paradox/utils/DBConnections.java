@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.utils;
 
+import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.Faq;
 import com.example.ielts_paradox.models.UserInfo;
@@ -15,7 +16,6 @@ public class DBConnections {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/ielts_paradox?useSSL=false";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "emon&&MYSQL";
-
 
     public boolean validate(String userEmail,String userPass, boolean userType){
         String DB_QUERY = "SELECT * FROM USERS WHERE email = ? AND password = ? AND isTeacher = ?";
@@ -86,8 +86,6 @@ public class DBConnections {
 
     public ArrayList<CourseInfo> getAllCourse(){
         ArrayList<CourseInfo> cf = new ArrayList<>();
-
-        String DB_QUERY = "SELECT * FROM courses";
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
             String sql = "SELECT * FROM courses";
             try (Statement statement = connection.createStatement()) {
@@ -170,5 +168,65 @@ public class DBConnections {
         }
         return null;
     }
+    public ArrayList<BlogInfo> getAllBlog(){
+        ArrayList<BlogInfo> blogs = new ArrayList<>();
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            String sql = "SELECT * FROM blogs";
+            try (Statement statement = connection.createStatement()) {
+                try (ResultSet resultSet = statement.executeQuery(sql)) {
+                    while (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String title = resultSet.getString("title");
+                            String thumbnail = resultSet.getString("thumbnail");
+                            String publisherName = resultSet.getString("publisherName");
+                            String content = resultSet.getString("content");
+                            String date = resultSet.getString("date");
+                            String bandScore = resultSet.getString("bandScore");
+                            BlogInfo b = new BlogInfo(title,_id,date,publisherName,content,thumbnail,bandScore);
+                            System.out.println();
+                            blogs.add(b);
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
 
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return blogs;
+    }
+    public BlogInfo getBlogById(String id){
+        BlogInfo ci;
+
+        String DB_QUERY = "SELECT * FROM blogs WHERE _id = ?";
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(DB_QUERY)) {
+                preparedStatement.setInt(1, Integer.parseInt(id));
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String title = resultSet.getString("title");
+                            String thumbnail = resultSet.getString("thumbnail");
+                            String publisherName = resultSet.getString("publisherName");
+                            String content = resultSet.getString("content");
+                            String date = resultSet.getString("date");
+                            String bandScore = resultSet.getString("bandScore");
+                            BlogInfo b = new BlogInfo(title,_id,date,publisherName,content,thumbnail,bandScore);
+                            return b;
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

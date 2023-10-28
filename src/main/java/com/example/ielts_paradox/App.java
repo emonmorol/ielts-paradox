@@ -1,4 +1,5 @@
 package com.example.ielts_paradox;
+import com.example.ielts_paradox.utils.DBConnections;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
