@@ -12,8 +12,6 @@
 }
 .my_class{
     -fx-background-color:transparent;
-
-
 }
 .my_class:hover{
     -fx-border-style: solid inside;
@@ -42,4 +40,7 @@
 }
 .text_field:focused{
     -fx-border-color: #1a2579;
+}
+.shadow_class{
+     -fx-effect:dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);
 }

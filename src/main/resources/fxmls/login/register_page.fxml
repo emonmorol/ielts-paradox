@@ -14,15 +14,15 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #04364A;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #1a2579;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.RegisterController">
 <children>
-<AnchorPane layoutX="137.0" layoutY="45.0" prefHeight="610.0" prefWidth="1026.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="45.0">
+<AnchorPane layoutX="310.0" layoutY="75.0" prefHeight="601.0" prefWidth="880.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="75.0">
     <children>
-        <AnchorPane layoutX="-2.0" prefHeight="667.0" prefWidth="596.0" style="-fx-background-color: #176B87; -fx-background-radius: 10 0 0 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane layoutX="-1.0" prefHeight="610.0" prefWidth="454.0" style="-fx-background-color: #5160d7; -fx-background-radius: 10 0 0 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="431.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <BorderPane layoutX="-3.0" prefHeight="667.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+                  <BorderPane layoutX="13.0" prefHeight="610.0" prefWidth="431.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
                      <center>
-                        <ImageView fitHeight="632.0" fitWidth="587.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                        <ImageView fitHeight="382.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
                               <Image url="@../../images/login.png" />
                            </image>
@@ -33,17 +33,17 @@
         </AnchorPane>
         <AnchorPane layoutX="594.0" prefHeight="617.0" prefWidth="431.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 10 10 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label layoutX="99.0" layoutY="24.0" text="CREATE NEW ACCOUNT">
+                <Label layoutX="99.0" layoutY="24.0" text="CREATE NEW ACCOUNT" textFill="#1a2579">
                     <font>
                         <Font name="Dubai Medium" size="22.0" />
                     </font>
                 </Label>
-                <Label layoutX="53.0" layoutY="274.0" text="Password">
+                <Label layoutX="53.0" layoutY="274.0" text="Password" textFill="#1a2579">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Button fx:id="register" layoutX="52.0" layoutY="480.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="41.0" prefWidth="331.0" style="-fx-background-color: #176B87; -fx-background-radius: 5;" text="REGISTER" textFill="WHITE">
+                <Button fx:id="register" layoutX="52.0" layoutY="480.0" mnemonicParsing="false" onAction="#registerPressed" prefHeight="41.0" prefWidth="331.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;" text="REGISTER" textFill="WHITE">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -60,35 +60,35 @@
                     </font>
                 </Label>
                   <TextField fx:id="userName" layoutX="50.0" layoutY="93.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Email" />
-                  <Label layoutX="53.0" layoutY="68.0" text="Full Name">
+                  <Label layoutX="53.0" layoutY="68.0" text="Full Name" textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="user_confirm_password" layoutX="51.0" layoutY="369.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Password" />
-                  <Label layoutX="54.0" layoutY="343.0" text="Confirm Password">
+                  <Label layoutX="54.0" layoutY="332.0" text="Confirm Password" textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="userEmail" layoutX="50.0" layoutY="160.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Email" />
-                  <Label layoutX="54.0" layoutY="135.0" text="Email">
+                  <Label layoutX="54.0" layoutY="135.0" text="Email" textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="userContactNumber" layoutX="50.0" layoutY="229.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Email" />
-                  <Label layoutX="53.0" layoutY="204.0" text="Contact Number">
+                  <Label layoutX="53.0" layoutY="204.0" text="Contact Number" textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="51.0" layoutY="413.0" text="Register As : ">
+                  <Label layoutX="51.0" layoutY="402.0" text="Register As : " textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="student" layoutX="53.0" layoutY="437.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" selected="true" text="Student">
+                  <RadioButton fx:id="student" layoutX="53.0" layoutY="426.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" selected="true" text="Student" textFill="#1a2579">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -96,12 +96,12 @@
                         <ToggleGroup fx:id="userType" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="teacher" layoutX="233.0" layoutY="437.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" text="Teacher" toggleGroup="$userType">
+                  <RadioButton fx:id="teacher" layoutX="233.0" layoutY="426.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" text="Teacher" textFill="#1a2579" toggleGroup="$userType">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </RadioButton>
-                  <Button layoutX="53.0" layoutY="553.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #ffffff;" text="Already Have An Account?">
+                  <Button layoutX="53.0" layoutY="542.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #ffffff;" text="Already Have An Account?" textFill="#1a2579">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>

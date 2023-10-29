@@ -16,7 +16,7 @@
       </Label>
       <Label alignment="BASELINE_RIGHT" layoutX="9.0" layoutY="31.0" prefHeight="15.0" prefWidth="73.0" text="Rimon Morol" textFill="#1a2579">
          <graphic>
-            <FontAwesomeIconView fill="#1a2579" glyphName="USER" size="8" />
+            <FontAwesomeIconView fill="#1a2579" glyphName="USER" size="8" text="" />
          </graphic>
          <font>
             <Font size="10.0" />
