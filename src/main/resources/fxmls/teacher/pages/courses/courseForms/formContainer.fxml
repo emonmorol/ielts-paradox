@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.AddCourseController">
     <children>
-        <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FORM">
+        <Text layoutX="28.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FORM">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
@@ -32,9 +32,9 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </MFXButton>
-      <AnchorPane fx:id="formPane" layoutY="43.0" prefHeight="406.0" prefWidth="934.0" />
-      <Label fx:id="id_" layoutX="178.0" layoutY="2.0" text="1" />
-      <MFXProgressBar layoutX="673.0" layoutY="17.0" progress="0.64" />
-      <Label fx:id="id_1" layoutX="883.0" layoutY="11.0" prefHeight="17.0" prefWidth="27.0" text="5/7" />
+      <AnchorPane fx:id="formPane" layoutY="54.0" prefHeight="406.0" prefWidth="934.0" />
+      <Label fx:id="id_" layoutX="205.0" layoutY="12.0" text="1" />
+      <MFXProgressBar layoutX="676.0" layoutY="24.0" progress="0.64" />
+      <Label fx:id="id_1" layoutX="886.0" layoutY="18.0" prefHeight="17.0" prefWidth="27.0" text="5/7" />
     </children>
 </AnchorPane>

@@ -126,7 +126,7 @@
             <children>
                 <AnchorPane prefHeight="54.0" prefWidth="1261.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
-                        <Label layoutX="137.0" layoutY="12.0" text="Student Name" textFill="#1a2579">
+                        <Label layoutX="160.0" layoutY="12.0" text="Student Name" textFill="#1a2579">
                             <font>
                                 <Font name="System Bold" size="11.5" />
                             </font>
@@ -155,15 +155,18 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" layoutX="136.0" layoutY="21.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: transparent; -fx-text-fill: #1a2579;" text="Profile">
+                        <Button alignment="CENTER_RIGHT" layoutX="166.0" layoutY="21.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: transparent; -fx-text-fill: #1a2579;" text="Profile">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                  <MFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" depthLevel="LEVEL1" layoutX="245.0" layoutY="8.0" onAction="#profileHandler" prefHeight="38.0" prefWidth="35.0" text=" ">
+                  <MFXButton alignment="CENTER" contentDisplay="CENTER" depthLevel="LEVEL1" layoutX="245.0" layoutY="8.0" onAction="#profileHandler" prefHeight="38.0" prefWidth="35.0" text=" ">
                      <graphic>
                                 <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="25" tabSize="0" text="" wrappingWidth="16.9998779296875" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MFXButton>
                     </children>
                 </AnchorPane>
