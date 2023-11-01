@@ -1,9 +1,6 @@
 package com.example.ielts_paradox.utils;
 
-import com.example.ielts_paradox.models.BlogInfo;
-import com.example.ielts_paradox.models.CourseInfo;
-import com.example.ielts_paradox.models.Faq;
-import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.models.*;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -114,6 +111,7 @@ public class DBConnections {
         }
         return cf;
     }
+
     public CourseInfo getCourseById(String id){
         CourseInfo ci;
 
@@ -168,6 +166,7 @@ public class DBConnections {
         }
         return null;
     }
+
     public ArrayList<BlogInfo> getAllBlog(){
         ArrayList<BlogInfo> blogs = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
@@ -198,6 +197,7 @@ public class DBConnections {
         }
         return blogs;
     }
+
     public BlogInfo getBlogById(String id){
         BlogInfo ci;
 
@@ -221,6 +221,64 @@ public class DBConnections {
                             e.printStackTrace();
                         }
 
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<StoryInfo> getAllStories(){
+        ArrayList<StoryInfo> blogs = new ArrayList<>();
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            String sql = "SELECT * FROM success_stories";
+            try (Statement statement = connection.createStatement()) {
+                try (ResultSet resultSet = statement.executeQuery(sql)) {
+                    while (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String mainStory = resultSet.getString("mainStory");
+                            String studentImage = resultSet.getString("studentImage");
+                            String studentName = resultSet.getString("studentName");
+                            String bandScore = resultSet.getString("bandScore");
+                            StoryInfo b = new StoryInfo(_id,mainStory,studentImage,studentName,bandScore);
+                            System.out.println();
+                            blogs.add(b);
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return blogs;
+    }
+
+    public StoryInfo getStoryById(String id){
+        StoryInfo ci;
+
+        String DB_QUERY = "SELECT * FROM success_stories WHERE _id = ?";
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(DB_QUERY)) {
+                preparedStatement.setInt(1, Integer.parseInt(id));
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String mainStory = resultSet.getString("mainStory");
+                            String studentImage = resultSet.getString("studentImage");
+                            String studentName = resultSet.getString("studentName");
+                            String bandScore = resultSet.getString("bandScore");
+                            StoryInfo b = new StoryInfo(_id,mainStory,studentImage,studentName,bandScore);
+                            return b;
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

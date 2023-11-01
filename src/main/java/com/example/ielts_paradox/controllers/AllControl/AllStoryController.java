@@ -1,5 +1,8 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.controllers.cardControllers.StoryCardController;
+import com.example.ielts_paradox.models.StoryInfo;
+import com.example.ielts_paradox.utils.DBConnections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,20 +23,17 @@ public class AllStoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> it = new ArrayList<>();
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-
+        ArrayList<StoryInfo> stories = new DBConnections().getAllStories();
         boolean isFirst = true;
-        for(String i:it){
+        for(StoryInfo story:stories){
             try {
+                System.out.println("from loop = "+story._id);
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/stories_card.fxml"));
                 AnchorPane paneee = fxmlLoader.load();
+                StoryCardController scc = fxmlLoader.getController();
+                scc.setData(story);
+
                 if(isFirst){
                     firstBox.getChildren().add(paneee);
                     isFirst = false;

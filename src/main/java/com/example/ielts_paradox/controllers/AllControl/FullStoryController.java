@@ -1,9 +1,12 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.controllers.cardControllers.StoryCardController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.models.StoryInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
+import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -30,26 +34,29 @@ public class FullStoryController implements Initializable {
     private Scene scene;
 
     private Parent root;
+
+
+
+    @FXML
+    private Label bandScore;
+
+    @FXML
+    private Label mainStory;
+
+    @FXML
+    private Label studentName;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> it = new ArrayList<>();
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-
-        for(String i:it){
+        ArrayList<StoryInfo> stories = new DBConnections().getAllStories();
+        for(StoryInfo story:stories){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/stories_card.fxml"));
                 AnchorPane paneee = fxmlLoader.load();
+                StoryCardController scc = fxmlLoader.getController();
+                scc.setData(story);
                 allBlogBox.getChildren().add(paneee);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -78,6 +85,11 @@ public class FullStoryController implements Initializable {
             sdc.onClick3(event);
         }
         stage.show();
+    }
+    public void setData(StoryInfo story){
+        bandScore.setText("Band Score: "+story.bandScore);
+        mainStory.setText(story.mainStory);
+        studentName.setText(story.studentName);
     }
 
 }
