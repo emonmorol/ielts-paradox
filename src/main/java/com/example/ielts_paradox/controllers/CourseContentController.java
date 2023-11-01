@@ -1,5 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.controllers.student.StudentDashboardController;
+import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
@@ -12,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;

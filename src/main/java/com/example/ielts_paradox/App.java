@@ -14,6 +14,7 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/login/login_page.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
+
             Image logo = new Image(getClass().getResource("/images/logo.png").toExternalForm());
             stage.setTitle("IELTS ParadOx");
             stage.getIcons().add(logo);

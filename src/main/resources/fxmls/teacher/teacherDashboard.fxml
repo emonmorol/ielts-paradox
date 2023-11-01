@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.TeacherDashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.TeacherDashboardController">
     <left>
         <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="730.0" prefWidth="175.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;">
             <children>
@@ -194,7 +194,7 @@
                                 <Font size="11.0" />
                             </font>
                         </Label>
-                  <MFXProgressSpinner layoutX="76.0" layoutY="63.0" prefHeight="131.0" prefWidth="133.0" progress="0.81" radius="70.0" />
+                  <MFXProgressSpinner layoutX="49.0" layoutY="58.0" prefHeight="146.0" prefWidth="199.0" progress="0.73" startingAngle="90.0" />
                     </children>
                 </AnchorPane>
             </children>

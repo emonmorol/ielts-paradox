@@ -1,7 +1,7 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
-import com.example.ielts_paradox.controllers.StudentDashboardController;
-import com.example.ielts_paradox.controllers.TeacherDashboardController;
+import com.example.ielts_paradox.controllers.student.StudentDashboardController;
+import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.controllers.cardControllers.BlogCardController;
 import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.models.UserInfo;

@@ -6,6 +6,7 @@ module com.example.ielts_paradox {
     requires com.google.gson;
     requires javafx.web;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires org.apache.pdfbox;
 
     opens com.example.ielts_paradox to javafx.fxml;
     opens com.example.ielts_paradox.utils to javafx.fxml;

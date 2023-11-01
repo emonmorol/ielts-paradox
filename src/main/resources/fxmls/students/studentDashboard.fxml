@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.StudentDashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.student.StudentDashboardController">
     <left>
         <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="730.0" prefWidth="175.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;">
             <children>
@@ -206,11 +207,7 @@
                                 <Font size="11.0" />
                             </font>
                         </Label>
-                        <Label layoutX="81.0" layoutY="77.0" prefHeight="89.0" prefWidth="131.0" text="71%" textFill="#1b2ca8">
-                            <font>
-                                <Font name="System Bold" size="61.0" />
-                            </font>
-                        </Label>
+                  <MFXProgressSpinner layoutX="83.0" layoutY="53.0" prefHeight="147.0" prefWidth="128.0" progress="0.83" startingAngle="90.0" />
                     </children>
                 </AnchorPane>
             </children>

@@ -1,10 +1,10 @@
 package com.example.ielts_paradox.controllers;
 
-import com.example.ielts_paradox.controllers.cardControllers.CourseOfferingCardController;
+import com.example.ielts_paradox.controllers.student.StudentDashboardController;
+import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
-import com.example.ielts_paradox.utils.LoadDashboardPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
