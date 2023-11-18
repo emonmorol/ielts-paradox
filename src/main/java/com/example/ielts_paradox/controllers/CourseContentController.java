@@ -2,6 +2,7 @@ package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
@@ -11,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
@@ -47,6 +49,12 @@ public class CourseContentController implements Initializable {
     private Scene scene;
 
     private Parent root;
+
+    @FXML
+    private Label instructor,title,id;
+
+    @FXML
+    private Label point;
 
     ArrayList<String> af = new ArrayList<>();
     @Override
@@ -90,10 +98,7 @@ public class CourseContentController implements Initializable {
     public void backButtonHandler(ActionEvent e) throws IOException {
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
-        System.out.println(user.isTeacher);
-        System.out.println(user.fullName);
-        System.out.println(user.email);
-        System.out.println(user.contactNumber);
+
         if(user.isTeacher){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
             root = fxmlLoader.load();
@@ -101,17 +106,38 @@ public class CourseContentController implements Initializable {
             scene = new Scene(root);
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            tdc.onClickOne(e);
+            if(point.getText()=="0"){
+                tdc.onClickOne(e);
+            }else{
+                tdc.onClickOverview(e);
+            }
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
-            StudentDashboardController sdc =fxmlLoader.getController();
+            StudentDashboardController sdc = fxmlLoader.getController();
             scene = new Scene(root);
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClickOne(e);
+
+            if(point.getText()=="0"){
+                sdc.onClickOne(e);
+            }else{
+                sdc.onClickOverview(e);
+            }
+
         }
         stage.show();
+    }
+    public void setData(CourseInfo ci,String p){
+        point.setText(p);
+        try{
+            id.setText(ci._id);
+            title.setText(ci.title);
+            instructor.setText(ci.instructorName + " ,IELTS Instructor");
+        }catch (Exception e){
+            System.out.println("From Course content controller ,");
+            e.printStackTrace();
+        }
     }
 
 //    @FXML

@@ -21,12 +21,12 @@
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" layoutY="15.0" prefHeight="76.0" prefWidth="209.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                  <Label fx:id="title" layoutY="15.0" prefHeight="76.0" prefWidth="254.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutY="89.0" prefHeight="21.0" prefWidth="131.0" text="Course Instructor" textFill="#ffffff9f">
+                  <Label fx:id="instructor" layoutY="89.0" prefHeight="21.0" prefWidth="131.0" text="Course Instructor" textFill="#ffffff9f">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -58,6 +58,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
+            <Label fx:id="id" layoutX="229.0" layoutY="22.0" text=" " visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">

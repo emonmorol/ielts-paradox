@@ -14,12 +14,12 @@
     <children>
         <AnchorPane fx:id="topAnchor" prefHeight="111.0" prefWidth="1500.0" style="-fx-background-color: #ced8eb;">
             <children>
-                <Label layoutX="177.0" layoutY="33.0" prefHeight="38.0" prefWidth="808.0" text="IELTS Course Online">
+                <Label fx:id="title" layoutX="177.0" layoutY="33.0" prefHeight="38.0" prefWidth="808.0" text="IELTS Course Online">
                     <font>
                         <Font name="System Bold" size="26.0" />
                     </font>
                 </Label>
-                <Label layoutX="178.0" layoutY="65.0" prefHeight="20.0" prefWidth="704.0" text="LABIB MOROL, IELTS Instructor">
+                <Label fx:id="instructor" layoutX="179.0" layoutY="65.0" prefHeight="20.0" prefWidth="703.0" text="LABIB MOROL, IELTS Instructor">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -32,6 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MFXButton>
+            <Label fx:id="id" layoutX="781.0" layoutY="63.0" text="Label" visible="false" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="mainAnchor" layoutX="125.0" layoutY="125.0" prefHeight="564.0" prefWidth="1247.0">
@@ -82,5 +83,6 @@
                 </AnchorPane>
             </children>
         </AnchorPane>
+      <Label fx:id="point" layoutX="85.0" layoutY="229.0" text=" " visible="false" />
     </children>
 </AnchorPane>

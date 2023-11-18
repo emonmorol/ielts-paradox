@@ -28,13 +28,11 @@ public class AllStoryController implements Initializable {
         boolean isFirst = true;
         for(StoryInfo story:stories){
             try {
-                System.out.println("from loop = "+story._id);
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/stories_card.fxml"));
                 AnchorPane paneee = fxmlLoader.load();
                 StoryCardController scc = fxmlLoader.getController();
                 scc.setData(story);
-
                 if(isFirst){
                     firstBox.getChildren().add(paneee);
                     isFirst = false;

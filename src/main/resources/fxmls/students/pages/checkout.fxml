@@ -132,7 +132,7 @@
                   <MFXTextField fx:id="studentEmailField" borderGap="0.0" disable="true" editable="false" floatMode="ABOVE" floatingText="STUDENT EMAIL" layoutX="38.0" layoutY="186.0" prefHeight="49.0" prefWidth="440.0" text="xyz@gmail.com" />
                   <MFXTextField fx:id="transectionId" borderGap="0.0" floatMode="ABOVE" floatingText="PAYMENT TRANSECTION ID" layoutX="37.0" layoutY="273.0" prefHeight="49.0" prefWidth="440.0" />
                   <MFXTextField fx:id="bkashNumber" borderGap="0.0" floatMode="ABOVE" floatingText="BKASH NUMBER" layoutX="38.0" layoutY="355.0" prefHeight="49.0" prefWidth="440.0" />
-                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="42.0" layoutY="462.0" onAction="#enrollmentHandler" prefHeight="49.0" prefWidth="440.0" style="-fx-background-radius: 10; -fx-background-color: #1a2579;" text="COMPLETE ENROLLMENT" textFill="WHITE">
+                  <MFXButton fx:id="enrollementButton" buttonType="RAISED" depthLevel="LEVEL1" layoutX="42.0" layoutY="462.0" onAction="#enrollmentHandler" prefHeight="49.0" prefWidth="440.0" style="-fx-background-radius: 10; -fx-background-color: #1a2579;" text="COMPLETE ENROLLMENT" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

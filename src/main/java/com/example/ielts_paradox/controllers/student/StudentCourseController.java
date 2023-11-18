@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers.student;
 
+import com.example.ielts_paradox.controllers.cardControllers.CourseCardHandler;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
@@ -27,12 +28,14 @@ public class StudentCourseController  implements Initializable {
         UserInfo u = user.getUser();
         ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,10);
         for(CourseInfo i:it){
+            System.out.println(i._id);
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseCard.fxml"));
                 HBox paneee = fxmlLoader.load();
                 mainBox.getChildren().add(paneee);
-
+                CourseCardHandler cch = fxmlLoader.getController();
+                cch.setData(i);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

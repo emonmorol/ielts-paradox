@@ -2,13 +2,33 @@ package com.example.ielts_paradox.database;
 
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.DBConnections;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class ForEnrollment {
+    public boolean validate(String userEmail,String id){
+        String DB_QUERY = "SELECT * FROM paid_student WHERE email = ? AND courseId = ?";
 
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement prpStatement = connection.prepareStatement(DB_QUERY)) {
+                prpStatement.setString(1,userEmail);
+                prpStatement.setString(2,id);
+                try (ResultSet resultSet = prpStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return true;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public boolean courseEnrollment(PaidStudentInfo psi){
         String insertQuery = "INSERT INTO paid_student (bkashNumber, transectionId, email, courseId, enrollementDate, courseApproval, isExpired) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try{
@@ -47,7 +67,7 @@ public class ForEnrollment {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
                         try {
-                            String _id = resultSet.getString("_id");
+                            String _id = resultSet.getString("courseId");
                             String title = resultSet.getString("title");
                             String thumbnail = resultSet.getString("thumbmail");
                             int price = Integer.parseInt(resultSet.getString("price"));

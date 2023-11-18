@@ -7,10 +7,12 @@ import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.Alert1;
 import com.example.ielts_paradox.utils.DBConnections;
+import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,9 +20,11 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
 public class CheckoutController {
     @FXML
@@ -43,6 +47,10 @@ public class CheckoutController {
 
     private Parent root;
     public static CourseInfo ci ;
+
+    @FXML
+    private MFXButton enrollementButton;
+
     @FXML
     public void backButtonHandler(ActionEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
@@ -59,11 +67,15 @@ public class CheckoutController {
         ci = cf;
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
-        System.out.println(user.email);
-        System.out.println(user.fullName);
+        boolean isEnrolled = new ForEnrollment().validate(user.email,cf._id);
+        if(isEnrolled){
+            enrollementButton.setDisable(true);
+            enrollementButton.setText("ALREADY ENROLLED");
+        }
         studentEmailField.setText(user.email);
         courseTitleField.setText(ci.title);
         courseTitle.setText(ci.title);
+
     }
     @FXML
     public void enrollmentHandler(ActionEvent event){
@@ -79,4 +91,6 @@ public class CheckoutController {
             Alert1.displayCustomAlert("Error","Fill up the form with appropriete info!");
         }
     }
+
+
 }
