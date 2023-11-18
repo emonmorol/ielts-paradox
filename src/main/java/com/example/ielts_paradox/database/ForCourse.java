@@ -65,28 +65,20 @@ public class ForCourse {
                             int discount = Integer.parseInt(resultSet.getString("discount"));;
                             String details = resultSet.getString("details");
                             String instructorName = resultSet.getString("instructorName");
-
-
-
                             String freateresJSON = resultSet.getString("features");
                             String curriculumJSON = resultSet.getString("curriculum");
                             String faqsJSON = resultSet.getString("faq");
                             String sidebarPointJSON = resultSet.getString("sidebarPoint");
-
                             Gson gson = new Gson();
                             String[] features = gson.fromJson(freateresJSON, String[].class);
                             String[] curriculum = gson.fromJson(curriculumJSON, String[].class);
                             String[] sidebarPoint = gson.fromJson(sidebarPointJSON, String[].class);
-
                             JsonArray jsonArray = gson.fromJson(faqsJSON, JsonArray.class);
-
                             ArrayList<Faq> faqs = new ArrayList<>();
-
                             for (JsonElement element : jsonArray) {
                                 Faq ob = gson.fromJson(element, Faq.class);
                                 faqs.add(ob);
                             }
-
                             ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName);
                             return ci;
                         }catch (SQLException e){

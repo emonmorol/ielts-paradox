@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.controllers.CourseDetails.DescriptionController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.models.CourseInfo;
@@ -15,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +25,11 @@ import java.util.ResourceBundle;
 import javafx.scene.web.WebView;
 
 public class CourseDetailsController implements Initializable{
+    @FXML
+    private VBox box1;
+
+    @FXML
+    private VBox box2;
 
     @FXML
     private AnchorPane insideAnchor;
@@ -41,19 +48,44 @@ public class CourseDetailsController implements Initializable{
     @FXML
     private WebView web_video;
     public static String point;
+    @FXML
+    private Label discountedPrice,total_price;
 
-    public void setDetailsInfo(CourseInfo crs,String p){
+    public void setDetailsInfo(CourseInfo crs,String p) throws IOException {
         CourseDetailsController.ci = crs;
         CourseDetailsController.point = p;
         courseTitle.setText(ci.title);
+        String[] sidePoints = crs.sidebarPoint;
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
+            DescriptionController dc = fxmlLoader.getController();
+            dc.setData(CourseDetailsController.ci);
             scrollpane.setContent(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        int cnt1 = 0,cnt2 = 0;
+        boolean isFirst = true;
+        for(int i = 1;i<=6 && (i <= sidePoints.length);i++){
+            FXMLLoader labelLoader = new FXMLLoader();
+            labelLoader.setLocation(getClass().getResource("/fxmls/components/sidebarPoints.fxml"));
+            Label pnt = labelLoader.load();
+            pnt.setText(sidePoints[i-1]);
+            if(isFirst){
+                box1.getChildren().add(pnt);
+                isFirst = false;
+            }
+            else{
+                box2.getChildren().add(pnt);
+                isFirst = true;
+            }
+        }
+        total_price.setText(crs.price+"TK");
+        double pr = crs.price - (crs.price * (crs.discount/100.0));
+        discountedPrice.setText((int)pr + "TK");
     }
 
 
@@ -90,10 +122,13 @@ public class CourseDetailsController implements Initializable{
 
     @FXML
     public void descriptionHandler(ActionEvent event) {
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
+            DescriptionController dc = fxmlLoader.getController();
+            dc.setData(CourseDetailsController.ci);
 //            insideAnchor.getChildren().add(paneee);
             scrollpane.setContent(paneee);
         } catch (IOException e) {
