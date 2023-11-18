@@ -1,5 +1,9 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
+import com.example.ielts_paradox.utils.DBConnections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,23 +21,10 @@ public class ProvidedCourseController implements Initializable {
     private VBox mainBox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> it = new ArrayList<>();
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        it.add("aksjhdsf");
-        for(String i:it){
+        UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
+        UserInfo u = user.getUser();
+        ArrayList<PaidStudentInfo> it = new DBConnections().courseEnrollmentUsingEmail(u.email);
+        for(PaidStudentInfo i:it){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseCard.fxml"));

@@ -29,7 +29,8 @@ public class DBConnections {
                             String fullname = resultSet.getString("fullname");
                             String contact_number = resultSet.getString("contact_number");
                             Boolean isTeacher = resultSet.getBoolean("isTeacher");
-                            UserSingleTon user = UserSingleTon.getInstance(new UserInfo(fullname,email,contact_number,isTeacher));
+                            UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
+                            user.setUser(new UserInfo(fullname,email,contact_number,isTeacher));
                         }catch (SQLException e){
                             e.printStackTrace();
                         }
@@ -286,5 +287,64 @@ public class DBConnections {
             e.printStackTrace();
         }
         return null;
+    }
+    public boolean courseEnrollment(PaidStudentInfo psi){
+        String insertQuery = "INSERT INTO paid_student (bkashNumber, transectionId, email, courseId, enrollementDate, courseApproval, isExpired) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (
+                Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+                PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+        ) {
+            preparedStatement.setString(1, psi.bkashNumber);
+            preparedStatement.setString(2, psi.enrollementDate);
+            preparedStatement.setString(3, psi.email);
+            preparedStatement.setInt(4, psi.courseId);
+            preparedStatement.setString(5, psi.enrollementDate);
+            preparedStatement.setBoolean(6, psi.courseApproval);
+            preparedStatement.setBoolean(7, psi.isExpired);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public ArrayList<PaidStudentInfo> courseEnrollmentUsingEmail(String email){
+        ArrayList<PaidStudentInfo> courses = new ArrayList<>();
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
+            String sql = "SELECT * FROM paid_student WHERE email = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, email);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        try {
+                            int _id = Integer.parseInt(resultSet.getString("_id"));
+                            String bkashNumber = resultSet.getString("bkashNumber");
+                            String transectionId = resultSet.getString("transectionId");
+                            String uemail = resultSet.getString("email");
+                            int courseId = resultSet.getInt("courseId");
+                            String enrollementDate = resultSet.getString("enrollementDate");
+                            boolean courseApproval = resultSet.getBoolean("courseApproval");
+                            boolean isExpired = resultSet.getBoolean("isExpired");
+
+                            PaidStudentInfo b = new PaidStudentInfo(_id,bkashNumber,transectionId,uemail,courseId,enrollementDate,courseApproval,isExpired);
+                            System.out.println();
+                            courses.add(b);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses;
     }
 }

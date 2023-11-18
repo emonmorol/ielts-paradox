@@ -22,7 +22,7 @@ public class MyClassesController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/courses/my_courses.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/fxmls/students/pages/my_courses.fxml"));
         try {
             MFXScrollPane paneee = fxmlLoader.load();
             mainPane.getChildren().add(paneee);
