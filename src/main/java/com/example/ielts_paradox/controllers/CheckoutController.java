@@ -56,7 +56,7 @@ public class CheckoutController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
         root = fxmlLoader.load();
         CourseDetailsController cdc = fxmlLoader.getController();
-        cdc.setDetailsInfo(ci);
+        cdc.setDetailsInfo(ci,"1");
         scene = new Scene(root);
 
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();

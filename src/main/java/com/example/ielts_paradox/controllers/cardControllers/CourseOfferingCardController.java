@@ -50,7 +50,7 @@ public class CourseOfferingCardController{
         root = fxmlLoader.load();
         CourseDetailsController cdc = fxmlLoader.getController();
         CourseInfo cf = new ForCourse().getCourseById(_id.getText());
-        cdc.setDetailsInfo(cf);
+        cdc.setDetailsInfo(cf,"1");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

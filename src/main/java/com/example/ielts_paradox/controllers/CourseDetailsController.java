@@ -40,9 +40,11 @@ public class CourseDetailsController implements Initializable{
     public static CourseInfo ci ;
     @FXML
     private WebView web_video;
+    public static String point;
 
-    public void setDetailsInfo(CourseInfo crs){
+    public void setDetailsInfo(CourseInfo crs,String p){
         CourseDetailsController.ci = crs;
+        CourseDetailsController.point = p;
         courseTitle.setText(ci.title);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/description.fxml"));
@@ -66,7 +68,10 @@ public class CourseDetailsController implements Initializable{
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            tdc.onClick2(event);
+            if(CourseDetailsController.point == "1")
+                tdc.onClick2(event);
+            else
+                tdc.onClickOverview(event);
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
@@ -74,7 +79,10 @@ public class CourseDetailsController implements Initializable{
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClick2(event);
+            if(CourseDetailsController.point == "1")
+                sdc.onClick2(event);
+            else
+                sdc.onClickOverview(event);
         }
 
         stage.show();
