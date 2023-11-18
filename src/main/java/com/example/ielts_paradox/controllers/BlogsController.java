@@ -23,7 +23,6 @@ public class BlogsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/blogs/allBlog.fxml"));

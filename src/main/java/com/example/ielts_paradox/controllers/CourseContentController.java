@@ -51,9 +51,7 @@ public class CourseContentController implements Initializable {
     ArrayList<String> af = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadVideo("https://www.youtube.com/embed/jPB3odX-F9s");
-
-
+//        loadVideo("https://www.youtube.com/embed/jPB3odX-F9s");
         af.add("course");
         af.add("course");
         af.add("course");

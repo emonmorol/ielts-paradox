@@ -42,7 +42,7 @@
                                     <Font size="21.0" />
                                  </font>
                                         </Label>
-                                        <Label fx:id="bandScore" alignment="CENTER" layoutX="139.0" layoutY="88.0" prefHeight="18.0" prefWidth="94.0" text="Band Score: 8.5" />
+                                        <Label fx:id="bandScore" alignment="CENTER" layoutX="137.0" layoutY="88.0" prefHeight="18.0" prefWidth="94.0" text="Band Score: 8.5" />
                            </children>
                         </AnchorPane>
                             </children>

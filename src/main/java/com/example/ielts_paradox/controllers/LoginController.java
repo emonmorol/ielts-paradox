@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.utils.Alert1;
 import com.example.ielts_paradox.utils.AlertClass;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
@@ -39,7 +40,8 @@ public class LoginController {
         String pass = userPassword.getText();
 
         if(email==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Email Address!");
+            Alert1.displayCustomAlert("ERROR!!!!!","Please Enter Your Email Address!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Email Address!");
         }
         else if(pass==""){
             AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");

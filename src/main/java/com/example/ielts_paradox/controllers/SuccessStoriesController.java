@@ -66,5 +66,17 @@ public class SuccessStoriesController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+    @FXML
+    void MyStoryHandler(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/stories/myStory.fxml"));
+            AnchorPane paneee = fxmlLoader.load();
+            mainStoryPane.getChildren().clear();
+            mainStoryPane.getChildren().add(paneee);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

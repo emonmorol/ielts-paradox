@@ -142,6 +142,6 @@ public class CourseDetailsController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        web_video.getEngine().load("https://www.youtube.com/embed/t1_ZFIGMKy8");
+//        web_video.getEngine().load("https://www.youtube.com/embed/t1_ZFIGMKy8");
     }
 }
