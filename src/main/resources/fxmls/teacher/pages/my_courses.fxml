@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="615.0" prefWidth="920.0" style="-fx-background-radius: 10; -fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXScrollPane prefHeight="615.0" prefWidth="920.0" style="-fx-background-color: #e9eff6;">
+         <content>
+            <VBox fx:id="myCourseTable" prefHeight="3302.0" prefWidth="906.0" spacing="10.0" style="-fx-background-color: #e9eff6;">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                     <children>
+                        <AnchorPane prefHeight="74.0" prefWidth="446.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+                           <children>
+                              <Group layoutX="23.0" layoutY="21.0" />
+                              <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="17.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets right="15.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="74.0" prefWidth="460.8" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+                           <children>
+                              <Button layoutX="13.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="325.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="166.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="UPDATE" textFill="#2979ef">
+                                 <font>
+                                    <Font name="System Bold" size="8.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="249.0" layoutY="19.0" startX="-100.0" />
+                              <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="405.0" layoutY="19.0" startX="-100.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </MFXScrollPane>
+   </children>
+</AnchorPane>

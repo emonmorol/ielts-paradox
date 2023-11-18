@@ -3,6 +3,7 @@ package com.example.ielts_paradox.controllers.AllControl;
 import com.example.ielts_paradox.controllers.cardControllers.StoryCardController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForStories;
 import com.example.ielts_paradox.models.StoryInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -49,7 +50,7 @@ public class FullStoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<StoryInfo> stories = new DBConnections().getAllStories();
+        ArrayList<StoryInfo> stories = new ForStories().getAllStories(0,100);
         for(StoryInfo story:stories){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();

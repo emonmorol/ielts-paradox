@@ -2,6 +2,7 @@ package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.controllers.AllControl.FullStoryController;
 import com.example.ielts_paradox.controllers.SuccessStoriesController;
+import com.example.ielts_paradox.database.ForStories;
 import com.example.ielts_paradox.models.StoryInfo;
 import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
@@ -45,7 +46,7 @@ public class StoryCardController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/full_success_story.fxml"));
             root = fxmlLoader.load();
             FullStoryController fsc = fxmlLoader.getController();
-            fsc.setData(new DBConnections().getStoryById(id.getText()));
+            fsc.setData(new ForStories().getStoryById(id.getText()));
             scene = new Scene(root);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

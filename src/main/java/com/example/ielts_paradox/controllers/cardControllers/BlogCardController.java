@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
+import com.example.ielts_paradox.database.ForBlogs;
 import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
@@ -40,7 +41,7 @@ public class BlogCardController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/blogs/full_blogs.fxml"));
         root = fxmlLoader.load();
         FullBlogController fbc = fxmlLoader.getController();
-        fbc.setData(new DBConnections().getBlogById(_id));
+        fbc.setData(new ForBlogs().getBlogById(_id));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

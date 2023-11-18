@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.models.UserInfo;
@@ -70,7 +71,7 @@ public class CheckoutController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm:ss");
         String formattedDateTime = currentDateTime.format(formatter);
         PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
-        boolean isComplete = new DBConnections().courseEnrollment(psi);
+        boolean isComplete = new ForEnrollment().courseEnrollment(psi);
         if(isComplete){
             Alert1.displayCustomAlert("Successfull","Wait for Approval!");
         }

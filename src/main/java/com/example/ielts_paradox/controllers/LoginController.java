@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.database.ForUser;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.utils.Alert1;
 import com.example.ielts_paradox.utils.AlertClass;
@@ -46,7 +47,7 @@ public class LoginController {
         else if(pass==""){
             AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");
         }else{
-            boolean isValid = new DBConnections().validate(email,pass,isTeacher);
+            boolean isValid = new ForUser().validate(email,pass,isTeacher);
             if(isValid){
 
                 if(isTeacher){

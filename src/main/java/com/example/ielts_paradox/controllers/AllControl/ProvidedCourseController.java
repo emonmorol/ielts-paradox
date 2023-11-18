@@ -1,5 +1,7 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.database.ForEnrollment;
+import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -23,8 +25,8 @@ public class ProvidedCourseController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
         UserInfo u = user.getUser();
-        ArrayList<PaidStudentInfo> it = new DBConnections().courseEnrollmentUsingEmail(u.email);
-        for(PaidStudentInfo i:it){
+        ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,10);
+        for(CourseInfo i:it){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseCard.fxml"));

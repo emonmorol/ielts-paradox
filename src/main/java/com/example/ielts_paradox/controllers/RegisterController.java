@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
 
+import com.example.ielts_paradox.database.ForUser;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.utils.AlertClass;
 import com.example.ielts_paradox.utils.DBConnections;
@@ -74,11 +75,11 @@ public class RegisterController {
         }
         else{
             UserInfo u = new UserInfo(fullname,email,contact_number,pass,isTeacher);
-            boolean isValid = new DBConnections().isUserExist(email);
+            boolean isValid = new ForUser().isUserExist(email);
             if(isValid){
                 AlertClass.showAlert("ERROR!!!!!","User Already Exits! Please Login!");
             }else if(!isValid){
-                boolean isCreated = new DBConnections().createUser(u);
+                boolean isCreated = new ForUser().createUser(u);
                 if(isCreated){
                     new SceneChanger().switchScene(e, "/fxmls/login/login_page.fxml");
 //                    if(isTeacher){

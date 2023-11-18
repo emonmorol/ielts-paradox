@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
 import com.example.ielts_paradox.controllers.cardControllers.BlogCardController;
+import com.example.ielts_paradox.database.ForBlogs;
 import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.utils.DBConnections;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ public class AllBlogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<BlogInfo> blogs = new DBConnections().getAllBlog();
+        ArrayList<BlogInfo> blogs = new ForBlogs().getAllBlog(0,100);
         boolean isFirst = true;
         for(BlogInfo blog:blogs){
             try {

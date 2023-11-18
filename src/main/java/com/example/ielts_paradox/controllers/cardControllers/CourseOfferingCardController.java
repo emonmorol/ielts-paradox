@@ -2,6 +2,7 @@ package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.controllers.CourseDetailsController;
 import com.example.ielts_paradox.controllers.CourseOfferingController;
+import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
@@ -48,7 +49,7 @@ public class CourseOfferingCardController{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
         root = fxmlLoader.load();
         CourseDetailsController cdc = fxmlLoader.getController();
-        CourseInfo cf = new DBConnections().getCourseById(_id.getText());
+        CourseInfo cf = new ForCourse().getCourseById(_id.getText());
         cdc.setDetailsInfo(cf);
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

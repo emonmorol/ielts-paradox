@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.controllers.cardControllers.CourseOfferingCardController;
+import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.Faq;
 import com.example.ielts_paradox.utils.DBConnections;
@@ -45,7 +46,7 @@ public class CourseOfferingController implements Initializable {
 //        courses.add(c4);
 //        courses.add(c5);
 //        courses.add(c6);
-        courses = new DBConnections().getAllCourse();
+        courses = new ForCourse().getAllCourse(0,100);
 
 
         boolean isFirst = true;

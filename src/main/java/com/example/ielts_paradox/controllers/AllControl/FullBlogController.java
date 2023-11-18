@@ -3,6 +3,7 @@ package com.example.ielts_paradox.controllers.AllControl;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.controllers.cardControllers.BlogCardController;
+import com.example.ielts_paradox.database.ForBlogs;
 import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -49,7 +50,7 @@ public class FullBlogController implements Initializable {
     private Parent root;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<BlogInfo> blogs = new DBConnections().getAllBlog();
+        ArrayList<BlogInfo> blogs = new ForBlogs().getAllBlog(0,100);
         for(BlogInfo blog:blogs){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();

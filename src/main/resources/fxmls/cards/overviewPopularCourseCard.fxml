@@ -3,13 +3,14 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="87.0" prefWidth="497.0" style="-fx-background-radius: 10; -fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="87.0" prefWidth="497.0" style="-fx-background-radius: 10; -fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.OverviewPopularCourseCardController">
     <children>
         <HBox prefHeight="87.0" prefWidth="497.0" style="-fx-background-radius: 10;">
             <children>
@@ -18,6 +19,7 @@
                         <AnchorPane layoutX="13.0" layoutY="12.0" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #ccdfff; -fx-background-radius: 10;">
                             <children>
                                 <FontAwesomeIconView fill="#3884ff" glyphName="FIRE" layoutX="14.0" layoutY="45.0" size="40" text="" />
+                        <Label fx:id="id" layoutX="16.0" layoutY="24.0" text=" " visible="false" />
                             </children>
                         </AnchorPane>
                     </children>
@@ -26,12 +28,12 @@
                     <children>
                         <Group layoutX="2.0" layoutY="19.0">
                             <children>
-                                <Label layoutY="-3.0" prefHeight="21.0" prefWidth="204.0" text="Live Online IELTS Course">
+                                <Label fx:id="title" layoutY="-3.0" prefHeight="21.0" prefWidth="204.0" text="Live Online IELTS Course">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="65.0" layoutY="25.0" text="Abu Bakar" />
+                                <Label fx:id="instructor" layoutX="65.0" layoutY="25.0" text="Abu Bakar" />
                                 <Label layoutX="1.0" layoutY="25.0" text="Instructor :" />
                             </children>
                         </Group>
@@ -62,13 +64,16 @@
                         <Insets bottom="7.0" right="7.0" top="7.0" />
                     </HBox.margin>
                     <children>
-                        <MFXButton contentDisplay="RIGHT" depthLevel="LEVEL1" layoutX="1.0" layoutY="5.0" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #3884ff; -fx-background-radius: 10;" text=" " textFill="WHITE">
+                        <MFXButton contentDisplay="RIGHT" depthLevel="LEVEL1" layoutX="1.0" layoutY="5.0" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #ccdfff; -fx-background-radius: 10;" text=" " textFill="WHITE">
                             <font>
                                 <Font size="8.0" />
                             </font>
                      <graphic>
-                                <FontAwesomeIconView fill="WHITE" glyphName="" size="30" text="" wrappingWidth="29.5" />
+                                <FontAwesomeIconView fill="#3884ff" glyphName="" size="30" text="" wrappingWidth="29.5" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </MFXButton>
                         <Group layoutX="20.0" layoutY="17.0" />
                         <Group layoutX="36.0" layoutY="4.0" />
