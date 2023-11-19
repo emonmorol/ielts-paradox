@@ -1,11 +1,11 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.Alerts.Alert1;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
-import com.example.ielts_paradox.utils.Alert1;
 import com.example.ielts_paradox.utils.DBConnections;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;

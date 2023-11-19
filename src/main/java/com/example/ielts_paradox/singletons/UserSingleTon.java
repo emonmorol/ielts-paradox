@@ -22,4 +22,5 @@ public class UserSingleTon {
     public void setUser(UserInfo user) {
         this.user = user;
     }
+
 }

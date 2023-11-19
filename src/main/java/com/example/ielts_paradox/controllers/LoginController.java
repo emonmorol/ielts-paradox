@@ -1,8 +1,8 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.Alerts.Alert1;
 import com.example.ielts_paradox.database.ForUser;
 import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.utils.Alert1;
 import com.example.ielts_paradox.utils.AlertClass;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
