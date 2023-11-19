@@ -127,28 +127,12 @@
             <children>
                 <AnchorPane prefHeight="54.0" prefWidth="1261.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
-                        <Label layoutX="160.0" layoutY="12.0" text="Student Name" textFill="#1a2579">
+                        <Label fx:id="studentName" alignment="CENTER_RIGHT" layoutX="115.0" layoutY="12.0" prefHeight="18.0" prefWidth="123.0" text="Student Name" textFill="#1a2579">
                             <font>
                                 <Font name="System Bold" size="11.5" />
                             </font>
                         </Label>
-                        <Button layoutX="83.0" layoutY="13.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="35.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
-                            <graphic>
-                                <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="20" tabSize="0" text="" wrappingWidth="18.333251953125" />
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                        <Button layoutX="49.0" layoutY="13.0" minWidth="40.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="40.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
-                            <graphic>
-                                <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="20" tabSize="0" text="" wrappingWidth="18.333251953125" />
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                        <Button layoutX="8.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="35.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
+                        <Button layoutX="13.0" layoutY="9.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="35.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
                             <graphic>
                                 <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="20" tabSize="0" text="" wrappingWidth="18.333251953125" />
                             </graphic>
@@ -169,6 +153,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </MFXButton>
+                  <Button layoutX="50.0" layoutY="13.0" mnemonicParsing="false" onAction="#reloadPage" prefHeight="28.0" prefWidth="35.0" style="-fx-background-radius: 10; -fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIconView fill="#1a2579" glyphName="f2f1" selectionEnd="0" selectionStart="0" size="20" tabSize="0" text="" wrappingWidth="18.333251953125" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutY="65.0" prefHeight="666.0" prefWidth="293.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="65.0">

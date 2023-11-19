@@ -24,9 +24,6 @@ public class SuccessStoriesController implements Initializable {
     @FXML
     private AnchorPane mainStoryPane;
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

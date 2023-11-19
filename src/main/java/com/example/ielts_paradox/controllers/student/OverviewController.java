@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -40,6 +41,9 @@ public class OverviewController implements Initializable {
     private VBox popularStory;
     @FXML
     private VBox upcomingExam;
+    @FXML
+    private Label greetings;
+
     @FXML
     public void onClickSeeCourse(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();
@@ -83,6 +87,7 @@ public class OverviewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
         UserInfo u = user.getUser();
+        greetings.setText("Hello "+u.fullName +", Welcome Back.");
         ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,2);
         for (CourseInfo c: it){
             FXMLLoader fxmlLoader = new FXMLLoader();
