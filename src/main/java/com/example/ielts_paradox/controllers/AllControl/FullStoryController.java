@@ -40,6 +40,8 @@ public class FullStoryController implements Initializable {
 
     @FXML
     private Label bandScore;
+    @FXML
+    private Label points;
 
     @FXML
     private Label mainStory;
@@ -75,7 +77,10 @@ public class FullStoryController implements Initializable {
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            tdc.onClick3(event);
+            if(points.getText()=="0")
+                tdc.onClick3(event);
+            else
+                tdc.onClickOverview(event);
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
@@ -83,11 +88,15 @@ public class FullStoryController implements Initializable {
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClick3(event);
+            if(points.getText()=="0")
+                sdc.onClick3(event);
+            else
+                sdc.onClickOverview(event);
         }
         stage.show();
     }
-    public void setData(StoryInfo story){
+    public void setData(StoryInfo story,String p){
+        points.setText(p);
         bandScore.setText("Band Score: "+story.bandScore);
         mainStory.setText(story.mainStory);
         studentName.setText(story.studentName);

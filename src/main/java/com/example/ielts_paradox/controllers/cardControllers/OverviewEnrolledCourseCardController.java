@@ -41,7 +41,7 @@ public class OverviewEnrolledCourseCardController {
         scene = new Scene(root);
         CourseContentController ccc = fxmlLoader.getController();
         CourseInfo ci = new ForCourse().getCourseById(id.getText());
-        ccc.setData(ci,"0");
+        ccc.setData(ci,"1");
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

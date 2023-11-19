@@ -16,6 +16,8 @@ module com.example.ielts_paradox {
     opens com.example.ielts_paradox.controllers.FormControllers to javafx.fxml;
     opens com.example.ielts_paradox.controllers.teacher to javafx.fxml;
     opens com.example.ielts_paradox.controllers.student to javafx.fxml;
+    opens com.example.ielts_paradox.controllers.alertController to javafx.fxml;
+    opens com.example.ielts_paradox.Alerts to javafx.fxml;
 
     exports com.example.ielts_paradox;
     exports com.example.ielts_paradox.utils;
@@ -26,5 +28,7 @@ module com.example.ielts_paradox {
     exports com.example.ielts_paradox.controllers.FormControllers;
     exports com.example.ielts_paradox.controllers.teacher;
     exports com.example.ielts_paradox.controllers.student;
+    exports com.example.ielts_paradox.controllers.alertController;
+    exports com.example.ielts_paradox.Alerts;
 
 }

@@ -46,7 +46,7 @@ public class StoryCardController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/full_success_story.fxml"));
             root = fxmlLoader.load();
             FullStoryController fsc = fxmlLoader.getController();
-            fsc.setData(new ForStories().getStoryById(id.getText()));
+            fsc.setData(new ForStories().getStoryById(id.getText()),"0");
             scene = new Scene(root);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

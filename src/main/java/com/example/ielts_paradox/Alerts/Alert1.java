@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.utils;
 
+import com.example.ielts_paradox.controllers.alertController.Alert1Controller;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,7 @@ public class Alert1 {
             FXMLLoader loader = new FXMLLoader(Alert1.class.getResource("/fxmls/alerts/alert1.fxml"));
             Parent root = loader.load();
 
-            com.example.ielts_paradox.utils.Alert1Controller controller = loader.getController();
+            Alert1Controller controller = loader.getController();
 
             Stage customAlertStage = new Stage(StageStyle.UNDECORATED);
 

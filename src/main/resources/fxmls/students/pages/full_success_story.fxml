@@ -83,6 +83,7 @@
               </MFXButton>
          </children>
       </AnchorPane>
+      <Label fx:id="points" layoutX="115.0" layoutY="273.0" text="Label" visible="false" />
     </children>
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

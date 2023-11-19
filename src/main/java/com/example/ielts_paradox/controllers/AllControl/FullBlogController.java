@@ -35,6 +35,9 @@ public class FullBlogController implements Initializable {
     private Label instructor;
 
     @FXML
+    private Label points;
+
+    @FXML
     private Label score;
 
     @FXML
@@ -75,7 +78,10 @@ public class FullBlogController implements Initializable {
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            tdc.onClick7(event);
+            if(points.getText()=="0")
+                tdc.onClick7(event);
+            else
+                tdc.onClickOverview(event);
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
@@ -83,16 +89,20 @@ public class FullBlogController implements Initializable {
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClick7(event);
+            if(points.getText()=="0")
+                sdc.onClick7(event);
+            else
+                sdc.onClickOverview(event);
         }
         stage.show();
     }
-    public void setData(BlogInfo blog){
+    public void setData(BlogInfo blog,String p){
         title.setText(blog.title);
         instructor.setText(blog.publisherName);
         content.setText(blog.content);
         date.setText(blog.date);
         score.setText("Band Score: "+blog.bandScore);
+        points.setText(p);
     }
 
 }

@@ -19,7 +19,7 @@
             <FontAwesomeIconView fill="#1a2579" glyphName="USER" size="15" tabSize="15" text="" />
          </graphic>
       </Label>
-      <MFXButton contentDisplay="RIGHT" layoutX="376.0" layoutY="7.0" prefHeight="36.0" prefWidth="21.0" style="-fx-border-radius: 10; -fx-background-color: white;" text=" ">
+      <MFXButton contentDisplay="RIGHT" layoutX="376.0" layoutY="7.0" onAction="#detailsHandler" prefHeight="36.0" prefWidth="21.0" style="-fx-border-radius: 10; -fx-background-color: white;" text=" ">
          <graphic>
             <FontAwesomeIconView fill="#1a2579" size="30" text="" />
          </graphic>

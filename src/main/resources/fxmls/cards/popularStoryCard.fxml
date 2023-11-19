@@ -15,7 +15,7 @@
                </font>
             </Label>
             <Label fx:id="band" alignment="BOTTOM_LEFT" layoutX="74.0" layoutY="23.0" prefHeight="20.0" prefWidth="349.0" text="Band Score: 8.5" />
-            <MFXButton contentDisplay="RIGHT" layoutX="376.0" layoutY="7.0" prefHeight="36.0" prefWidth="21.0" style="-fx-border-radius: 10; -fx-background-color: white;" text=" ">
+            <MFXButton contentDisplay="RIGHT" layoutX="376.0" layoutY="7.0" onAction="#detailsHandler" prefHeight="36.0" prefWidth="21.0" style="-fx-border-radius: 10; -fx-background-color: white;" text=" ">
                <graphic>
                   <FontAwesomeIconView fill="#1a2579" size="30" text="" />
                </graphic>
@@ -23,9 +23,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
-            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="38.0" prefWidth="34.0" style="-fx-background-color: #d7fae0; -fx-background-radius: 10;">
+            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="38.0" prefWidth="34.0" style="-fx-background-color: #abc0ee; -fx-background-radius: 10;">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="41.0" text="S" textFill="#32a852">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="41.0" text="S" textFill="#3256a8">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>

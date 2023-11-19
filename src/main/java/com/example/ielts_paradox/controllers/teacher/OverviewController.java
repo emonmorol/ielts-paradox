@@ -39,7 +39,7 @@ public class OverviewController implements Initializable{
         System.out.println();
         for (int i = 0; i<2;i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/overviewEnrolledCourseCard.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/teacherOverviewEnrolledCourseCard.fxml"));
             try {
                 AnchorPane paneee = fxmlLoader.load();
                 providedCourseContainer.getChildren().add(paneee);
@@ -50,7 +50,7 @@ public class OverviewController implements Initializable{
         }
         for (int i = 0; i<2;i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/overviewPopularCourseCard.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/teacherOverviewPopularCourseCard.fxml"));
             try {
                 AnchorPane paneee = fxmlLoader.load();
                 myBlogsContainer.getChildren().add(paneee);

@@ -1,5 +1,8 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.Alerts.Alert2;
+import com.example.ielts_paradox.utils.Alert2Controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -20,5 +23,10 @@ public class ProfileController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    @FXML
+    public void emailEditor(ActionEvent event) {
+        Alert2.displayCustomAlert("Hello From Email","LOL");
     }
 }

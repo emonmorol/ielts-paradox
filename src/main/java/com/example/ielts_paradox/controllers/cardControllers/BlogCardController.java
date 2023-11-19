@@ -41,7 +41,7 @@ public class BlogCardController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/blogs/full_blogs.fxml"));
         root = fxmlLoader.load();
         FullBlogController fbc = fxmlLoader.getController();
-        fbc.setData(new ForBlogs().getBlogById(_id));
+        fbc.setData(new ForBlogs().getBlogById(_id),"0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
