@@ -26,11 +26,10 @@ public class MockTestController {
 
     @FXML
     void goToListeningReq(ActionEvent event) throws IOException {
-        //        String _id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/listeningTestRequest.fxml"));
         root = fxmlLoader.load();
-//        FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        ListeningTestRequestController ltc = fxmlLoader.getController();
+        ltc.setData("0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -40,11 +39,10 @@ public class MockTestController {
 
     @FXML
     void goToReadingReq(ActionEvent event) throws IOException {
-        //        String _id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/readingTestRequest.fxml"));
         root = fxmlLoader.load();
-//        FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        ReadingTestRequestController rtc = fxmlLoader.getController();
+        rtc.setData("0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -54,11 +52,10 @@ public class MockTestController {
 
     @FXML
     void goToSpeakingReq(ActionEvent event) throws IOException {
-        //        String _id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/speakingTestRequest.fxml"));
         root = fxmlLoader.load();
-//        FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        SpeakingTestRequestController stc = fxmlLoader.getController();
+        stc.setData("0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -68,17 +65,14 @@ public class MockTestController {
 
     @FXML
     void goToWrittingReq(ActionEvent event) throws IOException {
-
-        //        String _id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/writingTestRequest.fxml"));
         root = fxmlLoader.load();
-//        FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        WritingTestRequestController wtc = fxmlLoader.getController();
+        wtc.setData("0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
     }
 
 

@@ -41,7 +41,7 @@ public class ListeningTestRequestController {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             if(points.getText()=="0")
-                tdc.onClick3(event);
+                tdc.onClick5(event);
             else
                 tdc.onClickOverview(event);
         }else{
@@ -52,10 +52,14 @@ public class ListeningTestRequestController {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             if(points.getText()=="0")
-                sdc.onClick3(event);
+                sdc.onClick5(event);
             else
                 sdc.onClickOverview(event);
         }
         stage.show();
+    }
+    @FXML
+    public void setData(String point){
+        points.setText(point);
     }
 }
