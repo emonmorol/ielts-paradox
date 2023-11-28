@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
+import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
 import com.example.ielts_paradox.models.BlogInfo;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
@@ -41,11 +42,10 @@ public class TeacherMyCourseCardController {
 //        id.setText(bi._id);
 //    }
     public void goToReqTable(ActionEvent event) throws IOException {
-//        String _id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/courses/teacherCourseRequest.fxml"));
         root = fxmlLoader.load();
-//        FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        TeacherCourseRequestController tcrt = fxmlLoader.getController();
+        tcrt.setData("0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
