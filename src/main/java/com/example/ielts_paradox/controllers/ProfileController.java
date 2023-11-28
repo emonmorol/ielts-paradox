@@ -49,7 +49,10 @@ public class ProfileController implements Initializable{
 
     @FXML
     public void bioEditor(ActionEvent event) {
-
+        System.out.println("I am here");
+        Alert2.displayCustomAlert("Bio");
+        setData();
+        System.out.println("Work Done");
     }
 
     @FXML
@@ -91,6 +94,7 @@ public class ProfileController implements Initializable{
         email.setText(info.email);
         name.setText(info.fullName);
         contact.setText(info.contactNumber);
+        bio.setText(info.bio);
     }
 
     @Override

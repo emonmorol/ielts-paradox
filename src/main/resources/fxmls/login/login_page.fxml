@@ -66,24 +66,34 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="51.0" layoutY="266.0" text="Register As : " textFill="#1a2579">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <RadioButton fx:id="student" layoutX="52.0" layoutY="291.0" mnemonicParsing="false" onAction="#getUserType" selected="true" text="Student" textFill="#1a2579">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="userType" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="teacher" layoutX="180.0" layoutY="291.0" mnemonicParsing="false" onAction="#getUserType" text="Teacher" textFill="#1a2579" toggleGroup="$userType">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </RadioButton>
+                  <AnchorPane layoutX="51.0" layoutY="268.0" prefHeight="44.0" prefWidth="331.0">
+                     <children>
+                        <Label text="Register As : " textFill="#1a2579">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="student" layoutX="1.0" layoutY="25.0" mnemonicParsing="false" onAction="#getUserType" selected="true" text="Student" textFill="#1a2579">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="userType" />
+                           </toggleGroup>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </RadioButton>
+                        <RadioButton fx:id="teacher" layoutX="181.0" layoutY="25.0" mnemonicParsing="false" onAction="#getUserType" text="Teacher" textFill="#1a2579" toggleGroup="$userType">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </RadioButton>
+                     </children>
+                  </AnchorPane>
                   <Button layoutX="36.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #ffffff;" text="Forgot Password?" textFill="#1a2579">
                      <cursor>
                         <Cursor fx:constant="HAND" />

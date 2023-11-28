@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.AddCourseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.AddCourseController">
     <children>
         <Text layoutX="28.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE FORM">
             <font>
@@ -34,7 +34,7 @@
         </MFXButton>
       <AnchorPane fx:id="formPane" layoutY="54.0" prefHeight="406.0" prefWidth="934.0" />
       <Label fx:id="id_" layoutX="205.0" layoutY="12.0" text="1" />
-      <MFXProgressBar layoutX="676.0" layoutY="24.0" progress="0.64" />
-      <Label fx:id="id_1" layoutX="886.0" layoutY="18.0" prefHeight="17.0" prefWidth="27.0" text="5/7" />
+      <Label fx:id="id_1" layoutX="886.0" layoutY="18.0" prefHeight="17.0" prefWidth="27.0" text="1/7" />
+      <ProgressBar fx:id="formProgress" layoutX="678.0" layoutY="24.0" prefHeight="6.0" prefWidth="200.0" progress="0.0" />
     </children>
 </AnchorPane>

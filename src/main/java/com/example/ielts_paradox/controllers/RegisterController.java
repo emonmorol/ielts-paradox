@@ -1,10 +1,9 @@
 package com.example.ielts_paradox.controllers;
 
 
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.database.ForUser;
 import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.utils.AlertClass;
-import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,43 +57,47 @@ public class RegisterController {
         String confirmPass = user_confirm_password.getText();
 
         if(fullname==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Full Name!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Full Name!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Full Name!");
         }
         else if(email==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Email!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Email!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Email!");
         }
 
         else if(contact_number==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Contact Number!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Contact Number!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Contact Number!");
         }
         else if(pass==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Password!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");
         }
         else if(confirmPass==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Confirm Your Password!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Confirm Your Password");
+//            AlertClass.showAlert("ERROR!!!!!","Please Confirm Your Password!");
         }
         else if(!pass.equals(confirmPass)){
-            AlertClass.showAlert("ERROR!!!!!","Password Didn't Match!");
+            ErrorAlert.displayCustomAlert("ERROR!","Password Didn't Match!");
+//            AlertClass.showAlert("ERROR!!!!!","Password Didn't Match!");
         }
         else{
-            UserInfo u = new UserInfo(fullname,email,contact_number,pass,isTeacher);
+            UserInfo u = new UserInfo(fullname,email,contact_number,pass,isTeacher,"We can’t express our gratitude enough for this teacher who always remembers to celebrate the little victories, not just the big ones.Can you imagine life without teachers?");
             boolean isValid = new ForUser().isUserExist(email);
             if(isValid){
-                AlertClass.showAlert("ERROR!!!!!","User Already Exits! Please Login!");
+                ErrorAlert.displayCustomAlert("ERROR!","User Already Exits! Please Login!");
+//                AlertClass.showAlert("ERROR!!!!!","User Already Exits! Please Login!");
             }else if(!isValid){
                 boolean isCreated = new ForUser().createUser(u);
                 if(isCreated){
                     new SceneChanger().switchScene(e, "/fxmls/login/login_page.fxml");
-//                    if(isTeacher){
-//                        new SceneChanger().switchScene(e, "/fxmls/teacher/teacherDashboard.fxml");
-//                    }else{
-//                        new SceneChanger().switchScene(e, "/fxmls/students/studentDashboard.fxml");
-//                    }
                 }else {
-                    AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
+                    ErrorAlert.displayCustomAlert("ERROR!","Something Went Wrong\nTry Again!");
+//                    AlertClass.showAlert("ERROR!!!!!","");
                 }
             }else{
-                AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
+                ErrorAlert.displayCustomAlert("ERROR!","Something Went Wrong\nTry Again!");
+//                AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
             }
         }
 

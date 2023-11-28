@@ -17,4 +17,12 @@ public class BlogInfo {
         this.thumbnail = thumbnail;
         this.bandScore = bandScore;
     }
+    public BlogInfo( String title, String date, String publisherName, String content, String thumbnail,String bandScore) {
+        this.title = title;
+        this.date = date;
+        this.publisherName = publisherName;
+        this.content = content;
+        this.thumbnail = thumbnail;
+        this.bandScore = bandScore;
+    }
 }

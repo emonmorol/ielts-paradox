@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="278.0" style="-fx-background-color: #ff000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.Alert1Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="278.0" style="-fx-background-color: #ff000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.ErrorAlertController">
    <children>
       <AnchorPane prefHeight="454.0" prefWidth="283.0" style="-fx-border-color: #f63535; -fx-border-width: 4 0.5 0.5 0.5; -fx-background-color: white; -fx-background-radius: 0 0 10 10; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);">
          <children>
@@ -21,12 +21,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
-            <Label fx:id="title" alignment="CENTER" layoutX="51.0" layoutY="209.0" prefHeight="36.0" prefWidth="178.0" text="Opps!" textFill="RED">
+            <Label fx:id="title" alignment="CENTER" layoutX="52.0" layoutY="191.0" prefHeight="36.0" prefWidth="178.0" text="Opps!" textFill="RED">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="messageLabel" alignment="TOP_CENTER" layoutX="37.0" layoutY="275.0" prefHeight="46.0" prefWidth="207.0" text="Something went wrong.Something went wrong." textAlignment="CENTER" wrapText="true">
+            <Label fx:id="messageLabel" alignment="TOP_CENTER" layoutX="38.0" layoutY="254.0" prefHeight="86.0" prefWidth="207.0" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="15.0" />
                </font>

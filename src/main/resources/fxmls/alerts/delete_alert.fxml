@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="260.0" prefWidth="441.0" style="-fx-border-width: 6 0.5 0.5 0.5; -fx-border-color: #ff5c40;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.DeleteAlertController">
+   <children>
+      <MFXButton buttonType="RAISED" layoutX="246.0" layoutY="196.0" onAction="#delete" prefHeight="43.0" prefWidth="179.0" style="-fx-background-color: #ff5c40; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <MFXButton buttonType="RAISED" layoutX="14.0" layoutY="197.0" onAction="#cancel" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #4287f5; -fx-background-radius: 20;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <Label layoutX="151.0" layoutY="114.0" text="Are you sure? " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Circle fill="#ff5c40" layoutX="221.0" layoutY="54.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <FontAwesomeIconView fill="WHITE" layoutX="206.0" layoutY="68.0" selectionFill="#ff1616" size="35" text="" wrappingWidth="37.28571319580078" />
+      <Label layoutX="106.0" layoutY="145.0" text="Do you want to delete?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

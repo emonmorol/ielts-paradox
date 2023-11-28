@@ -14,4 +14,10 @@ public class StoryInfo {
         this.studentName = studentName;
         this.bandScore = bandScore;
     }
+    public StoryInfo(String mainStory, String studentImage, String studentName, String bandScore) {
+        this.mainStory = mainStory;
+        this.studentImage = studentImage;
+        this.studentName = studentName;
+        this.bandScore = bandScore;
+    }
 }

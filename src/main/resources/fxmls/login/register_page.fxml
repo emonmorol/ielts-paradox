@@ -66,7 +66,7 @@
                      </font>
                   </Label>
                   <PasswordField fx:id="user_confirm_password" layoutX="51.0" layoutY="369.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Password" />
-                  <Label layoutX="54.0" layoutY="332.0" text="Confirm Password" textFill="#1a2579">
+                  <Label layoutX="54.0" layoutY="345.0" text="Confirm Password" textFill="#1a2579">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -83,29 +83,33 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="51.0" layoutY="402.0" text="Register As : " textFill="#1a2579">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <RadioButton fx:id="student" layoutX="53.0" layoutY="426.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" selected="true" text="Student" textFill="#1a2579">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="userType" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="teacher" layoutX="233.0" layoutY="426.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" text="Teacher" textFill="#1a2579" toggleGroup="$userType">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </RadioButton>
-                  <Button layoutX="53.0" layoutY="542.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #ffffff;" text="Already Have An Account?" textFill="#1a2579">
+                  <AnchorPane layoutX="53.0" layoutY="419.0">
+                     <children>
+                        <Label text="Register As : " textFill="#1a2579">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="student" layoutY="27.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="112.0" selected="true" text="Student" textFill="#1a2579">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="userType" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="teacher" layoutX="181.0" layoutY="27.0" mnemonicParsing="false" onAction="#getUserType" prefHeight="21.0" prefWidth="149.0" text="Teacher" textFill="#1a2579" toggleGroup="$userType">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                  </AnchorPane>
+                  <PasswordField fx:id="userPassword" layoutX="51.0" layoutY="297.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Password" />
+                  <Button layoutX="53.0" layoutY="548.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="331.0" style="-fx-background-color: #ffffff;" text="Already Have An Account?" textFill="#1a2579">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <PasswordField fx:id="userPassword" layoutX="51.0" layoutY="297.0" prefHeight="35.0" prefWidth="331.0" promptText="Enter Your Password" />
             </children>
         </AnchorPane>
     </children>

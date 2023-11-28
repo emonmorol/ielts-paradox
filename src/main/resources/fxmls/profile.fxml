@@ -65,9 +65,9 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="bio" layoutX="41.0" layoutY="264.0" prefHeight="43.0" prefWidth="849.0" text="Lorem ipsum dolor sit amet, conus interdum, nunc felis maximus lectus, auctor ultrices tortor metus ac felis. Phasellus ullamcorper congue nunc sed maximus. Mauris dapibus purus ac diam bibendum pharetra." wrapText="true">
+            <Label fx:id="bio" layoutX="41.0" layoutY="264.0" prefHeight="43.0" prefWidth="769.0" text="Lorem ipsum dolor sit amet, conus interdum, nunc felis maximus lectus, auctor ultrices tortor metus ac felis. Phasellus ullamcorper congue nunc sed maximus. Mauris dapibus purus ac diam bibendum pharetra." wrapText="true">
                <font>
-                  <Font size="14.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
             <MFXButton fx:id="bioEditor" layoutX="844.0" layoutY="235.0" onAction="#bioEditor" prefHeight="25.0" prefWidth="34.0" style="-fx-background-color: #e9eff6;" text=" ">

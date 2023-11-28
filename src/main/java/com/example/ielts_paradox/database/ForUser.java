@@ -23,8 +23,9 @@ public class ForUser {
                             String fullname = resultSet.getString("fullname");
                             String contact_number = resultSet.getString("contact_number");
                             Boolean isTeacher = resultSet.getBoolean("isTeacher");
+                            String bio = resultSet.getString("bio");
                             UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
-                            user.setUser(new UserInfo(fullname,email,contact_number,isTeacher));
+                            user.setUser(new UserInfo(fullname,email,contact_number,isTeacher,bio));
                         }catch (SQLException e){
                             e.printStackTrace();
                         }
@@ -56,7 +57,7 @@ public class ForUser {
         return false;
     }
     public boolean createUser(UserInfo u){
-        String DB_QUERY = "INSERT INTO users VALUES (?,?,?,?,?);";
+        String DB_QUERY = "INSERT INTO users VALUES (?,?,?,?,?,?);";
         try{
             Connection connection = new DBConnections().getConnection();
             PreparedStatement prpStatement = connection.prepareStatement(DB_QUERY);
@@ -65,6 +66,7 @@ public class ForUser {
             prpStatement.setString(3,u.contactNumber);
             prpStatement.setString(4,u.password);
             prpStatement.setBoolean(5,u.isTeacher);
+            prpStatement.setString(6,u.bio);
             int rowsAffected = prpStatement.executeUpdate();
 
             if (rowsAffected > 0) {

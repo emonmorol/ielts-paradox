@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="615.0" prefWidth="934.0" style="-fx-background-radius: 10; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.myBlogController">
+<AnchorPane prefHeight="615.0" prefWidth="934.0" style="-fx-background-radius: 10; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.MyBlogController">
    <children>
       <MFXScrollPane layoutX="26.0" layoutY="91.0" prefHeight="492.0" prefWidth="883.0" style="-fx-background-color: WHITE;">
          <content>

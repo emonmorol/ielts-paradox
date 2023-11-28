@@ -1,18 +1,16 @@
 package com.example.ielts_paradox.controllers;
 
-import com.example.ielts_paradox.Alerts.Alert1;
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
-import com.example.ielts_paradox.utils.DBConnections;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,11 +18,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
 
 public class CheckoutController {
     @FXML
@@ -85,10 +80,10 @@ public class CheckoutController {
         PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
         boolean isComplete = new ForEnrollment().courseEnrollment(psi);
         if(isComplete){
-            Alert1.displayCustomAlert("Successfull","Wait for Approval!");
+            ErrorAlert.displayCustomAlert("Successfull","Wait for Approval!");
         }
         else{
-            Alert1.displayCustomAlert("Error","Fill up the form with appropriete info!");
+            ErrorAlert.displayCustomAlert("Error","Fill up the form with appropriete info!");
         }
     }
 

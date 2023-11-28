@@ -79,6 +79,10 @@ public class ForCourse {
                                 Faq ob = gson.fromJson(element, Faq.class);
                                 faqs.add(ob);
                             }
+                            System.out.println(freateresJSON);
+                            System.out.println(curriculumJSON);
+                            System.out.println(faqsJSON);
+                            System.out.println(sidebarPointJSON);
                             ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName);
                             return ci;
                         }catch (SQLException e){
@@ -92,5 +96,40 @@ public class ForCourse {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<CourseInfo> teacherCourses(String instructorMail,int limit){
+        ArrayList<CourseInfo> cf = new ArrayList<>();
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT * FROM courses WHERE instructorMail = ? LIMIT ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1,instructorMail);
+                statement.setInt(2,limit);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String title = resultSet.getString("title");
+                            String thumbnail = resultSet.getString("thumbmail");
+                            int price = Integer.parseInt(resultSet.getString("price"));
+                            boolean isReleased = Boolean.parseBoolean(resultSet.getString("isReleased"));
+                            int discount = Integer.parseInt(resultSet.getString("discount"));;
+                            String details = resultSet.getString("details");
+                            String instructorName = resultSet.getString("instructorName");
+                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName);
+                            cf.add(ci);
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return cf;
     }
 }

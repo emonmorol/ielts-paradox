@@ -1,20 +1,16 @@
 package com.example.ielts_paradox.controllers;
 
-import com.example.ielts_paradox.Alerts.Alert1;
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.database.ForUser;
 import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.utils.AlertClass;
-import com.example.ielts_paradox.utils.DBConnections;
 import com.example.ielts_paradox.utils.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.security.PublicKey;
 
 public class LoginController {
     @FXML
@@ -43,24 +39,26 @@ public class LoginController {
         String pass = userPassword.getText();
 
         if(email==""){
-            Alert1.displayCustomAlert("ERROR!!!!!","Please Enter Your Email Address!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Email Address!");
 //            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Email Address!");
         }
         else if(pass==""){
-            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");
+            ErrorAlert.displayCustomAlert("ERROR!","Please Enter Your Password!");
+//            AlertClass.showAlert("ERROR!!!!!","Please Enter Your Password!");
         }else{
             boolean isValid = new ForUser().validate(email,pass,isTeacher);
             if(isValid){
-
                 if(isTeacher){
                     new SceneChanger().switchScene(e, "/fxmls/teacher/teacherDashboard.fxml");
                 }else{
                     new SceneChanger().switchScene(e, "/fxmls/students/studentDashboard.fxml");
                 }
             }else if(!isValid){
-                AlertClass.showAlert("ERROR!!!!!","Incorrect Credentials!");
+                ErrorAlert.displayCustomAlert("ERROR!","Incorrect Credentials!\nPlease Enter Correct Information.");
+//                AlertClass.showAlert("ERROR!!!!!","Incorrect Credentials!");
             }else{
-                AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
+                ErrorAlert.displayCustomAlert("ERROR!","Something Went Wrong\nTry Again!");
+//                AlertClass.showAlert("ERROR!!!!!","Something Went Wrong\nTry Again!");
             }
         }
 

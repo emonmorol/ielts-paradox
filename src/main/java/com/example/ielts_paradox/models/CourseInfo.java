@@ -15,7 +15,7 @@ public class CourseInfo {
     public String details;
     public String[] sidebarPoint;
     public String instructorName;
-
+    public CourseInfo(){};
     public CourseInfo(String _id, String title, String thumbnail, int price, boolean isReleased, int discount, String details, String instructorName) {
         this._id = _id;
         this.title = title;

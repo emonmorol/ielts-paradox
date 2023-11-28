@@ -1,7 +1,6 @@
 package com.example.ielts_paradox.Alerts;
 
-
-import com.example.ielts_paradox.controllers.alertController.Alert1Controller;
+import com.example.ielts_paradox.controllers.alertController.DeleteAlertController;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXMLLoader;
@@ -12,17 +11,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-public class Alert1 {
+public class DeleteAlert {
     private static Stage ownerStage;
 
 
-    public static void displayCustomAlert( String title, String message) {
+    public static void displayCustomAlert(String type,String id) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(Alert1.class.getResource("/fxmls/alerts/alert1.fxml"));
+            FXMLLoader loader = new FXMLLoader(DeleteAlert.class.getResource("/fxmls/alerts/delete_alert.fxml"));
             Parent root = loader.load();
 
-            Alert1Controller controller = loader.getController();
+            DeleteAlertController controller = loader.getController();
 
             Stage customAlertStage = new Stage(StageStyle.UNDECORATED);
 
@@ -32,10 +31,8 @@ public class Alert1 {
             customAlertStage.setScene(new Scene(root));
             controller.setDialogStage(customAlertStage);
             addOpenAnimation(customAlertStage);
+            controller.setData(type,id);
 
-           controller.setMessage(message);
-            controller.setTitle(title);
-            customAlertStage.setTitle(title);
             customAlertStage.showAndWait();
 
 

@@ -8,46 +8,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.AddStoryController">
     <children>
         <Label layoutX="37.0" layoutY="20.0" prefHeight="28.0" prefWidth="120.0" text="ADD A STORY">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font>
         </Label>
-        <AnchorPane layoutX="-2.0" layoutY="65.0" prefHeight="418.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+        <AnchorPane layoutX="-2.0" layoutY="65.0" prefHeight="350.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;">
             <children>
-                <Label layoutX="37.0" layoutY="30.0" text="STORY TITLE" textFill="#544f4f">
+                <Label layoutX="39.0" layoutY="35.0" text="STUDENT NAME" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label layoutX="39.0" layoutY="124.0" text="STUDENT NAME" textFill="#544f4f">
+                <MFXTextField fx:id="studentName" floatMode="ABOVE" layoutX="39.0" layoutY="59.0" prefHeight="49.0" prefWidth="400.0" promptText="Student Name" />
+                <Label layoutX="470.0" layoutY="35.0" text="BAND SCORE" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <MFXTextField floatMode="ABOVE" layoutX="39.0" layoutY="148.0" prefHeight="49.0" prefWidth="400.0" promptText="Student Name" />
-                <MFXTextField floatMode="BORDER" layoutX="38.0" layoutY="61.0" prefHeight="49.0" prefWidth="858.0" promptText="Enter Story Title" stylesheets="@../../../../styles/common_style.css" />
-                <Label layoutX="470.0" layoutY="124.0" text="BAND SCORE" textFill="#544f4f">
+                <MFXTextField fx:id="bandScore" floatMode="BORDER" layoutX="470.0" layoutY="59.0" prefHeight="49.0" prefWidth="427.0" promptText="Band Score" />
+                <Label layoutX="37.0" layoutY="120.0" text="FULL STORY" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <MFXTextField floatMode="BORDER" layoutX="470.0" layoutY="148.0" prefHeight="49.0" prefWidth="427.0" promptText="Band Score" />
-                <Label layoutX="37.0" layoutY="209.0" text="FULL STORY" textFill="#544f4f">
-                    <font>
-                        <Font name="System Bold" size="13.0" />
-                    </font>
-                </Label>
-                <TextArea layoutX="39.0" layoutY="232.0" prefHeight="154.0" prefWidth="858.0" promptText="Type Your Story Here">
+                <TextArea fx:id="story" layoutX="39.0" layoutY="143.0" prefHeight="154.0" prefWidth="858.0" promptText="Type Your Story Here">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </TextArea>
             </children>
         </AnchorPane>
-        <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="537.0" prefHeight="49.0" prefWidth="934.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #1a2579; -fx-border-color: gray;" text="ADD STORY" textFill="WHITE">
+        <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="451.0" onAction="#addStoryHandler" prefHeight="49.0" prefWidth="934.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #1a2579; -fx-border-color: gray;" text="ADD STORY" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

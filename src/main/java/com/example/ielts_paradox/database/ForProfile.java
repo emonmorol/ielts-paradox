@@ -42,17 +42,18 @@ public class ForProfile {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
-    public boolean updateName(String oldname, String newname){
-        String updateSql = "UPDATE users SET fullname = ? WHERE fullname = ?";
+    public boolean updateName(String mail, String newname){
+        String updateSql = "UPDATE users SET fullname = ? WHERE email = ?";
 
         try {
             Connection connection = new DBConnections().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setString(1, newname);
-            preparedStatement.setString(2, oldname);
+            preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
 
             return (rowsAffected >0);
@@ -60,14 +61,14 @@ public class ForProfile {
             return false;
         }
     }
-    public boolean updateContact(String oldContact, String newContact){
-        String updateSql = "UPDATE users SET contact_number = ? WHERE contact_number = ?";
+    public boolean updateContact(String mail, String newContact){
+        String updateSql = "UPDATE users SET contact_number = ? WHERE email = ?";
 
         try {
             Connection connection = new DBConnections().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setString(1, newContact);
-            preparedStatement.setString(2, oldContact);
+            preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
 
             return (rowsAffected > 0);
@@ -75,14 +76,29 @@ public class ForProfile {
             return false;
         }
     }
-    public boolean updatePassword(String oldPassword, String newPassword){
+    public boolean updatePassword(String mail, String newPassword){
         String updateSql = "UPDATE users SET password = ? WHERE email = ?";
 
         try {
             Connection connection = new DBConnections().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setString(1, newPassword);
-            preparedStatement.setString(2, oldPassword);
+            preparedStatement.setString(2, mail);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return (rowsAffected > 0);
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+    public boolean updateBio(String mail, String newBio){
+        String updateSql = "UPDATE users SET bio = ? WHERE email = ?";
+
+        try {
+            Connection connection = new DBConnections().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setString(1, newBio);
+            preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
 
             return (rowsAffected > 0);
