@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MockTestController.WritingTestRequestController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <AnchorPane layoutX="-4.0" layoutY="-1.0" prefHeight="105.0" prefWidth="1504.0" style="-fx-background-color: #ced8eb;">
+         <children>
+            <MFXButton buttonType="RAISED" layoutX="38.0" layoutY="29.0" onAction="#goToBackPage" prefHeight="38.0" prefWidth="39.0" style="-fx-background-radius: 20;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView size="20" text="" wrappingWidth="10.14285659790039" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="302.0" layoutY="35.0" prefHeight="37.0" prefWidth="604.0" text="WRITING TEST REQUEST">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="points" layoutX="120.0" layoutY="271.0" text="Label" visible="false" />
+      <AnchorPane layoutX="300.0" layoutY="144.0" prefHeight="615.0" prefWidth="920.0" style="-fx-background-radius: 10; -fx-background-color: #e9eff6;">
+         <children>
+            <MFXScrollPane prefHeight="615.0" prefWidth="920.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="myCourseTable" prefHeight="3302.0" prefWidth="808.0" spacing="5.0" style="-fx-background-color: #e9eff6;">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="883.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
+                           <children>
+                              <AnchorPane prefHeight="58.0" prefWidth="677.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: white;">
+                                 <children>
+                                    <Group layoutX="23.0" layoutY="21.0" />
+                                    <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="19.0" prefHeight="23.0" prefWidth="147.0" text="abu786@gmail.com" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="183.0" layoutY="19.0" prefHeight="21.0" prefWidth="119.0" text="01533525475">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="351.0" layoutY="20.0" prefHeight="21.0" prefWidth="126.0" text="IHVFWE1237E3217">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="517.0" layoutY="22.0" prefHeight="18.0" prefWidth="110.0" text="12-11-2023">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets right="15.0" />
+                                 </padding>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="58.0" prefWidth="249.0" style="-fx-background-color: WHITE; -fx-background-radius: 0 10 10 0;">
+                                 <children>
+                                    <Button layoutX="127.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #fecaca; -fx-background-radius: 15; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="DECLINE" textFill="#dc2b49">
+                                       <font>
+                                          <Font name="System Bold" size="11.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="9.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 15; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="APPROVED" textFill="#2979ef">
+                                       <font>
+                                          <Font name="System Bold" size="11.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Line endX="-99.99996185302734" endY="26.19998550415039" layoutX="215.0" layoutY="19.0" startX="-99.99996185302734" startY="-6.600001335144043" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </MFXScrollPane>
+         </children>
+      </AnchorPane>
+      <Label contentDisplay="CENTER" layoutX="319.0" layoutY="107.0" prefHeight="27.0" prefWidth="66.0" text="Email" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="475.0" layoutY="110.0" prefHeight="25.0" prefWidth="137.0" text="BKASH NUMBER" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="639.0" layoutY="110.0" prefHeight="25.0" prefWidth="150.0" text="TRANSACTION ID" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="812.0" layoutY="110.0" prefHeight="25.0" prefWidth="126.0" text="PAYMENT DATE" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="967.0" layoutY="110.0" prefHeight="25.0" prefWidth="85.0" text="APPROVED" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1085.0" layoutY="110.0" prefHeight="25.0" prefWidth="77.0" text="DECLINE" textFill="#a19999">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

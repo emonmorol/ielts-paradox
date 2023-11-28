@@ -19,14 +19,17 @@ public class DeleteAlertController {
     public void setDialogStage(Stage stage) {
         dialogStage = stage;
     }
+
     @FXML
     public void cancel(ActionEvent event) {
         dialogStage.close();
     }
+
     public void setData(String t,String i){
         this.type = t;
         _id = i;
     }
+
     @FXML
     public void delete(ActionEvent event) {
         boolean isDone = false;
@@ -36,6 +39,7 @@ public class DeleteAlertController {
         }else if(type=="Blog"){
             isDone = new ForBlogs().deleteBlog(_id);
         }
+
 
         if(isDone){
             SuccessAlert.displayCustomAlert();
