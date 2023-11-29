@@ -112,6 +112,31 @@ public class ForBlogs {
         return blogs;
     }
 
+    public int teacherBlogsCount(String publisherMail){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT COUNT(*) AS row_count FROM blogs WHERE publisherMail = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, publisherMail);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try {
+                            int rows = resultSet.getInt("row_count");
+                            return rows;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public boolean uploadBlog(BlogInfo si){
         if(si.title == "" || si.title == null || si.content == ""|| si.content== null || si.bandScore == "" || si.bandScore == null) return false;
         UserSingleTon user = UserSingleTon.getInstance(new UserInfo());

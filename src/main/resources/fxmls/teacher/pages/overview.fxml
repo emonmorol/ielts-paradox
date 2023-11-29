@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.OverviewController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.OverviewController">
    <children>
       <VBox prefHeight="730.0" prefWidth="934.0" spacing="10.0">
          <children>
@@ -36,7 +36,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="70.0" layoutY="41.0" prefHeight="86.0" prefWidth="71.0" text="9">
+                        <Label fx:id="totalCourse" alignment="CENTER" layoutX="70.0" layoutY="41.0" prefHeight="86.0" prefWidth="71.0" text="9">
                            <font>
                               <Font name="System Bold" size="60.0" />
                            </font>
@@ -50,7 +50,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="75.0" layoutY="39.0" prefHeight="86.0" prefWidth="71.0" text="6">
+                        <Label fx:id="totalBlogs" alignment="CENTER" layoutX="75.0" layoutY="39.0" prefHeight="86.0" prefWidth="71.0" text="6">
                            <font>
                               <Font name="System Bold" size="60.0" />
                            </font>
@@ -64,7 +64,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="75.0" layoutY="39.0" prefHeight="86.0" prefWidth="71.0" text="6">
+                        <Label fx:id="takenMockTest" alignment="CENTER" layoutX="75.0" layoutY="39.0" prefHeight="86.0" prefWidth="71.0" text="6">
                            <font>
                               <Font name="System Bold" size="60.0" />
                            </font>
@@ -78,7 +78,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="51.0" layoutY="37.0" prefHeight="88.0" prefWidth="121.0" text="120">
+                        <Label fx:id="totalStudents" alignment="CENTER" layoutX="51.0" layoutY="37.0" prefHeight="88.0" prefWidth="121.0" text="120">
                            <font>
                               <Font name="System Bold" size="60.0" />
                            </font>
@@ -129,7 +129,7 @@
                   </VBox>
                   <VBox prefHeight="498.0" prefWidth="450.0" spacing="10.0">
                      <children>
-                        <AnchorPane prefHeight="151.0" prefWidth="410.0">
+                        <AnchorPane prefHeight="280.0" prefWidth="419.0">
                            <children>
                               <Group layoutX="2.0">
                                  <children>
@@ -140,10 +140,10 @@
                                     </Label>
                                  </children>
                               </Group>
-                              <VBox fx:id="studentRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
+                              <VBox fx:id="studentRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="247.0" prefWidth="419.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="151.0" prefWidth="410.0">
+                        <AnchorPane prefHeight="187.0" prefWidth="419.0">
                            <children>
                               <Group layoutX="2.0">
                                  <children>
@@ -154,21 +154,7 @@
                                     </Label>
                                  </children>
                               </Group>
-                              <VBox fx:id="testRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="151.0" prefWidth="410.0">
-                           <children>
-                              <Group layoutX="2.0">
-                                 <children>
-                                    <Label layoutY="7.0" text="Upcoming Exam">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Group>
-                              <VBox fx:id="upcomingExamRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="119.0" prefWidth="419.0" spacing="5.0" />
+                              <VBox fx:id="testRequestContainer" layoutX="-1.0" layoutY="32.0" prefHeight="155.0" prefWidth="419.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
                      </children>

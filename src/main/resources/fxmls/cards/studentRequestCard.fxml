@@ -7,33 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="36.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.StudentRequestCardController">
+<AnchorPane prefHeight="45.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.StudentRequestCardController">
    <children>
-      <Label layoutX="160.0" layoutY="10.0" prefHeight="15.0" prefWidth="167.0" text="EKRAMUL HASAN MOROL">
+      <Label fx:id="studentMail" layoutX="214.0" layoutY="16.0" prefHeight="15.0" prefWidth="149.0" text="EKRAMUL HASAN MOROL" textFill="#3658a3">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="9.0" prefHeight="16.0" prefWidth="118.0" text="Spoken English">
+      <Label fx:id="courseTitle" layoutX="52.0" layoutY="14.0" prefHeight="16.0" prefWidth="154.0" text="Spoken English" textFill="#3658a3">
          <font>
-            <Font name="System Bold" size="11.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <MFXButton contentDisplay="CENTER" layoutX="381.0" layoutY="6.0" onAction="#goToCourseReqPage" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #d7f5df;" text=" ">
+      <MFXButton contentDisplay="CENTER" layoutX="380.0" layoutY="8.0" onAction="#goToCourseReqPage" prefHeight="30.0" prefWidth="29.0" style="-fx-background-color: #e1eefa;" text=" ">
          <graphic>
-            <FontAwesomeIconView fill="#51c46f" size="17" text="" wrappingWidth="4.892857074737549" />
+            <FontAwesomeIconView fill="#3658a3" size="20" text="" wrappingWidth="4.892857074737549" />
          </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </MFXButton>
-      <MFXButton contentDisplay="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #e1eefa; -fx-background-radius: 5;" text=" ">
+      <MFXButton contentDisplay="CENTER" layoutX="6.0" layoutY="7.0" prefHeight="32.0" prefWidth="35.0" style="-fx-background-color: #e1eefa; -fx-background-radius: 5;" text=" ">
          <graphic>
-            <FontAwesomeIconView fill="#3658a3" size="14" text="" />
+            <FontAwesomeIconView fill="#3658a3" size="14" text="" wrappingWidth="14.5" />
          </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </MFXButton>
+      <Label fx:id="courseId" layoutX="299.0" layoutY="10.0" text=" " visible="false">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import com.example.ielts_paradox.controllers.MockTestController.ListeningTestReq
 import com.example.ielts_paradox.controllers.MockTestController.ReadingTestRequestController;
 import com.example.ielts_paradox.controllers.MockTestController.SpeakingTestRequestController;
 import com.example.ielts_paradox.controllers.MockTestController.WritingTestRequestController;
+import com.example.ielts_paradox.models.TestInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,14 @@ import java.util.Objects;
 public class TeacherTestRequestCardController {
 
     @FXML
+    private Label enrollmentDate;
+
+    @FXML
+    private Label logo;
+
+    @FXML
     private Label testName;
+
 
     @FXML
     private Stage stage;
@@ -35,7 +43,7 @@ public class TeacherTestRequestCardController {
     @FXML
     void goToTestRequestPage(ActionEvent event) throws IOException {
         System.out.println(testName.getText());
-        if(Objects.equals(testName.getText(), "SPEAKING")){
+        if(Objects.equals(testName.getText(), "Speaking")){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/speakingTestRequest.fxml"));
             root = fxmlLoader.load();
             SpeakingTestRequestController stc = fxmlLoader.getController();
@@ -46,7 +54,7 @@ public class TeacherTestRequestCardController {
             stage.show();
         }
 
-        else if (Objects.equals(testName.getText(), "READING")) {
+        else if (Objects.equals(testName.getText(), "Reading")) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/readingTestRequest.fxml"));
             root = fxmlLoader.load();
             ReadingTestRequestController rtc = fxmlLoader.getController();
@@ -56,7 +64,7 @@ public class TeacherTestRequestCardController {
             stage.setScene(scene);
             stage.show();
         }
-        else if (Objects.equals(testName.getText(), "WRITTING")){
+        else if (Objects.equals(testName.getText(), "Writing")){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/writingTestRequest.fxml"));
             root = fxmlLoader.load();
             WritingTestRequestController wtc = fxmlLoader.getController();
@@ -68,7 +76,7 @@ public class TeacherTestRequestCardController {
 
         }
 
-        else if (Objects.equals(testName.getText(), "LISTENING")) {
+        else if (Objects.equals(testName.getText(), "Listening")) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/listeningTestRequest.fxml"));
             root = fxmlLoader.load();
             ListeningTestRequestController ltc = fxmlLoader.getController();
@@ -82,9 +90,14 @@ public class TeacherTestRequestCardController {
 
     }
 
-
-
+    public void setData(TestInfo ti){
+        enrollmentDate.setText(ti.enrollmentDate);
+        testName.setText(ti.examModule);
+        logo.setText(ti.examModule.charAt(0)+"");
     }
+
+
+}
 
 
 

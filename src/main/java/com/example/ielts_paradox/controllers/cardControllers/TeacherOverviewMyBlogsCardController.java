@@ -40,11 +40,10 @@ public class TeacherOverviewMyBlogsCardController {
         id_.setText(bi._id);
     }
     public void detailsHandler(ActionEvent event) throws IOException {
-//        String _id = id_.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/blogs/full_blogs.fxml"));
         root = fxmlLoader.load();
         FullBlogController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id) , "1");
+        fbc.setData(new ForBlogs().getBlogById(id_.getText()) , "1");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

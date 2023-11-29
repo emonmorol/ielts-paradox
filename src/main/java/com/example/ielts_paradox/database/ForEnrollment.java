@@ -2,6 +2,7 @@ package com.example.ielts_paradox.database;
 
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.StudentRequest;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.DBConnections;
@@ -213,5 +214,60 @@ public class ForEnrollment {
             e.printStackTrace();
         }
         return false;
+    }
+    public ArrayList<StudentRequest> studentRequestUsingTeacherMail(String email, int limit){
+        ArrayList<StudentRequest> srs = new ArrayList<>();
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT ps.*, c.* FROM paid_student ps INNER JOIN courses c ON ps.courseId = c._id WHERE c.instructorMail = ? AND  ps.courseApproval = ? LIMIT ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setBoolean(2, false);
+                preparedStatement.setInt(3, limit);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        try {
+                            String _id = resultSet.getString("courseId");
+                            String title = resultSet.getString("title");
+                            String sEmail = resultSet.getString("email");
+                            StudentRequest sr = new StudentRequest(_id,title,sEmail);
+                            srs.add(sr);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return srs;
+    }
+    public int totalApprovedStudentCount(String email){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT COUNT(*) AS row_count FROM paid_student ps INNER JOIN courses c ON ps.courseId = c._id WHERE c.instructorMail = ? AND courseApproval = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setBoolean(2, true);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try {
+                            int rows = resultSet.getInt("row_count");
+                            return rows;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
