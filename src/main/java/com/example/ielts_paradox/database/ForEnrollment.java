@@ -35,7 +35,7 @@ public class ForEnrollment {
             Connection connection = new DBConnections().getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 preparedStatement.setString(1, psi.bkashNumber);
-                preparedStatement.setString(2, psi.enrollementDate);
+                preparedStatement.setString(2, psi.transectionId);
                 preparedStatement.setString(3, psi.email);
                 preparedStatement.setInt(4, psi.courseId);
                 preparedStatement.setString(5, psi.enrollementDate);
@@ -145,5 +145,73 @@ public class ForEnrollment {
             e.printStackTrace();
         }
         return 0;
+    }
+    public ArrayList<PaidStudentInfo> getRequests(String courseId,int limit){
+        ArrayList<PaidStudentInfo> psi = new ArrayList<>();
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT * FROM paid_student WHERE courseId = ? AND courseApproval = ? LIMIT ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1,courseId);
+                statement.setBoolean(2,false);
+                statement.setInt(3,limit);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        try{
+                            String _id = resultSet.getString("_id");
+                            String bkashNumber = resultSet.getString("bkashNumber");
+                            String transectionId = resultSet.getString("transectionId");
+                            System.out.println(transectionId);
+                            String email = resultSet.getString("email");
+                            String enrollementDate = resultSet.getString("enrollementDate");
+                            PaidStudentInfo ps = new PaidStudentInfo(Integer.parseInt(_id),bkashNumber,transectionId,email,Integer.parseInt(courseId),enrollementDate,false,false);
+                            psi.add(ps);
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return psi;
+    }
+
+    public boolean updateApproval(String id){
+        String updateSql = "UPDATE paid_student SET courseApproval = ? WHERE _id = ?";
+
+        try {
+            Connection connection = new DBConnections().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setBoolean(1, true);
+            preparedStatement.setString(2, id);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return (rowsAffected > 0);
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+    public boolean declineRequest(String id){
+        try {
+            Connection connection = new DBConnections().getConnection();
+            String query = "DELETE FROM paid_student WHERE _id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, Integer.parseInt(id));
+
+            int rowsDeleted = preparedStatement.executeUpdate();
+            if (rowsDeleted > 0) {
+                return true;
+            }
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

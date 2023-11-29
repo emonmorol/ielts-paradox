@@ -1,8 +1,14 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
+import com.example.ielts_paradox.Alerts.DeleteAlert;
+import com.example.ielts_paradox.Alerts.ErrorAlert;
+import com.example.ielts_paradox.Alerts.SuccessAlert;
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
+import com.example.ielts_paradox.database.ForCourse;
+import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.BlogInfo;
+import com.example.ielts_paradox.models.CourseInfo;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,42 +22,40 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class TeacherMyCourseCardController {
-
-
-
     @FXML
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
-    private MFXButton detailsBlogHandler;
-
-    @FXML
-    private Label publisher;
-
-    @FXML
     private Label title;
 
     @FXML
-    private Label id;
+    private Label id_;
 
-//    public void setData(BlogInfo bi){
-//        publisher.setText(bi.publisherName);
-//        title.setText(bi.title);
-//        id.setText(bi._id);
-//    }
+
     public void goToReqTable(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/courses/teacherCourseRequest.fxml"));
         root = fxmlLoader.load();
         TeacherCourseRequestController tcrt = fxmlLoader.getController();
-        tcrt.setData("0");
+        CourseInfo ci = new ForCourse().getCourseById(id_.getText());
+        tcrt.setData(ci,"0");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    public void approvedHandler(ActionEvent event) {
 
+    }
 
-
+    @FXML
+    public void removeHandler(ActionEvent event) {
+        DeleteAlert.displayCustomAlert("Course",id_.getText());
+    }
+    public void setData(CourseInfo bi){
+        title.setText(bi.title);
+        id_.setText(bi._id);
+    }
 }

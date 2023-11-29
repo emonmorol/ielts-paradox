@@ -2,9 +2,7 @@ package com.example.ielts_paradox.controllers.alertController;
 
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
-import com.example.ielts_paradox.database.ForBlogs;
-import com.example.ielts_paradox.database.ForProfile;
-import com.example.ielts_paradox.database.ForStories;
+import com.example.ielts_paradox.database.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -38,6 +36,10 @@ public class DeleteAlertController {
             isDone = new ForStories().deleteStory(_id);
         }else if(type=="Blog"){
             isDone = new ForBlogs().deleteBlog(_id);
+        }else if(type=="Course"){
+            isDone = new ForCourse().deleteCourse(_id);
+        }else if(type=="Paid Student"){
+            isDone = new ForEnrollment().declineRequest(_id);
         }
 
 

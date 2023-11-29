@@ -2,7 +2,9 @@ package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
+import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.models.BlogInfo;
+import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
@@ -19,10 +21,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class TeacherOverviewMyCourseCardController {
-
-
-
-
     @FXML
     private Label instructor;
 
@@ -35,27 +33,20 @@ public class TeacherOverviewMyCourseCardController {
     private Parent root;
 
     @FXML
-    private MFXButton detailsBlogHandler;
-
-    @FXML
-    private Label publisher;
+    private Label id_;
 
 
-
-//    @FXML
-//    private Label id_;
-//
-//
-//    public void setData(BlogInfo bi){
-//        publisher.setText(bi.publisherName);
-//        title.setText(bi.title);
-//        id_.setText(bi._id);
-//    }
+    public void setData(CourseInfo bi){
+        instructor.setText(bi.instructorName);
+        title.setText(bi.title);
+        id_.setText(bi._id);
+    }
     public void detailsHandler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/courses/teacherCourseRequest.fxml"));
         root = fxmlLoader.load();
         TeacherCourseRequestController tcrt = fxmlLoader.getController();
-        tcrt.setData("1");
+        CourseInfo ci = new ForCourse().getCourseById(id_.getText());
+        tcrt.setData(ci,"1");
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

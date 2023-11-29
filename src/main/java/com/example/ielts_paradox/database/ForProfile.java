@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ForProfile {
+
     public boolean updateEmail(String oldMail, String newMail){
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
 
@@ -106,4 +107,5 @@ public class ForProfile {
             return false;
         }
     }
+
 }

@@ -24,7 +24,7 @@ public class MyBlogsCardController {
 
     @FXML
     void deleteHandler(ActionEvent event) {
-        System.out.println(id_.getText());
+
         DeleteAlert.displayCustomAlert("Blog",id_.getText());
     }
 }

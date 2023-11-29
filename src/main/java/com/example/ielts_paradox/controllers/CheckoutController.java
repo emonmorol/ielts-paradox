@@ -76,8 +76,9 @@ public class CheckoutController {
     @FXML
     public void enrollmentHandler(ActionEvent event){
         LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println(transectionId.getText());
         PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
         boolean isComplete = new ForEnrollment().courseEnrollment(psi);
         if(isComplete){

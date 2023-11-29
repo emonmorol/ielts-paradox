@@ -13,6 +13,7 @@ public class PaidStudentInfo {
     public PaidStudentInfo(int _id, String bkashNumber,String transectionId, String email, int courseId, String enrollementDate, boolean courseApproval, boolean isExpired) {
         this._id = _id;
         this.bkashNumber = bkashNumber;
+        this.transectionId = transectionId;
         this.email = email;
         this.courseId = courseId;
         this.enrollementDate = enrollementDate;
@@ -22,6 +23,7 @@ public class PaidStudentInfo {
     public PaidStudentInfo(String bkashNumber,String transectionId, String email, int courseId, String enrollementDate, boolean courseApproval, boolean isExpired) {
         this.bkashNumber = bkashNumber;
         this.email = email;
+        this.transectionId = transectionId;
         this.courseId = courseId;
         this.enrollementDate = enrollementDate;
         this.courseApproval = courseApproval;

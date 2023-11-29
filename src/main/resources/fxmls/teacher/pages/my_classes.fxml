@@ -13,8 +13,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MyClassesController">
    <children>
       <AnchorPane layoutY="1.0" />
-      <AnchorPane fx:id="mainPane" layoutY="139.0" prefHeight="591.0" prefWidth="934.0" />
-      <AnchorPane prefHeight="136.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;">
+      <AnchorPane fx:id="mainPane" layoutY="122.0" prefHeight="609.0" prefWidth="934.0" />
+      <AnchorPane prefHeight="122.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;">
          <children>
             <ImageView fitHeight="70.0" fitWidth="934.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);">
                <image>

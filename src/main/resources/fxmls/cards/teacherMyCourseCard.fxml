@@ -12,14 +12,15 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.TeacherMyCourseCardController">
    <children>
-      <AnchorPane prefHeight="73.0" prefWidth="674.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
+      <AnchorPane prefHeight="73.0" prefWidth="456.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
          <children>
             <Group layoutX="23.0" layoutY="21.0" />
-            <Label alignment="TOP_LEFT" layoutX="34.0" layoutY="18.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
+            <Label fx:id="title" alignment="TOP_LEFT" layoutX="34.0" layoutY="18.0" prefHeight="38.0" prefWidth="402.0" text="Live online Ielts Course" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="id_" layoutX="401.0" layoutY="13.0" text=" " visible="false" />
          </children>
          <opaqueInsets>
             <Insets />
@@ -28,9 +29,9 @@
             <Insets right="15.0" />
          </padding>
       </AnchorPane>
-      <AnchorPane prefHeight="73.0" prefWidth="395.0" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
+      <AnchorPane prefHeight="73.0" prefWidth="448.0" style="-fx-background-color: WHITE]; -fx-background-radius: 0 10 10 0;">
          <children>
-            <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#goToReqTable" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
+            <Button layoutX="164.0" layoutY="17.0" mnemonicParsing="false" onAction="#goToReqTable" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="SEE REQUESTS" textFill="#16a367">
                <font>
                   <Font name="System Bold" size="8.0" />
                </font>
@@ -38,7 +39,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="170.0" layoutY="17.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
+            <Button layoutX="312.0" layoutY="17.0" mnemonicParsing="false" onAction="#removeHandler" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #fecaca; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="REMOVE" textFill="#dc2b49">
                <font>
                   <Font name="System Bold" size="8.0" />
                </font>
@@ -46,7 +47,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="250.0" layoutY="19.0" startX="-100.0" />
+            <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="400.0" layoutY="19.0" startX="-100.0" />
+            <Line endX="-100.00001525878906" endY="35.400001525878906" layoutX="251.0" layoutY="19.0" startX="-100.0" />
+            <Button layoutX="21.0" layoutY="18.0" mnemonicParsing="false" onAction="#approvedHandler" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="APPROVED STUDENTS" textFill="#2979ef">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </children>

@@ -2,6 +2,7 @@ package com.example.ielts_paradox.database;
 
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.Faq;
+import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -131,4 +132,26 @@ public class ForCourse {
         }
         return cf;
     }
+
+    public boolean deleteCourse(String id){
+        try {
+            Connection connection = new DBConnections().getConnection();
+            String query = "DELETE FROM courses WHERE _id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, Integer.parseInt(id));
+
+            int rowsDeleted = preparedStatement.executeUpdate();
+            if (rowsDeleted > 0) {
+                return true;
+            }
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 }
