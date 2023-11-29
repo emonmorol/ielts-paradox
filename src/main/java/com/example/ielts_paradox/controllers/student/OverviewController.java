@@ -43,6 +43,8 @@ public class OverviewController implements Initializable {
     private VBox upcomingExam;
     @FXML
     private Label greetings;
+    @FXML
+    private Label courseCount;
 
     @FXML
     public void onClickSeeCourse(ActionEvent event) {
@@ -87,7 +89,13 @@ public class OverviewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
         UserInfo u = user.getUser();
+
         greetings.setText("Hello "+u.fullName +", Welcome Back.");
+
+        int cnt = new ForEnrollment().totalCourseNumber(u.email);
+        courseCount.setText(""+cnt);
+
+
         ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,2);
         for (CourseInfo c: it){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -118,7 +126,7 @@ public class OverviewController implements Initializable {
             }
         }
 
-        ArrayList<BlogInfo> it3 = new ForBlogs().getAllBlog(0,2);
+        ArrayList<BlogInfo> it3 = new ForBlogs().getAllBlog(0,3);
         for (BlogInfo c: it3){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/popularBlogCard.fxml"));
@@ -132,7 +140,7 @@ public class OverviewController implements Initializable {
                 throw new RuntimeException(e);
             }
         }
-        ArrayList<StoryInfo> it4 = new ForStories().getAllStories(0,2);
+        ArrayList<StoryInfo> it4 = new ForStories().getAllStories(0,3);
         for (StoryInfo c: it4){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/popularStoryCard.fxml"));
@@ -141,17 +149,6 @@ public class OverviewController implements Initializable {
                 popularStory.getChildren().add(paneee);
                 PopularStoryCardController pscc = fxmlLoader.getController();
                 pscc.setData(c);
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        for (int i = 0; i<3;i++){
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/upcomingExamCard.fxml"));
-            try {
-                AnchorPane paneee = fxmlLoader.load();
-                upcomingExam.getChildren().add(paneee);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);

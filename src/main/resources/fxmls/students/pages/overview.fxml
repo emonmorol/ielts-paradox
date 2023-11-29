@@ -30,46 +30,32 @@
             </AnchorPane>
             <HBox prefHeight="143.0" prefWidth="951.0" spacing="15.0">
                <children>
-                  <AnchorPane prefHeight="143.0" prefWidth="617.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;">
+                  <AnchorPane prefHeight="131.0" prefWidth="755.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;">
                      <children>
-                        <Label layoutX="21.0" layoutY="7.0" prefHeight="34.0" prefWidth="570.0" text="One course can fullfill your dream" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="25.0" prefHeight="34.0" prefWidth="570.0" text="One course can fullfill your dream" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <Label alignment="TOP_LEFT" layoutX="21.0" layoutY="43.0" prefHeight="51.0" prefWidth="555.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea" textFill="#e5e3e3d2" wrapText="true">
+                        <Label alignment="TOP_LEFT" layoutX="32.0" layoutY="59.0" prefHeight="51.0" prefWidth="555.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea" textFill="#e5e3e3d2" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="buttons" alignment="CENTER" layoutX="400.0" layoutY="89.0" mnemonicParsing="false" onAction="#onClickSeeCourse" prefHeight="34.0" prefWidth="180.0" stylesheets="@../../../styles/sidebar_buttons.css" text="See Course">
+                        <Button fx:id="buttons" alignment="CENTER" layoutX="622.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickSeeCourse" prefHeight="82.0" prefWidth="102.0" stylesheets="@../../../styles/sidebar_buttons.css" text="See Course">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="143.0" prefWidth="143.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;">
+                  <AnchorPane prefHeight="131.0" prefWidth="163.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;">
                      <children>
-                        <Label alignment="CENTER" layoutX="8.0" layoutY="18.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
+                        <Label alignment="CENTER" layoutX="23.0" layoutY="10.0" prefHeight="34.0" prefWidth="128.0" text="TOTAL COURSE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="36.0" layoutY="41.0" prefHeight="86.0" prefWidth="71.0" text="9">
-                           <font>
-                              <Font name="System Bold" size="60.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="143.0" prefWidth="143.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 10;">
-                     <children>
-                        <Label alignment="CENTER" layoutX="8.0" layoutY="16.0" prefHeight="34.0" prefWidth="128.0" text="COMPLETED">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="36.0" layoutY="39.0" prefHeight="86.0" prefWidth="71.0" text="6">
+                        <Label fx:id="courseCount" alignment="CENTER" layoutX="51.0" layoutY="33.0" prefHeight="86.0" prefWidth="71.0" text="9">
                            <font>
                               <Font name="System Bold" size="60.0" />
                            </font>
@@ -123,7 +109,7 @@
                   </VBox>
                   <VBox prefHeight="498.0" prefWidth="450.0" spacing="10.0">
                      <children>
-                        <AnchorPane prefHeight="151.0" prefWidth="410.0">
+                        <AnchorPane prefHeight="239.0" prefWidth="419.0">
                            <children>
                               <Group layoutX="2.0">
                                  <children>
@@ -142,10 +128,10 @@
                                     <FontAwesomeIconView text="" />
                                  </graphic>
                               </Button>
-                              <VBox fx:id="popularBlog" layoutX="1.0" layoutY="34.0" prefHeight="113.0" prefWidth="418.0" spacing="8.0" />
+                              <VBox fx:id="popularBlog" layoutX="1.0" layoutY="41.0" prefHeight="195.0" prefWidth="418.0" spacing="10.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="153.0" prefWidth="420.0">
+                        <AnchorPane prefHeight="239.0" prefWidth="419.0">
                            <children>
                               <Group layoutX="2.0" layoutY="2.0">
                                  <children>
@@ -164,29 +150,7 @@
                                     <FontAwesomeIconView text="" />
                                  </graphic>
                               </Button>
-                              <VBox fx:id="popularStory" layoutX="-1.0" layoutY="38.0" prefHeight="113.0" prefWidth="418.0" spacing="8.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="143.0" prefWidth="420.0">
-                           <children>
-                              <Group layoutX="2.0" layoutY="2.0">
-                                 <children>
-                                    <Label layoutY="7.0" text="Upcomig Exams">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Group>
-                              <Button alignment="BASELINE_RIGHT" contentDisplay="RIGHT" layoutX="340.0" layoutY="5.0" mnemonicParsing="false" onAction="#onClickPopularCourses" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: transparent;" text="See All   ">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <graphic>
-                                    <FontAwesomeIconView text="" />
-                                 </graphic>
-                              </Button>
-                              <VBox fx:id="upcomingExam" layoutX="1.0" layoutY="31.0" prefHeight="123.0" prefWidth="418.0" spacing="7.0" />
+                              <VBox fx:id="popularStory" layoutX="-1.0" layoutY="38.0" prefHeight="195.0" prefWidth="418.0" spacing="10.0" />
                            </children>
                         </AnchorPane>
                      </children>

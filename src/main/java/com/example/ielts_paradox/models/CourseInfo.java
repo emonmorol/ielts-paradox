@@ -15,6 +15,7 @@ public class CourseInfo {
     public String details;
     public String[] sidebarPoint;
     public String instructorName;
+    public String routine;
     public CourseInfo(){};
     public CourseInfo(String _id, String title, String thumbnail, int price, boolean isReleased, int discount, String details, String instructorName) {
         this._id = _id;
@@ -25,9 +26,10 @@ public class CourseInfo {
         this.discount = discount;
         this.details = details;
         this.instructorName = instructorName;
+        this.routine = routine;
     }
 
-    public CourseInfo(String _id, String title, String[] features, String thumbnail, int price, boolean isReleased, int discount, String[] curriculum, ArrayList<Faq> faqs, String details, String[] sidebarPoint, String instructorName) {
+    public CourseInfo(String _id, String title, String[] features, String thumbnail, int price, boolean isReleased, int discount, String[] curriculum, ArrayList<Faq> faqs, String details, String[] sidebarPoint, String instructorName,String routine) {
         this._id = _id;
         this.title = title;
         this.features = features;
@@ -40,7 +42,7 @@ public class CourseInfo {
         this.details = details;
         this.sidebarPoint = sidebarPoint;
         this.instructorName = instructorName;
-
+        this.routine = routine;
     }
 
 

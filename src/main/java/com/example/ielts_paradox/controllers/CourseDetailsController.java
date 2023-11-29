@@ -1,6 +1,8 @@
 package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.controllers.CourseDetails.DescriptionController;
+import com.example.ielts_paradox.controllers.CourseDetails.FaqController;
+import com.example.ielts_paradox.controllers.CourseDetails.RoutineController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.models.CourseInfo;
@@ -32,9 +34,7 @@ public class CourseDetailsController implements Initializable{
     private VBox box2;
 
     @FXML
-    private AnchorPane insideAnchor;
-    @FXML
-    private ScrollPane scrollpane;
+    private AnchorPane contentAnchor;
     @FXML
     private Stage stage;
 
@@ -63,7 +63,8 @@ public class CourseDetailsController implements Initializable{
             AnchorPane paneee = fxmlLoader.load();
             DescriptionController dc = fxmlLoader.getController();
             dc.setData(CourseDetailsController.ci);
-            scrollpane.setContent(paneee);
+            contentAnchor.getChildren().add(paneee);
+//            scrollpane.setContent(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -129,8 +130,8 @@ public class CourseDetailsController implements Initializable{
             AnchorPane paneee = fxmlLoader.load();
             DescriptionController dc = fxmlLoader.getController();
             dc.setData(CourseDetailsController.ci);
-//            insideAnchor.getChildren().add(paneee);
-            scrollpane.setContent(paneee);
+            contentAnchor.getChildren().add(paneee);
+//            scrollpane.setContent(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -142,19 +143,9 @@ public class CourseDetailsController implements Initializable{
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/faq.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
-            scrollpane.setContent(paneee);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    public void instructorHandler(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/instructor.fxml"));
-        try {
-            AnchorPane paneee = fxmlLoader.load();
-            scrollpane.setContent(paneee);
+            FaqController fc = fxmlLoader.getController();
+            fc.setData(CourseDetailsController.ci.faqs);
+            contentAnchor.getChildren().add(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -166,7 +157,10 @@ public class CourseDetailsController implements Initializable{
         fxmlLoader.setLocation(getClass().getResource("/fxmls/students/courseDetails/routine.fxml"));
         try {
             AnchorPane paneee = fxmlLoader.load();
-            scrollpane.setContent(paneee);
+            RoutineController rc = fxmlLoader.getController();
+            rc.setData(CourseDetailsController.ci.routine);
+            contentAnchor.getChildren().add(paneee);
+//            scrollpane.setContent(paneee);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

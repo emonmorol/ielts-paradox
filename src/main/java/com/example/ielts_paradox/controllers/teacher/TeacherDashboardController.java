@@ -40,11 +40,6 @@ public class TeacherDashboardController  implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/teacher/pages/overview.fxml");
         mainPane.setCenter(panel);
-        setStudentName();
-    }
-    public void setStudentName(){
-        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
-        studentName.setText(info.fullName);
     }
     @FXML
     public void onClickOne(ActionEvent e){

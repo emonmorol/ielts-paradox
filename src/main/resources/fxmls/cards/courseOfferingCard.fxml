@@ -15,11 +15,7 @@
    <children>
       <AnchorPane prefHeight="192.0" prefWidth="447.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10 10 0 0;">
          <children>
-            <ImageView fitHeight="98.0" fitWidth="436.0" layoutX="5.0" layoutY="3.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../images/live-course.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="courseBanner" fitHeight="98.0" fitWidth="436.0" layoutX="5.0" layoutY="3.0" pickOnBounds="true" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="258.0" prefWidth="480.0">

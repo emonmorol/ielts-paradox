@@ -48,6 +48,7 @@ public class DeleteAlertController {
         }
 
         dialogStage.close();
+
     }
 }
 

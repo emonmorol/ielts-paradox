@@ -1,24 +1,23 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.controllers.CourseDetailsController;
-import com.example.ielts_paradox.controllers.CourseOfferingController;
 import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.models.CourseInfo;
-import com.example.ielts_paradox.utils.DBConnections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class CourseOfferingCardController{
     @FXML
@@ -43,6 +42,8 @@ public class CourseOfferingCardController{
 
     @FXML
     private Label totalPrice;
+    @FXML
+    private ImageView courseBanner;
 
     @FXML
     void seeDetailsHandler(ActionEvent event) throws IOException {
@@ -57,7 +58,7 @@ public class CourseOfferingCardController{
         stage.show();
     }
     @FXML
-    public void setData(CourseInfo course){
+    public void setData(CourseInfo course) throws FileNotFoundException {
         courseDetails.setText(course.details);
         courseTitle.setText(course.title);
         totalPrice.setText(String.valueOf(course.price)+"TK");
@@ -65,6 +66,14 @@ public class CourseOfferingCardController{
         discountedPrice.setText(String.valueOf(disPrice)+"TK");
         instructorName.setText(course.instructorName);
         _id.setText(course._id);
+
+        if(course.thumbnail != null){
+            Image img = new Image(getClass().getResourceAsStream(course.thumbnail));
+            courseBanner.setImage(img);
+        }else{
+            ErrorAlert.displayCustomAlert("Error Loading","Image Path is NULL");
+        }
+
     }
 
 }

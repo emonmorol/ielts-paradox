@@ -39,13 +39,6 @@ public class StudentDashboardController implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
         mainPane.setCenter(panel);
-        setStudentName();
-    }
-    public void setStudentName(){
-        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
-        System.out.println("From Student Dashboard before = "+info.fullName + " "+studentFullName.getText());
-        studentFullName.setText(info.fullName);
-        System.out.println("From Student Dashboard after = "+info.fullName + " "+studentFullName.getText());
     }
     @FXML
     public void onClickOne(ActionEvent e){

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -10,25 +9,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="922.0" prefWidth="736.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <AnchorPane layoutX="4.0" layoutY="39.0" prefHeight="206.0" prefWidth="729.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 80;">
+        <AnchorPane layoutX="4.0" layoutY="39.0" prefHeight="96.0" prefWidth="496.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 80;">
             <children>
-                <ImageView fitHeight="184.0" fitWidth="189.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="73.0" fitWidth="82.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../images/instructor.png" />
                     </image>
                 </ImageView>
                 <Group layoutX="370.0" layoutY="71.0" />
-                  <Label alignment="BASELINE_RIGHT" layoutX="250.0" layoutY="47.0" prefHeight="32.0" prefWidth="254.0" text="Samiur Rahman Omlan">
-                      <graphic>
-                          <FontAwesomeIconView glyphName="USER" />
-                      </graphic>
+                  <Label alignment="BOTTOM_LEFT" layoutX="112.0" layoutY="19.0" prefHeight="36.0" prefWidth="349.0" text="Samiur Rahman Omlan">
                <font>
-                  <Font size="22.0" />
+                  <Font size="25.0" />
                </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="256.0" layoutY="94.0" prefHeight="18.0" prefWidth="148.0" text="Student At IELTS Paradox" />
-                  <Label layoutX="404.0" layoutY="97.0" text="|" />
-                  <Label alignment="CENTER" layoutX="410.0" layoutY="96.0" prefHeight="18.0" prefWidth="94.0" text="Band Score: 8.5" />
+            <Label alignment="BOTTOM_LEFT" layoutX="112.0" layoutY="40.0" prefHeight="36.0" prefWidth="230.0" text="Instructor at IELTS Paradox">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

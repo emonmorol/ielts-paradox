@@ -122,4 +122,28 @@ public class ForEnrollment {
         }
         return courses;
     }
+    public int totalCourseNumber(String email){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT COUNT(*) AS row_count FROM paid_student ps INNER JOIN courses c ON ps.courseId = c._id WHERE ps.email = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, email);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try {
+                            int rows = resultSet.getInt("row_count");
+                            return rows;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
