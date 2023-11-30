@@ -16,10 +16,11 @@ public class ExamAlertController {
 
     @FXML
     private Stage dialogStage;
-    @FXML
+
     private  Stage stage;
     private Scene scene;
     private Parent root;
+    private String module;
 
     @FXML
     public void setDialogStage(Stage stage) {
@@ -30,19 +31,23 @@ public class ExamAlertController {
     @FXML
     void closeAlert(ActionEvent event) {
         dialogStage.close();
-
+    }
+    public void setModule(String m){
+        module = m;
+    }
+    public void setStage(Stage st){
+        stage = st;
     }
 
     @FXML
     void goToCheckoutPage(ActionEvent event) throws IOException {
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/checkout.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
+//        dialogStage.close();
     }
 
 

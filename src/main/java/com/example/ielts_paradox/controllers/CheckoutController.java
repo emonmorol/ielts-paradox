@@ -3,8 +3,10 @@ package com.example.ielts_paradox.controllers;
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
 import com.example.ielts_paradox.database.ForEnrollment;
+import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
@@ -46,6 +48,7 @@ public class CheckoutController {
 
     @FXML
     private MFXButton enrollementButton;
+    private boolean isCourse;
 
     @FXML
     public void backButtonHandler(ActionEvent e) throws IOException {
@@ -60,6 +63,7 @@ public class CheckoutController {
         stage.show();
     }
     public void setData(CourseInfo cf){
+        isCourse = true;
         ci = cf;
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
@@ -70,25 +74,53 @@ public class CheckoutController {
         }
         studentEmailField.setText(user.email);
         courseTitleField.setText(ci.title);
+        courseTitleField.setFloatingText("Course Title");
         courseTitle.setText(ci.title);
+    }
 
+    public void setData(String module){
+        isCourse = false;
+        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
+        UserInfo user = ins.getUser();
+
+        studentEmailField.setText(user.email);
+        courseTitleField.setText(module);
+
+        courseTitleField.setFloatingText("Exam Module");
+        courseTitle.setText(module);
     }
     @FXML
     public void enrollmentHandler(ActionEvent event){
+        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
+        UserInfo user = ins.getUser();
         LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         String formattedDateTime = currentDateTime.format(formatter);
-        System.out.println(transectionId.getText());
-        PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
-        boolean isComplete = new ForEnrollment().courseEnrollment(psi);
-        if(isComplete){
-            SuccessAlert.displayCustomAlert();
-            enrollementButton.setDisable(true);
-            enrollementButton.setText("ALREADY ENROLLED");
+        if(isCourse){
+            PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
+            boolean isComplete = new ForEnrollment().courseEnrollment(psi);
+            if(isComplete){
+                SuccessAlert.displayCustomAlert();
+                enrollementButton.setDisable(true);
+                enrollementButton.setText("ALREADY ENROLLED");
+            }
+            else{
+                ErrorAlert.displayCustomAlert("Error","Fill up the form with appropriete info!");
+            }
+        }else{
+            TestInfo ti = new TestInfo("0",formattedDateTime,courseTitle.getText(),user.email,transectionId.getText(),bkashNumber.getText(),false,false);
+            boolean isComplete = new ForTest().testEnrollment(ti);
+            if(isComplete){
+                SuccessAlert.displayCustomAlert();
+                enrollementButton.setDisable(true);
+                enrollementButton.setText("ENROLLED");
+            }
+            else{
+                ErrorAlert.displayCustomAlert("Error","Fill up the form with appropriete info!");
+            }
         }
-        else{
-            ErrorAlert.displayCustomAlert("Error","Fill up the form with appropriete info!");
-        }
+
+
     }
 
 

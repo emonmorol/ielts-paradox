@@ -1,5 +1,11 @@
 package com.example.ielts_paradox.controllers.student;
 
+import com.example.ielts_paradox.Alerts.ExamAlert;
+import com.example.ielts_paradox.controllers.CourseDetailsController;
+import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,53 +30,105 @@ public class MockTestController {
 
     @FXML
     void onClickListening(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
-        root = fxmlLoader.load();
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+        boolean isEnrolled = new ForTest().testValidation(info.email,"Listening");
+        if(!isEnrolled){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClickPricing(event);
+
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
+            root = fxmlLoader.load();
 //        ListeningTestRequestController ltc = fxmlLoader.getController();
 //        ltc.setData("0");
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     @FXML
     void onClickReading(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
-        root = fxmlLoader.load();
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+        boolean isEnrolled = new ForTest().testValidation(info.email,"Reading");
+        if(!isEnrolled){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClickPricing(event);
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
+            root = fxmlLoader.load();
 //        ListeningTestRequestController ltc = fxmlLoader.getController();
 //        ltc.setData("0");
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 
     @FXML
     void onClickSpeaking(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
-        root = fxmlLoader.load();
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+        boolean isEnrolled = new ForTest().testValidation(info.email,"Speaking");
+        if(!isEnrolled){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClickPricing(event);
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
+            root = fxmlLoader.load();
 //        ListeningTestRequestController ltc = fxmlLoader.getController();
 //        ltc.setData("0");
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 
     @FXML
     void onClickWritting(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
-        root = fxmlLoader.load();
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+        boolean isEnrolled = new ForTest().testValidation(info.email,"Writing");
+        if(!isEnrolled){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc =fxmlLoader.getController();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            sdc.onClickPricing(event);
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
+            root = fxmlLoader.load();
 //        ListeningTestRequestController ltc = fxmlLoader.getController();
 //        ltc.setData("0");
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 

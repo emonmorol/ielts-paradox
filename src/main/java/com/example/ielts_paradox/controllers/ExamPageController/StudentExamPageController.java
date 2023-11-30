@@ -55,12 +55,9 @@ public class StudentExamPageController {
     void answerSubmit(ActionEvent event)  {
         String text = answerArea.getText();
         SuccessAlert.displayCustomAlert();
-
         System.out.println("Text from TextArea: " + text);
 
     }
-
-
 
     @FXML
     void downloadQuestion(ActionEvent event) throws URISyntaxException, IOException {

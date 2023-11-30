@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.database;
 
 import com.example.ielts_paradox.models.BlogInfo;
+import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -13,6 +14,30 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ForTest {
+    public boolean testEnrollment(TestInfo ti){
+        String insertQuery = "INSERT INTO test_students (enrollmentDate, examModule, studentMail, isAccepted, isTaken, transectionId, bkashNumber) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                preparedStatement.setString(1, ti.enrollmentDate);
+                preparedStatement.setString(2, ti.examModule);
+                preparedStatement.setString(3, ti.studentMail);
+                preparedStatement.setBoolean(4, ti.isAccepted);
+                preparedStatement.setBoolean(5, ti.isTaken);
+                preparedStatement.setString(6, ti.transectionId);
+                preparedStatement.setString(7, ti.bkashNumber);
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    return true;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public ArrayList<TestInfo> teachersTests(String email, int limit){
         ArrayList<TestInfo> tis = new ArrayList<>();
@@ -182,7 +207,6 @@ public class ForTest {
         }
         return null;
     }
-
     public boolean updateQuestionLink(String id,String link){
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
         String updateSql = "UPDATE test_students SET questionLink = ? WHERE _id = ?";
@@ -267,6 +291,27 @@ public class ForTest {
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean testValidation(String email,String module){
+        String DB_QUERY = "SELECT * FROM test_students WHERE studentMail = ? AND examModule = ?";
+
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement prpStatement = connection.prepareStatement(DB_QUERY)) {
+                prpStatement.setString(1,email);
+                prpStatement.setString(2,module);
+                try (ResultSet resultSet = prpStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return true;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
         return false;
     }

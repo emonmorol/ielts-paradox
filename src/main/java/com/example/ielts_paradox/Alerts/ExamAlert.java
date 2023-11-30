@@ -14,31 +14,22 @@ import javafx.util.Duration;
 public class ExamAlert {
 
     private static Stage ownerStage;
-    public static void displayCustomAlert() {
+    public static void displayCustomAlert(String module,Stage st) {
 
         try {
             FXMLLoader loader = new FXMLLoader(ErrorAlert.class.getResource("/fxmls/alerts/exam_Alert.fxml"));
             Parent root = loader.load();
-
             ExamAlertController controller = loader.getController();
-
+            controller.setModule(module);
+            controller.setStage(st);
             Stage customAlertStage = new Stage(StageStyle.UNDECORATED);
             customAlertStage.initModality(Modality.APPLICATION_MODAL);
             customAlertStage.initOwner(ownerStage);
-
             customAlertStage.setScene(new Scene(root));
             controller.setDialogStage(customAlertStage);
             addOpenAnimation(customAlertStage);
-
-//            controller.setMessage(message);
-//            controller.setTitle(title);
-//            customAlertStage.setTitle(title);
             customAlertStage.showAndWait();
-
-
             addCloseAnimation(customAlertStage);
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +48,7 @@ public class ExamAlert {
     }
 
     private static void addCloseAnimation(Stage customAlertStage) {
-        // You can add a similar animation for closing the alert
+
         TranslateTransition translateTransition = new TranslateTransition(Duration.millis(300), customAlertStage.getScene().getRoot());
         translateTransition.setFromY(-100);
         translateTransition.setToY(0);
