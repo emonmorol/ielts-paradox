@@ -2,6 +2,7 @@ package com.example.ielts_paradox.controllers;
 
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
+import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.CourseInfo;
@@ -26,14 +27,25 @@ import java.time.format.DateTimeFormatter;
 
 public class CheckoutController {
     @FXML
-    public Label courseTitle;
+    private MFXTextField bkashNumber;
+
+    @FXML
+    private Label courseTitle;
+
+    @FXML
+    private MFXTextField courseTitleField;
+
+    @FXML
+    private Label discountedPrice;
+
+    @FXML
+    private MFXButton enrollementButton;
 
     @FXML
     private MFXTextField studentEmailField;
+
     @FXML
-    private MFXTextField courseTitleField;
-    @FXML
-    private MFXTextField bkashNumber;
+    private Label totalPrice;
 
     @FXML
     private MFXTextField transectionId;
@@ -46,21 +58,32 @@ public class CheckoutController {
     private Parent root;
     public static CourseInfo ci ;
 
-    @FXML
-    private MFXButton enrollementButton;
     private boolean isCourse;
 
     @FXML
     public void backButtonHandler(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
-        root = fxmlLoader.load();
-        CourseDetailsController cdc = fxmlLoader.getController();
-        cdc.setDetailsInfo(ci,"1");
-        scene = new Scene(root);
+        if(isCourse){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/offeredCourseDetails.fxml"));
+            root = fxmlLoader.load();
+            CourseDetailsController cdc = fxmlLoader.getController();
+            cdc.setDetailsInfo(ci,"1");
+            scene = new Scene(root);
 
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+            root = fxmlLoader.load();
+            StudentDashboardController sdc = fxmlLoader.getController();
+
+            scene = new Scene(root);
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+            sdc.onClick5(e);
+        }
+
     }
     public void setData(CourseInfo cf){
         isCourse = true;
@@ -78,14 +101,15 @@ public class CheckoutController {
         courseTitle.setText(ci.title);
     }
 
-    public void setData(String module){
+    public void setData(String module,String price){
         isCourse = false;
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
 
         studentEmailField.setText(user.email);
         courseTitleField.setText(module);
-
+        discountedPrice.setText(price+".0TK");
+        totalPrice.setText(price+".0TK");
         courseTitleField.setFloatingText("Exam Module");
         courseTitle.setText(module);
     }

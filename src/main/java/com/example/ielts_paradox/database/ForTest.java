@@ -207,6 +207,48 @@ public class ForTest {
         }
         return null;
     }
+
+    public TestInfo getTestInfoForStudent(String module,String email){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT * FROM test_students WHERE examModule = ? AND studentMail = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1,module);
+                statement.setString(2,email);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        try{
+                            String _id= resultSet.getString("_id");
+                            String meetLink= resultSet.getString("meetLink");
+                            String resultScore= resultSet.getString("resultScore");
+                            String resultLink= resultSet.getString("resultLink");
+                            String enrollmentDate= resultSet.getString("enrollmentDate");
+                            String examDate= resultSet.getString("examDate");
+                            String studentSubmissionLink= resultSet.getString("studentSubmissionLink");
+                            String examModule= resultSet.getString("examModule");
+                            String questionLink= resultSet.getString("questionLink");
+                            String practiceQuestionLink= resultSet.getString("practiceQuestionLink");
+                            String studentMail= resultSet.getString("studentMail");
+                            String teacherMail= resultSet.getString("teacherMail");
+                            boolean isAccepted= resultSet.getBoolean("isAccepted");
+                            boolean isTaken= resultSet.getBoolean("isTaken");
+                            String transectionId= resultSet.getString("transectionId");
+                            String bkashNumber= resultSet.getString("bkashNumber");
+                            TestInfo ti = new TestInfo(_id,meetLink,resultScore,resultLink,enrollmentDate,examDate,studentSubmissionLink,examModule,questionLink,practiceQuestionLink,studentMail,teacherMail,isAccepted,isTaken,transectionId,bkashNumber);
+                            return ti;
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public boolean updateQuestionLink(String id,String link){
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
         String updateSql = "UPDATE test_students SET questionLink = ? WHERE _id = ?";
@@ -261,6 +303,24 @@ public class ForTest {
     public boolean updateMeetLink(String id,String link){
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
         String updateSql = "UPDATE test_students SET meetLink = ? WHERE _id = ?";
+
+        try {
+            Connection connection = new DBConnections().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setString(1, link);
+            preparedStatement.setString(2, id);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return (rowsAffected > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean updateSubmissionLink(String id,String link){
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+        String updateSql = "UPDATE test_students SET studentSubmissionLink = ? WHERE _id = ?";
 
         try {
             Connection connection = new DBConnections().getConnection();

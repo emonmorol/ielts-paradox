@@ -88,7 +88,7 @@
                      </font>
                   </Label>
                   <Line endX="339.0" layoutX="136.0" layoutY="276.0" startX="-100.0" stroke="#cdc6c6" />
-                  <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="59.0" layoutY="298.0" prefHeight="60.0" prefWidth="416.0" text="01600000000 Number e 2250 Taka Bkash Send Money korun" wrapText="true">
+                  <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="59.0" layoutY="298.0" prefHeight="60.0" prefWidth="416.0" text="01600000000 Number e Fees Send Money korun via Bkash" wrapText="true">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -98,7 +98,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="59.0" layoutY="420.0" prefHeight="60.0" prefWidth="416.0" text="01600000000Number e 2250 Taka B" wrapText="true">
+                  <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="59.0" layoutY="420.0" prefHeight="27.0" prefWidth="416.0" text="Wait 24hours for teacher to accept your request" wrapText="true">
                      <font>
                         <Font size="17.0" />
                      </font>

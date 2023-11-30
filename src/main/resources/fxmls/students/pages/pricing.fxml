@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.student.PricingController">
     <children>
         <AnchorPane prefHeight="136.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;">
             <children>
@@ -57,7 +58,11 @@
                         </Label>
                         <Label alignment="CENTER" layoutY="100.0" prefHeight="17.0" prefWidth="181.0" text="lorem ipsum asum asf" />
                         <Label alignment="CENTER" layoutX="1.0" layoutY="118.0" prefHeight="17.0" prefWidth="180.0" text="lorem ipsum" />
-                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now" />
+                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" onAction="#listeningEnrollHandler" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </MFXButton>
                      </children>
                   </AnchorPane>
                </children>
@@ -71,7 +76,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="500">
+                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="600">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -83,7 +88,11 @@
                         </Label>
                         <Label alignment="CENTER" layoutY="100.0" prefHeight="17.0" prefWidth="181.0" text="lorem ipsum asum asf" />
                         <Label alignment="CENTER" layoutX="1.0" layoutY="118.0" prefHeight="17.0" prefWidth="180.0" text="lorem ipsum" />
-                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now" />
+                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" onAction="#readingEnrollHandler" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </MFXButton>
                      </children>
                   </AnchorPane>
                </children>
@@ -97,7 +106,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="500">
+                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="700">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -109,7 +118,11 @@
                         </Label>
                         <Label alignment="CENTER" layoutY="100.0" prefHeight="17.0" prefWidth="181.0" text="lorem ipsum asum asf" />
                         <Label alignment="CENTER" layoutX="1.0" layoutY="118.0" prefHeight="17.0" prefWidth="180.0" text="lorem ipsum" />
-                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now" />
+                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" onAction="#speakingEnrollHandler" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </MFXButton>
                      </children>
                   </AnchorPane>
                </children>
@@ -123,7 +136,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="500">
+                        <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="58.0" prefHeight="35.0" prefWidth="93.0" text="800">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -135,7 +148,11 @@
                         </Label>
                         <Label alignment="CENTER" layoutY="100.0" prefHeight="17.0" prefWidth="181.0" text="lorem ipsum asum asf" />
                         <Label alignment="CENTER" layoutX="1.0" layoutY="118.0" prefHeight="17.0" prefWidth="180.0" text="lorem ipsum" />
-                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now" />
+                        <MFXButton buttonType="RAISED" layoutX="4.0" layoutY="172.0" onAction="#writingEnrollHandler" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10;" text="Enroll Now">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </MFXButton>
                      </children>
                   </AnchorPane>
                </children>

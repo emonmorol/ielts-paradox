@@ -10,7 +10,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -58,7 +57,7 @@
                   <FontAwesomeIconView fill="#2979ef" text="" />
                </graphic>
             </MFXButton>
-            <Label contentDisplay="RIGHT" layoutX="37.0" layoutY="273.0" prefHeight="26.0" prefWidth="252.0" text="INSERT YOUR ANSWER LINK HERE">
+            <Label contentDisplay="RIGHT" layoutX="37.0" layoutY="322.0" prefHeight="26.0" prefWidth="252.0" text="INSERT YOUR ANSWER LINK HERE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -66,21 +65,20 @@
                   <FontAwesomeIconView text="" />
                </graphic>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="165.0" layoutX="464.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="149.0" />
             <Label layoutX="27.0" layoutY="18.0" text="INSTRUCTIONS :">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
             <Label layoutX="42.0" layoutY="44.0" prefHeight="18.0" prefWidth="356.0" text="Please Download Your Question at First." />
-            <Label layoutX="42.0" layoutY="62.0" prefHeight="54.0" prefWidth="409.0" text="Then Write All Your Answer In Your Exercise Book Timely And Take Photo Of Your Answer. Then Convert Them In PDF Formet And Upload PDF File In Your Google Drive ." textAlignment="JUSTIFY" wrapText="true" />
-            <Label layoutX="42.0" layoutY="116.0" prefHeight="34.0" prefWidth="410.0" text="Then Copy Your Drive Link And Paste It In Text Area Then Click SUBMIT Button To Submit Your Answer." wrapText="true" />
-            <Label layoutX="42.0" layoutY="150.0" prefHeight="34.0" prefWidth="410.0" text="By Clicking &quot;MEET LINK&quot; You can Directly Talk With Your Course Instructor." wrapText="true" />
+            <Label layoutX="42.0" layoutY="61.0" prefHeight="40.0" prefWidth="582.0" text="Then Write All Your Answer In Your Exercise Book Timely And Take Photo Of Your Answer. Then Convert Them In PDF Formet And Upload PDF File In Your Google Drive ." textAlignment="JUSTIFY" wrapText="true" />
+            <Label layoutX="42.0" layoutY="103.0" prefHeight="18.0" prefWidth="582.0" text="Then Copy Your Drive Link And Paste It In Text Area Then Click SUBMIT Button To Submit Your Answer." wrapText="true" />
+            <Label layoutX="42.0" layoutY="115.0" prefHeight="34.0" prefWidth="582.0" text="By Clicking &quot;MEET LINK&quot; You can Directly Talk With Your Course Instructor." wrapText="true" />
             <Text layoutX="28.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1." />
-            <Text layoutX="28.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2." />
-            <Text layoutX="30.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3." />
-            <Text layoutX="30.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4." />
-            <Hyperlink fx:id="practiseId" alignment="CENTER" layoutX="463.0" layoutY="224.0" onAction="#practiseQuestion" prefHeight="40.0" prefWidth="149.0" style="-fx-background-color: #bfdbfe;" text="PRACTISE QUESTION" textFill="#2979ef">
+            <Text layoutX="28.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2." />
+            <Text layoutX="30.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3." />
+            <Text layoutX="30.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4." />
+            <Hyperlink fx:id="practiseId" alignment="CENTER" layoutX="447.0" layoutY="272.0" onAction="#practiseQuestion" prefHeight="40.0" prefWidth="149.0" style="-fx-background-color: #bfdbfe;" text="PRACTISE QUESTION" textFill="#2979ef">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
@@ -96,7 +94,7 @@
                   <FontAwesomeIconView fill="#2979ef" text="" />
                </graphic>
             </Hyperlink>
-            <Hyperlink fx:id="questionId" alignment="CENTER" layoutX="52.0" layoutY="197.0" onAction="#downloadQuestion" prefHeight="54.0" prefWidth="336.0" style="-fx-background-color: #bfdbfe;" text="DOWNLOAD QUESTION" textFill="#2979ef">
+            <Hyperlink fx:id="questionId" alignment="CENTER" layoutX="37.0" layoutY="258.0" onAction="#downloadQuestion" prefHeight="54.0" prefWidth="336.0" style="-fx-background-color: #bfdbfe;" text="DOWNLOAD QUESTION" textFill="#2979ef">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -104,7 +102,13 @@
                   <FontAwesomeIconView fill="#2979ef" size="25" text="" />
                </graphic>
             </Hyperlink>
-            <TextField fx:id="answerArea" layoutX="28.0" layoutY="309.0" prefHeight="118.0" prefWidth="582.0" />
+            <TextField fx:id="answerArea" layoutX="28.0" layoutY="360.0" prefHeight="67.0" prefWidth="582.0" />
+            <Label fx:id="examTime" alignment="CENTER" layoutX="63.0" layoutY="157.0" prefHeight="67.0" prefWidth="550.0" text="12:50:60">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+            <Label fx:id="timerLabel" layoutX="433.0" layoutY="233.0" prefHeight="17.0" prefWidth="150.0" text="Time Remains For Exam" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="910.0" layoutY="150.0" prefHeight="571.0" prefWidth="370.0" style="-fx-background-color: WHITE; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);">

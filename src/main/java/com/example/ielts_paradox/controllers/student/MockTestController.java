@@ -2,6 +2,7 @@ package com.example.ielts_paradox.controllers.student;
 
 import com.example.ielts_paradox.Alerts.ExamAlert;
 import com.example.ielts_paradox.controllers.CourseDetailsController;
+import com.example.ielts_paradox.controllers.ExamPageController.StudentExamPageController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.UserInfo;
@@ -45,8 +46,8 @@ public class MockTestController {
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
-//        ListeningTestRequestController ltc = fxmlLoader.getController();
-//        ltc.setData("0");
+            StudentExamPageController sepc = fxmlLoader.getController();
+            sepc.setData(new ForTest().getTestInfoForStudent("Listening",info.email));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -70,8 +71,8 @@ public class MockTestController {
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
-//        ListeningTestRequestController ltc = fxmlLoader.getController();
-//        ltc.setData("0");
+            StudentExamPageController sepc = fxmlLoader.getController();
+            sepc.setData(new ForTest().getTestInfoForStudent("Reading",info.email));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -96,8 +97,8 @@ public class MockTestController {
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
-//        ListeningTestRequestController ltc = fxmlLoader.getController();
-//        ltc.setData("0");
+            StudentExamPageController sepc = fxmlLoader.getController();
+            sepc.setData(new ForTest().getTestInfoForStudent("Speaking",info.email));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -122,8 +123,8 @@ public class MockTestController {
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
-//        ListeningTestRequestController ltc = fxmlLoader.getController();
-//        ltc.setData("0");
+            StudentExamPageController sepc = fxmlLoader.getController();
+            sepc.setData(new ForTest().getTestInfoForStudent("Writing",info.email));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
