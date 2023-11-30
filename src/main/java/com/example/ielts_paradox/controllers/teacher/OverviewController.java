@@ -124,7 +124,7 @@ public class OverviewController implements Initializable{
             }
         }
 
-        ArrayList<TestInfo> tis = new ForTest().teachersTests(info.email,3);
+        ArrayList<TestInfo> tis = new ForTest().teachersTests(3);
         for (TestInfo ti:tis){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/testRequestCard.fxml"));

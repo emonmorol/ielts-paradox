@@ -39,13 +39,13 @@ public class ForTest {
         return false;
     }
 
-    public ArrayList<TestInfo> teachersTests(String email, int limit){
+    public ArrayList<TestInfo> teachersTests(int limit){
         ArrayList<TestInfo> tis = new ArrayList<>();
         try{
             Connection connection = new DBConnections().getConnection();
-            String sql = "SELECT * FROM test_students WHERE teacherMail = ? LIMIT ?";
+            String sql = "SELECT * FROM test_students WHERE isAccepted = ? LIMIT ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1,email);
+                statement.setBoolean(1,false);
                 statement.setInt(2,limit);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
