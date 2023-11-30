@@ -1,7 +1,10 @@
 package com.example.ielts_paradox.controllers.MockTestController;
 
+import com.example.ielts_paradox.controllers.cardControllers.MyBlogsCardController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
@@ -11,12 +14,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class SpeakingTestRequestController {
+public class TestRequestController {
 
     @FXML
     private Stage stage;
@@ -26,9 +31,10 @@ public class SpeakingTestRequestController {
     private Parent root;
     @FXML
     private Label points;
-
     @FXML
     private VBox myCourseTable;
+    @FXML
+    private Label testType;
 
     @FXML
     void goToBackPage(ActionEvent event) throws IOException {
@@ -60,7 +66,27 @@ public class SpeakingTestRequestController {
         stage.show();
     }
     @FXML
-    public void setData(String point){
+    public void setData(String type,String point){
         points.setText(point);
+        testType.setText(type);
+        myCourseTable.getChildren().clear();
+        ArrayList<TestInfo> tis = new ForTest().getTestRequests(type,100,false);
+
+        for(TestInfo ti:tis){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/mocktest/testRequestTableCard.fxml"));
+            try {
+                HBox paneee = fxmlLoader.load();
+                TestRequestCardController trcc = fxmlLoader.getController();
+                trcc.setData(ti);
+                myCourseTable.getChildren().add(paneee);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    @FXML
+    void reloadPage(ActionEvent event) {
+        setData(testType.getText(),points.getText());
     }
 }

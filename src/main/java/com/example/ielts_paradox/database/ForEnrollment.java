@@ -183,7 +183,6 @@ public class ForEnrollment {
         }
         return psi;
     }
-
     public boolean updateApproval(String id){
         String updateSql = "UPDATE paid_student SET courseApproval = ? WHERE _id = ?";
 

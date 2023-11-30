@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,12 +10,13 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MockTestController.MockTestController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.MockTestController">
     <children>
-        <GridPane hgap="20.0" layoutY="139.0" prefHeight="411.0" prefWidth="934.0" vgap="20.0">
+        <GridPane hgap="20.0" layoutY="250.0" prefHeight="411.0" prefWidth="934.0" vgap="20.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="787.2000244140625" minWidth="10.0" prefWidth="586.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="609.0" minWidth="0.0" prefWidth="587.0" />
@@ -26,7 +28,7 @@
             <children>
                 <AnchorPane prefHeight="195.0" prefWidth="553.0">
                     <children>
-                        <Button alignment="TOP_LEFT" layoutY="-1.0" mnemonicParsing="false" onAction="#goToListeningReq" prefHeight="196.0" prefWidth="456.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToListeningReq" prefHeight="196.0" prefWidth="456.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -102,5 +104,14 @@
             </Label>
          </children>
       </AnchorPane>
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="147.0" onAction="#goToApprovedStudents" prefHeight="76.0" prefWidth="934.0" style="-fx-background-color: #bbf7d0; -fx-background-radius: 10 10 10 10;" text="APPROVED STUDENTS" textFill="#16a367">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <Line endX="777.0" layoutX="157.0" layoutY="237.0" startX="-157.0" />
     </children>
 </AnchorPane>

@@ -41,6 +41,9 @@ public class DeleteAlertController {
         }else if(type=="Paid Student"){
             isDone = new ForEnrollment().declineRequest(_id);
         }
+        else if(type=="Test"){
+            isDone = new ForTest().declineRequest(_id);
+        }
 
 
         if(isDone){

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="922.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MockTestController.MockTestTableCardController">
+   <children>
+      <AnchorPane prefHeight="47.0" prefWidth="693.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: white;">
+         <children>
+            <Group layoutX="23.0" layoutY="21.0" />
+            <Label fx:id="email" alignment="TOP_LEFT" layoutX="29.0" layoutY="18.0" prefHeight="23.0" prefWidth="214.0" text="SAMIUR RAHMAN OMLAN" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="examType" layoutX="253.0" layoutY="18.0" prefHeight="21.0" prefWidth="119.0" text="SPOKEN ENGLISH">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="examDate" layoutX="422.0" layoutY="19.0" prefHeight="21.0" prefWidth="126.0" text="29-11-2023">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="paymentDate" layoutX="550.0" layoutY="19.0" prefHeight="18.0" prefWidth="110.0" text="12-11-2023">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="id_" layoutX="408.0" layoutY="21.0" text=" " visible="false">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </AnchorPane>
+      <AnchorPane prefHeight="58.0" prefWidth="210.0" style="-fx-background-color: WHITE; -fx-background-radius: 0 10 10 0;">
+         <children>
+            <Button layoutX="18.0" layoutY="11.0" mnemonicParsing="false" onAction="#takeExamHandler" prefHeight="37.0" prefWidth="184.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 15;" text="TAKE EXAM" textFill="#2979ef">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

@@ -13,10 +13,12 @@ public class TestInfo {
     public String practiceQuestionLink;
     public String studentMail;
     public String teacherMail;
+    public String transectionId;
+    public String bkashNumber;
     public boolean isAccepted;
     public boolean isTaken;
 
-    public TestInfo(String _id,String meetLink, String resultScore, String resultLink, String enrollmentDate, String examDate, String studentSubmissionLink, String examModule, String questionLink, String practiceQuestionLink, String studentMail, String teacherMail, boolean isAccepted, boolean isTaken) {
+    public TestInfo(String _id,String meetLink, String resultScore, String resultLink, String enrollmentDate, String examDate, String studentSubmissionLink, String examModule, String questionLink, String practiceQuestionLink, String studentMail, String teacherMail, boolean isAccepted, boolean isTaken, String transectionId, String bkashNumber) {
         this._id = _id;
         this.meetLink = meetLink;
         this.resultScore = resultScore;
@@ -31,6 +33,8 @@ public class TestInfo {
         this.teacherMail = teacherMail;
         this.isAccepted = isAccepted;
         this.isTaken = isTaken;
+        this.transectionId = transectionId;
+        this.bkashNumber = bkashNumber;
     }
 
 }
