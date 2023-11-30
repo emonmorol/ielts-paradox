@@ -1,10 +1,16 @@
 package com.example.ielts_paradox.database;
 
+import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.Faq;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.DBConnections;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ForUser {
     public boolean validate(String userEmail,String userPass, boolean userType){
@@ -76,5 +82,34 @@ public class ForUser {
             e.printStackTrace();
         }
         return false;
+    }
+    public UserInfo getUser(String mail){
+
+        String DB_QUERY = "SELECT * FROM users WHERE email = ?";
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement preparedStatement = connection.prepareStatement(DB_QUERY)) {
+                preparedStatement.setString(1,mail);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try{
+                            String fullname = resultSet.getString("fullname");
+                            String email = resultSet.getString("email");
+                            String contact = resultSet.getString("contact_number");
+                            System.out.println(fullname+" "+email+" "+contact);
+                            UserInfo ui = new UserInfo(fullname,email,contact);
+
+                            return ui;
+                        }catch (SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

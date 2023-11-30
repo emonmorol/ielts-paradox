@@ -147,14 +147,14 @@ public class ForEnrollment {
         }
         return 0;
     }
-    public ArrayList<PaidStudentInfo> getRequests(String courseId,int limit){
+    public ArrayList<PaidStudentInfo> getRequests(String courseId,int limit,boolean isApprove){
         ArrayList<PaidStudentInfo> psi = new ArrayList<>();
         try{
             Connection connection = new DBConnections().getConnection();
             String sql = "SELECT * FROM paid_student WHERE courseId = ? AND courseApproval = ? LIMIT ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1,courseId);
-                statement.setBoolean(2,false);
+                statement.setBoolean(2,isApprove);
                 statement.setInt(3,limit);
 
                 try (ResultSet resultSet = statement.executeQuery()) {
@@ -166,7 +166,10 @@ public class ForEnrollment {
                             System.out.println(transectionId);
                             String email = resultSet.getString("email");
                             String enrollementDate = resultSet.getString("enrollementDate");
-                            PaidStudentInfo ps = new PaidStudentInfo(Integer.parseInt(_id),bkashNumber,transectionId,email,Integer.parseInt(courseId),enrollementDate,false,false);
+                            Boolean courseApproval = resultSet.getBoolean("courseApproval");
+                            Boolean isExpired = resultSet.getBoolean("isExpired");
+
+                            PaidStudentInfo ps = new PaidStudentInfo(Integer.parseInt(_id),bkashNumber,transectionId,email,Integer.parseInt(courseId),enrollementDate,courseApproval,isExpired);
                             psi.add(ps);
                         }catch (SQLException e){
                             e.printStackTrace();
@@ -269,5 +272,20 @@ public class ForEnrollment {
             e.printStackTrace();
         }
         return 0;
+    }
+    public boolean banStudent(String id){
+        String updateSql = "UPDATE paid_student SET isExpired = ? WHERE _id = ?";
+
+        try {
+            Connection connection = new DBConnections().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setBoolean(1, true);
+            preparedStatement.setString(2, id);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return (rowsAffected > 0);
+        } catch (SQLException e) {
+            return false;
+        }
     }
 }

@@ -1,9 +1,8 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.controllers.cardControllers.TeacherApprovedStudentsTableCardController;
 import com.example.ielts_paradox.controllers.cardControllers.TeacherCourseRequestCardController;
-import com.example.ielts_paradox.controllers.cardControllers.TeacherMyCourseCardController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
-import com.example.ielts_paradox.controllers.teacher.TeacherCourseController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.CourseInfo;
@@ -13,7 +12,6 @@ import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,11 +21,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-public class TeacherCourseRequestController {
+public class TeacherApprovedStudentsTableController {
     public static CourseInfo ci;
     @FXML
     private Stage stage;
@@ -74,19 +70,19 @@ public class TeacherCourseRequestController {
         }
         stage.show();
     }
+
     public void setData(CourseInfo ci, String point) throws IOException {
         points.setText(point);
-        title.setText(ci.title + " - "+"Student Request");
-        TeacherCourseRequestController.ci = ci;
-        ArrayList<PaidStudentInfo> paidStudentInfos = new ForEnrollment().getRequests(ci._id,100,false);
+        title.setText(ci.title + " - "+"Approved Students");
+        TeacherApprovedStudentsTableController.ci = ci;
+        ArrayList<PaidStudentInfo> paidStudentInfos = new ForEnrollment().getRequests(ci._id,100,true);
         myCourseTable.getChildren().clear();
         for(PaidStudentInfo paidStudentInfo:paidStudentInfos){
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/courses/teacherCourseRequestCard.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/courses/teacherApprovedStudentsTableCard.fxml"));
             HBox paneee = fxmlLoader.load();
-            TeacherCourseRequestCardController tmccc = fxmlLoader.getController();
-            System.out.println(paidStudentInfo.transectionId);
-            tmccc.setDate(paidStudentInfo);
+            TeacherApprovedStudentsTableCardController tastcc = fxmlLoader.getController();
+            tastcc.setData(paidStudentInfo);
             myCourseTable.getChildren().add(paneee);
         }
     }

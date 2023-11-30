@@ -26,4 +26,9 @@ public class UserInfo {
         this.isTeacher = isTeacher;
         this.bio = bio;
     }
+    public UserInfo(String fullName, String email, String contactNumber) {
+        this.fullName = fullName;
+        this.email = email;
+        this.contactNumber = contactNumber;
+    }
 }

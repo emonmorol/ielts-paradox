@@ -4,6 +4,7 @@ import com.example.ielts_paradox.Alerts.DeleteAlert;
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
+import com.example.ielts_paradox.controllers.AllControl.TeacherApprovedStudentsTableController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
 import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.database.ForEnrollment;
@@ -46,8 +47,16 @@ public class TeacherMyCourseCardController {
         stage.show();
     }
     @FXML
-    public void approvedHandler(ActionEvent event) {
-
+    public void approvedHandler(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/pages/courses/teacherApprovedStudentsTable.fxml"));
+        root = fxmlLoader.load();
+        TeacherApprovedStudentsTableController tastc = fxmlLoader.getController();
+        CourseInfo ci = new ForCourse().getCourseById(id_.getText());
+        tastc.setData(ci,"0");
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

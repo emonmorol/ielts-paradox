@@ -5,14 +5,12 @@
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.AllControl.TeacherApprovedStudentsTableController">
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="95.0" prefWidth="1500.0" style="-fx-background-color: #ced8eb;">
          <children>
@@ -26,7 +24,7 @@
             </MFXButton>
          </children>
       </AnchorPane>
-      <Label layoutX="311.0" layoutY="25.0" prefHeight="37.0" prefWidth="604.0" text="APPROVED STUDENTS FOR SPOKEN ENGLISH">
+      <Label fx:id="title" layoutX="311.0" layoutY="25.0" prefHeight="37.0" prefWidth="604.0" text="APPROVED STUDENTS FOR SPOKEN ENGLISH">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -34,69 +32,31 @@
       <Label fx:id="points" layoutX="110.0" layoutY="261.0" text="Label" visible="false" />
       <AnchorPane layoutX="290.0" layoutY="135.0" prefHeight="615.0" prefWidth="856.0" style="-fx-background-radius: 10; -fx-background-color: #e9eff6;">
          <children>
-            <MFXScrollPane prefHeight="615.0" prefWidth="794.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
+            <MFXScrollPane prefHeight="615.0" prefWidth="905.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="myCourseTable" prefHeight="3304.0" prefWidth="776.0" spacing="5.0" style="-fx-background-color: #e9eff6;">
-                     <children>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="765.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);">
-                           <children>
-                              <AnchorPane prefHeight="58.0" prefWidth="717.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: white;">
-                                 <children>
-                                    <Group layoutX="23.0" layoutY="21.0" />
-                                    <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="19.0" prefHeight="23.0" prefWidth="209.0" text="IKRAMUL HASAN MOROL" wrapText="true">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="241.0" layoutY="19.0" prefHeight="20.0" prefWidth="149.0" text="emon2023@gmail.com">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="427.0" layoutY="21.0" prefHeight="20.0" prefWidth="108.0" text="01533525475">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="629.0" layoutY="21.0" prefHeight="20.0" prefWidth="102.0" text="30-11-2023">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </AnchorPane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <VBox fx:id="myCourseTable" prefHeight="3304.0" prefWidth="899.0" spacing="5.0" style="-fx-background-color: #e9eff6;" />
                </content>
             </MFXScrollPane>
          </children>
       </AnchorPane>
-      <Label contentDisplay="CENTER" layoutX="316.0" layoutY="97.0" prefHeight="27.0" prefWidth="124.0" text="STUDENT NAME" textFill="#a19999">
+      <Label contentDisplay="CENTER" layoutX="314.0" layoutY="97.0" prefHeight="27.0" prefWidth="124.0" text="Student Name" textFill="#a19999">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="531.0" layoutY="100.0" prefHeight="22.0" prefWidth="52.0" text="EMAIL" textFill="#a19999">
+      <Label contentDisplay="CENTER" layoutX="533.0" layoutY="100.0" prefHeight="22.0" prefWidth="52.0" text="Email" textFill="#a19999">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="712.0" layoutY="100.0" prefHeight="22.0" prefWidth="147.0" text="CONTACT NUMBER" textFill="#a19999">
+      <Label contentDisplay="CENTER" layoutX="719.0" layoutY="100.0" prefHeight="22.0" prefWidth="147.0" text="Contact Number" textFill="#a19999">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="916.0" layoutY="100.0" prefHeight="22.0" prefWidth="113.0" text="JOINING DATE" textFill="#a19999">
+      <Label contentDisplay="CENTER" layoutX="915.0" layoutY="100.0" prefHeight="22.0" prefWidth="113.0" text="Date" textFill="#a19999">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <Label fx:id="points" layoutX="96.0" layoutY="224.0" text=" " visible="false" />

@@ -83,6 +83,8 @@ public class CheckoutController {
         boolean isComplete = new ForEnrollment().courseEnrollment(psi);
         if(isComplete){
             SuccessAlert.displayCustomAlert();
+            enrollementButton.setDisable(true);
+            enrollementButton.setText("ALREADY ENROLLED");
         }
         else{
             ErrorAlert.displayCustomAlert("Error","Fill up the form with appropriete info!");
