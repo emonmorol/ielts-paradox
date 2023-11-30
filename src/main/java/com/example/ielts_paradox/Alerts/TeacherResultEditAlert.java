@@ -14,13 +14,14 @@ import javafx.util.Duration;
 public class TeacherResultEditAlert {
 
     private static Stage ownerStage;
-    public static void displayCustomAlert( ) {
+    public static void displayCustomAlert(String id) {
 
         try {
             FXMLLoader loader = new FXMLLoader(ErrorAlert.class.getResource("/fxmls/alerts/TeacherResultEditAlert.fxml"));
             Parent root = loader.load();
 
             TeacherResultEditAlertController controller = loader.getController();
+            controller.setId_(id);
 
             Stage customAlertStage = new Stage(StageStyle.UNDECORATED);
             customAlertStage.initModality(Modality.APPLICATION_MODAL);
@@ -30,10 +31,6 @@ public class TeacherResultEditAlert {
             controller.setDialogStage(customAlertStage);
             addOpenAnimation(customAlertStage);
 
-//            controller.setMessage(message);
-//            controller.setTitle(title);
-//            controller.setBandscore(bandscore);
-//            customAlertStage.setTitle(title);
             customAlertStage.showAndWait();
 
 

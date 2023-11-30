@@ -37,4 +37,15 @@ public class TestInfo {
         this.bkashNumber = bkashNumber;
     }
 
+    public TestInfo(String _id,String enrollmentDate, String examModule, String studentMail, String transectionId, String bkashNumber,boolean isAccepted,boolean isTaken) {
+        this._id = _id;
+        this.enrollmentDate = enrollmentDate;
+        this.examModule = examModule;
+        this.studentMail = studentMail;
+        this.transectionId = transectionId;
+        this.bkashNumber = bkashNumber;
+        this.isAccepted = isAccepted;
+        this.isTaken = isTaken;
+    }
+
 }

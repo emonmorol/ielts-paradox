@@ -82,7 +82,7 @@ public class StudentExamPageController {
 
     @FXML
     void resultLink(ActionEvent event) {
-        SeeResultAlert.displayCustomAlert("Your result: ","9");
+        SeeResultAlert.displayCustomAlert("Your result: ","9","https://drive.google.com/file/d/1kHw1xy011UjnmJ-fcqTGVw8Wj1nH_14w/view?usp=sharing");
 
     }
 

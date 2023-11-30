@@ -1,6 +1,6 @@
 package com.example.ielts_paradox.Alerts;
 
-import com.example.ielts_paradox.controllers.alertController.Alert2Controller;
+import com.example.ielts_paradox.controllers.alertController.FormAlertController;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +11,16 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-public class Alert2 {
+public class FormAlert {
 
     private static Stage ownerStage;
-    public static void displayCustomAlert( String title) {
+    public static void displayCustomAlert(String title ,String id) {
 
         try {
             FXMLLoader loader = new FXMLLoader(ErrorAlert.class.getResource("/fxmls/alerts/alert2.fxml"));
             Parent root = loader.load();
 
-            Alert2Controller controller = loader.getController();
+            FormAlertController controller = loader.getController();
 
             Stage customAlertStage = new Stage(StageStyle.UNDECORATED);
             customAlertStage.initModality(Modality.APPLICATION_MODAL);
@@ -31,6 +31,7 @@ public class Alert2 {
             addOpenAnimation(customAlertStage);
 
 //            controller.setMessage(message);
+            FormAlertController.setId_(id);
             controller.setTitle(title);
             customAlertStage.setTitle(title);
             customAlertStage.showAndWait();

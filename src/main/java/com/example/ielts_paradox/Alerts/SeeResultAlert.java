@@ -14,7 +14,7 @@ import javafx.util.Duration;
 public class SeeResultAlert {
 
     private static Stage ownerStage;
-    public static void displayCustomAlert( String title, String bandscore) {
+    public static void displayCustomAlert(String title, String bandscore,String urii) {
 
         try {
             FXMLLoader loader = new FXMLLoader(ErrorAlert.class.getResource("/fxmls/alerts/SeeResultAlert.fxml"));
@@ -33,6 +33,9 @@ public class SeeResultAlert {
 //            controller.setMessage(message);
             controller.setTitle(title);
             controller.setBandscore(bandscore);
+            controller.setUrii(urii);
+
+
             customAlertStage.setTitle(title);
             customAlertStage.showAndWait();
 

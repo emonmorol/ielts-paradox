@@ -1,5 +1,8 @@
 package com.example.ielts_paradox.controllers.MockTestController;
 
+import com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController;
+import com.example.ielts_paradox.database.ForBlogs;
+import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,16 +36,18 @@ public class MockTestTableCardController {
     private Parent root;
     @FXML
     public void takeExamHandler(ActionEvent event) throws IOException {
-//        String id = id.getText();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/teacher_exam_page.fxml"));
         root = fxmlLoader.load();
-//        TeacherExamPageController fbc = fxmlLoader.getController();
-//        fbc.setData(new ForBlogs().getBlogById(_id),"0");
+
+        TeacherExamPageController tecc = fxmlLoader.getController();
+        tecc.setData(new ForTest().getTestInfoById(id_.getText()));
+
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
+
     public void setData(TestInfo ti){
         id_.setText(ti._id);
         email.setText(ti.studentMail);

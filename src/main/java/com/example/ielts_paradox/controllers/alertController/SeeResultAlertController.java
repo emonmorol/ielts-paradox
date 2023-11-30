@@ -15,12 +15,13 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SeeResultAlertController implements Initializable {
+public class SeeResultAlertController{
     @FXML
     private Stage stage;
     private Parent root;
     private Scene scene;
     private Stage dialogStage;
+    String urii;
 
 
     @FXML
@@ -38,6 +39,10 @@ public class SeeResultAlertController implements Initializable {
     public void setTitle(String m) {
         title.setText(m);
     }
+    @FXML
+    public void setUrii(String m) {
+        urii = m;
+    }
 
     @FXML
     public void setBandscore(String m) {
@@ -54,15 +59,6 @@ public class SeeResultAlertController implements Initializable {
 
     @FXML
     void studentPaperLink(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/file/d/1OEipG7fBV-N3csrsQwfEbSGNiQsw33x6/view?usp=sharing"));
-
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        title.setText("Score Is: ");
-        bandscore.setText("9");
-
+        Desktop.getDesktop().browse(new URI(urii));
     }
 }

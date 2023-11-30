@@ -1,6 +1,5 @@
 package com.example.ielts_paradox.Alerts;
 
-import com.example.ielts_paradox.controllers.alertController.Alert2Controller;
 import com.example.ielts_paradox.controllers.alertController.ExamAlertController;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;

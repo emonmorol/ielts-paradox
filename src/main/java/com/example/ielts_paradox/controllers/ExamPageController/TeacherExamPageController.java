@@ -1,14 +1,8 @@
 package com.example.ielts_paradox.controllers.ExamPageController;
 
-import com.example.ielts_paradox.Alerts.Alert2;
-import com.example.ielts_paradox.Alerts.SeeResultAlert;
-import com.example.ielts_paradox.Alerts.SuccessAlert;
-import com.example.ielts_paradox.Alerts.TeacherResultEditAlert;
-import com.example.ielts_paradox.controllers.student.StudentDashboardController;
-import com.example.ielts_paradox.controllers.teacher.MockTestController;
-import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
-import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.singletons.UserSingleTon;
+import com.example.ielts_paradox.Alerts.*;
+import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.TestInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,8 +24,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class TeacherExamPageController implements Initializable {
-
-
+    String id_;
     @FXML
     private ComboBox<String> amPm;
 
@@ -69,16 +62,19 @@ public class TeacherExamPageController implements Initializable {
 
     private Parent root;
 
+    String meetUri;
+    String studentSubmissionUri;
+    String resultPaper;
 
 
 
 
     @FXML
-    private String[] hour = {"1","2","3","4","5","6","7","8","9","10","11","12"};
+    private String[] hour = {"01","02","03","04","05","06","07","08","09","10","11","12"};
 
     @FXML
     private String[] minute = {
-            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+            "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
             "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
             "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
             "31", "32", "33", "34", "35", "36", "37", "38", "39", "40",
@@ -88,10 +84,44 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     private  String[] ap ={"AM","PM"};
+    static TestInfo in;
 
+    public void setData(TestInfo ti){
+        in = ti;
+        id_ = ti._id;
+        if(ti.examDate != null && ti.examDate.length() > 2){
+            String[] dt = ti.examDate.split(":");
+            hourBox.getSelectionModel().select(dt[0]);
+            minuteBox.getSelectionModel().select(dt[1]);
+            amPm.getSelectionModel().select(dt[2]);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            datePicker.setValue(LocalDate.parse(dt[3],formatter));
+        }else{
+            hourBox.getSelectionModel().select("00");
+            minuteBox.getSelectionModel().select("00");
+            amPm.getSelectionModel().select("AM");
+            datePicker.setValue(LocalDate.now());
+        }
 
+        if(ti.meetLink != null && ti.meetLink.length() > 2){
+            meetUri = ti.meetLink;
+        }else{
+            meetUri = null;
+        }
 
+        if(ti.studentSubmissionLink != null && ti.studentSubmissionLink.length() > 2){
+            studentSubmissionUri = ti.studentSubmissionLink;
+        }else{
+            studentSubmissionUri = null;
+        }
 
+        if(ti.resultLink != null && ti.resultLink.length() > 2){
+            resultPaper = ti.resultLink;
+        }else{
+            resultPaper = null;
+        }
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -101,10 +131,6 @@ public class TeacherExamPageController implements Initializable {
         // Set custom size for minuteBox dropdown
         setDropdownSize(minuteBox, 50);
         minuteBox.getItems().addAll(minute);
-
-        hourBox.getSelectionModel().select("00");
-        minuteBox.getSelectionModel().select("00");
-        amPm.getSelectionModel().select("AM");
     }
 
     @FXML
@@ -116,98 +142,97 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     void backButtonHandler(ActionEvent event) throws IOException {
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
-            root = fxmlLoader.load();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
 
 
     @FXML
     void meetEdit(ActionEvent event) {
-        Alert2.displayCustomAlert("Enter Updated Link Meet Here!");
+        FormAlert.displayCustomAlert("Enter Updated Meet Link Here!",id_);
+        setData(new ForTest().getTestInfoById(id_));
     }
-
 
     @FXML
     void resultEdit(ActionEvent event) {
-        TeacherResultEditAlert.displayCustomAlert();
-
+        TeacherResultEditAlert.displayCustomAlert(id_);
+        setData(new ForTest().getTestInfoById(id_));
     }
 
     @FXML
     void practiseQuestion(ActionEvent event) {
-        Alert2.displayCustomAlert("Enter Practise Question Link Here!");
+        FormAlert.displayCustomAlert("Enter Practice Question Link Here!",id_);
+        setData(new ForTest().getTestInfoById(id_));
 
     }
-
 
     @FXML
     void uploadQuestion(ActionEvent event) {
-        Alert2.displayCustomAlert("Enter Question Link Here!");
-
+        FormAlert.displayCustomAlert("Enter Question Link Here!",id_);
+        setData(new ForTest().getTestInfoById(id_));
     }
+
 
     @FXML
     void seeResult(ActionEvent event) {
-        SeeResultAlert.displayCustomAlert("Student Bandscore","9");
-
+        SeeResultAlert.displayCustomAlert("Student Bandscore",TeacherExamPageController.in.resultScore, TeacherExamPageController.in.resultLink);
     }
+
 
     @FXML
     void openMeetLink(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/file/d/1OEipG7fBV-N3csrsQwfEbSGNiQsw33x6/view?usp=sharing"));
-
+        if(meetUri == null){
+            ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
+        }else{
+            Desktop.getDesktop().browse(new URI(meetUri));
+        }
     }
     @FXML
     void seeExamPaper(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://drive.google.com/file/d/1OEipG7fBV-N3csrsQwfEbSGNiQsw33x6/view?usp=sharing"));
-
+        if(meetUri == null){
+            ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
+        }else{
+            Desktop.getDesktop().browse(new URI(studentSubmissionUri));
+        }
     }
 
-
+    @FXML
+    void setTimeAndDate(ActionEvent event) {
+        String eDate = selectedHour+":"+selectedMinute+":"+selectedAmPm+":"+dateFormate;
+        boolean isUpdated = new ForTest().updateExamDate(id_,eDate);
+        if(isUpdated)
+            SuccessAlert.displayCustomAlert();
+        else
+            ErrorAlert.displayCustomAlert("Failed","Can't Update the date\nTry Again!");
+        setData(new ForTest().getTestInfoById(id_));
+    }
     @FXML
     void getDate(ActionEvent event) {
         LocalDate myDate = datePicker.getValue();
-         dateFormate = myDate.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-        System.out.println("Selected Date: " +myDate.toString());
-
+        dateFormate = myDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
     }
 
     @FXML
     void getAmPm(ActionEvent event) {
-         selectedAmPm = amPm.getValue();
-        System.out.println("Selected AM/PM: " + selectedAmPm);
+        selectedAmPm = amPm.getValue();
     }
 
     @FXML
     void getHour(ActionEvent event) {
         selectedHour = hourBox.getValue();
-        System.out.println("Selected Hour: " + selectedHour);
     }
 
     @FXML
     void getMinute(ActionEvent event) {
         selectedMinute = minuteBox.getValue();
-        System.out.println("Selected Minute: " + selectedMinute);
-    }
-
-    @FXML
-    void setTimeAndDate(ActionEvent event) {
-        System.out.println("Selected Date: " + dateFormate);
-        System.out.println("Selected AM/PM: " + selectedAmPm);
-        System.out.println("Selected Hour: " + selectedHour);
-        System.out.println("Selected Minute: " + selectedMinute);
-        SuccessAlert.displayCustomAlert();
-
     }
 
     private void setDropdownSize(ComboBox<String> comboBox, double maxHeight) {
         ListView<String> listView = getListView(comboBox);
-
         if (listView != null) {
             listView.setPrefHeight(maxHeight);
             listView.setMaxHeight(maxHeight);
