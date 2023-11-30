@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="260.0" prefWidth="441.0" style="-fx-border-width: 1; -fx-background-color: white; -fx-border-color: #ff5c40;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.ExamAlertController">
+   <children>
+      <MFXButton buttonType="RAISED" layoutX="18.0" layoutY="204.0" onAction="#closeAlert" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ff5c40; -fx-background-radius: 20;" text="CANCEL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <Label layoutX="119.0" layoutY="110.0" text="You are not Enrolled!!!" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Circle fill="#ff5c40" layoutX="221.0" layoutY="54.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <FontAwesomeIconView fill="WHITE" layoutX="202.0" layoutY="70.0" selectionFill="#ff1616" size="45" text="" wrappingWidth="37.28571319580078" />
+      <Label alignment="CENTER" layoutX="55.0" layoutY="148.0" prefHeight="31.0" prefWidth="349.0" text="Do you want to give Exam?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <MFXButton buttonType="RAISED" layoutX="239.0" layoutY="204.0" onAction="#goToCheckoutPage" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #0c9a0c; -fx-background-radius: 20;" text="ENROLL NOW" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+   </children>
+</AnchorPane>

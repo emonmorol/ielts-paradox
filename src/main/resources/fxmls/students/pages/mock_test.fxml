@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.student.MockTestController">
     <children>
         <GridPane hgap="20.0" layoutY="140.0" prefHeight="411.0" prefWidth="934.0" vgap="20.0">
             <columnConstraints>
@@ -26,7 +26,7 @@
             <children>
                 <AnchorPane prefHeight="195.0" prefWidth="553.0">
                     <children>
-                        <Button alignment="TOP_LEFT" layoutY="-1.0" mnemonicParsing="false" prefHeight="196.0" prefWidth="456.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
+                        <Button alignment="TOP_LEFT" layoutY="-1.0" mnemonicParsing="false" onAction="#onClickListening" prefHeight="196.0" prefWidth="456.0" style="-fx-background-radius: 7; -fx-background-color: #a5b4fc;" text="Listening">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -39,7 +39,7 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="250.0" prefWidth="455.0" GridPane.columnIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #93c5fd;" text="Reading">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onClickReading" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #93c5fd;" text="Reading">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -52,7 +52,7 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="196.0" prefWidth="473.0" GridPane.rowIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" layoutX="-1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #5eead4;" text="Writting">
+                        <Button alignment="TOP_LEFT" layoutX="-1.0" mnemonicParsing="false" onAction="#onClickWritting" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #5eead4;" text="Writting">
                             <font>
                                 <Font size="25.0" />
                             </font>
@@ -65,7 +65,7 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="256.0" prefWidth="498.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #fca5a5;" text="Speaking">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onClickSpeaking" prefHeight="195.0" prefWidth="458.0" style="-fx-background-radius: 7; -fx-background-color: #fca5a5;" text="Speaking">
                             <font>
                                 <Font size="25.0" />
                             </font>
