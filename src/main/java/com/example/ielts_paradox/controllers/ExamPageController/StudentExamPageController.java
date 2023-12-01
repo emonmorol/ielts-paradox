@@ -53,7 +53,7 @@ public class StudentExamPageController  {
     @FXML
     private Label examTime;
 
-    private static  int ADDITIONAL_MINUTES = 1;
+    private static  int ADDITIONAL_MINUTES = 40;
 
     @FXML
     private Label timerLabel;
@@ -82,9 +82,11 @@ public class StudentExamPageController  {
     String resultPaper;
     String questionPaperLink;
     String practiceQuestionPaperLink;
+    String timeString2;
 
     private boolean toStop = false;
     public void setData(TestInfo ti){
+
         in = ti;
         id_ = ti._id;
 
@@ -114,7 +116,42 @@ public class StudentExamPageController  {
         }else{
             resultPaper = null;
         }
+        timeString2 = ti.examDate;
 
+
+        LocalDateTime cDate = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:a,MM/dd/yyyy");
+        String timeString1 = cDate.format(formatter);
+        System.out.println(timeString1);
+        System.out.println(timeString2);
+        LocalDateTime dateTime1 = parseTimeString(timeString1);
+        LocalDateTime dateTime2 = parseTimeString(timeString2);
+
+        Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
+        Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
+
+        long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
+        duration = Duration.seconds(secondsBetween);
+        updateTimerLabel();
+
+        keyFrame = new KeyFrame(Duration.seconds(1), event -> {
+            duration = duration.subtract(Duration.seconds(1));
+            updateTimerLabel();
+            if (duration.equals(Duration.ZERO)) {
+                if(!toStop){
+                    toStop = true;
+                    startTimer(ADDITIONAL_MINUTES);
+                }else{
+                    toStop = false;
+                    stopTimer();
+                }
+
+            }
+        });
+
+        timeline = new Timeline(keyFrame);
+        timeline.setCycleCount((int) duration.toSeconds());
+        timeline.play();
     }
 
     @FXML
@@ -176,37 +213,7 @@ public class StudentExamPageController  {
     }
 
     public void initialize() {
-        String timeString1 = "10:30:AM,11/12/2013";
-        String timeString2 = "10:31:AM,11/12/2013";
 
-        LocalDateTime dateTime1 = parseTimeString(timeString1);
-        LocalDateTime dateTime2 = parseTimeString(timeString2);
-
-        Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
-        Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
-
-        long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
-        duration = Duration.seconds(secondsBetween);
-        updateTimerLabel();
-
-        keyFrame = new KeyFrame(Duration.seconds(1), event -> {
-            duration = duration.subtract(Duration.seconds(1));
-            updateTimerLabel();
-            if (duration.equals(Duration.ZERO)) {
-                if(!toStop){
-                    toStop = true;
-                    startTimer(ADDITIONAL_MINUTES);
-                }else{
-                    toStop = false;
-                    stopTimer();
-                }
-
-            }
-        });
-
-        timeline = new Timeline(keyFrame);
-        timeline.setCycleCount((int) duration.toSeconds());
-        timeline.play();
     }
 
     private void stopTimer() {
@@ -246,7 +253,7 @@ public class StudentExamPageController  {
     }
 
     private LocalDateTime parseTimeString(String timeString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm:a,MM/dd/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:a,MM/dd/yyyy");
         return LocalDateTime.parse(timeString, formatter);
     }
 

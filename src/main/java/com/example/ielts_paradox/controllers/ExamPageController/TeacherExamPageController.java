@@ -20,7 +20,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
@@ -80,7 +82,7 @@ public class TeacherExamPageController implements Initializable {
             "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
             "31", "32", "33", "34", "35", "36", "37", "38", "39", "40",
             "41", "42", "43", "44", "45", "46", "47", "48", "49", "50",
-            "51", "52", "53", "54", "55", "56", "57", "58", "59", "60"
+            "51", "52", "53", "54", "55", "56", "57", "58", "59", "00"
     };
 
     @FXML
@@ -91,17 +93,34 @@ public class TeacherExamPageController implements Initializable {
         in = ti;
         id_ = ti._id;
         if(ti.examDate != null && ti.examDate.length() > 2){
-            String[] dt = ti.examDate.split(":");
-            hourBox.getSelectionModel().select(dt[0]);
-            minuteBox.getSelectionModel().select(dt[1]);
-            amPm.getSelectionModel().select(dt[2]);
+            String[] dt = ti.examDate.split(",");
+            String[] tme = dt[0].split(":");
+            hourBox.getSelectionModel().select(tme[0]);
+            minuteBox.getSelectionModel().select(tme[1]);
+            amPm.getSelectionModel().select(tme[2]);
+
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            datePicker.setValue(LocalDate.parse(dt[3],formatter));
+            System.out.println(dt[1]);
+            datePicker.setValue(LocalDate.parse(dt[1],formatter));
+
+            selectedHour = tme[0];
+            selectedMinute = tme[1];
+            selectedAmPm = tme[2];
+            dateFormate = dt[1];
         }else{
             hourBox.getSelectionModel().select("00");
             minuteBox.getSelectionModel().select("00");
             amPm.getSelectionModel().select("AM");
             datePicker.setValue(LocalDate.now());
+            selectedHour = "00";
+            selectedMinute = "00";
+            selectedAmPm = "AM";
+            LocalDate localDate = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            String formattedDate = localDate.format(formatter);
+            System.out.println(formattedDate);
+            datePicker.setValue(LocalDate.parse(formattedDate, formatter));
+            dateFormate = formattedDate;
         }
 
         if(ti.meetLink != null && ti.meetLink.length() > 2){
@@ -215,10 +234,18 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     void setTimeAndDate(ActionEvent event) {
-        String eDate = selectedHour+":"+selectedMinute+":"+selectedAmPm+":"+dateFormate;
+        String eDate = selectedHour+":"+selectedMinute+":"+selectedAmPm+","+dateFormate;
+        System.out.println(eDate);
         boolean isUpdated = new ForTest().updateExamDate(id_,eDate);
-        if(isUpdated)
+        if(isUpdated){
             SuccessAlert.displayCustomAlert();
+//            hourBox.getSelectionModel().select(selectedHour);
+//            minuteBox.getSelectionModel().select(selectedMinute);
+//            amPm.getSelectionModel().select(selectedAmPm);
+//
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//            datePicker.setValue(LocalDate.parse(dateFormate,formatter));
+        }
         else
             ErrorAlert.displayCustomAlert("Failed","Can't Update the date\nTry Again!");
         setData(new ForTest().getTestInfoById(id_));
