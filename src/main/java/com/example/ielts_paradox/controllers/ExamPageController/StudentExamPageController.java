@@ -165,52 +165,30 @@ public class StudentExamPageController  {
     }
     @FXML
     void backButtonHandler(ActionEvent event) throws IOException {
-        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
-        UserInfo user = ins.getUser();
-        if(user.isTeacher){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
-            root = fxmlLoader.load();
-            TeacherDashboardController tdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            if(points.getText()=="0")
-                tdc.onClick5(event);
-            else
-                tdc.onClickOverview(event);
-        }else{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
-            root = fxmlLoader.load();
-            StudentDashboardController sdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            if(points.getText()=="0")
-                sdc.onClick5(event);
-            else
-                sdc.onClickOverview(event);
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
+        root = fxmlLoader.load();
+        StudentDashboardController sdc =fxmlLoader.getController();
+        sdc.onClick5(event);
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
 
     public void initialize() {
-        // Parse two time strings
         String timeString1 = "10:30:AM,11/12/2013";
         String timeString2 = "10:31:AM,11/12/2013";
 
         LocalDateTime dateTime1 = parseTimeString(timeString1);
         LocalDateTime dateTime2 = parseTimeString(timeString2);
 
-        // Convert LocalDateTime to Instant for ChronoUnit.between
         Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
         Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
 
-        // Calculate the duration between two times using ChronoUnit
         long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
         duration = Duration.seconds(secondsBetween);
         updateTimerLabel();
 
-        // Set up the timer
         keyFrame = new KeyFrame(Duration.seconds(1), event -> {
             duration = duration.subtract(Duration.seconds(1));
             updateTimerLabel();
@@ -226,7 +204,6 @@ public class StudentExamPageController  {
             }
         });
 
-        // Start the timer
         timeline = new Timeline(keyFrame);
         timeline.setCycleCount((int) duration.toSeconds());
         timeline.play();
@@ -246,7 +223,7 @@ public class StudentExamPageController  {
         updateTimerLabel();
 
         timeline = new Timeline(keyFrame);
-        timeline.setCycleCount(minutes * 60); // set cycle count based on minutes
+        timeline.setCycleCount(minutes * 60);
         timeline.play();
     }
 
@@ -272,9 +249,5 @@ public class StudentExamPageController  {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm:a,MM/dd/yyyy");
         return LocalDateTime.parse(timeString, formatter);
     }
-
-
-
-
 
 }

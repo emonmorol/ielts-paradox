@@ -38,11 +38,10 @@ public class MockTestController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc =fxmlLoader.getController();
+            sdc.onClickPricing(event);
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClickPricing(event);
-
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
@@ -64,10 +63,11 @@ public class MockTestController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc =fxmlLoader.getController();
+            sdc.onClickPricing(event);
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClickPricing(event);
+
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
@@ -90,10 +90,11 @@ public class MockTestController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc =fxmlLoader.getController();
+            sdc.onClickPricing(event);
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClickPricing(event);
+
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
@@ -116,10 +117,11 @@ public class MockTestController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc =fxmlLoader.getController();
+            sdc.onClickPricing(event);
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            sdc.onClickPricing(event);
+
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/exam_page.fxml"));
             root = fxmlLoader.load();
@@ -132,7 +134,4 @@ public class MockTestController {
         }
 
     }
-
-
-
 }

@@ -2,7 +2,6 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
@@ -43,16 +42,13 @@
                <HBox.margin>
                   <Insets bottom="7.0" right="7.0" top="7.0" />
                </HBox.margin>
-               <children>
-                  <MFXProgressSpinner layoutX="5.0" layoutY="14.0" prefHeight="50.0" prefWidth="56.0" progress="0.67" startingAngle="90.0" />
-               </children>
             </AnchorPane>
             <AnchorPane prefHeight="73.0" prefWidth="115.0">
                <HBox.margin>
                   <Insets bottom="7.0" right="7.0" top="7.0" />
                </HBox.margin>
                <children>
-                  <MFXButton fx:id="detailsButton" buttonType="RAISED" contentDisplay="RIGHT" depthLevel="LEVEL0" layoutX="43.0" layoutY="4.0" onAction="#detailsHandler" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #c0e8eb; -fx-background-radius: 10;" text=" " textFill="#035256">
+                  <MFXButton fx:id="detailsButton" buttonType="RAISED" contentDisplay="RIGHT" depthLevel="LEVEL0" layoutX="54.0" layoutY="4.0" onAction="#detailsHandler" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #c0e8eb; -fx-background-radius: 10;" text=" " textFill="#035256">
                      <graphic>
                         <FontAwesomeIconView fill="#035256" glyphName="" size="30" text="" wrappingWidth="28.552407264709473" />
                      </graphic>

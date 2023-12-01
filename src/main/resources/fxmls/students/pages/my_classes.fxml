@@ -27,9 +27,9 @@
                </children>
             </AnchorPane>
             <AnchorPane layoutX="96.0" layoutY="37.0" opacity="0.88" prefHeight="34.0" prefWidth="822.0" style="-fx-background-color: white; -fx-background-radius: 0 10 0 0;" />
-            <Label fx:id="pageTitle" layoutX="109.0" layoutY="74.0" prefHeight="46.0" prefWidth="622.0" style="-fx-text-fill: #1a2579;" text="MY CLASSES" textFill="#1a2579">
+            <Label fx:id="pageTitle" layoutX="109.0" layoutY="74.0" prefHeight="46.0" prefWidth="622.0" style="-fx-text-fill: #1a2579;" text="Classes" textFill="#1a2579">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
          </children>

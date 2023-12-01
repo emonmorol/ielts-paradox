@@ -75,24 +75,26 @@ public class FullBlogController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
             root = fxmlLoader.load();
             TeacherDashboardController tdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
             if(points.getText()=="0")
                 tdc.onClick7(event);
             else
                 tdc.onClickOverview(event);
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+
         }else{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
             if(points.getText()=="0")
                 sdc.onClick7(event);
             else
                 sdc.onClickOverview(event);
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+
         }
         stage.show();
     }

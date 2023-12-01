@@ -38,30 +38,17 @@ public class MockTestTableController implements Initializable {
 
     @FXML
     void goToBackPage(ActionEvent event) throws IOException {
-        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
-        UserInfo user = ins.getUser();
-        if(user.isTeacher){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
-            root = fxmlLoader.load();
-            TeacherDashboardController tdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            tdc.onClick5(event);
-        }else{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
-            root = fxmlLoader.load();
-            StudentDashboardController sdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            sdc.onClick5(event);
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+        root = fxmlLoader.load();
+        TeacherDashboardController tdc =fxmlLoader.getController();
+        tdc.onClick5(event);
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
     public void setData(){
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
-
         myCourseTable.getChildren().clear();
 
         ArrayList<TestInfo> tis = new ForTest().getApprovedStudents(info.email,100);

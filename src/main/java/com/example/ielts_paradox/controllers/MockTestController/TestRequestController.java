@@ -38,31 +38,13 @@ public class TestRequestController {
 
     @FXML
     void goToBackPage(ActionEvent event) throws IOException {
-        UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
-        UserInfo user = ins.getUser();
-        if(user.isTeacher){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
-            root = fxmlLoader.load();
-            TeacherDashboardController tdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            if(points.getText()=="0")
-                tdc.onClick5(event);
-            else
-                tdc.onClickOverview(event);
-        }else{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
-            root = fxmlLoader.load();
-            StudentDashboardController sdc =fxmlLoader.getController();
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            if(points.getText()=="0")
-                sdc.onClick5(event);
-            else
-                sdc.onClickOverview(event);
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
+        root = fxmlLoader.load();
+        TeacherDashboardController tdc =fxmlLoader.getController();
+        tdc.onClick5(event);
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
         stage.show();
     }
     @FXML

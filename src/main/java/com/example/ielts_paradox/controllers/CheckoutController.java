@@ -76,12 +76,12 @@ public class CheckoutController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/studentDashboard.fxml"));
             root = fxmlLoader.load();
             StudentDashboardController sdc = fxmlLoader.getController();
-
+            sdc.onClickPricing(e);
             scene = new Scene(root);
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-            sdc.onClick5(e);
+
         }
 
     }

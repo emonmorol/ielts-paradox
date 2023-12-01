@@ -1,12 +1,13 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.Alerts.DeleteAlert;
+import com.example.ielts_paradox.controllers.teacher.MyBlogController;
 import com.example.ielts_paradox.models.BlogInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class MyBlogsCardController {
+public class MyBlogsCardController{
     @FXML
     private Label id_;
 
@@ -24,7 +25,7 @@ public class MyBlogsCardController {
 
     @FXML
     void deleteHandler(ActionEvent event) {
-
         DeleteAlert.displayCustomAlert("Blog",id_.getText());
+
     }
 }

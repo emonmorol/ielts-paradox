@@ -26,6 +26,9 @@
                <graphic>
                   <FontAwesomeIconView size="20" text="" wrappingWidth="11.14285659790039" />
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </MFXButton>
          </children>
       </AnchorPane>

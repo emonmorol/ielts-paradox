@@ -177,12 +177,12 @@
                </children>
                 </AnchorPane>
                 <AnchorPane layoutY="65.0" prefHeight="666.0" prefWidth="293.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="65.0">
-                    <children>
-                  <AnchorPane layoutX="12.0" layoutY="346.0" prefHeight="314.0" prefWidth="269.0">
+               <children>
+                  <AnchorPane layoutX="13.0" layoutY="344.0" prefHeight="314.0" prefWidth="269.0">
                      <children>
-                              <VBox layoutY="34.0" prefHeight="278.0" prefWidth="269.0" spacing="5.0" style="-fx-background-radius: 10;">
+                        <VBox layoutY="34.0" prefHeight="278.0" prefWidth="269.0" spacing="5.0" style="-fx-background-radius: 10;">
                            <children>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;">
                                  <children>
                                     <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
                                        <children>
@@ -200,17 +200,28 @@
                                                 <Font name="System Bold" size="11.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="173.0" text="Next monday you will have a mock test.....">
+                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="158.0" text="Next monday you will have a mock test.....">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="172.0" layoutY="9.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="37.0" style="-fx-background-color: white; -fx-background-radius: 6;" />
+                                          <MFXButton ellipsisString="" layoutX="172.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;">
                                  <children>
                                     <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
                                        <children>
@@ -228,17 +239,28 @@
                                                 <Font name="System Bold" size="11.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="173.0" text="Next monday you will have a mock test.....">
+                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="158.0" text="Next monday you will have a mock test.....">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="172.0" layoutY="9.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="37.0" style="-fx-background-color: white; -fx-background-radius: 6;" />
+                                          <MFXButton ellipsisString="" layoutX="172.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;">
                                  <children>
                                     <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
                                        <children>
@@ -256,17 +278,28 @@
                                                 <Font name="System Bold" size="11.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="173.0" text="Next monday you will have a mock test.....">
+                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="158.0" text="Next monday you will have a mock test.....">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="172.0" layoutY="9.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="37.0" style="-fx-background-color: white; -fx-background-radius: 6;" />
+                                          <MFXButton ellipsisString="" layoutX="172.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;">
                                  <children>
                                     <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
                                        <children>
@@ -284,17 +317,28 @@
                                                 <Font name="System Bold" size="11.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="173.0" text="Next monday you will have a mock test.....">
+                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="158.0" text="Next monday you will have a mock test.....">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="172.0" layoutY="9.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="37.0" style="-fx-background-color: white; -fx-background-radius: 6;" />
+                                          <MFXButton ellipsisString="" layoutX="172.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;">
                                  <children>
                                     <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
                                        <children>
@@ -312,38 +356,49 @@
                                                 <Font name="System Bold" size="11.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="173.0" text="Next monday you will have a mock test.....">
+                                          <Label layoutX="-1.0" layoutY="26.0" prefHeight="15.0" prefWidth="158.0" text="Next monday you will have a mock test.....">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="172.0" layoutY="9.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="37.0" style="-fx-background-color: white; -fx-background-radius: 6;" />
+                                          <MFXButton ellipsisString="" layoutX="172.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
                            </children>
                         </VBox>
-                              <Label text="Latest Notice">
-                                  <font>
-                                      <Font name="System Bold" size="13.0" />
-                                  </font>
-                              </Label>
+                        <Label text="Latest Notice">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="332.0" prefWidth="269.0">
+                  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="332.0" prefWidth="269.0">
                      <children>
-                              <VBox layoutY="32.0" prefHeight="281.0" prefWidth="269.0" spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                        <VBox layoutY="32.0" prefHeight="281.0" prefWidth="269.0" spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                            <children>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 8;">
                                  <children>
                                     <AnchorPane prefHeight="59.0" prefWidth="76.0" style="-fx-background-radius: 10;">
                                        <children>
-                                          <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/user.png" />
-                                             </image>
-                                          </ImageView>
+                                          <FontAwesomeIconView fill="#1a2579" layoutX="14.0" layoutY="35.0" size="28" text="" wrappingWidth="24.571428298950195">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="242.0" style="-fx-background-radius: 10;">
@@ -353,21 +408,32 @@
                                                 <Font name="System Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true" />
+                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                           <Label layoutX="8.0" layoutY="26.0" prefHeight="17.0" prefWidth="150.0" text="Next monday you will have a mock test....." />
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 8;">
                                  <children>
                                     <AnchorPane prefHeight="59.0" prefWidth="76.0" style="-fx-background-radius: 10;">
                                        <children>
-                                          <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/user.png" />
-                                             </image>
-                                          </ImageView>
+                                          <FontAwesomeIconView fill="#1a2579" layoutX="14.0" layoutY="35.0" size="28" text="" wrappingWidth="24.571428298950195">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="242.0" style="-fx-background-radius: 10;">
@@ -377,21 +443,32 @@
                                                 <Font name="System Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true" />
+                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                           <Label layoutX="8.0" layoutY="26.0" prefHeight="17.0" prefWidth="150.0" text="Next monday you will have a mock test....." />
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 8;">
                                  <children>
                                     <AnchorPane prefHeight="59.0" prefWidth="76.0" style="-fx-background-radius: 10;">
                                        <children>
-                                          <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/user.png" />
-                                             </image>
-                                          </ImageView>
+                                          <FontAwesomeIconView fill="#1a2579" layoutX="14.0" layoutY="35.0" size="28" text="" wrappingWidth="24.571428298950195">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="242.0" style="-fx-background-radius: 10;">
@@ -401,21 +478,32 @@
                                                 <Font name="System Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true" />
+                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                           <Label layoutX="8.0" layoutY="26.0" prefHeight="17.0" prefWidth="150.0" text="Next monday you will have a mock test....." />
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 8;">
                                  <children>
                                     <AnchorPane prefHeight="59.0" prefWidth="76.0" style="-fx-background-radius: 10;">
                                        <children>
-                                          <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/user.png" />
-                                             </image>
-                                          </ImageView>
+                                          <FontAwesomeIconView fill="#1a2579" layoutX="14.0" layoutY="35.0" size="28" text="" wrappingWidth="24.571428298950195">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="242.0" style="-fx-background-radius: 10;">
@@ -425,21 +513,32 @@
                                                 <Font name="System Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true" />
+                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                           <Label layoutX="8.0" layoutY="26.0" prefHeight="17.0" prefWidth="150.0" text="Next monday you will have a mock test....." />
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </HBox>
-                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #cdd1ef; -fx-background-radius: 6;">
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 8;">
                                  <children>
                                     <AnchorPane prefHeight="59.0" prefWidth="76.0" style="-fx-background-radius: 10;">
                                        <children>
-                                          <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/user.png" />
-                                             </image>
-                                          </ImageView>
+                                          <FontAwesomeIconView fill="#1a2579" layoutX="14.0" layoutY="35.0" size="28" text="" wrappingWidth="24.571428298950195">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="242.0" style="-fx-background-radius: 10;">
@@ -449,7 +548,18 @@
                                                 <Font name="System Bold" size="12.0" />
                                              </font>
                                           </Label>
-                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true" />
+                                          <MFXButton ellipsisString="" layoutX="174.0" layoutY="10.0" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: white; -fx-background-radius: 6;" text=" " wrapText="true">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#1a2579" size="18" text="" wrappingWidth="1.0">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </FontAwesomeIconView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </MFXButton>
                                           <Label layoutX="8.0" layoutY="26.0" prefHeight="17.0" prefWidth="150.0" text="Next monday you will have a mock test....." />
                                        </children>
                                     </AnchorPane>
@@ -457,14 +567,14 @@
                               </HBox>
                            </children>
                         </VBox>
-                              <Label layoutX="2.0" text="Top Messages">
-                                  <font>
-                                      <Font name="System Bold" size="13.0" />
-                                  </font>
-                              </Label>
+                        <Label layoutX="2.0" text="Top Messages">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
-                    </children>
+               </children>
                 </AnchorPane>
             </children>
             <BorderPane.margin>

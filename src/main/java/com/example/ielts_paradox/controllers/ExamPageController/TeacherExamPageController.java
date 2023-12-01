@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.ExamPageController;
 
 import com.example.ielts_paradox.Alerts.*;
+import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
 import javafx.event.ActionEvent;
@@ -142,8 +143,20 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     void backButtonHandler(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxmls/teacher/mocktest/mockTestTable.fxml"));
+        this.root = (Parent)fxmlLoader.load();
+//        MockTestTableController mttc = fxmlLoader.getController();
+        this.scene = new Scene(this.root);
+        this.stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        this.stage.setScene(this.scene);
+        this.stage.show();
+    }
+    @FXML
+    void dashboardHandler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/teacherDashboard.fxml"));
         root = fxmlLoader.load();
+        TeacherDashboardController tdc = fxmlLoader.getController();
+        tdc.onClick5(event);
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
