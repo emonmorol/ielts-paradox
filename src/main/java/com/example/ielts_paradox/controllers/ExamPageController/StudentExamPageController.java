@@ -10,6 +10,7 @@ import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,13 +24,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.Desktop;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -37,30 +41,19 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
-public class StudentExamPageController  {
-    @FXML
-    private Stage stage;
+public class StudentExamPageController implements Initializable {
 
-    private Scene scene;
-
-    private Parent root;
     @FXML
-    private Label points;
+    private TextField answerArea;
+
+    @FXML
+    private Label examTime;
 
     @FXML
     private Hyperlink meetId;
 
     @FXML
-    private Label examTime;
-
-    private static  int ADDITIONAL_MINUTES = 40;
-
-    @FXML
-    private Label timerLabel;
-
-    @FXML
-    private TextField answerArea;
-
+    private Label points;
 
     @FXML
     private Hyperlink practiseId;
@@ -70,6 +63,35 @@ public class StudentExamPageController  {
 
     @FXML
     private MFXButton resultId;
+
+    @FXML
+    private MFXScrollPane sPane;
+
+    @FXML
+    private Label timerLabel;
+
+    @FXML
+    private VBox vBox;
+    @FXML
+    private Stage stage;
+
+    private Scene scene;
+
+    private Parent root;
+
+
+
+
+
+
+    private static  int ADDITIONAL_MINUTES = 40;
+
+
+
+
+    @FXML
+    private TextArea writeMessage;
+
 
     private Timeline timeline;
     private Duration duration;
@@ -116,42 +138,44 @@ public class StudentExamPageController  {
         }else{
             resultPaper = null;
         }
-        timeString2 = ti.examDate;
+        if(ti.examDate != null){
+            timeString2 = ti.examDate;
 
 
-        LocalDateTime cDate = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:a,MM/dd/yyyy");
-        String timeString1 = cDate.format(formatter);
-        System.out.println(timeString1);
-        System.out.println(timeString2);
-        LocalDateTime dateTime1 = parseTimeString(timeString1);
-        LocalDateTime dateTime2 = parseTimeString(timeString2);
+            LocalDateTime cDate = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:a,MM/dd/yyyy");
+            String timeString1 = cDate.format(formatter);
+            System.out.println(timeString1);
+            System.out.println(timeString2);
+            LocalDateTime dateTime1 = parseTimeString(timeString1);
+            LocalDateTime dateTime2 = parseTimeString(timeString2);
 
-        Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
-        Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
+            Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
+            Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
 
-        long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
-        duration = Duration.seconds(secondsBetween);
-        updateTimerLabel();
-
-        keyFrame = new KeyFrame(Duration.seconds(1), event -> {
-            duration = duration.subtract(Duration.seconds(1));
+            long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
+            duration = Duration.seconds(secondsBetween);
             updateTimerLabel();
-            if (duration.equals(Duration.ZERO)) {
-                if(!toStop){
-                    toStop = true;
-                    startTimer(ADDITIONAL_MINUTES);
-                }else{
-                    toStop = false;
-                    stopTimer();
+
+            keyFrame = new KeyFrame(Duration.seconds(1), event -> {
+                duration = duration.subtract(Duration.seconds(1));
+                updateTimerLabel();
+                if (duration.equals(Duration.ZERO)) {
+                    if(!toStop){
+                        toStop = true;
+                        startTimer(ADDITIONAL_MINUTES);
+                    }else{
+                        toStop = false;
+                        stopTimer();
+                    }
+
                 }
+            });
 
-            }
-        });
-
-        timeline = new Timeline(keyFrame);
-        timeline.setCycleCount((int) duration.toSeconds());
-        timeline.play();
+            timeline = new Timeline(keyFrame);
+            timeline.setCycleCount((int) duration.toSeconds());
+            timeline.play();
+        }
     }
 
     @FXML
@@ -212,9 +236,7 @@ public class StudentExamPageController  {
         stage.show();
     }
 
-    public void initialize() {
 
-    }
 
     private void stopTimer() {
         if (timeline != null) {
@@ -257,4 +279,27 @@ public class StudentExamPageController  {
         return LocalDateTime.parse(timeString, formatter);
     }
 
+    public void sentMessage(ActionEvent event) {
+
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for(int i =1;i<=10;i++){
+            FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
+            FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
+            try {
+                AnchorPane crd = loder.load();
+                vBox.getChildren().add(crd);
+                AnchorPane crd2 = loder2.load();
+                vBox.getChildren().add(crd2);
+                sPane.setVvalue(1.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+    }
 }

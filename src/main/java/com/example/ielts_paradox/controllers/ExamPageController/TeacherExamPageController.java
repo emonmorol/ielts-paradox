@@ -4,6 +4,7 @@ import com.example.ielts_paradox.Alerts.*;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
+import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -49,6 +52,10 @@ public class TeacherExamPageController implements Initializable {
     private TextArea question;
     @FXML
     private String dateFormate;
+    @FXML
+    private MFXScrollPane sPane;
+    @FXML
+    private VBox vBox;
     @FXML
     private String selectedAmPm;
     @FXML
@@ -92,7 +99,7 @@ public class TeacherExamPageController implements Initializable {
     public void setData(TestInfo ti){
         in = ti;
         id_ = ti._id;
-        if(ti.examDate != null && ti.examDate.length() > 2){
+        if(ti.examDate != null ){
             String[] dt = ti.examDate.split(",");
             String[] tme = dt[0].split(":");
             hourBox.getSelectionModel().select(tme[0]);
@@ -123,19 +130,19 @@ public class TeacherExamPageController implements Initializable {
             dateFormate = formattedDate;
         }
 
-        if(ti.meetLink != null && ti.meetLink.length() > 2){
+        if(ti.meetLink != null ){
             meetUri = ti.meetLink;
         }else{
             meetUri = null;
         }
 
-        if(ti.studentSubmissionLink != null && ti.studentSubmissionLink.length() > 2){
+        if(ti.studentSubmissionLink != null ){
             studentSubmissionUri = ti.studentSubmissionLink;
         }else{
             studentSubmissionUri = null;
         }
 
-        if(ti.resultLink != null && ti.resultLink.length() > 2){
+        if(ti.resultLink != null ){
             resultPaper = ti.resultLink;
         }else{
             resultPaper = null;
@@ -151,7 +158,25 @@ public class TeacherExamPageController implements Initializable {
         // Set custom size for minuteBox dropdown
         setDropdownSize(minuteBox, 50);
         minuteBox.getItems().addAll(minute);
-    }
+
+
+            for(int i =1;i<=10;i++){
+                FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
+                FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
+                try {
+                    AnchorPane crd = loder.load();
+                    vBox.getChildren().add(crd);
+                    AnchorPane crd2 = loder2.load();
+                    vBox.getChildren().add(crd2);
+                    sPane.setVvalue(1.0);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+        }
+
 
     @FXML
     void sentMessage(ActionEvent event) {

@@ -32,7 +32,8 @@ public class ForCourse {
                             int discount = Integer.parseInt(resultSet.getString("discount"));;
                             String details = resultSet.getString("details");
                             String instructorName = resultSet.getString("instructorName");
-                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName);
+                            int messagePort = resultSet.getInt("messagePort");
+                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName,messagePort);
                             cf.add(ci);
                         }catch (SQLException e){
                             e.printStackTrace();
@@ -72,6 +73,7 @@ public class ForCourse {
                             String faqsJSON = resultSet.getString("faq");
                             String sidebarPointJSON = resultSet.getString("sidebarPoint");
                             String routine = resultSet.getString("routine");
+                            int messagePort = resultSet.getInt("messagePort");
                             Gson gson = new Gson();
                             String[] features = gson.fromJson(freateresJSON, String[].class);
                             String[] curriculum = gson.fromJson(curriculumJSON, String[].class);
@@ -83,7 +85,7 @@ public class ForCourse {
                                 faqs.add(ob);
                             }
 
-                            ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName,routine);
+                            ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName,routine,messagePort);
                             return ci;
                         }catch (SQLException e){
                             e.printStackTrace();
@@ -118,7 +120,8 @@ public class ForCourse {
                             int discount = Integer.parseInt(resultSet.getString("discount"));;
                             String details = resultSet.getString("details");
                             String instructorName = resultSet.getString("instructorName");
-                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName);
+                            int messagePort = resultSet.getInt("messagePort");
+                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName,messagePort);
                             cf.add(ci);
                         }catch (SQLException e){
                             e.printStackTrace();

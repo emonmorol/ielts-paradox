@@ -76,7 +76,8 @@ public class ForEnrollment {
                             int discount = Integer.parseInt(resultSet.getString("discount"));;
                             String details = resultSet.getString("details");
                             String instructorName = resultSet.getString("instructorName");
-                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName);
+                            int messagePort = resultSet.getInt("messagePort");
+                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName,messagePort);
                             courses.add(ci);
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -110,7 +111,8 @@ public class ForEnrollment {
                             int discount = Integer.parseInt(resultSet.getString("discount"));;
                             String details = resultSet.getString("details");
                             String instructorName = resultSet.getString("instructorName");
-                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName);
+                            int messagePort = resultSet.getInt("messagePort");
+                            CourseInfo ci = new CourseInfo(_id,title,thumbnail,price,isReleased,discount,details,instructorName,messagePort);
                             courses.add(ci);
                         } catch (SQLException e) {
                             e.printStackTrace();

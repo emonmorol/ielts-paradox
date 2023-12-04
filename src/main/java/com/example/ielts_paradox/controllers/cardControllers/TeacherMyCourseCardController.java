@@ -33,6 +33,8 @@ public class TeacherMyCourseCardController {
 
     @FXML
     private Label id_;
+    @FXML
+    private Label msgPort;
 
 
     public void goToReqTable(ActionEvent event) throws IOException {
@@ -63,8 +65,19 @@ public class TeacherMyCourseCardController {
     public void removeHandler(ActionEvent event) {
         DeleteAlert.displayCustomAlert("Course",id_.getText());
     }
+    public void chatHandler(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/messages/chat.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Messages");
+        stage.setScene(scene);
+        stage.show();
+    }
     public void setData(CourseInfo bi){
         title.setText(bi.title);
         id_.setText(bi._id);
+        msgPort.setText(bi.messagePort+"");
     }
 }

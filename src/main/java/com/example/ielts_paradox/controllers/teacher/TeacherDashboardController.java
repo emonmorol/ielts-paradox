@@ -1,8 +1,5 @@
 package com.example.ielts_paradox.controllers.teacher;
 
-import com.example.ielts_paradox.controllers.student.StudentDashboardController;
-import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import com.example.ielts_paradox.utils.SceneChanger;
 import javafx.event.ActionEvent;
@@ -35,12 +32,14 @@ public class TeacherDashboardController  implements Initializable {
     Rectangle clip;
     @FXML
     ImageView img;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/teacher/pages/overview.fxml");
         mainPane.setCenter(panel);
     }
+
     @FXML
     public void onClickOne(ActionEvent e){
         LoadDashboardPane ob = new LoadDashboardPane();
@@ -116,5 +115,4 @@ public class TeacherDashboardController  implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 }

@@ -1,7 +1,6 @@
 package com.example.ielts_paradox;
-import com.example.ielts_paradox.database.ForTest;
-import com.example.ielts_paradox.models.TestInfo;
-import com.example.ielts_paradox.utils.DBConnections;
+import com.example.ielts_paradox.database.ForCourse;
+import com.example.ielts_paradox.models.CourseInfo;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +23,8 @@ public class App extends Application {
             stage.getIcons().add(logo);
             stage.setScene(scene);
             stage.show();
+//            Server s = new Server();
+//            s.startServer();
 
         }catch (Exception e){
             System.out.println(e);

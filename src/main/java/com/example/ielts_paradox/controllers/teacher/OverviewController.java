@@ -108,7 +108,7 @@ public class OverviewController implements Initializable{
             }
         }
 
-        ArrayList<StudentRequest> srs = new ForEnrollment().studentRequestUsingTeacherMail(info.email,5);
+        ArrayList<StudentRequest> srs = new ForEnrollment().studentRequestUsingTeacherMail(info.email,4);
         for (StudentRequest sr : srs){
             System.out.println(sr.studentMail+" "+sr.courseTitle+" "+sr._id);
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -124,7 +124,7 @@ public class OverviewController implements Initializable{
             }
         }
 
-        ArrayList<TestInfo> tis = new ForTest().teachersTests(3);
+        ArrayList<TestInfo> tis = new ForTest().teachersTests(4);
         for (TestInfo ti:tis){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/testRequestCard.fxml"));

@@ -99,6 +99,9 @@ public class CheckoutController {
         courseTitleField.setText(ci.title);
         courseTitleField.setFloatingText("Course Title");
         courseTitle.setText(ci.title);
+        totalPrice.setText(ci.price+"TK");
+        int dPrice = ci.price - (ci.price * ci.discount/100);
+        discountedPrice.setText(dPrice+"TK");
     }
 
     public void setData(String module,String price){

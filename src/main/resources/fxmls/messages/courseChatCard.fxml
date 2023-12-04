@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.CourseChatCardController">
+   <children>
+      <Label fx:id="msgPort" layoutX="87.0" layoutY="11.0" text=" " visible="false" />
+      <Label fx:id="title" layoutX="11.0" layoutY="8.0" prefHeight="19.0" prefWidth="172.0" text="Online IELTS Course">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="instructor" layoutX="11.0" layoutY="25.0" prefHeight="18.0" prefWidth="172.0" text="Instructor: Abu Bakar" />
+      <Label fx:id="courseId" layoutX="153.0" layoutY="19.0" text=" " visible="false" />
+      <MFXButton depthLevel="LEVEL0" onAction="#getToChat" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-background-radius: 10 10 10 10;" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></MFXButton>
+   </children>
+</AnchorPane>

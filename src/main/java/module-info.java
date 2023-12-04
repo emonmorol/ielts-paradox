@@ -8,6 +8,7 @@ module com.example.ielts_paradox {
     requires de.jensd.fx.glyphs.fontawesome;
     requires org.apache.pdfbox;
 
+
     opens com.example.ielts_paradox to javafx.fxml;
     opens com.example.ielts_paradox.utils to javafx.fxml;
     opens com.example.ielts_paradox.controllers to javafx.fxml;
@@ -20,6 +21,7 @@ module com.example.ielts_paradox {
     opens com.example.ielts_paradox.Alerts to javafx.fxml;
     opens com.example.ielts_paradox.controllers.MockTestController to javafx.fxml;
     opens com.example.ielts_paradox.controllers.FormControllers.courseForm to javafx.fxml;
+
 
     exports com.example.ielts_paradox;
     exports com.example.ielts_paradox.utils;

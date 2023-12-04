@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="48.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.TeacherTestRequestCardController">
+<AnchorPane prefHeight="45.0" prefWidth="419.0" style="-fx-background-color: white; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.TeacherTestRequestCardController">
     <children>
-        <Label fx:id="enrollmentDate" layoutX="201.0" layoutY="18.0" prefHeight="15.0" prefWidth="89.0" text="21th October 2023" textFill="#51c46f">
+        <Label fx:id="enrollmentDate" layoutX="201.0" layoutY="16.0" prefHeight="15.0" prefWidth="89.0" text="21th October 2023" textFill="#51c46f">
             <font>
                 <Font size="10.0" />
             </font>
         </Label>
-        <Label fx:id="testName" layoutX="59.0" layoutY="12.0" prefHeight="26.0" prefWidth="112.0" text="WRITTING" textFill="#51c46f">
+        <Label fx:id="testName" layoutX="59.0" layoutY="11.0" prefHeight="26.0" prefWidth="112.0" text="WRITTING" textFill="#51c46f">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font>
         </Label>
-        <MFXButton contentDisplay="CENTER" layoutX="370.0" layoutY="5.0" onAction="#goToTestRequestPage" prefHeight="38.0" prefWidth="37.0" style="-fx-background-color: #d7f5df; -fx-background-radius: 5;" text=" ">
+        <MFXButton contentDisplay="CENTER" layoutX="374.0" layoutY="5.0" onAction="#goToTestRequestPage" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #d7f5df; -fx-background-radius: 5;" text=" ">
             <graphic>
                 <FontAwesomeIconView fill="#51c46f" size="17" text="" wrappingWidth="4.892857074737549" />
             </graphic>
@@ -27,9 +27,9 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </MFXButton>
-      <Label fx:id="logo" alignment="CENTER" layoutX="6.0" layoutY="5.0" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #d7f5df; -fx-background-radius: 5;" text="S" textFill="#51c46f">
+      <Label fx:id="logo" alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="30.0" prefWidth="36.0" style="-fx-background-color: #d7f5df; -fx-background-radius: 5;" text="S" textFill="#51c46f">
          <font>
-            <Font name="System Bold" size="26.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
     </children>
