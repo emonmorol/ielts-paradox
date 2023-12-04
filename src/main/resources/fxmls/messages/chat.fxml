@@ -13,17 +13,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="350.0" opacity="0.98" prefHeight="504.0" prefWidth="579.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.ChatController">
     <children>
-        <ScrollPane fx:id="sPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="11.0" layoutY="50.0" prefHeight="388.0" prefWidth="554.0" style="-fx-background-color: #e9eff6;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0">
+        <ScrollPane fx:id="sPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="11.0" layoutY="50.0" prefHeight="376.0" prefWidth="554.0" style="-fx-background-color: #e9eff6;" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0">
          <content>
-            <AnchorPane prefHeight="615.0" prefWidth="536.0" style="-fx-background-color: #e9eff6;">
-               <children>
-                  <VBox fx:id="messageVBox" layoutX="2.0" prefHeight="615.0" prefWidth="548.0" style="-fx-background-color: #e9eff6;">
-                     <padding>
-                        <Insets bottom="5.0" top="5.0" />
-                     </padding>
-                  </VBox>
-               </children>
-            </AnchorPane>
+            <VBox fx:id="messageVBox" prefHeight="263.0" prefWidth="552.0" style="-fx-background-color: #e9eff6;">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </VBox>
          </content>
         </ScrollPane>
       <MFXButton fx:id="sendButton" buttonType="RAISED" layoutX="482.0" layoutY="451.0" onAction="#sendMessage" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #86cef0;" text=" ">

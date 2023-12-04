@@ -44,8 +44,8 @@ public class SocketClient {
 
             while (in.hasNext()) {
                 String message = in.nextLine();
-                String[] sm = message.split("\\$");
-                controller.appendToLog(sm[0],sm[1]);
+//                String[] sm = message.split("\\$");
+                controller.appendToLog(message);
             }
         } catch (IOException e) {
             e.printStackTrace();

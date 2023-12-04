@@ -8,6 +8,7 @@ import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -69,9 +67,12 @@ public class ChatController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/outgoingCard.fxml"));
             AnchorPane outg = fxmlLoader.load();
             OutgoingCard oc = fxmlLoader.getController();
-            oc.setData(info.fullName,message);
+            oc.setData(message);
+//            messageVBox.setVgrow(outg, Priority.ALWAYS);
+            sPane.setVvalue(1.0);
             messageVBox.getChildren().add(outg);
-//            sPane.set
+
+
 //            appendToLog("You: " + message);
             inputField.clear();
 
@@ -80,12 +81,24 @@ public class ChatController {
         }
     }
 
-    public void appendToLog(String user,String message) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/incomingCard.fxml"));
-        AnchorPane outg = fxmlLoader.load();
-        IncomingCard oc = fxmlLoader.getController();
-        oc.setData(user,message);
-        messageVBox.getChildren().add(outg);
+    public void appendToLog(String message) throws IOException {
+        Platform.runLater(() -> {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/incomingCard.fxml"));
+            AnchorPane outg = null;
+            try {
+                outg = fxmlLoader.load();
+                IncomingCard oc = fxmlLoader.getController();
+                oc.setData(message);
+//                messageVBox.setVgrow(outg, Priority.ALWAYS);
+                sPane.setVvalue(1.0);
+                messageVBox.getChildren().add(outg);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        });
+
     }
 
     public TextField getInputField() {

@@ -12,8 +12,8 @@ public class OutgoingCard {
     @FXML
     private TextFlow textFlow;
 
-    public void setData(String userName,String msg){
-        name.setText(userName);
+    public void setData(String msg){
+//        name.setText(userName);
         Text t = new Text(msg);
         textFlow.getChildren().add(t);
     }

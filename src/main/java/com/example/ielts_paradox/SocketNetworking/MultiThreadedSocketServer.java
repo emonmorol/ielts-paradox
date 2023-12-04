@@ -24,6 +24,7 @@ public class MultiThreadedSocketServer{
 
 
     public void startThreading(int port) {
+
         Stage stage = new Stage();
         logArea.setEditable(false);
         stage.setTitle("MultiThreaded Socket Server");
@@ -63,13 +64,14 @@ public class MultiThreadedSocketServer{
         private String clientName;
 
         public ClientHandler(Socket socket) {
-            UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
-            System.out.println(info.fullName);
-            this.clientName = info.fullName;
+//            UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+//            System.out.println(info.fullName);
+//            this.clientName = info.fullName;
             this.clientSocket = socket;
             try {
                 this.in = new Scanner(socket.getInputStream());
                 this.out = new PrintWriter(socket.getOutputStream(), true);
+                this.clientName = "client-" + clientCounter.getAndIncrement();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -78,20 +80,20 @@ public class MultiThreadedSocketServer{
 
         @Override
         public void run() {
-            UserInfo userInfo = UserSingleTon.getInstance(new UserInfo()).getUser();
-            appendToLog("Client " + userInfo.fullName + " connected: " + clientSocket);
             try {
+                appendToLog("Client " + clientName + " connected: " + clientSocket);
+
                 while (true) {
                     if (in.hasNext()) {
                         String message = in.nextLine();
-                        broadcastMessage(userInfo.fullName + "$" + message, this);
+                        broadcastMessage("Server: "+clientName + ": " + message, this);
                     }
                 }
             } finally {
                 in.close();
                 out.close();
                 clients.remove(this);
-                appendToLog("Client " + userInfo.fullName + " disconnected: " + clientSocket);
+                appendToLog("Client " + clientName + " disconnected: " + clientSocket);
             }
         }
 
