@@ -3,7 +3,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -13,9 +12,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController">
    <children>
       <AnchorPane prefHeight="99.0" prefWidth="1500.0" style="-fx-background-color: #ced8eb;">
          <children>
@@ -158,8 +156,8 @@
             </AnchorPane>
             <AnchorPane layoutX="683.0" prefHeight="571.0" prefWidth="370.0" style="-fx-background-color: WHITE; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);">
                <children>
-                  <TextArea fx:id="writeMessage" layoutX="38.0" layoutY="510.0" prefHeight="40.0" prefWidth="222.0" wrapText="true" />
-                  <MFXButton contentDisplay="CENTER" layoutX="270.0" layoutY="510.0" onAction="#sentMessage" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 15;" text=" " textFill="#2979ef">
+                  <TextArea fx:id="writeMessage" layoutX="28.0" layoutY="510.0" prefHeight="40.0" prefWidth="232.0" wrapText="true" />
+                  <MFXButton contentDisplay="CENTER" layoutX="270.0" layoutY="509.0" onAction="#sentMessage" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 6;" text=" " textFill="#2979ef">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -170,150 +168,23 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </MFXButton>
-                  <FontAwesomeIconView fill="#2979ef" layoutX="78.0" layoutY="41.0" size="25" text="" />
-                  <Label layoutX="102.0" layoutY="19.0" prefHeight="27.0" prefWidth="221.0" text="Samiur Rahman Olman" textFill="#2979ef">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <MFXScrollPane fx:id="sPane" layoutX="24.0" layoutY="64.0" prefHeight="431.0" prefWidth="322.0" style="-fx-background-color: white;" vbarPolicy="NEVER">
+                  <MFXScrollPane fx:id="sPane" hbarPolicy="NEVER" layoutX="24.0" layoutY="70.0" prefHeight="431.0" prefWidth="322.0" style="-fx-background-color: white; -fx-border-color: #bfdbfe; -fx-border-radius: 8;">
                      <content>
                         <AnchorPane prefHeight="433.0" prefWidth="320.0">
                            <children>
-                              <VBox fx:id="vBox" prefHeight="538.0" prefWidth="319.0" spacing="5.0">
-                                 <children>
-                                    <AnchorPane prefHeight="44.0" prefWidth="319.0">
-                                       <children>
-                                          <TextFlow fx:id="flowText" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 15 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label layoutX="14.0" prefHeight="14.0" prefWidth="166.0" text="Ikramul Morol">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="45.0" prefWidth="319.0" style="-fx-background-radius: 20 20 20 0;">
-                                       <children>
-                                          <TextFlow fx:id="flowText2" layoutX="24.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 15 0 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label alignment="CENTER_RIGHT" layoutX="151.0" prefHeight="18.0" prefWidth="166.0" text="Samiur Rahman">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="44.0" prefWidth="319.0">
-                                       <children>
-                                          <TextFlow fx:id="flowText1" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 15 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label layoutX="14.0" prefHeight="14.0" prefWidth="166.0" text="Ikramul Morol">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="45.0" prefWidth="319.0" style="-fx-background-radius: 20 20 20 0;">
-                                       <children>
-                                          <TextFlow fx:id="flowText21" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="304.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 15 0 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label alignment="CENTER_RIGHT" layoutX="151.0" prefHeight="18.0" prefWidth="166.0" text="Samiur Rahman">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="44.0" prefWidth="319.0">
-                                       <children>
-                                          <TextFlow fx:id="flowText3" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 15 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label layoutX="14.0" prefHeight="14.0" prefWidth="166.0" text="Ikramul Morol">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="45.0" prefWidth="319.0" style="-fx-background-radius: 20 20 20 0;">
-                                       <children>
-                                          <TextFlow fx:id="flowText211" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="304.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 15 0 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label alignment="CENTER_RIGHT" layoutX="151.0" prefHeight="18.0" prefWidth="166.0" text="Samiur Rahman">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="44.0" prefWidth="319.0">
-                                       <children>
-                                          <TextFlow fx:id="flowText31" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 15 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label layoutX="14.0" prefHeight="14.0" prefWidth="166.0" text="Ikramul Morol">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="45.0" prefWidth="319.0" style="-fx-background-radius: 20 20 20 0;">
-                                       <children>
-                                          <TextFlow fx:id="flowText212" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="304.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 15 0 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label alignment="CENTER_RIGHT" layoutX="151.0" prefHeight="18.0" prefWidth="166.0" text="Samiur Rahman">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="44.0" prefWidth="319.0">
-                                       <children>
-                                          <TextFlow fx:id="flowText311" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="294.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 15 15 15;">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </TextFlow>
-                                          <Label layoutX="14.0" prefHeight="14.0" prefWidth="166.0" text="Ikramul Morol">
-                                             <font>
-                                                <Font name="System Bold" size="9.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="vBox" layoutX="-1.0" prefHeight="431.0" prefWidth="319.0" spacing="5.0" />
                            </children>
                         </AnchorPane>
                      </content>
                   </MFXScrollPane>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="19.0" prefHeight="27.0" prefWidth="322.0" text="Samiur Rahman Olman" textFill="#2979ef">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2979ef" size="20" text="" />
+                     </graphic>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

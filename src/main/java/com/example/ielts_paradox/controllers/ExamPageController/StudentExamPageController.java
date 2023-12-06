@@ -72,6 +72,7 @@ public class StudentExamPageController implements Initializable {
 
     @FXML
     private VBox vBox;
+
     @FXML
     private Stage stage;
 
@@ -79,26 +80,17 @@ public class StudentExamPageController implements Initializable {
 
     private Parent root;
 
-
-
-
-
-
     private static  int ADDITIONAL_MINUTES = 40;
-
-
-
 
     @FXML
     private TextArea writeMessage;
-
 
     private Timeline timeline;
     private Duration duration;
     private KeyFrame keyFrame;
     static TestInfo in;
     public String id_;
-    @FXML
+
     String meetUri;
     String studentSubmissionUri;
     String resultPaper;

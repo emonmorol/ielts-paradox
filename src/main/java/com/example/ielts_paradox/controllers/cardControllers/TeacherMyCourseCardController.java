@@ -1,19 +1,13 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.Alerts.DeleteAlert;
-import com.example.ielts_paradox.Alerts.ErrorAlert;
-import com.example.ielts_paradox.Alerts.SuccessAlert;
 import com.example.ielts_paradox.SocketNetworking.MultiThreadedSocketServer;
 import com.example.ielts_paradox.SocketNetworking.SocketClient;
-import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherApprovedStudentsTableController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForCourse;
-import com.example.ielts_paradox.database.ForEnrollment;
-import com.example.ielts_paradox.models.BlogInfo;
 import com.example.ielts_paradox.models.CourseInfo;
-import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -16,6 +16,7 @@ public class SocketClient {
 
     private static PrintWriter out;
     private ChatController controller;
+    private Scanner in;
 
     public void runClient(int port) {
         try {
@@ -29,7 +30,9 @@ public class SocketClient {
             primaryStage.getIcons().add(logo);
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
-
+            Socket socket = new Socket("localhost", port);
+            in = new Scanner(socket.getInputStream());
+            out = new PrintWriter(socket.getOutputStream(), true);
             Runnable serverRunnable = () -> connectToServer(port);
             new Thread(serverRunnable).start();
         } catch (IOException e) {
@@ -39,10 +42,6 @@ public class SocketClient {
 
     private void connectToServer(int port) {
         try {
-            Socket socket = new Socket("localhost", port);
-            Scanner in = new Scanner(socket.getInputStream());
-            out = new PrintWriter(socket.getOutputStream(), true);
-
             while (in.hasNext()) {
                 String message = in.nextLine();
                 controller.appendToLog(message);

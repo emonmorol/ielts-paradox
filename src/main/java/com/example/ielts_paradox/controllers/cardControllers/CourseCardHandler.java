@@ -2,14 +2,11 @@ package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.SocketNetworking.*;
 import com.example.ielts_paradox.controllers.CourseContentController;
-import com.example.ielts_paradox.controllers.MessagesController.ChatController;
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.database.ForCourseContent;
 import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.CourseVideo;
-import com.example.ielts_paradox.models.UserInfo;
-import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,8 +17,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.util.ArrayList;
 
 public class CourseCardHandler {
