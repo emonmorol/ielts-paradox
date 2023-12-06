@@ -3,6 +3,7 @@ package com.example.ielts_paradox.controllers;
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
+import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.CourseInfo;
@@ -124,7 +125,8 @@ public class CheckoutController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         String formattedDateTime = currentDateTime.format(formatter);
         if(isCourse){
-            PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false);
+            CourseInfo inf = new ForCourse().getCourseById(CheckoutController.ci._id);
+            PaidStudentInfo psi = new PaidStudentInfo(bkashNumber.getText(),transectionId.getText(),studentEmailField.getText(),Integer.parseInt(CheckoutController.ci._id),formattedDateTime,false,false,inf.content);
             boolean isComplete = new ForEnrollment().courseEnrollment(psi);
             if(isComplete){
                 SuccessAlert.displayCustomAlert();

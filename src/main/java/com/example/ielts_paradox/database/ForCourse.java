@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.database;
 
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.CourseVideo;
 import com.example.ielts_paradox.models.Faq;
 import com.example.ielts_paradox.models.PaidStudentInfo;
 import com.example.ielts_paradox.utils.DBConnections;
@@ -74,10 +75,13 @@ public class ForCourse {
                             String sidebarPointJSON = resultSet.getString("sidebarPoint");
                             String routine = resultSet.getString("routine");
                             int messagePort = resultSet.getInt("messagePort");
+                            String videoJSON = resultSet.getString("content");
+
                             Gson gson = new Gson();
                             String[] features = gson.fromJson(freateresJSON, String[].class);
                             String[] curriculum = gson.fromJson(curriculumJSON, String[].class);
                             String[] sidebarPoint = gson.fromJson(sidebarPointJSON, String[].class);
+
                             JsonArray jsonArray = gson.fromJson(faqsJSON, JsonArray.class);
                             ArrayList<Faq> faqs = new ArrayList<>();
                             for (JsonElement element : jsonArray) {
@@ -85,7 +89,15 @@ public class ForCourse {
                                 faqs.add(ob);
                             }
 
-                            ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName,routine,messagePort);
+                            ArrayList<CourseVideo> cvs = new ArrayList<>();
+
+                            JsonArray jsonArray2 = gson.fromJson(videoJSON, JsonArray.class);
+                            for (JsonElement element : jsonArray2) {
+                                CourseVideo ob = gson.fromJson(element, CourseVideo.class);
+                                cvs.add(ob);
+                            }
+
+                            ci = new CourseInfo(_id,title,features,thumbnail,price,isReleased,discount,curriculum,faqs,details,sidebarPoint,instructorName,routine,messagePort,cvs);
                             return ci;
                         }catch (SQLException e){
                             e.printStackTrace();
@@ -179,6 +191,4 @@ public class ForCourse {
         }
         return false;
     }
-
-
 }

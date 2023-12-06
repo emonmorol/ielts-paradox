@@ -4,6 +4,7 @@ module com.example.ielts_paradox {
     requires java.sql;
     requires MaterialFX;
     requires com.google.gson;
+    requires javafx.graphics;
     requires javafx.web;
     requires de.jensd.fx.glyphs.fontawesome;
     requires org.apache.pdfbox;
@@ -21,6 +22,9 @@ module com.example.ielts_paradox {
     opens com.example.ielts_paradox.Alerts to javafx.fxml;
     opens com.example.ielts_paradox.controllers.MockTestController to javafx.fxml;
     opens com.example.ielts_paradox.controllers.FormControllers.courseForm to javafx.fxml;
+    opens com.example.ielts_paradox.controllers.ExamPageController to javafx.fxml;
+    opens com.example.ielts_paradox.controllers.MessagesController to javafx.fxml;
+    opens com.example.ielts_paradox.controllers.CourseDetails to javafx.fxml;
 
 
     exports com.example.ielts_paradox;
@@ -36,5 +40,8 @@ module com.example.ielts_paradox {
     exports com.example.ielts_paradox.Alerts;
     exports com.example.ielts_paradox.controllers.MockTestController;
     exports com.example.ielts_paradox.controllers.FormControllers.courseForm;
+    exports com.example.ielts_paradox.controllers.ExamPageController;
+    exports com.example.ielts_paradox.controllers.MessagesController;
+    exports com.example.ielts_paradox.controllers.CourseDetails;
 
 }

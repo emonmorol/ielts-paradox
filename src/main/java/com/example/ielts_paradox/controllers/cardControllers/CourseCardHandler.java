@@ -44,7 +44,7 @@ public class CourseCardHandler {
         scene = new Scene(root);
         CourseContentController ccc = fxmlLoader.getController();
         CourseInfo ci = new ForCourse().getCourseById(id.getText());
-        ccc.setData(ci,"0");
+        ccc.setData(ci,"0",ccc);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
@@ -55,7 +55,6 @@ public class CourseCardHandler {
             new MultiThreadedSocketServer().startThreading(Integer.parseInt(msgPort.getText()));
             new ForChat().updatePort(Integer.parseInt(msgPort.getText()),true);
         }
-
 
         new SocketClient().runClient(Integer.parseInt(msgPort.getText()));
 

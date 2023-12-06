@@ -8,13 +8,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#playVideoHandler" prefHeight="50.0" prefWidth="418.0" style="-fx-border-color: #1a2579; -fx-border-width: 2.5 0.5 0.5 0.5; -fx-background-radius: 0 0 10 10; -fx-border-radius: 0 0 10 10;" styleClass="content_card" stylesheets="@../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.CourseContentCardController">
    <children>
-      <Label layoutX="42.0" layoutY="14.0" prefHeight="21.0" prefWidth="343.0" text="1. This is the intruduction of this course ">
+      <Label fx:id="title" layoutX="42.0" layoutY="6.0" prefHeight="40.0" prefWidth="343.0" text="1. This is the intruduction of this course " wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
       <FontAwesomeIconView fx:id="lock_icon" fill="#1a2579" glyphName="LOCK" layoutX="392.0" layoutY="32.0" size="18" wrappingWidth="8.714285850524902" />
       <FontAwesomeIconView fx:id="status_icon" fill="#1a2579" glyphName="LOCK" layoutX="14.0" layoutY="31.0" size="15" text="" wrappingWidth="8.714285850524902" />
+      <Label fx:id="contentId" layoutX="233.0" layoutY="18.0" text=" " visible="false" />
+      <Label fx:id="videoId" layoutX="285.0" layoutY="18.0" text=" " visible="false" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

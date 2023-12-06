@@ -5,10 +5,12 @@
 <?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.CourseContentController">
     <children>
@@ -37,38 +39,50 @@
         </AnchorPane>
         <AnchorPane fx:id="mainAnchor" layoutX="125.0" layoutY="125.0" prefHeight="564.0" prefWidth="1247.0">
             <children>
-                <AnchorPane fx:id="webAnchor" prefHeight="500.0" prefWidth="808.0" style="-fx-background-color: white;" />
+                <AnchorPane fx:id="webAnchor" prefHeight="500.0" prefWidth="808.0" style="-fx-background-color: white;">
+               <children>
+                  <WebView fx:id="courseVideo" layoutX="4.0" layoutY="3.0" prefHeight="494.0" prefWidth="801.0" />
+               </children></AnchorPane>
                 <AnchorPane fx:id="bottomAnchor" layoutY="500.0" prefHeight="64.0" prefWidth="808.0" style="-fx-background-color: #ced8eb; -fx-border-width: 1 0 0 0 0;">
                <children>
-                  <MFXButton buttonType="RAISED" contentDisplay="RIGHT" depthLevel="LEVEL1" layoutX="684.0" layoutY="17.0" prefHeight="30.0" prefWidth="99.0" rippleBackgroundOpacity="0.0" rippleRadiusMultiplier="0.0" text="NEXT ">
+                  <MFXButton buttonType="RAISED" contentDisplay="RIGHT" depthLevel="LEVEL1" layoutX="684.0" layoutY="17.0" onAction="#previous" prefHeight="30.0" prefWidth="99.0" rippleBackgroundOpacity="0.0" rippleRadiusMultiplier="0.0" text="NEXT ">
                      <graphic>
                         <FontAwesomeIconView text="" wrappingWidth="8.571428298950195" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MFXButton>
-                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="572.0" layoutY="17.0" prefHeight="30.0" prefWidth="99.0" text="  PREVIOUS">
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="572.0" layoutY="17.0" onAction="#next" prefHeight="30.0" prefWidth="99.0" text="  PREVIOUS">
                      <graphic>
                         <FontAwesomeIconView text="" wrappingWidth="5.571428298950195" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MFXButton>
-                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="25.0" layoutY="17.0" prefHeight="30.0" prefWidth="121.0" text="   FULL SCREEN">
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="25.0" layoutY="17.0" onAction="#fullScreen" prefHeight="30.0" prefWidth="121.0" text="   FULL SCREEN">
                      <graphic>
                         <FontAwesomeIconView text="" wrappingWidth="5.571428298950195" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </MFXButton>
-                  <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="162.0" layoutY="17.0" prefHeight="30.0" prefWidth="121.0" text="   METERIALS">
+                  <Hyperlink alignment="CENTER" layoutX="162.0" layoutY="17.0" onAction="#meterials" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: white; -fx-background-radius: 4; -fx-effect: dropshadow( one-pass-box,#2e265c34 , 10, 0.0 , 2 , 5);" text="METERIALS">
                      <graphic>
-                        <FontAwesomeIconView text="" wrappingWidth="5.571428298950195" />
+                        <FontAwesomeIconView text="" />
                      </graphic>
-                  </MFXButton>
+                  </Hyperlink>
                </children></AnchorPane>
                 <AnchorPane fx:id="sideAnchor" layoutX="808.0" prefHeight="564.0" prefWidth="440.0" style="-fx-background-color: #e9eff6; -fx-border-width: 0 0 0 1;">
                     <children>
-                        <Label layoutX="21.0" layoutY="15.0" prefHeight="19.0" prefWidth="132.0" text="13 Chapters (3h 20m)" textFill="#878f91">
+                        <Label fx:id="totalChapters" layoutX="21.0" layoutY="15.0" prefHeight="19.0" prefWidth="132.0" text="13 Chapters (3h 20m)" textFill="#878f91">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font>
                         </Label>
-                        <MFXProgressBar layoutX="272.0" layoutY="20.0" prefHeight="8.0" prefWidth="113.0" progress="0.65" />
+                        <MFXProgressBar fx:id="topProgress" layoutX="272.0" layoutY="20.0" prefHeight="8.0" prefWidth="113.0" progress="0.65" />
                         <Label layoutX="392.0" layoutY="15.0" text="100%" textFill="#9a9797">
                             <font>
                                 <Font size="13.0" />

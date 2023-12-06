@@ -1,11 +1,11 @@
 package com.example.ielts_paradox.database;
 
-import com.example.ielts_paradox.models.CourseInfo;
-import com.example.ielts_paradox.models.PaidStudentInfo;
-import com.example.ielts_paradox.models.StudentRequest;
-import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.models.*;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.DBConnections;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,10 +31,19 @@ public class ForEnrollment {
         return false;
     }
     public boolean courseEnrollment(PaidStudentInfo psi){
-        String insertQuery = "INSERT INTO paid_student (bkashNumber, transectionId, email, courseId, enrollementDate, courseApproval, isExpired) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO paid_student (bkashNumber, transectionId, email, courseId, enrollementDate, courseApproval, isExpired,content) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             Connection connection = new DBConnections().getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+
+                Gson gson = new Gson();
+                JsonArray jsonArray = new JsonArray();
+                for (CourseVideo course : psi.content) {
+                    JsonElement jsonElement = gson.toJsonTree(course);
+                    jsonArray.add(jsonElement);
+                }
+                String jsonString = gson.toJson(jsonArray);
+
                 preparedStatement.setString(1, psi.bkashNumber);
                 preparedStatement.setString(2, psi.transectionId);
                 preparedStatement.setString(3, psi.email);
@@ -42,6 +51,7 @@ public class ForEnrollment {
                 preparedStatement.setString(5, psi.enrollementDate);
                 preparedStatement.setBoolean(6, psi.courseApproval);
                 preparedStatement.setBoolean(7, psi.isExpired);
+                preparedStatement.setString(8, jsonString);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 

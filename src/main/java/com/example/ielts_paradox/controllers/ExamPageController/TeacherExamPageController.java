@@ -77,10 +77,8 @@ public class TeacherExamPageController implements Initializable {
     String resultPaper;
 
 
-
-
     @FXML
-    private String[] hour = {"01","02","03","04","05","06","07","08","09","10","11","12"};
+    private String[] hour = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
 
     @FXML
     private String[] minute = {
@@ -93,13 +91,13 @@ public class TeacherExamPageController implements Initializable {
     };
 
     @FXML
-    private  String[] ap ={"AM","PM"};
+    private String[] ap = {"AM", "PM"};
     static TestInfo in;
 
-    public void setData(TestInfo ti){
+    public void setData(TestInfo ti) {
         in = ti;
         id_ = ti._id;
-        if(ti.examDate != null ){
+        if (ti.examDate != null) {
             String[] dt = ti.examDate.split(",");
             String[] tme = dt[0].split(":");
             hourBox.getSelectionModel().select(tme[0]);
@@ -108,13 +106,13 @@ public class TeacherExamPageController implements Initializable {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
             System.out.println(dt[1]);
-            datePicker.setValue(LocalDate.parse(dt[1],formatter));
+            datePicker.setValue(LocalDate.parse(dt[1], formatter));
 
             selectedHour = tme[0];
             selectedMinute = tme[1];
             selectedAmPm = tme[2];
             dateFormate = dt[1];
-        }else{
+        } else {
             hourBox.getSelectionModel().select("00");
             minuteBox.getSelectionModel().select("00");
             amPm.getSelectionModel().select("AM");
@@ -130,21 +128,21 @@ public class TeacherExamPageController implements Initializable {
             dateFormate = formattedDate;
         }
 
-        if(ti.meetLink != null ){
+        if (ti.meetLink != null) {
             meetUri = ti.meetLink;
-        }else{
+        } else {
             meetUri = null;
         }
 
-        if(ti.studentSubmissionLink != null ){
+        if (ti.studentSubmissionLink != null) {
             studentSubmissionUri = ti.studentSubmissionLink;
-        }else{
+        } else {
             studentSubmissionUri = null;
         }
 
-        if(ti.resultLink != null ){
+        if (ti.resultLink != null) {
             resultPaper = ti.resultLink;
-        }else{
+        } else {
             resultPaper = null;
         }
 
@@ -160,22 +158,22 @@ public class TeacherExamPageController implements Initializable {
         minuteBox.getItems().addAll(minute);
 
 
-            for(int i =1;i<=10;i++){
-                FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
-                FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
-                try {
-                    AnchorPane crd = loder.load();
-                    vBox.getChildren().add(crd);
-                    AnchorPane crd2 = loder2.load();
-                    vBox.getChildren().add(crd2);
-                    sPane.setVvalue(1.0);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-
+        for (int i = 1; i <= 10; i++) {
+            FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
+            FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
+            try {
+                AnchorPane crd = loder.load();
+                vBox.getChildren().add(crd);
+                AnchorPane crd2 = loder2.load();
+                vBox.getChildren().add(crd2);
+                sPane.setVvalue(1.0);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
         }
+
+    }
 
 
     @FXML

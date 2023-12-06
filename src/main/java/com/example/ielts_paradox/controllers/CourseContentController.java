@@ -1,10 +1,14 @@
 package com.example.ielts_paradox.controllers;
 
+import com.example.ielts_paradox.controllers.cardControllers.CourseContentCardController;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForCourseContent;
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.CourseVideo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
+import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,84 +21,65 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CourseContentController implements Initializable {
+public class CourseContentController {
     @FXML
-    private VBox contentSideBox;
-
-    @FXML
-    private AnchorPane sideAnchor;
-    @FXML
-    private AnchorPane mainAnchor;
-
-    @FXML
-    private AnchorPane topAnchor;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private AnchorPane bottomAnchor;
 
     @FXML
-    private WebView videoPlayer;
+    private VBox contentSideBox;
 
     @FXML
-    private AnchorPane webAnchor;
-    @FXML
-    private Stage stage;
-
-    private Scene scene;
-
-    private Parent root;
+    private WebView courseVideo;
 
     @FXML
-    private Label instructor,title,id;
+    private Label id;
+
+    @FXML
+    private Label instructor;
+
+    @FXML
+    private AnchorPane mainAnchor;
 
     @FXML
     private Label point;
 
-    ArrayList<String> af = new ArrayList<>();
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        loadVideo("https://www.youtube.com/embed/jPB3odX-F9s");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        af.add("course");
-        for(String i:af){
+    @FXML
+    private AnchorPane sideAnchor;
 
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseContentCard.fxml"));
-                AnchorPane paneee = fxmlLoader.load();
-                contentSideBox.getChildren().add(paneee);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
+    @FXML
+    private Label title;
+
+    @FXML
+    private AnchorPane topAnchor;
+
+    @FXML
+    private MFXProgressBar topProgress;
+
+    @FXML
+    private Label totalChapters;
+
+    @FXML
+    private AnchorPane webAnchor;
+
+
     public void loadVideo(String uri){
-        videoPlayer.getEngine().load(uri);
+        courseVideo.getEngine().load(uri);
     }
+
     public void backButtonHandler(ActionEvent e) throws IOException {
         UserSingleTon ins = UserSingleTon.getInstance(new UserInfo());
         UserInfo user = ins.getUser();
@@ -127,45 +112,93 @@ public class CourseContentController implements Initializable {
         }
         stage.show();
     }
-    public void setData(CourseInfo ci,String p){
+
+    @FXML
+    void fullScreen(ActionEvent event) {
+
+    }
+    @FXML
+    void meterials(ActionEvent event) {
+
+    }
+    @FXML
+    void next(ActionEvent event) {
+
+    }
+    @FXML
+    void previous(ActionEvent event) {
+
+    }
+
+    CourseContentController ccc;
+    ArrayList<CourseVideo> cvs;
+
+    public void setData(CourseInfo ci,String p,CourseContentController oldCCC){
+        ccc = oldCCC;
         point.setText(p);
+
         try{
             id.setText(ci._id);
             title.setText(ci.title);
             instructor.setText(ci.instructorName + " ,IELTS Instructor");
         }catch (Exception e){
-            System.out.println("From Course content controller ,");
             e.printStackTrace();
+        }
+        String id_ = id.getText();
+        cvs = new ForCourseContent().getCourseContent(Integer.parseInt(id_));
+        totalChapters.setText("Total "+cvs.size()+" Chapters");
+
+        int lastWatchedId = -1;
+
+        for(CourseVideo cv : cvs){
+            if(!cv.isWatched){
+                lastWatchedId = cv._id - 2;
+                break;
+            }
+        }
+
+        if(lastWatchedId == -1){
+            loadVideo(cvs.get(cvs.size()-1).videoURI);
+        }else{
+            loadVideo(cvs.get(lastWatchedId).videoURI);
+        }
+
+        for(CourseVideo i:cvs){
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseContentCard.fxml"));
+                AnchorPane paneee = fxmlLoader.load();
+                CourseContentCardController cccc = fxmlLoader.getController();
+                cccc.setData(ci,p,oldCCC,i);
+
+                contentSideBox.getChildren().add(paneee);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
-//    @FXML
-//    void fullScreenHandler(ActionEvent event) {
-//        Stage stage = (Stage) webAnchor.getScene().getWindow();
-//
-//        // Enter full-screen mode
-//        stage.setFullScreen(true);
-//
-//        // Adjust WebView size to fill the screen
-//        videoPlayer.setPrefSize(Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
-//        videoPlayer.setLayoutX(-176);
-//        videoPlayer.setLayoutY(-126);
-//        sideAnchor.setVisible(false);
-//        bottomAnchor.setVisible(false);
-//        topAnchor.setVisible(false);
-//    }
-//    private void exitFullScreen() {
-//        // Exit full-screen mode
-//        stage.setFullScreen(false);
-//
-//        // Restore WebView size and layout
-//        videoPlayer.setPrefSize(1500, 750);
-//        videoPlayer.setLayoutX(0);
-//        videoPlayer.setLayoutY(0);
-//
-//        // Restore visibility of other AnchorPane children
-//        sideAnchor.setVisible(true);
-//        bottomAnchor.setVisible(true);
-//        topAnchor.setVisible(true);
-//    }
+    public boolean updateVideoWatching(int couserId,int videoId){
+        cvs.get(videoId-1).isWatched = true;
+        Gson gson = new Gson();
+
+        JsonArray jsonArray = new JsonArray();
+        for (CourseVideo course : cvs) {
+            JsonElement jsonElement = gson.toJsonTree(course);
+            jsonArray.add(jsonElement);
+        }
+        String jsonString = gson.toJson(jsonArray);
+        return (new ForCourseContent().updateWatch(jsonString,couserId));
+    }
+
+    public boolean validate(int videoId){
+        if(videoId==1 || cvs.get(videoId-2).isWatched){
+            return true;
+        }
+        return false;
+    }
+
 }
