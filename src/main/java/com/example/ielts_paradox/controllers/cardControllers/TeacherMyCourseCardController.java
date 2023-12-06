@@ -3,9 +3,12 @@ package com.example.ielts_paradox.controllers.cardControllers;
 import com.example.ielts_paradox.Alerts.DeleteAlert;
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
+import com.example.ielts_paradox.SocketNetworking.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.SocketClient;
 import com.example.ielts_paradox.controllers.AllControl.FullBlogController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherApprovedStudentsTableController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForCourse;
 import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.models.BlogInfo;
@@ -65,15 +68,14 @@ public class TeacherMyCourseCardController {
     public void removeHandler(ActionEvent event) {
         DeleteAlert.displayCustomAlert("Course",id_.getText());
     }
-    public void chatHandler(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/messages/chat.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
 
-        stage.setTitle("Messages");
-        stage.setScene(scene);
-        stage.show();
+    public void chatHandler(ActionEvent event) throws IOException {
+        if(!new ForChat().isRunning(Integer.parseInt(msgPort.getText()))){
+            new MultiThreadedSocketServer().startThreading(Integer.parseInt(msgPort.getText()));
+            new ForChat().updatePort(Integer.parseInt(msgPort.getText()),true);
+        }
+
+        new SocketClient().runClient(Integer.parseInt(msgPort.getText()));
     }
     public void setData(CourseInfo bi){
         title.setText(bi.title);

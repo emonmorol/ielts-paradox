@@ -4,6 +4,7 @@ import com.example.ielts_paradox.controllers.MessagesController.ChatController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,10 +24,10 @@ public class SocketClient {
             Parent root = loader.load();
 
             controller = loader.getController();
-
-            primaryStage.setTitle("Socket Client");
+            Image logo = new Image(getClass().getResource("/images/logo.png").toExternalForm());
+            primaryStage.setTitle("IELTS ParadOx Messenger");
+            primaryStage.getIcons().add(logo);
             primaryStage.setScene(new Scene(root));
-//            primaryStage.setOnCloseRequest(e -> System.exit(0));
             primaryStage.show();
 
             Runnable serverRunnable = () -> connectToServer(port);
@@ -44,7 +45,6 @@ public class SocketClient {
 
             while (in.hasNext()) {
                 String message = in.nextLine();
-//                String[] sm = message.split("\\$");
                 controller.appendToLog(message);
             }
         } catch (IOException e) {

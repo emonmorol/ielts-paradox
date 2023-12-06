@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.SocketNetworking;
 
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import javafx.application.Platform;
@@ -18,31 +19,24 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MultiThreadedSocketServer{
 
-    private TextArea logArea = new TextArea();
     private List<ClientHandler> clients = new ArrayList<>();
     private AtomicInteger clientCounter = new AtomicInteger(1);
+    private int runningPort;
 
 
     public void startThreading(int port) {
-
-        Stage stage = new Stage();
-        logArea.setEditable(false);
-        stage.setTitle("MultiThreaded Socket Server");
-        stage.setScene(new Scene(logArea, 400, 300));
-        stage.setOnCloseRequest(e -> System.exit(0));
-        stage.show();
-
+        runningPort = port;
         Runnable serverRunnable = () -> startServer(port);
         new Thread(serverRunnable).start();
     }
 
     private void startServer(int port) {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            appendToLog("Server started. Listening on port 5555...");
+            System.out.println("Server started. Listening on port "+port+"...");
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                appendToLog("Client connected: " + clientSocket);
+                System.out.println("Client connected: " + clientSocket);
 
                 ClientHandler clientHandler = new ClientHandler(clientSocket);
                 clients.add(clientHandler);
@@ -53,9 +47,6 @@ public class MultiThreadedSocketServer{
         }
     }
 
-    private void appendToLog(String message) {
-        Platform.runLater(() -> logArea.appendText(message + "\n"));
-    }
 
     private class ClientHandler implements Runnable {
         private Socket clientSocket;
@@ -64,15 +55,10 @@ public class MultiThreadedSocketServer{
         private String clientName;
 
         public ClientHandler(Socket socket) {
-//            UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
-//            System.out.println(info.fullName);
-//            this.clientName = info.fullName;
             this.clientSocket = socket;
             try {
                 this.in = new Scanner(socket.getInputStream());
                 this.out = new PrintWriter(socket.getOutputStream(), true);
-                this.clientName = "client-" + clientCounter.getAndIncrement();
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -81,35 +67,59 @@ public class MultiThreadedSocketServer{
         @Override
         public void run() {
             try {
-                appendToLog("Client " + clientName + " connected: " + clientSocket);
-
-                while (true) {
-                    if (in.hasNext()) {
-                        String message = in.nextLine();
-                        broadcastMessage("Server: "+clientName + ": " + message, this);
+                if(!in.nextLine().equals("/disconnect")){
+                    this.clientName = in.nextLine();
+                    broadcastMessage(clientName + " has joined the chat!",this);
+                    System.out.println("Client " + clientName + " connected: " + clientSocket);
+                    while (true) {
+                        if (in.hasNext()) {
+                            String message = in.nextLine();
+                            if(message.equals("/disconnect")){
+                                broadcastMessage(clientName+" has left the chat",this);
+                                break;
+                            }
+                            broadcastMessage(clientName + "$" + message, this);
+                        }
                     }
                 }
-            } finally {
+            }
+            catch (Exception e){
+                broadcastMessage(clientName+" has left the chat!",this);
+            }
+            finally {
                 in.close();
                 out.close();
+                if(clients.size()==1){
+                    new ForChat().updatePort(runningPort,false);
+                }
                 clients.remove(this);
-                appendToLog("Client " + clientName + " disconnected: " + clientSocket);
+                closeConnection();
+
+                System.out.println("Client " + clientName + " disconnected: " + clientSocket);
             }
         }
 
         public void sendMessage(String message) {
             out.println(message);
         }
+
+        private void closeConnection(){
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 
     private void broadcastMessage(String message, ClientHandler sender) {
-        appendToLog("Broadcasting: " + message);
+        System.out.println("Broadcasting: " + message);
         for (ClientHandler client : clients) {
-            // Send the message to all clients except the sender
             if (client != sender) {
                 client.sendMessage(message);
             }
         }
     }
+
 }

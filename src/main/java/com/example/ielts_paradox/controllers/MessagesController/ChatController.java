@@ -8,6 +8,7 @@ import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +31,7 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ChatController {
+public class ChatController implements Initializable{
 
 
     @FXML
@@ -40,18 +41,14 @@ public class ChatController {
     public VBox messageVBox;
     @FXML
     private TextField inputField;
-
-//    @FXML
-//    private TextArea logArea;
-
-//    @FXML
-//    public TextField messageWriter;
     @FXML
     public Label msgPort;
 
     @FXML
-    public ScrollPane sPane;
+    public MFXScrollPane sPane;
     public MFXButton sendButton;
+
+    boolean isNameSpecified = false;
 
     public void setData(CourseInfo c){
         courseName.setText(c.title);
@@ -60,42 +57,61 @@ public class ChatController {
 
     @FXML
     private void sendMessage() throws IOException {
-        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+        UserInfo user = UserSingleTon.getInstance(new UserInfo()).getUser();
+        if(!isNameSpecified){
+            if(user.isTeacher){
+                SocketClient.sendMessageToServer(user.fullName+" (Instructor)");
+            }else{
+                SocketClient.sendMessageToServer(user.fullName);
+            }
+            isNameSpecified = true;
+        }
+
         String message = inputField.getText();
         if (!message.isEmpty()) {
-            // Handle send button action
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/outgoingCard.fxml"));
             AnchorPane outg = fxmlLoader.load();
             OutgoingCard oc = fxmlLoader.getController();
-            oc.setData(message);
-//            messageVBox.setVgrow(outg, Priority.ALWAYS);
+            oc.setData(user.fullName,message);
+
             sPane.setVvalue(1.0);
             messageVBox.getChildren().add(outg);
-
-
-//            appendToLog("You: " + message);
             inputField.clear();
-
-            // Send the message to the server
             SocketClient.sendMessageToServer(message);
         }
     }
 
     public void appendToLog(String message) throws IOException {
         Platform.runLater(() -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/incomingCard.fxml"));
-            AnchorPane outg = null;
-            try {
-                outg = fxmlLoader.load();
-                IncomingCard oc = fxmlLoader.getController();
-                oc.setData(message);
-//                messageVBox.setVgrow(outg, Priority.ALWAYS);
-                sPane.setVvalue(1.0);
-                messageVBox.getChildren().add(outg);
+            String[] s = message.split("\\$");
+            if(s.length <2){
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/messageLabelCard.fxml"));
+                AnchorPane outg = null;
+                try {
+                    outg = fxmlLoader.load();
+                    LabelController lc = fxmlLoader.getController();
+                    lc.setMsgLabel(message);
+                    sPane.setVvalue(1.0);
+                    messageVBox.getChildren().add(outg);
 
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }else{
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/incomingCard.fxml"));
+                AnchorPane outg = null;
+                try {
+                    outg = fxmlLoader.load();
+                    IncomingCard oc = fxmlLoader.getController();
+                    oc.setData(s[0],s[1]);
+                    sPane.setVvalue(1.0);
+                    messageVBox.getChildren().add(outg);
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
+
 
         });
 
@@ -105,4 +121,20 @@ public class ChatController {
         return inputField;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        sPane.setVvalue(1.0);
+        try{
+            Platform.runLater(() -> {
+                Stage stage = (Stage) messageVBox.getScene().getWindow();
+                stage.setOnCloseRequest(event -> {
+                    SocketClient.sendMessageToServer("/disconnect");
+                });
+            });
+        }catch (Exception e){
+            Stage stage = (Stage) messageVBox.getScene().getWindow();
+            stage.close();
+            e.printStackTrace();
+        }
+    }
 }

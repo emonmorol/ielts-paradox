@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm1">
    <children>
       <MFXTextField fx:id="title" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course title" />
       <MFXTextField fx:id="price" alignment="TOP_LEFT" floatMode="BORDER" layoutX="475.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course Price" />
@@ -21,7 +23,6 @@
          </font>
       </Text>
       <MFXTextField fx:id="discount" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="146.0" prefHeight="50.0" prefWidth="341.0" promptText="Enter Discount Percentage" />
-      <MFXTextField fx:id="banner" alignment="TOP_LEFT" floatMode="BORDER" layoutX="404.0" layoutY="146.0" prefHeight="50.0" prefWidth="490.0" promptText="Image Link Here" />
       <Text layoutX="34.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISCOUNT(PERCENTAGE)">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -38,5 +39,18 @@
          </font>
       </Text>
       <TextArea fx:id="description" layoutX="32.0" layoutY="252.0" prefHeight="115.0" prefWidth="866.0" promptText="Course Details Here" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="158.0" layoutY="403.0" onAction="#saveButton" prefHeight="50.0" prefWidth="618.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </MFXButton>
+      <MFXButton buttonType="RAISED" layoutX="404.0" layoutY="146.0" onAction="#chooseBanner" prefHeight="50.0" prefWidth="490.0" text="Click Here To Choose Banner">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
    </children>
 </AnchorPane>

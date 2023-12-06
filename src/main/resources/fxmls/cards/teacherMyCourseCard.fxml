@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.Teac                      herMyCourseCardController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="900.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.TeacherMyCourseCardController">
    <children>
       <AnchorPane prefHeight="73.0" prefWidth="401.0" style="-fx-background-radius: 10 0 0 10; -fx-background-color: #1a2579;">
          <children>
@@ -51,7 +51,7 @@
                </cursor>
             </Button>
             <Line endX="-100.0" endY="33.0" layoutX="464.0" layoutY="23.0" startX="-100.0" />
-            <Button layoutX="257.0" layoutY="22.0" mnemonicParsing="false" onAction="#chatHandler" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CHATS" textFill="#2979ef">
+            <Button layoutX="257.0" layoutY="22.0" mnemonicParsing="false" onAction="#chatHandler" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #faf8d2; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CHATS" textFill="#a49901">
                <font>
                   <Font name="System Bold" size="8.0" />
                </font>

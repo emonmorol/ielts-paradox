@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm4">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm4">
    <children>
-      <Text layoutX="65.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE INSTRUCTOR">
+      <Text layoutX="59.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE CONTENT">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="65.0" layoutY="110.0" prefHeight="38.0" prefWidth="390.0" promptText="Enter Instructor Name" />
-      <MFXTextField alignment="TOP_LEFT" floatMode="BORDER" layoutX="501.0" layoutY="110.0" prefHeight="38.0" prefWidth="390.0" promptText="Enter Instructor Experience" />
-      <Text layoutX="502.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSTRUCTOR EXPERIENCE">
+      <MFXTextField fx:id="title" alignment="TOP_LEFT" floatMode="BORDER" layoutX="59.0" layoutY="123.0" prefHeight="50.0" prefWidth="816.0" promptText="Enter Video Title" />
+      <Text layoutX="60.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Video Title">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="66.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSTRUCTOR NAME">
+      <Text layoutX="59.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URI">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="67.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION">
+      <TextArea fx:id="uri" layoutX="59.0" layoutY="213.0" prefHeight="82.0" prefWidth="816.0" promptText="Enter Video URI" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="254.0" layoutY="316.0" onAction="#addNext" prefHeight="50.0" prefWidth="426.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="Add" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font size="20.0" />
          </font>
-      </Text>
-      <TextArea layoutX="66.0" layoutY="204.0" prefHeight="154.0" prefWidth="819.0" promptText="Instructor Details Here" />
-      <Line endX="715.6000366210938" endY="7.62939453125E-6" layoutX="167.0" layoutY="61.0" startX="-100.0" stroke="#cfcfcf" />
+      </MFXButton>
+      <Line endX="715.6000366210938" endY="7.62939453125E-6" layoutX="158.0" layoutY="77.0" startX="-100.0" stroke="#cfcfcf" />
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="158.0" layoutY="403.0" onAction="#saveButton" prefHeight="50.0" prefWidth="618.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </MFXButton>
    </children>
 </AnchorPane>
