@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="912.0" style="-fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.CourseCardHandler">
@@ -40,49 +42,47 @@
             <Insets right="15.0" />
          </padding>
       </AnchorPane>
-      <AnchorPane prefHeight="150.0" prefWidth="396.0" style="-fx-border-width: 0 2 0 0; -fx-border-color: #1a2579; -fx-background-color: white;">
+      <AnchorPane prefHeight="150.0" prefWidth="416.0" style="-fx-border-width: 0 2 0 0; -fx-border-color: #1a2579; -fx-background-color: white;">
          <children>
-            <Label layoutX="27.0" layoutY="114.0" prefHeight="21.0" prefWidth="98.0" text="Abu Bakar" textFill="#302560">
+            <Label fx:id="runningChapter" alignment="BASELINE_LEFT" layoutX="25.0" layoutY="34.0" prefHeight="62.0" prefWidth="377.0" text="Currently Running Chapter" textFill="#2f285c" wrapText="true">
                <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="24.0" layoutY="54.0" prefHeight="38.0" prefWidth="362.0" text="Currently Running Chapter" textFill="#2f285c">
-               <font>
-                  <Font size="26.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
             <Label fx:id="id" layoutX="229.0" layoutY="22.0" text=" " visible="false" />
-            <Label layoutX="25.0" layoutY="11.0" prefHeight="21.0" prefWidth="98.0" text="TOTAL CHAPTER 10" textFill="#302560">
+            <Label fx:id="chapters" layoutX="25.0" layoutY="13.0" prefHeight="21.0" prefWidth="98.0" text="TOTAL CHAPTER 10" textFill="#302560">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
             <Label fx:id="msgPort" layoutX="241.0" layoutY="22.0" text=" " visible="false" />
+            <Button layoutX="27.0" layoutY="106.0" mnemonicParsing="false" onAction="#continueActionHandler" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #1a2579; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CONTINUE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="223.0" layoutY="106.0" mnemonicParsing="false" onAction="#chatHandler" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #1a2579; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CHAT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="156.0" prefWidth="235.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
+      <AnchorPane prefHeight="150.0" prefWidth="195.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
          <children>
-            <Button layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#continueActionHandler" prefHeight="38.0" prefWidth="189.0" style="-fx-background-color: #1a2579; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CONTINUE" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="8.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <AnchorPane layoutX="33.0" layoutY="18.0" opacity="0.14" prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: black; -fx-border-radius: 500;" />
             <Group layoutX="16.0" layoutY="20.0" />
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#chatHandler" prefHeight="38.0" prefWidth="189.0" style="-fx-background-color: #1a2579; -fx-background-radius: 20; -fx-effect: dropshadow( one-pass-box ,  #2e265c34 , 10, 0.0 , 2 , 5);" text="CHAT" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="8.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <MFXProgressSpinner fx:id="progessSpinner" layoutX="33.0" layoutY="17.0" prefHeight="115.0" prefWidth="115.0" progress="0.54" startingAngle="90.0">
+               <color4>
+                  <Color red="0.15777289867401123" green="0.18421052396297455" blue="0.1709917187690735" />
+               </color4>
+            </MFXProgressSpinner>
          </children>
       </AnchorPane>
    </children>

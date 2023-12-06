@@ -5,9 +5,12 @@ import com.example.ielts_paradox.controllers.CourseContentController;
 import com.example.ielts_paradox.controllers.MessagesController.ChatController;
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForCourse;
+import com.example.ielts_paradox.database.ForCourseContent;
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.CourseVideo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
+import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,12 +22,17 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class CourseCardHandler {
     @FXML
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+
+    @FXML
+    private Label chapters;
 
     @FXML
     private Label id;
@@ -33,10 +41,16 @@ public class CourseCardHandler {
     private Label instructor;
 
     @FXML
-    private Label title;
+    private Label msgPort;
 
     @FXML
-    private Label msgPort;
+    private MFXProgressSpinner progessSpinner;
+
+    @FXML
+    private Label runningChapter;
+
+    @FXML
+    private Label title;
 
     public void continueActionHandler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/courseContent.fxml"));
@@ -61,6 +75,28 @@ public class CourseCardHandler {
     }
 
     public void setData(CourseInfo ci){
+
+        ArrayList<CourseVideo> cvs = new ForCourseContent().getCourseContent(Integer.parseInt(ci._id));
+        chapters.setText("TOTAL CHAPTERS "+cvs.size());
+
+        int lastWatchedId = -1,watchCount = 0;
+
+        for(CourseVideo cv : cvs){
+            if(!cv.isWatched){
+                lastWatchedId = cv._id - 2;
+                break;
+            }
+            watchCount++;
+        }
+
+        double prog = (((double) watchCount/cvs.size()));
+        if(lastWatchedId == -1){
+            runningChapter.setText(cvs.get(cvs.size()-1).videoTitle);
+        }else{
+            runningChapter.setText(cvs.get(lastWatchedId).videoTitle);
+        }
+
+        progessSpinner.setProgress(prog);
         id.setText(ci._id);
         System.out.println(ci._id);
         instructor.setText(ci.instructorName);

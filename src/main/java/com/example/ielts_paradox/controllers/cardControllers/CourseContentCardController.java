@@ -31,6 +31,7 @@ public class CourseContentCardController {
     void playVideoHandler(MouseEvent event) {
         if(oldCCC.validate(cvss._id)){
             oldCCC.loadVideo(cvss.videoURI);
+            oldCCC.runningVideoId = cvss._id;
             boolean isWatched = oldCCC.updateVideoWatching(Integer.parseInt(ci._id), cvss._id);
             if(isWatched){
                 lock_icon.setText("\uF00C");
