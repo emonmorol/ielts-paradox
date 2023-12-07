@@ -3,7 +3,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController">
    <children>
       <AnchorPane prefHeight="99.0" prefWidth="1500.0" style="-fx-background-color: #ced8eb;">
          <children>
@@ -54,7 +53,7 @@
                         <FontAwesomeIconView fill="#2979ef" text="" />
                      </graphic>
                   </MFXButton>
-                  <MFXButton layoutX="337.0" layoutY="481.0" onAction="#seeResult" prefHeight="40.0" prefWidth="214.0" style="-fx-background-color: #bfdbfe;" text="RESULT" textFill="#2979ef">
+                  <MFXButton layoutX="337.0" layoutY="501.0" onAction="#seeResult" prefHeight="40.0" prefWidth="214.0" style="-fx-background-color: #bfdbfe;" text="RESULT" textFill="#2979ef">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -73,7 +72,7 @@
                         <FontAwesomeIconView text="" />
                      </graphic>
                   </Label>
-                  <MFXButton layoutX="172.0" layoutY="283.0" onAction="#setTimeAndDate" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="SET TIME AND DATE" textFill="#2979ef">
+                  <MFXButton layoutX="168.0" layoutY="296.0" onAction="#setTimeAndDate" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="SET TIME AND DATE" textFill="#2979ef">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -85,7 +84,7 @@
                      </graphic>
                   </MFXButton>
                   <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="234.0" onAction="#getDate" prefHeight="40.0" prefWidth="213.0" />
-                  <MFXButton layoutX="248.0" layoutY="481.0" onAction="#meetEdit" prefHeight="40.0" prefWidth="54.0" style="-fx-background-color: #bfdbfe;" text=" " textFill="#2979ef">
+                  <MFXButton layoutX="244.0" layoutY="501.0" onAction="#meetEdit" prefHeight="40.0" prefWidth="54.0" style="-fx-background-color: #bfdbfe;" text=" " textFill="#2979ef">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -93,7 +92,7 @@
                         <FontAwesomeIconView fill="#2979ef" size="25" text="" wrappingWidth="17.0" />
                      </graphic>
                   </MFXButton>
-                  <MFXButton layoutX="558.0" layoutY="481.0" onAction="#resultEdit" prefHeight="40.0" prefWidth="54.0" style="-fx-background-color: #bfdbfe;" text=" " textFill="#2979ef">
+                  <MFXButton layoutX="561.0" layoutY="501.0" onAction="#resultEdit" prefHeight="40.0" prefWidth="54.0" style="-fx-background-color: #bfdbfe;" text=" " textFill="#2979ef">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -124,20 +123,12 @@
                   <ComboBox fx:id="hourBox" layoutX="23.0" layoutY="234.0" onAction="#getHour" prefHeight="40.0" prefWidth="98.0" />
                   <ComboBox fx:id="minuteBox" layoutX="159.0" layoutY="234.0" onAction="#getMinute" prefHeight="40.0" prefWidth="98.0" />
                   <ComboBox fx:id="amPm" layoutX="288.0" layoutY="234.0" onAction="#getAmPm" prefHeight="40.0" prefWidth="98.0" />
-                  <Hyperlink fx:id="meetLink" alignment="CENTER" layoutX="23.0" layoutY="481.0" onAction="#openMeetLink" prefHeight="40.0" prefWidth="214.0" style="-fx-background-color: #bfdbfe;" text="MEET LINK" textFill="#2979ef">
+                  <Hyperlink fx:id="meetLink" alignment="CENTER" layoutX="23.0" layoutY="501.0" onAction="#openMeetLink" prefHeight="40.0" prefWidth="214.0" style="-fx-background-color: #bfdbfe;" text="MEET LINK" textFill="#2979ef">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                      <graphic>
                         <FontAwesomeIconView fill="#2979ef" text="" />
-                     </graphic>
-                  </Hyperlink>
-                  <Hyperlink fx:id="studentExamPaper" alignment="CENTER" layoutX="172.0" layoutY="424.0" onAction="#seeExamPaper" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="SEE STUDENT PAPER" textFill="#2979ef">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView fill="#2979ef" text="" />
                      </graphic>
                   </Hyperlink>
                   <MFXButton layoutX="325.0" layoutY="110.0" onAction="#practiseQuestion" prefHeight="54.0" prefWidth="288.0" style="-fx-background-color: #bfdbfe;" text="PRACTISE QUESTION" textFill="#2979ef">
@@ -154,20 +145,16 @@
                   <AnchorPane layoutX="675.0" layoutY="18.0" prefHeight="538.0" prefWidth="488.0" style="-fx-border-color: black; -fx-border-width: 0 0 0 1;">
                      <children>
                         <WebView fx:id="webview" layoutX="7.0" layoutY="2.0" prefHeight="484.0" prefWidth="476.0" />
-                        <MFXButton layoutX="98.0" layoutY="499.0" prefHeight="0.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="Open in External Browser" textFill="#2979ef">
+                        <Hyperlink fx:id="externalBrowser" alignment="CENTER" layoutX="98.0" layoutY="492.0" onAction="#externalBrowserLink" prefHeight="31.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="Open in External Browser" textFill="#2979ef">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                            <graphic>
                               <FontAwesomeIconView fill="#2979ef" text="" />
                            </graphic>
-                        </MFXButton>
+                        </Hyperlink>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="293.0" layoutY="363.0" mnemonicParsing="false" onAction="#openWeb" text="Button" />
                   <MFXButton alignment="CENTER" layoutX="486.0" layoutY="34.0" onAction="#openMesseneger" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #bfdbfe; -fx-background-radius: 6;" text="Messenger" textFill="#2979ef">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -177,6 +164,17 @@
                      </cursor>
                      <graphic>
                         <FontAwesomeIconView fill="#2979ef" size="25" text="" />
+                     </graphic>
+                  </MFXButton>
+                  <MFXButton fx:id="studentExamPaper" layoutX="168.0" layoutY="443.0" onAction="#seeExamPaper" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #bfdbfe;" text="SEE STUDENT PAPER" textFill="#2979ef">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2979ef" text="" />
                      </graphic>
                   </MFXButton>
                </children>

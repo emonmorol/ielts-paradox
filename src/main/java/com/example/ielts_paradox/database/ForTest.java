@@ -414,4 +414,18 @@ public class ForTest {
         }
         return false;
     }
+    public void updateIsTaken(String id){
+        String updateSql = "UPDATE test_students SET isTaken = ? WHERE _id = ?";
+
+        try {
+            Connection connection = new DBConnections().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setBoolean(1, true);
+            preparedStatement.setString(2, id);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.controllers.AllControl.FullStoryController;
 import com.example.ielts_paradox.controllers.SuccessStoriesController;
 import com.example.ielts_paradox.database.ForStories;
@@ -13,12 +14,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class StoryCardController {
@@ -41,6 +49,9 @@ public class StoryCardController {
     private Label id;
 
     @FXML
+    private Circle circle;
+
+    @FXML
     public void viewFullStory(ActionEvent event) throws IOException {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/students/pages/full_success_story.fxml"));
@@ -59,5 +70,28 @@ public class StoryCardController {
         bandScore.setText(story.bandScore);
         mainStory.setText(story.mainStory);
         studentName.setText(story.studentName);
+
+        if (story.studentImage != null && story.studentImage.length()!=0) {
+            File imageFile = new File(story.studentImage);
+            try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
+                Image img = new Image(fileInputStream,300, 300, false,true);
+                circle.setFill(new ImagePattern(img));
+            } catch (FileNotFoundException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + story.studentImage);
+            } catch (IOException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Error reading image file: " + e.getMessage());
+            }
+        } else {
+            File imageFile = new File("universal.jpg");
+            try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
+                Image img = new Image(fileInputStream,300, 300, false,true);
+                circle.setFill(new ImagePattern(img));
+            } catch (FileNotFoundException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + "universal.jpg");
+            } catch (IOException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Error reading image file: " + e.getMessage());
+            }
+        }
+
     }
 }

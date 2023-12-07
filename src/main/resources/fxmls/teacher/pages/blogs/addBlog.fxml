@@ -29,12 +29,11 @@
             </Label>
             <MFXTextField fx:id="score" floatMode="ABOVE" layoutX="39.0" layoutY="148.0" prefHeight="49.0" prefWidth="413.0" promptText="Teacher Band Score" />
             <MFXTextField fx:id="title" floatMode="BORDER" layoutX="38.0" layoutY="61.0" prefHeight="49.0" prefWidth="852.0" promptText="Enter Blog Title" stylesheets="@../../../../styles/common_style.css" />
-            <Label layoutX="477.0" layoutY="124.0" text="BLOG BANNER" textFill="#544f4f">
+            <Label layoutX="633.0" layoutY="124.0" text="BLOG BANNER" textFill="#544f4f">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <MFXTextField fx:id="image" floatMode="BORDER" layoutX="477.0" layoutY="148.0" prefHeight="49.0" prefWidth="413.0" promptText="Blog Banner Here" />
             <Label layoutX="39.0" layoutY="207.0" text="CONTENT" textFill="#544f4f">
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -45,6 +44,11 @@
                   <Font size="13.0" />
                </font>
             </TextArea>
+            <MFXButton buttonType="RAISED" layoutX="480.0" layoutY="151.0" onAction="#chooseBanner" prefHeight="50.0" prefWidth="413.0" text="Click Here To Choose Banner">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
          </children>
       </AnchorPane>
       <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="494.0" onAction="#uploadBlog" prefHeight="49.0" prefWidth="918.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #1a2579; -fx-border-color: gray;" text="ADD BLOG" textFill="WHITE">

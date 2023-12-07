@@ -8,6 +8,7 @@ public class BlogInfo {
     public String content;
     public String thumbnail;
     public String bandScore;
+
     public BlogInfo( String title,String _id, String date, String publisherName, String content, String thumbnail,String bandScore) {
         this._id = _id;
         this.title = title;

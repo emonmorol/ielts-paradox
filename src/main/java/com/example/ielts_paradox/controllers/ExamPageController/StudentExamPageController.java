@@ -30,6 +30,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -49,48 +52,37 @@ public class StudentExamPageController implements Initializable {
 
     @FXML
     private TextField answerArea;
-
     @FXML
     private Label examTime;
-
-    @FXML
-    private Hyperlink meetId;
-
-    @FXML
-    private Label points;
-
-    @FXML
-    private Hyperlink practiseId;
-
-    @FXML
-    private Hyperlink questionId;
-
-    @FXML
-    private MFXButton resultId;
-
-    @FXML
-    private MFXScrollPane sPane;
 
     @FXML
     private Label timerLabel;
 
     @FXML
-    private VBox vBox;
-
-    @FXML
-    private Stage stage;
-
-    @FXML
     private Label title;
 
-    private Scene scene;
-
-    private Parent root;
-
-    private static  int ADDITIONAL_MINUTES = 40;
+    @FXML
+    private WebView webview;
+    @FXML
+    private MFXButton questionId;
+    @FXML
+    private MFXButton submitId;
 
     @FXML
-    private TextArea writeMessage;
+    private MFXScrollPane sPane;
+
+    @FXML
+    private VBox vBox;
+    @FXML
+    private Stage stage;
+    @FXML
+    private Label isRunning;
+
+    private Scene scene;
+    private Parent root;
+    private static  int ADDITIONAL_MINUTES = 1;
+
+
 
     private Timeline timeline;
     private Duration duration;
@@ -107,8 +99,16 @@ public class StudentExamPageController implements Initializable {
     String teacherMail;
 
 
+
     private boolean toStop = false;
     public void setData(TestInfo ti){
+        if(ti.isTaken){
+            questionId.setDisable(true);
+            submitId.setDisable(true);
+            answerArea.setEditable(false);
+            System.out.println();
+        }
+        System.out.println(ti.isTaken);
         this.teacherMail = ti.teacherMail;
         title.setText(ti.examModule+" Mock Test");
         in = ti;
@@ -151,32 +151,53 @@ public class StudentExamPageController implements Initializable {
             System.out.println(timeString2);
             LocalDateTime dateTime1 = parseTimeString(timeString1);
             LocalDateTime dateTime2 = parseTimeString(timeString2);
+            if(!ti.isTaken){
+                Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
+                Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
 
-            Instant instant1 = dateTime1.atZone(ZoneId.systemDefault()).toInstant();
-            Instant instant2 = dateTime2.atZone(ZoneId.systemDefault()).toInstant();
 
-            long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
-            duration = Duration.seconds(secondsBetween);
-            updateTimerLabel();
-
-            keyFrame = new KeyFrame(Duration.seconds(1), event -> {
-                duration = duration.subtract(Duration.seconds(1));
+                long secondsBetween = ChronoUnit.SECONDS.between(instant1, instant2);
+                duration = Duration.seconds(secondsBetween);
                 updateTimerLabel();
-                if (duration.equals(Duration.ZERO)) {
-                    if(!toStop){
-                        toStop = true;
-                        startTimer(ADDITIONAL_MINUTES);
-                    }else{
-                        toStop = false;
-                        stopTimer();
+
+                keyFrame = new KeyFrame(Duration.seconds(1), event -> {
+                    duration = duration.subtract(Duration.seconds(1));
+                    updateTimerLabel();
+                    if (duration.equals(Duration.ZERO)) {
+                        if(!toStop){
+                            toStop = true;
+                            startTimer(ADDITIONAL_MINUTES);
+                            timerLabel.setText("Exam Is Running");
+                            timerLabel.setFont(new Font(20));
+                            timerLabel.setTextFill(Color.BLUE);
+                            isRunning.setText("1");
+                            questionId.setDisable(false);
+                            submitId.setDisable(false);
+                            answerArea.setEditable(true);
+
+
+                        }else{
+                            toStop = false;
+                            timerLabel.setText("Exam Ended");
+                            timerLabel.setFont(new Font(20));
+                            timerLabel.setTextFill(Color.RED);
+                            isRunning.setText("0");
+                            questionId.setDisable(true);
+                            submitId.setDisable(true);
+                            answerArea.setEditable(false);
+                            stopTimer();
+                            new ForTest().updateIsTaken(id_);
+                        }
+
                     }
+                });
 
-                }
-            });
+                timeline = new Timeline(keyFrame);
+                timeline.setCycleCount((int) duration.toSeconds());
+                timeline.play();
+            }
 
-            timeline = new Timeline(keyFrame);
-            timeline.setCycleCount((int) duration.toSeconds());
-            timeline.play();
+
         }
     }
 
@@ -196,7 +217,7 @@ public class StudentExamPageController implements Initializable {
         if(questionPaperLink==null){
             ErrorAlert.displayCustomAlert("Failed","Can't Open the link\nLink not set yet!");
         }else{
-            Desktop.getDesktop().browse(new URI(questionPaperLink));
+            loadvideo(questionPaperLink);
         }
     }
 
@@ -205,6 +226,7 @@ public class StudentExamPageController implements Initializable {
         if(meetUri == null){
             ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
         }else{
+
             Desktop.getDesktop().browse(new URI(meetUri));
         }
     }
@@ -214,7 +236,7 @@ public class StudentExamPageController implements Initializable {
         if(practiceQuestionPaperLink==null){
             ErrorAlert.displayCustomAlert("Failed","Can't Open the link\nLink not set yet!");
         }else{
-            Desktop.getDesktop().browse(new URI(practiceQuestionPaperLink));
+            loadvideo(practiceQuestionPaperLink);
         }
     }
 
@@ -225,6 +247,26 @@ public class StudentExamPageController implements Initializable {
         }else{
             SeeResultAlert.displayCustomAlert("Student Bandscore",StudentExamPageController.in.resultScore, StudentExamPageController.in.resultLink);
         }
+    }
+
+    @FXML
+    void externalBrowserLink(ActionEvent event) {
+        if (webview != null && webview.getEngine() != null && webview.getEngine().getLocation() != null) {
+            String currentUrl = webview.getEngine().getLocation();
+            if (currentUrl != null && !currentUrl.isEmpty()) {
+                try {
+                    Desktop.getDesktop().browse(new URI(currentUrl));
+                } catch (IOException | URISyntaxException e) {
+                    e.printStackTrace();
+                    // Handle the exception as needed
+                }
+            }
+        }
+    }
+
+
+    public void loadvideo(String uri){
+        webview.getEngine().load(uri);
     }
     @FXML
     void backButtonHandler(ActionEvent event) throws IOException {
@@ -294,7 +336,16 @@ public class StudentExamPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+            if(isRunning.getText().equals("0")){
+                questionId.setDisable(true);
+                submitId.setDisable(true);
+                answerArea.setEditable(false);
+            }
+            else{
+                questionId.setDisable(false);
+                submitId.setDisable(false);
+                answerArea.setEditable(true);
+            }
 
     }
 

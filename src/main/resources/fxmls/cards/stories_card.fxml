@@ -5,9 +5,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="260.0" prefWidth="448.0" style="-fx-background-radius: 20; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.StoryCardController">
@@ -43,12 +42,8 @@
                   </MFXButton>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="101.0" fitWidth="108.0" layoutX="171.0" layoutY="-43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/instructor.png" />
-               </image>
-            </ImageView>
             <Label fx:id="id" layoutX="52.0" layoutY="24.0" visible="false" />
+            <Circle fx:id="circle" fill="WHITE" layoutX="220.0" layoutY="14.0" radius="53.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.5" />
          </children>
          <stylesheets>
             <URL value="@../../styles/course_offering.css" />

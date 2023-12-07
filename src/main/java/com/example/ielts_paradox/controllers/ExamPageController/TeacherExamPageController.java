@@ -7,6 +7,7 @@ import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
+import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,30 +49,15 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     private DatePicker datePicker;
-
-    @FXML
-    private Hyperlink meetLink;
-    @FXML
-    private Button openWeb;
-
-    @FXML
-    private Hyperlink studentExamPaper;
-    @FXML
-    private TextArea question;
     @FXML
     private String dateFormate;
-    @FXML
-    private MFXScrollPane sPane;
-    @FXML
-    private VBox vBox;
     @FXML
     private String selectedAmPm;
     @FXML
     private String selectedHour;
     @FXML
     private String selectedMinute;
-    @FXML
-    private TextArea writeMessage;
+
     @FXML
     private WebView webview;
     @FXML
@@ -183,10 +169,29 @@ public class TeacherExamPageController implements Initializable {
         new SocketClient().runClient(55555,studentMail,id_);
     }
 
+
+
     @FXML
-    void openWeb(ActionEvent event) {
-        System.out.println("i am here = "+studentSubmissionUri);
-        loadvideo(studentSubmissionUri);
+    void seeExamPaper(ActionEvent event) {
+        if(studentSubmissionUri == null){
+            ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
+        }else{
+            loadvideo(studentSubmissionUri);
+        }
+    }
+    @FXML
+    void externalBrowserLink(ActionEvent event) {
+        if (webview != null && webview.getEngine() != null && webview.getEngine().getLocation() != null) {
+            String currentUrl = webview.getEngine().getLocation();
+            if (currentUrl != null && !currentUrl.isEmpty()) {
+                try {
+                    Desktop.getDesktop().browse(new URI(currentUrl));
+                } catch (IOException | URISyntaxException e) {
+                    e.printStackTrace();
+                    // Handle the exception as needed
+                }
+            }
+        }
     }
 
 
@@ -256,15 +261,7 @@ public class TeacherExamPageController implements Initializable {
             Desktop.getDesktop().browse(new URI(meetUri));
         }
     }
-    @FXML
-    void seeExamPaper(ActionEvent event) throws URISyntaxException, IOException {
-//        loadvideo(studentSubmissionUri);
-        if(studentSubmissionUri == null){
-            ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
-        }else{
-            Desktop.getDesktop().browse(new URI(studentSubmissionUri));
-        }
-    }
+
 
     @FXML
     void setTimeAndDate(ActionEvent event) {

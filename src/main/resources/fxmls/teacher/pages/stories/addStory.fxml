@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="934.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.AddStoryController">
     <children>
@@ -15,33 +16,43 @@
                 <Font name="System Bold" size="17.0" />
             </font>
         </Label>
-        <AnchorPane layoutX="-2.0" layoutY="65.0" prefHeight="350.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+        <AnchorPane layoutX="-2.0" layoutY="65.0" prefHeight="414.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;">
             <children>
                 <Label layoutX="39.0" layoutY="35.0" text="STUDENT NAME" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <MFXTextField fx:id="studentName" floatMode="ABOVE" layoutX="39.0" layoutY="59.0" prefHeight="49.0" prefWidth="400.0" promptText="Student Name" />
-                <Label layoutX="470.0" layoutY="35.0" text="BAND SCORE" textFill="#544f4f">
+                <MFXTextField fx:id="studentName" floatMode="ABOVE" layoutX="39.0" layoutY="59.0" prefHeight="49.0" prefWidth="858.0" promptText="Student Name" />
+                <Label layoutX="39.0" layoutY="126.0" text="BAND SCORE" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <MFXTextField fx:id="bandScore" floatMode="BORDER" layoutX="470.0" layoutY="59.0" prefHeight="49.0" prefWidth="427.0" promptText="Band Score" />
-                <Label layoutX="37.0" layoutY="120.0" text="FULL STORY" textFill="#544f4f">
+                <MFXTextField fx:id="bandScore" floatMode="BORDER" layoutX="39.0" layoutY="150.0" prefHeight="49.0" prefWidth="427.0" promptText="Band Score" />
+                <Label layoutX="41.0" layoutY="207.0" text="FULL STORY" textFill="#544f4f">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <TextArea fx:id="story" layoutX="39.0" layoutY="143.0" prefHeight="154.0" prefWidth="858.0" promptText="Type Your Story Here">
+                <TextArea fx:id="story" layoutX="43.0" layoutY="230.0" prefHeight="154.0" prefWidth="858.0" promptText="Type Your Story Here">
                     <font>
                         <Font size="13.0" />
                     </font>
                 </TextArea>
+            <Text layoutX="505.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT IMAGE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <MFXButton buttonType="RAISED" layoutX="505.0" layoutY="150.0" onAction="#chooseImage" prefHeight="50.0" prefWidth="397.0" text="Click Here To Choose Image">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
             </children>
         </AnchorPane>
-        <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="451.0" onAction="#addStoryHandler" prefHeight="49.0" prefWidth="934.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #1a2579; -fx-border-color: gray;" text="ADD STORY" textFill="WHITE">
+        <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutY="501.0" onAction="#addStoryHandler" prefHeight="49.0" prefWidth="934.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #1a2579; -fx-border-color: gray;" text="ADD STORY" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

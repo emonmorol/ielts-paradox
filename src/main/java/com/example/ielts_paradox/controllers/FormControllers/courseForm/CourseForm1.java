@@ -52,7 +52,6 @@ public class CourseForm1 {
         selectedFile2 = fileChooser.showOpenDialog(null);
 
         if (selectedFile2 != null) {
-
             System.out.println("Selected file: " + selectedFile2.getAbsolutePath());
         }
 
