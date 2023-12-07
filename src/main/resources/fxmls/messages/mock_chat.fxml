@@ -11,8 +11,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="350.0" opacity="0.98" prefHeight="645.0" prefWidth="608.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.CourseChatController">
-    <children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="350.0" opacity="0.98" prefHeight="645.0" prefWidth="608.0" style="-fx-background-color: #e9eff6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.ExamChatController">
+   <children>
       <AnchorPane layoutX="25.0" layoutY="51.0" prefHeight="501.0" prefWidth="545.0" style="-fx-border-color: #1ea4e3; -fx-border-radius: 10; -fx-background-radius: 10;">
          <children>
             <MFXScrollPane fx:id="sPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="2.0" prefHeight="495.0" prefWidth="554.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;">
@@ -47,5 +47,5 @@
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
       <Label fx:id="msgPort" layoutX="468.0" layoutY="19.0" text=" " visible="false" />
-    </children>
+   </children>
 </AnchorPane>

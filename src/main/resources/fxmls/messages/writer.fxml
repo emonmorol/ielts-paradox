@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.ChatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.MessagesController.CourseChatController">
    <children>
       <TextArea fx:id="messageWriter" layoutX="16.0" layoutY="10.0" prefHeight="44.0" prefWidth="285.0" promptText="Type a message..." wrapText="true" />
       <MFXButton buttonType="RAISED" layoutX="323.0" layoutY="9.0" onAction="#send" prefHeight="44.0" prefWidth="57.0" style="-fx-background-color: #b1c8df;" text=" ">

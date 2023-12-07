@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
-import com.example.ielts_paradox.SocketNetworking.*;
+import com.example.ielts_paradox.SocketNetworking.Course.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.Course.SocketClient;
 import com.example.ielts_paradox.controllers.CourseContentController;
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForCourse;

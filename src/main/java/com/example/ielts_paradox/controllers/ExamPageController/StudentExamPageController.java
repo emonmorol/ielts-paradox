@@ -3,8 +3,11 @@ package com.example.ielts_paradox.controllers.ExamPageController;
 import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.Alerts.SeeResultAlert;
 import com.example.ielts_paradox.Alerts.SuccessAlert;
+import com.example.ielts_paradox.SocketNetworking.Exam.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.Exam.SocketClient;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
@@ -23,6 +26,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -76,6 +80,9 @@ public class StudentExamPageController implements Initializable {
     @FXML
     private Stage stage;
 
+    @FXML
+    private Label title;
+
     private Scene scene;
 
     private Parent root;
@@ -97,10 +104,13 @@ public class StudentExamPageController implements Initializable {
     String questionPaperLink;
     String practiceQuestionPaperLink;
     String timeString2;
+    String teacherMail;
+
 
     private boolean toStop = false;
     public void setData(TestInfo ti){
-
+        this.teacherMail = ti.teacherMail;
+        title.setText(ti.examModule+" Mock Test");
         in = ti;
         id_ = ti._id;
 
@@ -271,27 +281,21 @@ public class StudentExamPageController implements Initializable {
         return LocalDateTime.parse(timeString, formatter);
     }
 
-    public void sentMessage(ActionEvent event) {
+    @FXML
+    void openMesseneger(ActionEvent event) {
+        if(!new ForChat().isRunning(55555)){
+            new MultiThreadedSocketServer().startThreading(55555);
+            new ForChat().updatePort(55555,true);
+        }
 
+        new SocketClient().runClient(55555,teacherMail,id_);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for(int i =1;i<=10;i++){
-            FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
-            FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
-            try {
-                AnchorPane crd = loder.load();
-                vBox.getChildren().add(crd);
-                AnchorPane crd2 = loder2.load();
-                vBox.getChildren().add(crd2);
-                sPane.setVvalue(1.0);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
 
-        }
 
     }
+
 }

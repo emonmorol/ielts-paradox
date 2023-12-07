@@ -1,7 +1,10 @@
 package com.example.ielts_paradox.controllers.ExamPageController;
 
 import com.example.ielts_paradox.Alerts.*;
+import com.example.ielts_paradox.SocketNetworking.Exam.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.Exam.SocketClient;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
@@ -12,10 +15,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -45,6 +51,8 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     private Hyperlink meetLink;
+    @FXML
+    private Button openWeb;
 
     @FXML
     private Hyperlink studentExamPaper;
@@ -64,6 +72,10 @@ public class TeacherExamPageController implements Initializable {
     private String selectedMinute;
     @FXML
     private TextArea writeMessage;
+    @FXML
+    private WebView webview;
+    @FXML
+    private Label title;
 
     @FXML
     private Stage stage;
@@ -75,6 +87,7 @@ public class TeacherExamPageController implements Initializable {
     String meetUri;
     String studentSubmissionUri;
     String resultPaper;
+    String studentMail;
 
 
     @FXML
@@ -95,6 +108,8 @@ public class TeacherExamPageController implements Initializable {
     static TestInfo in;
 
     public void setData(TestInfo ti) {
+        this.studentMail = ti.studentMail;
+        title.setText(ti.examModule+" Mock Test");
         in = ti;
         id_ = ti._id;
         if (ti.examDate != null) {
@@ -152,33 +167,26 @@ public class TeacherExamPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hourBox.getItems().addAll(hour);
         amPm.getItems().addAll(ap);
-
-        // Set custom size for minuteBox dropdown
         setDropdownSize(minuteBox, 50);
         minuteBox.getItems().addAll(minute);
-
-
-        for (int i = 1; i <= 10; i++) {
-            FXMLLoader loder = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestIncomingCard.fxml"));
-            FXMLLoader loder2 = new FXMLLoader(getClass().getResource("/fxmls/messages/mockTestOutgoingCard.fxml"));
-            try {
-                AnchorPane crd = loder.load();
-                vBox.getChildren().add(crd);
-                AnchorPane crd2 = loder2.load();
-                vBox.getChildren().add(crd2);
-                sPane.setVvalue(1.0);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
 
     }
 
 
     @FXML
-    void sentMessage(ActionEvent event) {
-        String wm = writeMessage.getText();
+    void openMesseneger(ActionEvent event) {
+        if(!new ForChat().isRunning(55555)){
+            new MultiThreadedSocketServer().startThreading(55555);
+            new ForChat().updatePort(55555,true);
+        }
+
+        new SocketClient().runClient(55555,studentMail,id_);
+    }
+
+    @FXML
+    void openWeb(ActionEvent event) {
+        System.out.println("i am here = "+studentSubmissionUri);
+        loadvideo(studentSubmissionUri);
     }
 
 
@@ -234,12 +242,14 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     void seeResult(ActionEvent event) {
+
         SeeResultAlert.displayCustomAlert("Student Bandscore",TeacherExamPageController.in.resultScore, TeacherExamPageController.in.resultLink);
     }
 
 
     @FXML
     void openMeetLink(ActionEvent event) throws URISyntaxException, IOException {
+
         if(meetUri == null){
             ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
         }else{
@@ -248,7 +258,8 @@ public class TeacherExamPageController implements Initializable {
     }
     @FXML
     void seeExamPaper(ActionEvent event) throws URISyntaxException, IOException {
-        if(meetUri == null){
+//        loadvideo(studentSubmissionUri);
+        if(studentSubmissionUri == null){
             ErrorAlert.displayCustomAlert("Can't Open!", "Link Hasn't Set Yet!");
         }else{
             Desktop.getDesktop().browse(new URI(studentSubmissionUri));
@@ -262,12 +273,6 @@ public class TeacherExamPageController implements Initializable {
         boolean isUpdated = new ForTest().updateExamDate(id_,eDate);
         if(isUpdated){
             SuccessAlert.displayCustomAlert();
-//            hourBox.getSelectionModel().select(selectedHour);
-//            minuteBox.getSelectionModel().select(selectedMinute);
-//            amPm.getSelectionModel().select(selectedAmPm);
-//
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-//            datePicker.setValue(LocalDate.parse(dateFormate,formatter));
         }
         else
             ErrorAlert.displayCustomAlert("Failed","Can't Update the date\nTry Again!");
@@ -309,5 +314,9 @@ public class TeacherExamPageController implements Initializable {
             }
         }
         return null;
+    }
+
+    public void loadvideo(String uri){
+        webview.getEngine().load(uri);
     }
 }

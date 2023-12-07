@@ -1,7 +1,10 @@
 package com.example.ielts_paradox.controllers.MockTestController;
 
+import com.example.ielts_paradox.SocketNetworking.Course.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.Course.SocketClient;
 import com.example.ielts_paradox.controllers.ExamPageController.TeacherExamPageController;
 import com.example.ielts_paradox.database.ForBlogs;
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.database.ForTest;
 import com.example.ielts_paradox.models.TestInfo;
 import javafx.event.ActionEvent;
@@ -36,6 +39,12 @@ public class MockTestTableCardController {
     private Parent root;
     @FXML
     public void takeExamHandler(ActionEvent event) throws IOException {
+//        if(!new ForChat().isRunning(55555)){
+//            new MultiThreadedSocketServer().startThreading(55555);
+//            new ForChat().updatePort(55555,true);
+//        }
+//        new SocketClient().runClient(55555);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/teacher/mocktest/teacher_exam_page.fxml"));
         root = fxmlLoader.load();
 

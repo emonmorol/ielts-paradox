@@ -1,8 +1,8 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.Alerts.DeleteAlert;
-import com.example.ielts_paradox.SocketNetworking.MultiThreadedSocketServer;
-import com.example.ielts_paradox.SocketNetworking.SocketClient;
+import com.example.ielts_paradox.SocketNetworking.Course.MultiThreadedSocketServer;
+import com.example.ielts_paradox.SocketNetworking.Course.SocketClient;
 import com.example.ielts_paradox.controllers.AllControl.TeacherApprovedStudentsTableController;
 import com.example.ielts_paradox.controllers.AllControl.TeacherCourseRequestController;
 import com.example.ielts_paradox.database.ForChat;
