@@ -36,6 +36,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
+            <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="146.0" layoutY="32.0" onAction="#reloadHandler" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 50;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView size="20" text="" wrappingWidth="11.14285659790039" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="109.0" layoutY="126.0" prefHeight="573.0" prefWidth="1195.0">

@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers.teacher;
 
+import com.example.ielts_paradox.models.NoticeInfo;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import com.example.ielts_paradox.utils.SceneChanger;
 import javafx.event.ActionEvent;
@@ -13,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -24,6 +27,9 @@ public class TeacherDashboardController  implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private VBox vBox;
+
     @FXML
     BorderPane mainPane = new BorderPane();
     @FXML
@@ -38,6 +44,20 @@ public class TeacherDashboardController  implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/teacher/pages/overview.fxml");
         mainPane.setCenter(panel);
+
+        for(int i=0; i<7; i++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/latestNotice.fxml"));
+            try {
+                HBox paneee = fxmlLoader.load();
+                vBox.getChildren().add(paneee);
+                LatestNoticeCardController oeccc = fxmlLoader.getController();
+                oeccc.setData(new NoticeInfo("Your exam will be taken in next Friday","Exam Notice","hlw","hlw","hlw","hlw"));
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
