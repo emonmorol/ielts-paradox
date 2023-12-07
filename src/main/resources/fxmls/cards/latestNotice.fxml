@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controller">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.LatestNoticeCardController">
    <children>
       <AnchorPane prefHeight="51.0" prefWidth="51.0" style="-fx-background-radius: 10;">
          <children>
@@ -17,6 +17,7 @@
                   <Font size="25.0" />
                </font>
             </FontAwesomeIconView>
+            <Label fx:id="_id" layoutX="5.0" layoutY="4.0" prefHeight="18.0" prefWidth="5.0" text=" " visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="51.0" prefWidth="218.0" style="-fx-background-radius: 10;">

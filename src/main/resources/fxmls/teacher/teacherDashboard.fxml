@@ -130,7 +130,7 @@
                <children>
                   <HBox layoutX="1.0" layoutY="7.0" prefHeight="44.0" prefWidth="293.0" spacing="20.0">
                      <children>
-                        <MFXButton buttonType="RAISED" contentDisplay="CENTER" depthLevel="LEVEL1" prefHeight="42.0" prefWidth="90.0" style="-fx-background-radius: 10;" text=" ">
+                        <MFXButton buttonType="RAISED" contentDisplay="CENTER" depthLevel="LEVEL1" onAction="#reloadHandler" prefHeight="42.0" prefWidth="90.0" style="-fx-background-radius: 10;" text=" ">
                            <graphic>
                               <FontAwesomeIconView fill="#1a2579" glyphName="house" selectionEnd="0" selectionStart="0" size="18" tabSize="0" text="" wrappingWidth="18.9998779296875" />
                            </graphic>

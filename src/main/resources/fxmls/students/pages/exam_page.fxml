@@ -29,7 +29,7 @@
                </cursor>
             </MFXButton>
             <Label fx:id="points" layoutX="123.0" layoutY="42.0" visible="false" />
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="83.0" layoutY="31.0" onAction="#reloadHandler" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 50;" text=" ">
+            <MFXButton fx:id="reload" buttonType="RAISED" depthLevel="LEVEL1" layoutX="83.0" layoutY="31.0" onAction="#reloadHandler" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 50;" text=" ">
                <graphic>
                   <FontAwesomeIconView size="20" text="" wrappingWidth="11.14285659790039" />
                </graphic>
@@ -37,6 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
+            <Label fx:id="isTimerRunning" layoutX="393.0" layoutY="34.0" text=" " visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="152.0" layoutY="134.0" prefWidth="1196.0">

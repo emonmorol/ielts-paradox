@@ -93,6 +93,12 @@ public class TeacherExamPageController implements Initializable {
     private String[] ap = {"AM", "PM"};
     static TestInfo in;
 
+    @FXML
+    void reloadHandler(ActionEvent event) {
+        setData(new ForTest().getTestInfoById(id_));
+
+    }
+
     public void setData(TestInfo ti) {
         this.studentMail = ti.studentMail;
         title.setText(ti.examModule+" Mock Test");

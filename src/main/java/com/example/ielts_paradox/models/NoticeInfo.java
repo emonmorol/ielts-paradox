@@ -27,4 +27,21 @@ public class NoticeInfo {
         this.senderName = senderName;
         this.module = module;
     }
+
+    public int get_id() {
+        return _id;
+    }
+
+    @Override
+    public String toString() {
+        return "NoticeInfo{" +
+                "_id=" + _id +
+                ", text='" + text + '\'' +
+                ", title='" + title + '\'' +
+                ", recieverMail='" + recieverMail + '\'' +
+                ", senderMail='" + senderMail + '\'' +
+                ", senderName='" + senderName + '\'' +
+                ", module='" + module + '\'' +
+                '}';
+    }
 }

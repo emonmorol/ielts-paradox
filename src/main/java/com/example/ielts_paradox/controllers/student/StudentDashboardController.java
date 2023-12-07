@@ -1,5 +1,7 @@
 package com.example.ielts_paradox.controllers.student;
 
+import com.example.ielts_paradox.controllers.cardControllers.LatestNoticeCardController;
+import com.example.ielts_paradox.database.ForNotices;
 import com.example.ielts_paradox.models.NoticeInfo;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import com.example.ielts_paradox.utils.SceneChanger;
@@ -19,6 +21,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class StudentDashboardController implements Initializable {
@@ -34,24 +39,41 @@ public class StudentDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        LoadDashboardPane ob = new LoadDashboardPane();
-        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
-        mainPane.setCenter(panel);
-        for(int i=0; i<7; i++){
+        setInformation();
+    }
+    public void setInformation(){
+            LoadDashboardPane ob = new LoadDashboardPane();
+            AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
+            mainPane.setCenter(panel);
+        ArrayList<NoticeInfo> nis = new ForNotices().getNotices();
+        Collections.sort(nis, Comparator.comparingInt(NoticeInfo::get_id).reversed());
+        int cnt = 0;
+        vBox.getChildren().clear();
+            for(NoticeInfo ni : nis){
+                if(cnt >=7){
+                    break;
+                }
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/latestNotice.fxml"));
                 try {
                     HBox paneee = fxmlLoader.load();
                     vBox.getChildren().add(paneee);
                     LatestNoticeCardController oeccc = fxmlLoader.getController();
-                    oeccc.setData(new NoticeInfo("Your exam will be taken in next Friday","Exam Notice","hlw","hlw","hlw","hlw"));
+                    oeccc.setData(ni);
+                    cnt++;
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
+    }
 
-        }
+    @FXML
+    void reloadHandler(ActionEvent event) {
+        setInformation();
+
+    }
+
 
     @FXML
     public void onClickOne(ActionEvent e){

@@ -57,6 +57,8 @@ public class StudentExamPageController implements Initializable {
 
     @FXML
     private Label timerLabel;
+    @FXML
+    private MFXButton reload;
 
     @FXML
     private Label title;
@@ -77,6 +79,8 @@ public class StudentExamPageController implements Initializable {
     private Stage stage;
     @FXML
     private Label isRunning;
+    @FXML
+    private Label isTimerRunning;
 
     private Scene scene;
     private Parent root;
@@ -99,13 +103,18 @@ public class StudentExamPageController implements Initializable {
     String teacherMail;
 
 
+    @FXML
+    void reloadHandler(ActionEvent event) {
+        setData(new ForTest().getTestInfoById(id_));
 
+    }
     private boolean toStop = false;
     public void setData(TestInfo ti){
         if(ti.isTaken){
             questionId.setDisable(true);
             submitId.setDisable(true);
             answerArea.setEditable(false);
+            reload.setDisable(false);
             System.out.println();
         }
         System.out.println(ti.isTaken);
@@ -114,6 +123,9 @@ public class StudentExamPageController implements Initializable {
         in = ti;
         id_ = ti._id;
 
+        if(ti.examDate != null){
+            isTimerRunning.setText("1");
+        }
 
         if(ti.meetLink != null){
             meetUri = ti.meetLink;
@@ -174,6 +186,7 @@ public class StudentExamPageController implements Initializable {
                             questionId.setDisable(false);
                             submitId.setDisable(false);
                             answerArea.setEditable(true);
+                            reload.setDisable(true);
 
 
                         }else{
@@ -185,6 +198,7 @@ public class StudentExamPageController implements Initializable {
                             questionId.setDisable(true);
                             submitId.setDisable(true);
                             answerArea.setEditable(false);
+                            reload.setDisable(false);
                             stopTimer();
                             new ForTest().updateIsTaken(id_);
                         }
@@ -340,11 +354,13 @@ public class StudentExamPageController implements Initializable {
                 questionId.setDisable(true);
                 submitId.setDisable(true);
                 answerArea.setEditable(false);
+                reload.setDisable(false);
             }
             else{
                 questionId.setDisable(false);
                 submitId.setDisable(false);
                 answerArea.setEditable(true);
+                reload.setDisable(true);
             }
 
     }

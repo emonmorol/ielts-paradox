@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.controllers.cardControllers;
 
 import com.example.ielts_paradox.Alerts.NoticeAlert;
+import com.example.ielts_paradox.database.ForNotices;
 import com.example.ielts_paradox.models.NoticeInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,8 @@ public class LatestNoticeCardController {
 
     @FXML
     private Label fullMessage;
+    @FXML
+    private Label _id;
 
     @FXML
     private Label title;
@@ -17,11 +20,12 @@ public class LatestNoticeCardController {
     public void setData(NoticeInfo nic){
         title.setText(nic.title);
         fullMessage.setText(nic.text);
+        _id.setText(nic._id+"");
     }
 
     @FXML
     void seeDetails(ActionEvent event) {
-        NoticeAlert.displayCustomAlert(new NoticeInfo(1,"your exam will start soon","Exam Notice","olman","moral","olman","Writting"));
+        NoticeAlert.displayCustomAlert(new ForNotices().getNoticeById(_id.getText()));
 
     }
 }
