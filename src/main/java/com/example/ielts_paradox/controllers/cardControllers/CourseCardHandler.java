@@ -66,7 +66,7 @@ public class CourseCardHandler {
             new ForChat().updatePort(Integer.parseInt(msgPort.getText()),true);
         }
 
-        new SocketClient().runClient(Integer.parseInt(msgPort.getText()));
+        new SocketClient().runClient(Integer.parseInt(msgPort.getText()),new ForCourse().getCourseById(id.getText()));
 
     }
 

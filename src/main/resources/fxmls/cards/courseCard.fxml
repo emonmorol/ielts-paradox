@@ -76,13 +76,16 @@
       </AnchorPane>
       <AnchorPane prefHeight="150.0" prefWidth="195.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
          <children>
-            <AnchorPane layoutX="33.0" layoutY="18.0" opacity="0.14" prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: black; -fx-border-radius: 500;" />
-            <Group layoutX="16.0" layoutY="20.0" />
-            <MFXProgressSpinner fx:id="progessSpinner" layoutX="33.0" layoutY="17.0" prefHeight="115.0" prefWidth="115.0" progress="0.54" startingAngle="90.0">
-               <color4>
-                  <Color red="0.15777289867401123" green="0.18421052396297455" blue="0.1709917187690735" />
-               </color4>
-            </MFXProgressSpinner>
+            <AnchorPane layoutX="33.0" layoutY="17.0">
+               <children>
+                  <AnchorPane layoutY="1.0" opacity="0.14" prefHeight="115.0" prefWidth="115.0" style="-fx-border-color: black; -fx-border-radius: 500;" />
+                  <MFXProgressSpinner fx:id="progessSpinner" prefHeight="115.0" prefWidth="115.0" progress="0.54" startingAngle="90.0">
+                     <color4>
+                        <Color red="0.15777289867401123" green="0.18421052396297455" blue="0.1709917187690735" />
+                     </color4>
+                  </MFXProgressSpinner>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

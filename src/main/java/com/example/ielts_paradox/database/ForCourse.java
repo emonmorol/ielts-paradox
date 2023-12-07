@@ -195,6 +195,33 @@ public class ForCourse {
         UserInfo info = user.getUser();
 
         String insertQuery = "INSERT INTO courses (title, price, isReleased, discount, details,features,curriculum,faq,sidebarPoint,thumbmail,instructorName,instructorMail,routine,messagePort,content) VALUES (?, ?, ?, ?, ?,?,?, ?, ?, ?, ?,?,?,?,?)";
+        String insertQuery2 = "INSERT INTO port_history (messagePort,isRunning) VALUES (?, ?)";
+
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement preparedStatement2 = connection.prepareStatement(insertQuery)) {
+                preparedStatement2.setInt(1, messagePort);
+                preparedStatement2.setBoolean(2, false);
+                int rowsAffected = preparedStatement2.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement preparedStatement2 = connection.prepareStatement(insertQuery)) {
+                preparedStatement2.setInt(1, messagePort);
+                preparedStatement2.setBoolean(2, false);
+                int rowsAffected = preparedStatement2.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         try{
             Connection connection = new DBConnections().getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {

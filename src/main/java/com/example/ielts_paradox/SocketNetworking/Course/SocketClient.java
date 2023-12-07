@@ -1,6 +1,7 @@
 package com.example.ielts_paradox.SocketNetworking.Course;
 
 import com.example.ielts_paradox.controllers.MessagesController.CourseChatController;
+import com.example.ielts_paradox.models.CourseInfo;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,13 +19,14 @@ public class SocketClient {
     private CourseChatController controller;
     private Scanner in;
 
-    public void runClient(int port) {
+    public void runClient(int port, CourseInfo ci) {
         try {
             Stage primaryStage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmls/messages/chat.fxml"));
             Parent root = loader.load();
 
             controller = loader.getController();
+            controller.setData(ci);
             Image logo = new Image(getClass().getResource("/images/logo.png").toExternalForm());
             primaryStage.setTitle("IELTS ParadOx Messenger");
             primaryStage.getIcons().add(logo);

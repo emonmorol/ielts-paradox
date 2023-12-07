@@ -20,6 +20,11 @@ public class ForProfile {
 
         String updateSql2 = "UPDATE paid_student SET email = ? WHERE email = ?";
 
+        String updateSql3 = "UPDATE courses SET instructorMail = ? WHERE instructorMail = ?";
+        String updateSql4 = "UPDATE success_stories SET teacherMail = ? WHERE teacherMail = ?";
+        String updateSql5 = "UPDATE test_students SET teacherMail = ? WHERE teacherMail = ?";
+        String updateSql6 = "UPDATE test_students SET studentMail = ? WHERE studentMail = ?";
+
         try {
 
             if(info.isTeacher){
@@ -28,18 +33,41 @@ public class ForProfile {
                 preparedStatement.setString(1, newMail);
                 preparedStatement.setString(2, oldMail);
                 int rowsAffected = preparedStatement.executeUpdate();
-                return  rowsAffected>0;
+
+                PreparedStatement preparedStatement2 = connection.prepareStatement(updateSql3);
+                preparedStatement2.setString(1, newMail);
+                preparedStatement2.setString(2, oldMail);
+                int rowsAffected2 = preparedStatement2.executeUpdate();
+
+                PreparedStatement preparedStatement3 = connection.prepareStatement(updateSql4);
+                preparedStatement3.setString(1, newMail);
+                preparedStatement3.setString(2, oldMail);
+                int rowsAffected3 = preparedStatement2.executeUpdate();
+
+                PreparedStatement preparedStatement4 = connection.prepareStatement(updateSql5);
+                preparedStatement4.setString(1, newMail);
+                preparedStatement4.setString(2, oldMail);
+                int rowsAffected4 = preparedStatement2.executeUpdate();
+
+                return (rowsAffected > 0 && rowsAffected2 > 0 && rowsAffected3 > 0 && rowsAffected4 > 0);
             }else{
                 Connection connection = new DBConnections().getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
                 preparedStatement.setString(1, newMail);
                 preparedStatement.setString(2, oldMail);
                 int rowsAffected = preparedStatement.executeUpdate();
+
                 PreparedStatement preparedStatement2 = connection.prepareStatement(updateSql2);
                 preparedStatement2.setString(1, newMail);
                 preparedStatement2.setString(2, oldMail);
                 int rowsAffected2 = preparedStatement2.executeUpdate();
-                return (rowsAffected > 0 && rowsAffected2 > 0);
+
+                PreparedStatement preparedStatement3 = connection.prepareStatement(updateSql6);
+                preparedStatement3.setString(1, newMail);
+                preparedStatement3.setString(2, oldMail);
+                int rowsAffected3 = preparedStatement2.executeUpdate();
+
+                return (rowsAffected > 0 && rowsAffected2 > 0 && rowsAffected3 > 0);
             }
 
         } catch (SQLException e) {

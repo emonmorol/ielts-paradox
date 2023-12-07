@@ -69,7 +69,7 @@ public class TeacherMyCourseCardController {
             new ForChat().updatePort(Integer.parseInt(msgPort.getText()),true);
         }
 
-        new SocketClient().runClient(Integer.parseInt(msgPort.getText()));
+        new SocketClient().runClient(Integer.parseInt(msgPort.getText()),new ForCourse().getCourseById(id_.getText()));
     }
     public void setData(CourseInfo bi){
         title.setText(bi.title);

@@ -1,6 +1,8 @@
 package com.example.ielts_paradox.controllers.MessagesController;
 import com.example.ielts_paradox.SocketNetworking.Course.SocketClient;
+import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.MessageInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CourseChatController implements Initializable{
@@ -34,12 +37,52 @@ public class CourseChatController implements Initializable{
     @FXML
     public MFXScrollPane sPane;
     public MFXButton sendButton;
+    String courseId;
 
     boolean isNameSpecified = false;
 
-    public void setData(CourseInfo c){
-        courseName.setText(c.title);
-        msgPort.setText(c.messagePort+"");
+    public void setData(CourseInfo c) throws IOException {
+        Platform.runLater(()->{
+            courseName.setText(c.title);
+            msgPort.setText(c.messagePort+"");
+            courseId = c._id;
+            ArrayList<MessageInfo> mis = new ForChat().getConversation(c._id,true);
+            UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+            for(MessageInfo mi:mis){
+                if(mi.senderEmail.equals(info.email)){
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/outgoingCard.fxml"));
+                    AnchorPane outg = null;
+                    try {
+                        outg = fxmlLoader.load();
+                        OutgoingCard oc = fxmlLoader.getController();
+                        oc.setData(info.fullName,mi.message);
+
+                        sPane.setVvalue(1.0);
+                        messageVBox.getChildren().add(outg);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                }else{
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmls/messages/incomingCard.fxml"));
+                    AnchorPane outg = null;
+                    try {
+                        outg = fxmlLoader.load();
+                        IncomingCard ic = fxmlLoader.getController();
+                        ic.setData(mi.senderName,mi.message);
+
+                        sPane.setVvalue(1.0);
+                        messageVBox.getChildren().add(outg);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                }
+            }
+        });
+
+
     }
 
     @FXML
@@ -64,6 +107,7 @@ public class CourseChatController implements Initializable{
             sPane.setVvalue(1.0);
             messageVBox.getChildren().add(outg);
             inputField.clear();
+            new ForChat().updateConversation(courseId,true,message,user.fullName,user.email);
             SocketClient.sendMessageToServer(message);
         }
     }
@@ -113,6 +157,7 @@ public class CourseChatController implements Initializable{
         sPane.setVvalue(1.0);
         try{
             Platform.runLater(() -> {
+
                 Stage stage = (Stage) messageVBox.getScene().getWindow();
                 stage.setOnCloseRequest(event -> {
                     SocketClient.sendMessageToServer("/disconnect");

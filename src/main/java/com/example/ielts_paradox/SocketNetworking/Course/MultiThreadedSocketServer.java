@@ -1,7 +1,12 @@
 package com.example.ielts_paradox.SocketNetworking.Course;
 import com.example.ielts_paradox.database.ForChat;
+import com.example.ielts_paradox.models.CourseVideo;
+import com.example.ielts_paradox.models.MessageInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
@@ -76,6 +81,7 @@ public class MultiThreadedSocketServer{
                             broadcastMessage(clientName+" has left the chat",this);
                             break;
                         }
+
                         broadcastMessage(clientName + "$" + message, this);
                     }
                 }

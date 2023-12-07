@@ -60,6 +60,8 @@ public class OverviewController implements Initializable{
 
     @FXML
     private Label totalStudents;
+    @FXML
+    private Label welcome;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -74,6 +76,8 @@ public class OverviewController implements Initializable{
 
         int exams = new ForTest().takeTestCount(info.email);
         takenMockTest.setText(exams+"");
+        welcome.setText("Hello "+info.fullName+", Welcome back");
+
 
         int students = new ForEnrollment().totalApprovedStudentCount(info.email);
         totalStudents.setText(students+"");
