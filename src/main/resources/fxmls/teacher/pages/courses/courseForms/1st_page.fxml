@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm1">
    <children>
-      <MFXTextField fx:id="title" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course title" />
-      <MFXTextField fx:id="price" alignment="TOP_LEFT" floatMode="BORDER" layoutX="475.0" layoutY="51.0" prefHeight="50.0" prefWidth="418.0" promptText="Enter Course Price" />
-      <Text layoutX="475.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE PRICE">
+      <MFXTextField fx:id="title" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="51.0" prefHeight="50.0" prefWidth="409.0" promptText="Enter Course title" />
+      <MFXTextField fx:id="price" alignment="TOP_LEFT" floatMode="BORDER" layoutX="465.0" layoutY="53.0" prefHeight="50.0" prefWidth="207.0" promptText="Enter Course Price" />
+      <Text layoutX="465.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE PRICE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -22,13 +22,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <MFXTextField fx:id="discount" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="146.0" prefHeight="50.0" prefWidth="341.0" promptText="Enter Discount Percentage" />
-      <Text layoutX="34.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISCOUNT(PERCENTAGE)">
+      <MFXTextField fx:id="discount" alignment="TOP_LEFT" floatMode="BORDER" layoutX="690.0" layoutY="54.0" prefHeight="50.0" prefWidth="207.0" promptText="Enter Discount Percentage" />
+      <Text layoutX="690.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DISCOUNT(PERCENTAGE)">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="404.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE BANNER">
+      <Text layoutX="690.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE BANNER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -47,10 +47,26 @@
             <Font size="20.0" />
          </font>
       </MFXButton>
-      <MFXButton buttonType="RAISED" layoutX="404.0" layoutY="146.0" onAction="#chooseBanner" prefHeight="50.0" prefWidth="490.0" text="Click Here To Choose Banner">
+      <MFXButton buttonType="RAISED" layoutX="687.0" layoutY="146.0" onAction="#chooseBanner" prefHeight="50.0" prefWidth="207.0" text="Click Here To Choose Banner">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </MFXButton>
+      <Text layoutX="468.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COURSE ROUTINE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <MFXButton buttonType="RAISED" layoutX="465.0" layoutY="146.0" onAction="#chooseRoutine" prefHeight="50.0" prefWidth="207.0" text="Click Here To Choose Routine">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MFXButton>
+      <MFXTextField fx:id="messagePort" alignment="TOP_LEFT" floatMode="BORDER" layoutX="34.0" layoutY="149.0" prefHeight="50.0" prefWidth="409.0" promptText="Enter Message Port" />
+      <Text layoutX="35.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MESSAGE PORT">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

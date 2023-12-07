@@ -6,11 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
+import java.io.*;
 
 
 public class CourseForm1 {
@@ -28,8 +24,14 @@ public class CourseForm1 {
     @FXML
     private MFXTextField title;
 
+    @FXML
+    private MFXTextField messagePort;
+
+
+
 
     private File selectedFile;
+    private File selectedFile2;
 
     @FXML
     void chooseBanner(ActionEvent event) {
@@ -44,30 +46,51 @@ public class CourseForm1 {
     }
 
     @FXML
+    void chooseRoutine(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose Routine Image");
+        selectedFile2 = fileChooser.showOpenDialog(null);
+
+        if (selectedFile2 != null) {
+
+            System.out.println("Selected file: " + selectedFile2.getAbsolutePath());
+        }
+
+    }
+
+    @FXML
     void saveButton(ActionEvent event) {
         System.out.println(description.getText());
         System.out.println(discount.getText());
         System.out.println(price.getText());
         System.out.println(title.getText());
-        if (selectedFile != null) {
-            try {
+        System.out.println(messagePort.getText());
 
-                FileInputStream fr = new FileInputStream(selectedFile);
+        saveImage(selectedFile, "banner2.jpg");
+        saveImage(selectedFile2, "routine2.jpg");
+    }
 
-                FileOutputStream fw = new FileOutputStream( "moral.png");
-                fw.write(fr.read());
+    private void saveImage(File sourceFile, String destinationFileName) {
+        if (sourceFile != null) {
+            try (FileInputStream fr = new FileInputStream(sourceFile);
+                 FileOutputStream fw = new FileOutputStream(destinationFileName);
+                 BufferedInputStream bufferedInput = new BufferedInputStream(fr);
+                 BufferedOutputStream bufferedOutput = new BufferedOutputStream(fw)) {
 
-                fw.flush();
-                fw.close();
-                fr.close();
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = bufferedInput.read(buffer)) != -1) {
+                    bufferedOutput.write(buffer, 0, bytesRead);
+                }
+
+                System.out.println("File saved: " + destinationFileName);
 
             } catch (IOException e) {
-                e.printStackTrace();
-
+                e.printStackTrace(); // Consider logging or displaying a more user-friendly error message
             }
         } else {
-
             System.out.println("No file selected");
         }
     }
+
 }
