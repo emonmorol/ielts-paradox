@@ -48,10 +48,7 @@ public class ChatController implements Initializable{
     public MFXScrollPane sPane;
     public MFXButton sendButton;
 
-    boolean isJoined = false;
-    boolean isTeacher;
-
-    String name;
+    boolean isNameSpecified = false;
 
     public void setData(CourseInfo c){
         courseName.setText(c.title);
@@ -61,25 +58,14 @@ public class ChatController implements Initializable{
     @FXML
     private void sendMessage() throws IOException {
         UserInfo user = UserSingleTon.getInstance(new UserInfo()).getUser();
-//        Platform.runLater(() -> {
-//            if(!isNameSpecified){
-//                if(user.isTeacher){
-//                    SocketClient.sendMessageToServer(user.fullName+" (Instructor)");
-//                }else{
-//                    SocketClient.sendMessageToServer(user.fullName);
-//                }
-//                isNameSpecified = true;
-//            }
-//        });
-//
-//        if(!isJoined){
-//            if(isTeacher){
-//                SocketClient.sendMessageToServer(name+" (Instructor)");
-//            }else{
-//                SocketClient.sendMessageToServer(name);
-//            }
-//            isJoined = true;
-//        }
+        if(!isNameSpecified){
+            if(user.isTeacher){
+                SocketClient.sendMessageToServer(user.fullName+" (Instructor)");
+            }else{
+                SocketClient.sendMessageToServer(user.fullName);
+            }
+            isNameSpecified = true;
+        }
 
         String message = inputField.getText();
         if (!message.isEmpty()) {
@@ -91,10 +77,7 @@ public class ChatController implements Initializable{
             sPane.setVvalue(1.0);
             messageVBox.getChildren().add(outg);
             inputField.clear();
-            if(user.isTeacher)
-                SocketClient.sendMessageToServer(user.fullName+" (Instructor)$"+message);
-            else
-                SocketClient.sendMessageToServer(user.fullName+"$"+message);
+            SocketClient.sendMessageToServer(message);
         }
     }
 
@@ -142,10 +125,7 @@ public class ChatController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sPane.setVvalue(1.0);
         try{
-            UserInfo user = UserSingleTon.getInstance(new UserInfo()).getUser();
             Platform.runLater(() -> {
-                name = user.fullName;
-                isTeacher = user.isTeacher;
                 Stage stage = (Stage) messageVBox.getScene().getWindow();
                 stage.setOnCloseRequest(event -> {
                     SocketClient.sendMessageToServer("/disconnect");

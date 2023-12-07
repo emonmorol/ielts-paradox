@@ -1,5 +1,4 @@
 package com.example.ielts_paradox.SocketNetworking;
-
 import com.example.ielts_paradox.database.ForChat;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -66,26 +65,19 @@ public class MultiThreadedSocketServer{
 
         @Override
         public void run() {
-            boolean isNameSet = false;
             try {
 //                if(!in.nextLine().equals("/disconnect")){
-//                    this.clientName = in.nextLine();
-//                    broadcastMessage(clientName + " has joined the chat!",this);
-//                    System.out.println("Client " + clientName + " connected: " + clientSocket);
+                    this.clientName = in.nextLine();
+                    broadcastMessage(clientName + " has joined the chat!",this);
+                    System.out.println("Client " + clientName + " connected: " + clientSocket);
                     while (true) {
                         if (in.hasNext()) {
                             String message = in.nextLine();
-                            if(!isNameSet){
-                                String[] s = message.split("\\$");
-                                this.clientName = s[0];
-                                broadcastMessage(clientName + " has joined the chat!",this);
-                                isNameSet = true;
-                            }
                             if(message.equals("/disconnect")){
                                 broadcastMessage(clientName+" has left the chat",this);
                                 break;
                             }
-                            broadcastMessage(message, this);
+                            broadcastMessage(clientName + "$" + message, this);
                         }
                     }
 //                }
