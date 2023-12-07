@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -67,12 +68,29 @@ public class CourseOfferingCardController{
         instructorName.setText(course.instructorName);
         _id.setText(course._id);
 
-        if(course.thumbnail != null){
-            Image img = new Image(getClass().getResourceAsStream(course.thumbnail));
-            courseBanner.setImage(img);
-        }else{
-            ErrorAlert.displayCustomAlert("Error Loading","Image Path is NULL");
+        if (course.thumbnail != null) {
+            File imageFile = new File(course.thumbnail);
+            try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
+                Image img = new Image(fileInputStream);
+                courseBanner.setImage(img);
+            } catch (FileNotFoundException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + course.thumbnail);
+            } catch (IOException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Error reading image file: " + e.getMessage());
+            }
+        } else {
+            ErrorAlert.displayCustomAlert("Error Loading", "Image Path is NULL");
         }
+
+
+
+
+//        if(course.thumbnail != null){
+//            Image img = new Image(getClass().getResourceAsStream(course.thumbnail));
+//            courseBanner.setImage(img);
+//        }else{
+//            ErrorAlert.displayCustomAlert("Error Loading","Image Path is NULL");
+//        }
 
     }
 

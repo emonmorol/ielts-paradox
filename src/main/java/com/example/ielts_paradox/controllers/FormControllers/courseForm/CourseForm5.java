@@ -50,6 +50,6 @@ public class CourseForm5 {
         }
 
         String jsonString = jsonArray.toString();
-        System.out.println(jsonString);
+        AddCourseController.sidebarPoint = jsonString;
     }
 }

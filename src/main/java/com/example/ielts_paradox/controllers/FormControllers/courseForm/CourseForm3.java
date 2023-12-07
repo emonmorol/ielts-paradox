@@ -49,6 +49,6 @@ public class CourseForm3 {
         }
 
         String jsonString = jsonArray.toString();
-        System.out.println(jsonString);
+        AddCourseController.features = jsonString;
     }
 }

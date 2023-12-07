@@ -60,15 +60,20 @@ public class CourseForm1 {
 
     @FXML
     void saveButton(ActionEvent event) {
-        System.out.println(description.getText());
-        System.out.println(discount.getText());
-        System.out.println(price.getText());
-        System.out.println(title.getText());
-        System.out.println(messagePort.getText());
+        AddCourseController.title = title.getText();
+        AddCourseController.discount = Integer.parseInt(discount.getText());
+        AddCourseController.price = Integer.parseInt(price.getText());
+        AddCourseController.details = description.getText();
+        AddCourseController.messagePort = Integer.parseInt(messagePort.getText());
 
-        saveImage(selectedFile, "banner2.jpg");
-        saveImage(selectedFile2, "routine2.jpg");
+
+        saveImage(selectedFile, title.getText()+"_banner.jpg");
+        saveImage(selectedFile2, title.getText()+"_routine.jpg");
+
+        AddCourseController.thumbnail = title.getText()+"_banner.jpg";
+        AddCourseController.routine = title.getText()+"_routine.jpg";
     }
+
 
     private void saveImage(File sourceFile, String destinationFileName) {
         if (sourceFile != null) {

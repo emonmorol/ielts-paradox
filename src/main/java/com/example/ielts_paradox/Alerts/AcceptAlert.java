@@ -13,7 +13,7 @@ import javafx.util.Duration;
 
 public class AcceptAlert{
     private static Stage ownerStage;
-    public static void displayCustomAlert( ) {
+    public static boolean displayCustomAlert(String message) {
 
         try {
             FXMLLoader loader = new FXMLLoader(AcceptAlert.class.getResource("/fxmls/alerts/accept_alert.fxml"));
@@ -28,6 +28,7 @@ public class AcceptAlert{
 
             customAlertStage.setScene(new Scene(root));
             controller.setDialogStage(customAlertStage);
+            controller.setMessage(message);
             addOpenAnimation(customAlertStage);
 
 
@@ -35,9 +36,11 @@ public class AcceptAlert{
 
 
             addCloseAnimation(customAlertStage);
+            return controller.isAccepted();
 
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 

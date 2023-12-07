@@ -1,9 +1,7 @@
 package com.example.ielts_paradox.database;
 
-import com.example.ielts_paradox.models.CourseInfo;
-import com.example.ielts_paradox.models.CourseVideo;
-import com.example.ielts_paradox.models.Faq;
-import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.*;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.DBConnections;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -186,6 +184,43 @@ public class ForCourse {
 
             preparedStatement.close();
             connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean uploadCourse(String title, int price,int discount,String details,String features,String curriculum,String faq,String sidebarPoint,String thumbnail,String routine,int messagePort,String content){
+        UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
+        UserInfo info = user.getUser();
+
+        String insertQuery = "INSERT INTO courses (title, price, isReleased, discount, details,features,curriculum,faq,sidebarPoint,thumbmail,instructorName,instructorMail,routine,messagePort,content) VALUES (?, ?, ?, ?, ?,?,?, ?, ?, ?, ?,?,?,?,?)";
+        try{
+            Connection connection = new DBConnections().getConnection();
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                preparedStatement.setString(1, title);
+                preparedStatement.setInt(2, price);
+                preparedStatement.setBoolean(3, true);
+                preparedStatement.setInt(4, discount);
+                preparedStatement.setString(5, details);
+                preparedStatement.setString(6, features);
+                preparedStatement.setString(7, curriculum);
+                preparedStatement.setString(8, faq);
+                preparedStatement.setString(9, sidebarPoint);
+                preparedStatement.setString(10, thumbnail);
+                preparedStatement.setString(11, info.fullName);
+                preparedStatement.setString(12, info.email);
+                preparedStatement.setString(13, routine);
+                preparedStatement.setInt(14, messagePort);
+                preparedStatement.setString(15, content);
+
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    return true;
+                }
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

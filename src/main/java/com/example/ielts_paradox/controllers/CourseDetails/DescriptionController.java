@@ -22,9 +22,13 @@ public class DescriptionController {
     private VBox features;
 
     @FXML
+    private Label teacherName;
+
+    @FXML
     private Label title;
     public void setData(CourseInfo ci) throws IOException {
         title.setText(ci.title);
+        teacherName.setText(ci.instructorName);
         courseTitle.setText(ci.title);
         description.setText(ci.details);
         String[] curri = ci.curriculum;

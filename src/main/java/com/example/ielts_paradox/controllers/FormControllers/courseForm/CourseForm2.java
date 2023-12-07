@@ -61,6 +61,6 @@ public class CourseForm2 {
         }
 
         String jsonString = jsonArray.toString();
-        System.out.println(jsonString);
+        AddCourseController.curriculum = jsonString;
     }
 }

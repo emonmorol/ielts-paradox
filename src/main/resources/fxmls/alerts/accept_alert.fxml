@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="260.0" prefWidth="441.0" style="-fx-border-width: 6 0.5 0.5 0.5; -fx-border-color: #0c9a0c;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.AcceptAlertController">
+<AnchorPane prefHeight="324.0" prefWidth="527.0" style="-fx-border-width: 6 0.5 0.5 0.5; -fx-border-color: #0c9a0c;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.alertController.AcceptAlertController">
    <children>
-      <MFXButton buttonType="RAISED" layoutX="246.0" layoutY="195.0" onAction="#ignoreButton" prefHeight="43.0" prefWidth="179.0" style="-fx-background-color: #ff5c40; -fx-background-radius: 20;" text="Ignore" textFill="WHITE">
+      <MFXButton buttonType="RAISED" layoutX="32.0" layoutY="260.0" onAction="#ignoreButton" prefHeight="35.0" prefWidth="213.0" style="-fx-background-color: #ff5c40; -fx-background-radius: 20;" text="Ignore" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -18,7 +18,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MFXButton>
-      <MFXButton buttonType="RAISED" layoutX="14.0" layoutY="196.0" onAction="#acceptButton" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #0c9a0c; -fx-background-radius: 20;" text="Accept" textFill="WHITE">
+      <MFXButton buttonType="RAISED" layoutX="282.0" layoutY="261.0" onAction="#acceptButton" prefHeight="35.0" prefWidth="213.0" style="-fx-background-color: #0c9a0c; -fx-background-radius: 20;" text="Accept" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -26,16 +26,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MFXButton>
-      <Label layoutX="165.0" layoutY="114.0" text="Are you sure? " textAlignment="CENTER" wrapText="true">
+      <Label layoutX="194.0" layoutY="124.0" text="Are you sure? " textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Circle fill="#0c9a0c" layoutX="221.0" layoutY="54.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <FontAwesomeIconView fill="WHITE" layoutX="202.0" layoutY="67.0" selectionFill="#ff1616" size="35" text="" wrappingWidth="37.28571319580078" />
-      <Label layoutX="119.0" layoutY="145.0" text="Do you want to accept?" textAlignment="CENTER" wrapText="true">
+      <Circle fill="#0c9a0c" layoutX="264.0" layoutY="74.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <FontAwesomeIconView fill="WHITE" layoutX="245.0" layoutY="87.0" selectionFill="#ff1616" size="35" text="" wrappingWidth="37.28571319580078" />
+      <Label fx:id="message" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="168.0" prefHeight="62.0" prefWidth="432.0" text="Once you upload the course you wont be abe the change it again." textAlignment="CENTER" wrapText="true">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="21.0" />
          </font>
       </Label>
    </children>

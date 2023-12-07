@@ -1,6 +1,8 @@
 package com.example.ielts_paradox.controllers.FormControllers.courseForm;
 
 import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.CourseVideo;
+import com.example.ielts_paradox.models.Faq;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
@@ -14,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AddCourseController implements Initializable {
@@ -35,6 +38,23 @@ public class AddCourseController implements Initializable {
 
     @FXML
     private AnchorPane formPane;
+
+    public static String title;
+    public static String features;
+    public static String thumbnail;
+    public static int price;
+    public static boolean isReleased;
+    public static int discount;
+    public static String curriculum;
+    public static String faqs;
+    public static String details;
+    public static String sidebarPoint;
+    public static String instructorName;
+    public static String routine;
+    public static int messagePort;
+    public static String content;
+
+
 
 
     @FXML

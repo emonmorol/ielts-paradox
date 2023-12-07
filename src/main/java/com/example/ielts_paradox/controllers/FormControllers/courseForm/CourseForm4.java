@@ -48,7 +48,7 @@ public class CourseForm4 {
         }
 
         String jsonString = gson.toJson(jsonArray);
-        System.out.println(jsonString);
+        AddCourseController.content = jsonString;
 
     }
 }

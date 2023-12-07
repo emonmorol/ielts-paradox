@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm7">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="934.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.FormControllers.courseForm.CourseForm7">
    <children>
-      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="169.0" layoutY="168.0" prefHeight="70.0" prefWidth="596.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="Upload The Course" textFill="WHITE">
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="169.0" layoutY="168.0" onAction="#uploadCourseHandler" prefHeight="70.0" prefWidth="596.0" style="-fx-background-color: #1a2579; -fx-background-radius: 15;" text="Upload The Course" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
