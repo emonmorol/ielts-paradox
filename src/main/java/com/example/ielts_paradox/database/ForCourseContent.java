@@ -38,7 +38,6 @@ public class ForCourseContent {
                             JsonArray jsonArray = gson.fromJson(videoJSON, JsonArray.class);
                             for (JsonElement element : jsonArray) {
                                 CourseVideo ob = gson.fromJson(element, CourseVideo.class);
-                                System.out.println(ob.toString());
                                 courses.add(ob);
                             }
                         } catch (SQLException e) {

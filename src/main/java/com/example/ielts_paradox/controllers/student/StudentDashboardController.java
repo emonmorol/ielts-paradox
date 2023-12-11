@@ -1,10 +1,19 @@
 package com.example.ielts_paradox.controllers.student;
 
 import com.example.ielts_paradox.controllers.cardControllers.LatestNoticeCardController;
+import com.example.ielts_paradox.controllers.cardControllers.OverviewEnrolledCourseCardController;
+import com.example.ielts_paradox.database.ForCourseContent;
+import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.database.ForNotices;
+import com.example.ielts_paradox.models.CourseInfo;
+import com.example.ielts_paradox.models.CourseVideo;
 import com.example.ielts_paradox.models.NoticeInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import com.example.ielts_paradox.utils.SceneChanger;
+import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
+import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,36 +45,64 @@ public class StudentDashboardController implements Initializable {
     BorderPane mainPane = new BorderPane();
     @FXML
     private Label studentFullName;
+    @FXML
+    private MFXProgressSpinner progessSpinner;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setInformation();
     }
     public void setInformation(){
-            LoadDashboardPane ob = new LoadDashboardPane();
-            AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
-            mainPane.setCenter(panel);
+        LoadDashboardPane ob = new LoadDashboardPane();
+        AnchorPane panel = ob.getSidePane("/fxmls/students/pages/overview.fxml");
+        mainPane.setCenter(panel);
         ArrayList<NoticeInfo> nis = new ForNotices().getNotices();
         Collections.sort(nis, Comparator.comparingInt(NoticeInfo::get_id).reversed());
         int cnt = 0;
         vBox.getChildren().clear();
-            for(NoticeInfo ni : nis){
-                if(cnt >=7){
+        UserInfo u = UserSingleTon.getInstance(new UserInfo()).getUser();
+
+        //right sidebar progress spiner
+        ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,100);
+        double totalProg = 0;
+        for (CourseInfo c: it){
+            ArrayList<CourseVideo> cvs = new ForCourseContent().getCourseContent(Integer.parseInt(c._id));
+            int lastWatchedId = -1,watchCount = 0;
+            for(CourseVideo cv : cvs){
+                if(!cv.isWatched){
+                    lastWatchedId = cv._id - 2;
                     break;
                 }
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/latestNotice.fxml"));
-                try {
-                    HBox paneee = fxmlLoader.load();
-                    vBox.getChildren().add(paneee);
-                    LatestNoticeCardController oeccc = fxmlLoader.getController();
-                    oeccc.setData(ni);
-                    cnt++;
-
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                watchCount++;
             }
+            double prog = (((double) watchCount/cvs.size()));
+            totalProg += prog;
+            System.out.println("from dash = "+totalProg);
+        }
+        System.out.println(totalProg+" "+it.size()+" "+totalProg/it.size());
+        totalProg = totalProg/it.size();
+        progessSpinner.setProgress(totalProg);
+
+
+
+
+        for(NoticeInfo ni : nis){
+            if(cnt >=7){
+                break;
+            }
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/latestNotice.fxml"));
+            try {
+                HBox paneee = fxmlLoader.load();
+                vBox.getChildren().add(paneee);
+                LatestNoticeCardController oeccc = fxmlLoader.getController();
+                oeccc.setData(ni);
+                cnt++;
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML

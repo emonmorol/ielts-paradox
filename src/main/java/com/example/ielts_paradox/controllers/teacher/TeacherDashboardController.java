@@ -1,10 +1,18 @@
 package com.example.ielts_paradox.controllers.teacher;
 
 import com.example.ielts_paradox.controllers.cardControllers.LatestNoticeCardController;
+import com.example.ielts_paradox.database.ForCourse;
+import com.example.ielts_paradox.database.ForEnrollment;
 import com.example.ielts_paradox.database.ForNotices;
+import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.CourseInfo;
 import com.example.ielts_paradox.models.NoticeInfo;
+import com.example.ielts_paradox.models.PaidStudentInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import com.example.ielts_paradox.utils.LoadDashboardPane;
 import com.example.ielts_paradox.utils.SceneChanger;
+import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,6 +51,8 @@ public class TeacherDashboardController  implements Initializable {
     Rectangle clip;
     @FXML
     ImageView img;
+    @FXML
+    private MFXProgressSpinner progessSpinner;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +62,26 @@ public class TeacherDashboardController  implements Initializable {
         LoadDashboardPane ob = new LoadDashboardPane();
         AnchorPane panel = ob.getSidePane("/fxmls/teacher/pages/overview.fxml");
         mainPane.setCenter(panel);
+
+        // Teacher righside bar progress spinner
+
+        UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
+        ArrayList<CourseInfo> cis = new ForCourse().teacherCourses(info.email,100);
+        int accepted = 0,notAccepted = 0;
+        for(CourseInfo ci:cis){
+            accepted += new ForCourse().getStudentCount(Integer.parseInt(ci._id),true);
+            notAccepted += new ForCourse().getStudentCount(Integer.parseInt(ci._id),false);
+        }
+        double progress = (double) accepted/(accepted+notAccepted);
+
+        int toTake = new ForTest().getStudentByMail(info.email);
+        int taken = new ForTest().takeTestCount(info.email);
+
+        progress += (double) taken/toTake;
+
+        progress /= 2;
+        progessSpinner.setProgress(progress);
+
 
         ArrayList<NoticeInfo> nis = new ForNotices().getNotices();
         Collections.sort(nis, Comparator.comparingInt(NoticeInfo::get_id).reversed());

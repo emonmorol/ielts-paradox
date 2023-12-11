@@ -428,4 +428,29 @@ public class ForTest {
             e.printStackTrace();
         }
     }
+
+    public int getStudentByMail(String mail){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT COUNT(*) AS row_count FROM test_students WHERE teacherMail = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, mail);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try {
+                            int rows = resultSet.getInt("row_count");
+                            return rows;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

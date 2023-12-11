@@ -16,13 +16,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.TeacherDashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" style="-fx-background-color: #e9eff6; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.teacher.TeacherDashboardController">
     <left>
         <AnchorPane layoutX="24.0" layoutY="17.0" prefHeight="730.0" prefWidth="175.0" style="-fx-background-color: #1a2579; -fx-background-radius: 10;">
             <children>
                 <ImageView fitHeight="85.0" fitWidth="141.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../images/IP.png" />
+                        <Image url="@../../images/IP2.png" />
                     </image>
                 </ImageView>
                 <AnchorPane layoutX="-1.0" layoutY="104.0" prefHeight="566.0" prefWidth="204.0" style="-fx-background-radius: 20px;" AnchorPane.bottomAnchor="60.0" AnchorPane.topAnchor="104.0">

@@ -39,17 +39,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="146.0" layoutY="119.0" opacity="0.9" prefHeight="43.0" prefWidth="743.0" style="-fx-background-color: white; -fx-background-radius: 0 10 0 0;">
-               <children>
-                  <MFXButton fx:id="profilePicEditor" layoutX="690.0" layoutY="6.0" onAction="#profilePicEditor" prefHeight="25.0" prefWidth="34.0" style="-fx-background-color: transparent;" text=" ">
-                     <graphic>
-                        <FontAwesomeIconView size="25" text="" wrappingWidth="17.0" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </MFXButton>
-               </children></AnchorPane>
+            <AnchorPane layoutX="146.0" layoutY="119.0" opacity="0.9" prefHeight="43.0" prefWidth="743.0" style="-fx-background-color: white; -fx-background-radius: 0 10 0 0;" />
             <AnchorPane layoutX="156.0" layoutY="176.0">
                <children>
                   <Label fx:id="topName" prefHeight="29.0" prefWidth="453.0" text="Samiur Rahman Omlan">

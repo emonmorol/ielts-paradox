@@ -253,4 +253,30 @@ public class ForCourse {
         }
         return false;
     }
+
+    public int getStudentCount(int courseId,boolean isAccepted){
+        try{
+            Connection connection = new DBConnections().getConnection();
+            String sql = "SELECT COUNT(*) AS row_count FROM paid_student WHERE courseId = ? AND courseApproval = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setInt(1, courseId);
+                preparedStatement.setBoolean(2, isAccepted);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        try {
+                            int rows = resultSet.getInt("row_count");
+                            return rows;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
