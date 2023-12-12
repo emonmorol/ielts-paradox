@@ -87,6 +87,8 @@ public class TeacherDashboardController  implements Initializable {
         Collections.sort(nis, Comparator.comparingInt(NoticeInfo::get_id).reversed());
         int cnt = 0;
         vBox.getChildren().clear();
+
+
         for(NoticeInfo ni : nis){
             if(cnt >=7){
                 break;
@@ -118,6 +120,7 @@ public class TeacherDashboardController  implements Initializable {
         AnchorPane panel = ob.getSidePane("/fxmls/teacher/pages/my_classes.fxml");
         mainPane.setCenter(panel);
     }
+
     @FXML
     public void onClick2(ActionEvent event) {
         LoadDashboardPane ob = new LoadDashboardPane();

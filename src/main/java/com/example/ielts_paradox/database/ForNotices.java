@@ -85,6 +85,7 @@ public class ForNotices {
         return null;
     }
     public boolean uploadNotices(NoticeInfo ni){
+
         UserInfo info = UserSingleTon.getInstance(new UserInfo()).getUser();
 
         String insertQuery = "INSERT INTO notices (text, title, recieverMail, senderMail, senderName,module) VALUES (?, ?, ?, ?, ?,?)";

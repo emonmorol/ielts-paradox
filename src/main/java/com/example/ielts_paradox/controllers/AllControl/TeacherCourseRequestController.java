@@ -87,8 +87,8 @@ public class TeacherCourseRequestController {
             fxmlLoader.setLocation(getClass().getResource("/fxmls/teacher/pages/courses/teacherCourseRequestCard.fxml"));
             HBox paneee = fxmlLoader.load();
             TeacherCourseRequestCardController tmccc = fxmlLoader.getController();
-            System.out.println(paidStudentInfo.transectionId);
-            tmccc.setDate(paidStudentInfo);
+
+            tmccc.setDate(paidStudentInfo,ci.title);
             myCourseTable.getChildren().add(paneee);
         }
     }

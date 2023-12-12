@@ -5,8 +5,12 @@ import com.example.ielts_paradox.SocketNetworking.Exam.MultiThreadedSocketServer
 import com.example.ielts_paradox.SocketNetworking.Exam.SocketClient;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForChat;
+import com.example.ielts_paradox.database.ForNotices;
 import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.NoticeInfo;
 import com.example.ielts_paradox.models.TestInfo;
+import com.example.ielts_paradox.models.UserInfo;
+import com.example.ielts_paradox.singletons.UserSingleTon;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.event.ActionEvent;
@@ -74,6 +78,7 @@ public class TeacherExamPageController implements Initializable {
     String studentSubmissionUri;
     String resultPaper;
     String studentMail;
+    UserInfo ui = UserSingleTon.getInstance(new UserInfo()).getUser();
 
 
     @FXML
@@ -157,6 +162,7 @@ public class TeacherExamPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setDefaultLink();
         hourBox.getItems().addAll(hour);
         amPm.getItems().addAll(ap);
         setDropdownSize(minuteBox, 50);
@@ -199,6 +205,9 @@ public class TeacherExamPageController implements Initializable {
             }
         }
     }
+    void setDefaultLink(){
+        loadvideo("https://drive.google.com/file/d/1z97wcEoQkHjrJHlqqelDH9kzaKL5p3UK/view?usp=sharing");
+    }
 
 
 
@@ -227,27 +236,42 @@ public class TeacherExamPageController implements Initializable {
 
     @FXML
     void meetEdit(ActionEvent event) {
-        FormAlert.displayCustomAlert("Enter Updated Meet Link Here!",id_);
+        boolean isUpdated = FormAlert.displayCustomAlert("Enter Updated Meet Link Here!",id_);
         setData(new ForTest().getTestInfoById(id_));
+        if (isUpdated) {
+            String text = "I wanted to inform you of an important update regarding the meeting link for your upcoming "+in.examModule+" test. The previous link has been updated";
+            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Meet Link Updated!", in.studentMail, ui.email, ui.fullName, in.examModule));
+        }
     }
 
     @FXML
     void resultEdit(ActionEvent event) {
         TeacherResultEditAlert.displayCustomAlert(id_);
         setData(new ForTest().getTestInfoById(id_));
+        String text = "I am pleased to inform you that the results for the recent "+in.examModule+" test have been published. You can now access your individual result in Exam Page.";
+        boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Result Published", in.studentMail, ui.email, ui.fullName, in.examModule));
+
     }
 
     @FXML
     void practiseQuestion(ActionEvent event) {
-        FormAlert.displayCustomAlert("Enter Practice Question Link Here!",id_);
+        boolean isUpdated = FormAlert.displayCustomAlert("Enter Practice Question Link Here!",id_);
         setData(new ForTest().getTestInfoById(id_));
+        if (isUpdated) {
+            String text = "I wanted to inform you of an important update regarding the Practice Question for your upcoming "+in.examModule+" test. The previous link has been updated";
+            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Practice Question Updated!", in.studentMail, ui.email, ui.fullName, in.examModule));
+        }
 
     }
 
     @FXML
     void uploadQuestion(ActionEvent event) {
-        FormAlert.displayCustomAlert("Enter Question Link Here!",id_);
+        boolean isUpdated = FormAlert.displayCustomAlert("Enter Question Link Here!",id_);
         setData(new ForTest().getTestInfoById(id_));
+        if (isUpdated) {
+            String text = "I wanted to inform you of an important update regarding the Exam Question for your upcoming "+in.examModule+" test. The Question is already uploaded. Wait till the start of the exam.";
+            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Question Updated!", in.studentMail, ui.email, ui.fullName, in.examModule));
+        }
     }
 
 
@@ -275,6 +299,8 @@ public class TeacherExamPageController implements Initializable {
         System.out.println(eDate);
         boolean isUpdated = new ForTest().updateExamDate(id_,eDate);
         if(isUpdated){
+            String text = "I wanted to inform you of an important update regarding the Exam Schedule for your upcoming "+in.examModule+" test exam will start at "+eDate+".\nExam time is set.\nBe prepared";
+            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Exam Schedule Updated!", in.studentMail, ui.email, ui.fullName, in.examModule));
             SuccessAlert.displayCustomAlert();
         }
         else

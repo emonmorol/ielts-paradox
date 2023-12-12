@@ -8,7 +8,9 @@ import com.example.ielts_paradox.SocketNetworking.Exam.SocketClient;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.database.ForChat;
+import com.example.ielts_paradox.database.ForNotices;
 import com.example.ielts_paradox.database.ForTest;
+import com.example.ielts_paradox.models.NoticeInfo;
 import com.example.ielts_paradox.models.TestInfo;
 import com.example.ielts_paradox.models.UserInfo;
 import com.example.ielts_paradox.singletons.UserSingleTon;
@@ -101,15 +103,17 @@ public class StudentExamPageController implements Initializable {
     String practiceQuestionPaperLink;
     String timeString2;
     String teacherMail;
-
+    UserInfo ui = UserSingleTon.getInstance(new UserInfo()).getUser();
 
     @FXML
     void reloadHandler(ActionEvent event) {
+        stopTimer();
         setData(new ForTest().getTestInfoById(id_));
 
     }
     private boolean toStop = false;
     public void setData(TestInfo ti){
+
         if(ti.isTaken){
             questionId.setDisable(true);
             submitId.setDisable(true);
@@ -180,6 +184,7 @@ public class StudentExamPageController implements Initializable {
                             toStop = true;
                             startTimer(ADDITIONAL_MINUTES);
                             timerLabel.setText("Exam Is Running");
+
                             timerLabel.setFont(new Font(20));
                             timerLabel.setTextFill(Color.BLUE);
                             isRunning.setText("1");
@@ -187,6 +192,9 @@ public class StudentExamPageController implements Initializable {
                             submitId.setDisable(false);
                             answerArea.setEditable(true);
                             reload.setDisable(true);
+                            String text = "Your Scheduled "+in.examModule+" test is started.You are request to start the exam now.";
+                            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Exam Started", in.studentMail, "System", "IELTS Paradox", in.examModule));
+                            boolean isNoticeUpload1 = new ForNotices().uploadNotices(new NoticeInfo(text, "Exam Started", in.teacherMail, "System", "IELTS Paradox", in.examModule));
 
 
                         }else{
@@ -201,6 +209,10 @@ public class StudentExamPageController implements Initializable {
                             reload.setDisable(false);
                             stopTimer();
                             new ForTest().updateIsTaken(id_);
+                            String text = "Your Scheduled "+in.examModule+" test is Ended. Wait for your result.";
+                            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text, "Exam Ended", in.studentMail, "System", "IELTS Paradox", in.examModule));
+                            boolean isNoticeUpload1 = new ForNotices().uploadNotices(new NoticeInfo(text, "Exam Ended", in.teacherMail, "System", "IELTS Paradox", in.examModule));
+
                         }
 
                     }
@@ -214,12 +226,19 @@ public class StudentExamPageController implements Initializable {
 
         }
     }
+    void setDefaultLink(){
+        loadvideo("https://drive.google.com/file/d/1z97wcEoQkHjrJHlqqelDH9kzaKL5p3UK/view?usp=sharing");
+    }
 
     @FXML
     void answerSubmit(ActionEvent event)  {
         String text = answerArea.getText();
+        answerArea.clear();
+
         boolean isSubmitted = new ForTest().updateSubmissionLink(id_,text);
         if(isSubmitted){
+            String text2 = "Student Updated the Paper for "+in.examModule+" test. Check the paper and update the result";
+            boolean isNoticeUpload = new ForNotices().uploadNotices(new NoticeInfo(text2, "Paper Recieved", in.teacherMail, ui.email, ui.fullName, in.examModule));
             SuccessAlert.displayCustomAlert();
         }else{
             ErrorAlert.displayCustomAlert("Failed!","Something Went Wrong!\nTry Again!");
@@ -272,7 +291,6 @@ public class StudentExamPageController implements Initializable {
                     Desktop.getDesktop().browse(new URI(currentUrl));
                 } catch (IOException | URISyntaxException e) {
                     e.printStackTrace();
-                    // Handle the exception as needed
                 }
             }
         }
@@ -350,6 +368,7 @@ public class StudentExamPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setDefaultLink();
             if(isRunning.getText().equals("0")){
                 questionId.setDisable(true);
                 submitId.setDisable(true);

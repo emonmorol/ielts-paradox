@@ -32,6 +32,8 @@ public class FormAlertController {
 
     @FXML
     private MFXTextField data;
+    boolean isDone;
+
     public void setDialogStage(Stage stage) {
         dialogStage = stage;
     }
@@ -64,6 +66,7 @@ public class FormAlertController {
             System.out.println(isUpdated);
             if(isUpdated){
                 user.setUser(new UserInfo(info.fullName,v,info.contactNumber,info.isTeacher,info.bio));
+                isDone = isUpdated;
                 SuccessAlert.displayCustomAlert();
             }else{
                 ErrorAlert.displayCustomAlert("Failed","Can not Update\nTry Again!");
@@ -71,6 +74,7 @@ public class FormAlertController {
         } else if (type == "Full Name") {
             boolean isUpdated = new ForProfile().updateName(info.email,v);
             if(isUpdated){
+                isDone = isUpdated;
                 user.setUser(new UserInfo(v,info.email,info.contactNumber,info.isTeacher,info.bio));
 //                new SceneChanger().switchScene(e,"/fxmls/students/studentDashboard.fxml");
                 SuccessAlert.displayCustomAlert();
@@ -80,6 +84,7 @@ public class FormAlertController {
         }else if (type == "Contact") {
             boolean isUpdated = new ForProfile().updateContact(info.email,v);
             if(isUpdated){
+                isDone = isUpdated;
                 user.setUser(new UserInfo(info.fullName,info.email,v,info.isTeacher,info.bio));
                 SuccessAlert.displayCustomAlert();
             }else{
@@ -88,6 +93,7 @@ public class FormAlertController {
         }else if (type == "Password") {
             boolean isUpdated = new ForProfile().updatePassword(info.email,v);
             if(isUpdated){
+                isDone = isUpdated;
                 SuccessAlert.displayCustomAlert();
             }else{
                 ErrorAlert.displayCustomAlert("Failed","Can not Update\nTry Again!");
@@ -97,6 +103,7 @@ public class FormAlertController {
         else if (type == "Bio") {
             boolean isUpdated = new ForProfile().updateBio(info.email,v);
             if(isUpdated){
+                isDone = isUpdated;
                 user.setUser(new UserInfo(info.fullName,info.email,info.contactNumber,info.isTeacher,v));
                 SuccessAlert.displayCustomAlert();
             }else{
@@ -105,6 +112,7 @@ public class FormAlertController {
         } else if (type == "Enter Question Link Here!") {
             boolean isUpdated = new ForTest().updateQuestionLink(id_,v);
             if(isUpdated){
+                isDone = isUpdated;
                 SuccessAlert.displayCustomAlert();
             }else{
                 ErrorAlert.displayCustomAlert("Failed","Can not Update\nTry Again!");
@@ -113,6 +121,7 @@ public class FormAlertController {
         else if (type == "Enter Practice Question Link Here!") {
             boolean isUpdated = new ForTest().updatePracticeQuestionLink(id_,v);
             if(isUpdated){
+                isDone = isUpdated;
                 SuccessAlert.displayCustomAlert();
             }else{
                 ErrorAlert.displayCustomAlert("Failed","Can not Update\nTry Again!");
@@ -121,6 +130,7 @@ public class FormAlertController {
         else if (type == "Enter Updated Meet Link Here!") {
             boolean isUpdated = new ForTest().updateMeetLink(id_,v);
             if(isUpdated){
+                isDone = isUpdated;
                 SuccessAlert.displayCustomAlert();
             }else{
                 ErrorAlert.displayCustomAlert("Failed","Can not Update\nTry Again!");
@@ -128,5 +138,8 @@ public class FormAlertController {
         }
 
         dialogStage.close();
+    }
+    public boolean isUpadated(){
+        return isDone;
     }
 }

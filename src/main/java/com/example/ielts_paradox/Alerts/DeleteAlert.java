@@ -15,7 +15,7 @@ public class DeleteAlert {
     private static Stage ownerStage;
 
 
-    public static void displayCustomAlert(String type,String id) {
+    public static boolean displayCustomAlert(String type,String id) {
 
         try {
             FXMLLoader loader = new FXMLLoader(DeleteAlert.class.getResource("/fxmls/alerts/delete_alert.fxml"));
@@ -38,9 +38,12 @@ public class DeleteAlert {
 
             addCloseAnimation(customAlertStage);
 
+            return controller.isDeleted();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     private static void addOpenAnimation(Stage customAlertStage) {

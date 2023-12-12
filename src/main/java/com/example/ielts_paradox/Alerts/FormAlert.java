@@ -14,7 +14,7 @@ import javafx.util.Duration;
 public class FormAlert {
 
     private static Stage ownerStage;
-    public static void displayCustomAlert(String title ,String id) {
+    public static boolean displayCustomAlert(String title ,String id) {
 
         try {
             FXMLLoader loader = new FXMLLoader(ErrorAlert.class.getResource("/fxmls/alerts/alert2.fxml"));
@@ -39,11 +39,12 @@ public class FormAlert {
 
             addCloseAnimation(customAlertStage);
 
-
+            return controller.isUpadated();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
     private static void addOpenAnimation(Stage customAlertStage) {
         TranslateTransition translateTransition = new TranslateTransition(Duration.millis(300), customAlertStage.getScene().getRoot());
