@@ -4,15 +4,19 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="447.0" style="-fx-background-color: white;" stylesheets="@../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.BlogCardController">
+<VBox fx:id="blogs_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="447.0" style="-fx-background-color: white; -fx-border-width: 1; -fx-background-radius: 15 15 0 0; -fx-border-radius: 13 13 0 0;" stylesheets="@../../styles/common_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ielts_paradox.controllers.cardControllers.BlogCardController">
    <children>
-      <ImageView fx:id="imageView" fitHeight="222.0" fitWidth="447.0" pickOnBounds="true" />
-      <AnchorPane prefHeight="219.0" prefWidth="447.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="222.0" prefWidth="447.0" style="-fx-background-color: white; -fx-background-radius: 15 15 0 0; -fx-border-width: 0;">
+         <children>
+            <Rectangle fx:id="rectangle" arcHeight="26.0" arcWidth="26.0" fill="DODGERBLUE" height="222.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="445.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="219.0" prefWidth="447.0" style="-fx-background-color: white; -fx-border-color: ash;">
          <children>
             <Group layoutX="21.0" layoutY="6.0">
                <children>

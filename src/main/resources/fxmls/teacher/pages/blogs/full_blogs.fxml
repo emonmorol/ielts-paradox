@@ -21,7 +21,7 @@
                <content>
                   <AnchorPane prefHeight="2416.0" prefWidth="491.0" style="-fx-background-radius: 10; -fx-background-color: white;">
                      <children>
-                        <ImageView fx:id="imageView" fitHeight="268.0" fitWidth="486.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imageView" fitHeight="268.0" fitWidth="486.0" layoutX="4.0" pickOnBounds="true" />
                         <Group layoutX="-20.0" layoutY="275.0">
                            <children>
                               <Label fx:id="instructor" alignment="BASELINE_LEFT" layoutX="21.0" prefHeight="18.0" prefWidth="349.0" text="Rimon Morol">

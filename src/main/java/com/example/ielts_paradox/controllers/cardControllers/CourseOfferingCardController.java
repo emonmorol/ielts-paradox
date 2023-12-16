@@ -87,8 +87,6 @@ public class CourseOfferingCardController{
             ErrorAlert.displayCustomAlert("Error Loading", "Image Path is NULL");
         }
 
-
-
     }
 
 }

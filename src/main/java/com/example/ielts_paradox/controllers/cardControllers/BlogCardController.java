@@ -14,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -40,6 +42,11 @@ public class BlogCardController {
 
     @FXML
     private Label title;
+
+    @FXML
+    private Rectangle rectangle;
+
+
     @FXML
     private Stage stage;
     private Scene scene;
@@ -67,7 +74,7 @@ public class BlogCardController {
             File imageFile = new File(blog.thumbnail);
             try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
                 Image img = new Image(fileInputStream);
-                imageView.setImage(img);
+                rectangle.setFill(new ImagePattern(img));
             } catch (FileNotFoundException e) {
                 ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + blog.thumbnail);
             } catch (IOException e) {
