@@ -1,5 +1,6 @@
 package com.example.ielts_paradox.controllers.AllControl;
 
+import com.example.ielts_paradox.Alerts.ErrorAlert;
 import com.example.ielts_paradox.controllers.student.StudentDashboardController;
 import com.example.ielts_paradox.controllers.teacher.TeacherDashboardController;
 import com.example.ielts_paradox.controllers.cardControllers.BlogCardController;
@@ -16,9 +17,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -45,6 +51,10 @@ public class FullBlogController implements Initializable {
 
     @FXML
     private VBox allBlogBox;
+
+    @FXML
+    private ImageView imageView;
+
     @FXML
     private Stage stage;
 
@@ -105,6 +115,19 @@ public class FullBlogController implements Initializable {
         date.setText(blog.date);
         score.setText("Band Score: "+blog.bandScore);
         points.setText(p);
+        if (blog.thumbnail != null) {
+            File imageFile = new File(blog.thumbnail);
+            try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
+                Image img = new Image(fileInputStream);
+                imageView.setImage(img);
+            } catch (FileNotFoundException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + blog.thumbnail);
+            } catch (IOException e) {
+                ErrorAlert.displayCustomAlert("Error Loading", "Error reading image file: " + e.getMessage());
+            }
+        } else {
+            ErrorAlert.displayCustomAlert("Error Loading", "Image Path is NULL");
+        }
     }
 
 }
