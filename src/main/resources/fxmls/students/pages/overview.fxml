@@ -16,7 +16,7 @@
          <children>
             <AnchorPane prefHeight="104.0" prefWidth="964.0">
                <children>
-                  <Label fx:id="greetings" layoutX="1.0" layoutY="21.0" prefHeight="19.0" prefWidth="260.0" text="Hello Omlan, Welcome back" textFill="#a19a9a">
+                  <Label fx:id="greetings" layoutX="1.0" layoutY="21.0" prefHeight="20.0" prefWidth="919.0" text="Hello Omlan, Welcome back" textFill="#a19a9a">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -37,12 +37,12 @@
                               <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <Label alignment="TOP_LEFT" layoutX="32.0" layoutY="59.0" prefHeight="51.0" prefWidth="555.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the lea" textFill="#e5e3e3d2" wrapText="true">
+                        <Label alignment="TOP_LEFT" layoutX="32.0" layoutY="59.0" prefHeight="51.0" prefWidth="555.0" text="Are you ready to take your skills to the next level and achieve your dreams? Look no further! Our cutting-edge courses is designed to empower students." textFill="#e5e3e3d2" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="buttons" alignment="CENTER" layoutX="622.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickSeeCourse" prefHeight="82.0" prefWidth="102.0" stylesheets="@../../../styles/sidebar_buttons.css" text="See Course">
+                        <Button fx:id="buttons" alignment="CENTER" layoutX="587.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickSeeCourse" prefHeight="82.0" prefWidth="137.0" stylesheets="@../../../styles/sidebar_buttons.css" text="See Course">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>

@@ -69,11 +69,12 @@ public class ForEnrollment {
         ArrayList<CourseInfo> courses = new ArrayList<>();
         try{
             Connection connection = new DBConnections().getConnection();
-            String sql = "SELECT ps.*, c.* FROM paid_student ps INNER JOIN courses c ON ps.courseId = c._id WHERE ps.email = ? LIMIT ?";
+            String sql = "SELECT ps.*, c.* FROM paid_student ps INNER JOIN courses c ON ps.courseId = c._id WHERE ps.email = ? AND ps.courseApproval = ? LIMIT ?";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, email);
-                preparedStatement.setInt(2, limit);
+                preparedStatement.setBoolean(2, true);
+                preparedStatement.setInt(3, limit);
 
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {

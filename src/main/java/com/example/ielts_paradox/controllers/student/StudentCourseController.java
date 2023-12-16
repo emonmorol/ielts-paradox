@@ -22,13 +22,14 @@ public class StudentCourseController  implements Initializable {
 
     @FXML
     private VBox mainBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UserSingleTon user = UserSingleTon.getInstance(new UserInfo());
         UserInfo u = user.getUser();
         ArrayList<CourseInfo> it = new ForEnrollment().courseEnrollmentUsingEmail(u.email,10);
         for(CourseInfo i:it){
-            System.out.println(i._id);
+
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/fxmls/cards/courseCard.fxml"));
@@ -39,6 +40,7 @@ public class StudentCourseController  implements Initializable {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+
         }
     }
 }

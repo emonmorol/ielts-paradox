@@ -13,8 +13,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.awt.font.ImageGraphicAttribute;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,6 +48,8 @@ public class CourseOfferingCardController{
     private Label totalPrice;
     @FXML
     private ImageView courseBanner;
+    @FXML
+    private Rectangle rectangle;
 
     @FXML
     void seeDetailsHandler(ActionEvent event) throws IOException {
@@ -72,7 +77,7 @@ public class CourseOfferingCardController{
             File imageFile = new File(course.thumbnail);
             try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
                 Image img = new Image(fileInputStream);
-                courseBanner.setImage(img);
+                rectangle.setFill(new ImagePattern(img));
             } catch (FileNotFoundException e) {
                 ErrorAlert.displayCustomAlert("Error Loading", "Image File Not Found: " + course.thumbnail);
             } catch (IOException e) {
@@ -83,14 +88,6 @@ public class CourseOfferingCardController{
         }
 
 
-
-
-//        if(course.thumbnail != null){
-//            Image img = new Image(getClass().getResourceAsStream(course.thumbnail));
-//            courseBanner.setImage(img);
-//        }else{
-//            ErrorAlert.displayCustomAlert("Error Loading","Image Path is NULL");
-//        }
 
     }
 
