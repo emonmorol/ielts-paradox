@@ -39,6 +39,7 @@ public class ForBlogs {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,6 +73,7 @@ public class ForBlogs {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -106,6 +108,7 @@ public class ForBlogs {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -131,6 +134,7 @@ public class ForBlogs {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -160,6 +164,7 @@ public class ForBlogs {
                     return true;
                 }
             }
+            connection.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -216,6 +221,7 @@ public class ForBlogs {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -48,7 +48,7 @@ public class ForProfile {
                 preparedStatement4.setString(1, newMail);
                 preparedStatement4.setString(2, oldMail);
                 int rowsAffected4 = preparedStatement2.executeUpdate();
-
+                connection.close();
                 return (rowsAffected > 0 && rowsAffected2 > 0 && rowsAffected3 > 0 && rowsAffected4 > 0);
             }else{
                 Connection connection = new DBConnections().getConnection();
@@ -66,6 +66,7 @@ public class ForProfile {
                 preparedStatement3.setString(1, newMail);
                 preparedStatement3.setString(2, oldMail);
                 int rowsAffected3 = preparedStatement2.executeUpdate();
+                connection.close();
 
                 return (rowsAffected > 0 && rowsAffected2 > 0 && rowsAffected3 > 0);
             }
@@ -84,7 +85,7 @@ public class ForProfile {
             preparedStatement.setString(1, newname);
             preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected >0);
         } catch (SQLException e) {
             return false;
@@ -99,7 +100,7 @@ public class ForProfile {
             preparedStatement.setString(1, newContact);
             preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             return false;
@@ -114,7 +115,7 @@ public class ForProfile {
             preparedStatement.setString(1, newPassword);
             preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             return false;
@@ -129,7 +130,7 @@ public class ForProfile {
             preparedStatement.setString(1, newBio);
             preparedStatement.setString(2, mail);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             return false;

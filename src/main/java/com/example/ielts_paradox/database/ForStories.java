@@ -36,6 +36,7 @@ public class ForStories {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,6 +67,7 @@ public class ForStories {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -92,7 +94,7 @@ public class ForStories {
                     return true;
                 }
             }
-
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -126,6 +128,7 @@ public class ForStories {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

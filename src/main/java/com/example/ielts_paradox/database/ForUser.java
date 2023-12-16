@@ -40,6 +40,7 @@ public class ForUser {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -53,10 +54,12 @@ public class ForUser {
             prpStatement.setString(1,email);
 
             ResultSet resultSet = prpStatement.executeQuery();
+            connection.close();
             if(resultSet.next()){
 
                 return true;
             }
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -74,10 +77,11 @@ public class ForUser {
             prpStatement.setBoolean(5,u.isTeacher);
             prpStatement.setString(6,u.bio);
             int rowsAffected = prpStatement.executeUpdate();
-
+            connection.close();
             if (rowsAffected > 0) {
                 return true;
             }
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -107,6 +111,7 @@ public class ForUser {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

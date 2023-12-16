@@ -25,6 +25,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -59,6 +60,7 @@ public class ForEnrollment {
                     return true;
                 }
             }
+            connection.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,6 +98,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -131,6 +134,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -155,6 +159,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -191,6 +196,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -205,7 +211,7 @@ public class ForEnrollment {
             preparedStatement.setBoolean(1, true);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             return false;
@@ -255,6 +261,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -280,6 +287,7 @@ public class ForEnrollment {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -294,7 +302,7 @@ public class ForEnrollment {
             preparedStatement.setBoolean(1, true);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             return false;

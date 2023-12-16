@@ -274,9 +274,11 @@ public class ForCourse {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return 0;
     }
+
 }

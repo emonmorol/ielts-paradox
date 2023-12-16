@@ -202,6 +202,7 @@ public class ForTest {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -243,6 +244,7 @@ public class ForTest {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -259,7 +261,7 @@ public class ForTest {
             preparedStatement.setString(1, link);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -276,7 +278,7 @@ public class ForTest {
             preparedStatement.setString(1, link);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -293,7 +295,7 @@ public class ForTest {
             preparedStatement.setString(1, date);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -310,7 +312,7 @@ public class ForTest {
             preparedStatement.setString(1, link);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -328,7 +330,7 @@ public class ForTest {
             preparedStatement.setString(1, link);
             preparedStatement.setString(2, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -347,7 +349,7 @@ public class ForTest {
             preparedStatement.setString(2, link);
             preparedStatement.setString(3, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -369,6 +371,7 @@ public class ForTest {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -388,7 +391,7 @@ public class ForTest {
             preparedStatement.setString(2, info.email);
             preparedStatement.setString(3, id);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -448,6 +451,7 @@ public class ForTest {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -105,6 +105,7 @@ public class ForNotices {
                     return true;
                 }
             }
+            connection.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

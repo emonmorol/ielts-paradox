@@ -32,6 +32,7 @@ public class ForChat {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -46,7 +47,7 @@ public class ForChat {
             preparedStatement.setBoolean(1, value);
             preparedStatement.setInt(2, portName);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -83,6 +84,7 @@ public class ForChat {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -109,6 +111,7 @@ public class ForChat {
                 preparedStatement.setString(6, message);
                 int rowsAffected = preparedStatement.executeUpdate();
             }
+            connection.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

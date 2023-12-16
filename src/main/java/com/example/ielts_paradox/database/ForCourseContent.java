@@ -46,6 +46,7 @@ public class ForCourseContent {
                     }
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,7 +64,7 @@ public class ForCourseContent {
             preparedStatement.setInt(2, courseID);
             preparedStatement.setString(3, info.email);
             int rowsAffected = preparedStatement.executeUpdate();
-
+            connection.close();
             return (rowsAffected >0);
         } catch (SQLException e) {
             return false;
